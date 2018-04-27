@@ -75,10 +75,8 @@ class App extends Component {
     <div className="App">
       <header className="App-header">
         <h1 className="App-title">Chat multitasking experiment</h1>
+        <p className="App-intro">Let's test how many chats you can handle</p>
       </header>
-      <p className="App-intro">
-      Let's test how many chats you can handle
-      </p>
       <Route path="/exp1" render={() => <ChatDialogGrid dialogs={this.state.dialogs}/>} />
       <Route path="/exp2" render={() => <ChatDialogList dialogs={this.state.dialogs}/>}/>
     </div>

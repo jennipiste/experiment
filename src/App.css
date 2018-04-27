@@ -10,7 +10,7 @@
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
 .App-intro {
@@ -19,14 +19,14 @@
 
 .ChatDialogGrid {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .ChatDialog {
   border: 1px solid #000;
   margin: 20px;
   height: 400px;
-  max-width: 400px;
-  flex-grow: 1;
+  width: 400px;
   display: flex;
   flex-direction: column;
 }
@@ -57,19 +57,20 @@
 }
 
 .ChatDialogFooter {
-  margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  margin: 10px;
 }
 
 .SendButton {
-  margin: 5px;
+  height: 56px;
+  margin-left: 5px;
 }
 
 .MessageTextarea {
   resize: none;
-  flex-basis: 300px;
+  flex-grow: 1;
   height: 50px;
 }
 
@@ -79,8 +80,14 @@
 
 .ChatList {
   flex-basis: 200px;
+  margin-top: 20px;
 }
 
 .ChatListItem {
   padding: 20px;
+  cursor: pointer;
+}
+
+.ChatListItem.active {
+  background-color: #E7E7E7;
 }

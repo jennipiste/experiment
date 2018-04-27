@@ -26,7 +26,7 @@ class ChatDialogList extends Component {
 
   render() {
     let dialogs = map(this.props.dialogs, (dialog, index) => {
-      return <ChatListItem {...dialog} key={index} onChatListItemClick={this.onChatListItemClick}/>
+      return <ChatListItem {...dialog} key={index} onChatListItemClick={this.onChatListItemClick} isActive={this.state.activeDialog.id === dialog.id}/>
     });
 
     return (

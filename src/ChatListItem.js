@@ -8,7 +8,7 @@ class ChatListItem extends Component {
 
   render() {
     return (
-    <div className="ChatListItem" onClick={event => this.props.onChatListItemClick(this.props.id)} ref={element => this.listElement = element}>
+    <div className={"ChatListItem " + (this.props.isActive ? "active" : "")} onClick={event => this.props.onChatListItemClick(this.props.id)} ref={element => this.listElement = element}>
         {this.props.name}
     </div>
     );
