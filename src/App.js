@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom'
 import './App.css';
+import ChatDialogGrid from './ChatDialogGrid';
 import ChatDialogList from './ChatDialogList';
 
 class App extends Component {
@@ -30,6 +32,7 @@ class App extends Component {
           },
         ],
         name: "Chat Dialog 1",
+        id: 1,
       },
       {
         messages: [
@@ -47,6 +50,7 @@ class App extends Component {
           },
         ],
         name: "Chat Dialog 2",
+        id: 2,
       },
       {
         messages: [
@@ -60,6 +64,7 @@ class App extends Component {
           },
         ],
         name: "Chat Dialog 3",
+        id: 3,
       },
     ]
     this.setState({dialogs: dialogs});
@@ -74,7 +79,8 @@ class App extends Component {
       <p className="App-intro">
       Let's test how many chats you can handle
       </p>
-      <ChatDialogList dialogs={this.state.dialogs} />
+      <Route path="/exp1" render={() => <ChatDialogGrid dialogs={this.state.dialogs}/>} />
+      <Route path="/exp2" render={() => <ChatDialogList dialogs={this.state.dialogs}/>}/>
     </div>
     );
   }

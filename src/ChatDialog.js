@@ -8,14 +8,20 @@ class ChatDialog extends Component {
 
     this.state = {
       composedMessage: "",
-      messages: [],
+      messages: this.props.messages,
     }
 
-    let textareaElement = null;
+    this.textareaElement = null;
   }
 
-  componentDidMount = () => {
+  componentDidMount() {
     this.setState({messages: this.props.messages});
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (!this.props.messages.lenght) {
+      this.setState({messages: nextProps.messages});
+    }
   }
 
   onTextareaValueChange = (target) => {
@@ -46,7 +52,7 @@ class ChatDialog extends Component {
     this.textareaElement.focus();
   }
 
-  render = () => {
+  render() {
     const textareaProps = {
       maxLength: 2000,
       onChange: event => this.onTextareaValueChange(event.target),

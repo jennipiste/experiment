@@ -5,7 +5,7 @@ import map from 'lodash/map';
 class ChatMessageList extends Component {
   constructor(props) {
     super(props);
-    let listElement = null;
+    this.listElement = null;
   }
 
   scrollToBottom = () => {
@@ -15,11 +15,11 @@ class ChatMessageList extends Component {
     }
   }
 
-  componentDidUpdate = () => {
+  componentDidUpdate() {
     this.scrollToBottom();
   }
 
-  render = () => {
+  render() {
     let messages = map(this.props.messages, (message, index) => {
       return <ChatMessage message={message.message} type={message.type} key={index}/>
     })
