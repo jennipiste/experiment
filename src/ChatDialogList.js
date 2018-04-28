@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
 import ChatDialog from './ChatDialog';
 import ChatListItem from './ChatListItem';
 import map from 'lodash/map';
@@ -10,7 +10,7 @@ class ChatDialogList extends Component {
 
     this.state = {
       activeDialog: this.props.dialogs[0],
-    }
+    };
   }
 
   componentWillReceiveProps(nextProps) {
@@ -19,23 +19,23 @@ class ChatDialogList extends Component {
     }
   }
 
-  onChatListItemClick = (chat_id) => {
+  onChatListItemClick = (event, chat_id) => {
     const dialog = find(this.props.dialogs, (dialog) => { return dialog.id === chat_id; });
     this.setState({activeDialog: dialog});
   }
 
   render() {
     let dialogs = map(this.props.dialogs, (dialog, index) => {
-      return <ChatListItem {...dialog} key={index} onChatListItemClick={this.onChatListItemClick} isActive={this.state.activeDialog.id === dialog.id}/>
+      return <ChatListItem {...dialog} key={index} onChatListItemClick={this.onChatListItemClick} isActive={this.state.activeDialog.id === dialog.id} />;
     });
 
     return (
-    <div className="ChatDialogList">
-      <div className="ChatList">
-        {dialogs}
+      <div className="ChatDialogList">
+        <div className="ChatList">
+          {dialogs}
+        </div>
+        {this.state.activeDialog && <ChatDialog {...this.state.activeDialog} />}
       </div>
-      {this.state.activeDialog && <ChatDialog {...this.state.activeDialog} />}
-    </div>
     );
   }
 }

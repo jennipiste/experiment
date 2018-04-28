@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { Route } from 'react-router-dom'
-import './App.css';
+import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
+import { Route } from 'react-router-dom';
 import ChatDialogGrid from './ChatDialogGrid';
 import ChatDialogList from './ChatDialogList';
+import './App.css';
 
 class App extends Component {
   constructor(props) {

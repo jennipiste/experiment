@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
 import ChatMessageList from './ChatMessageList';
 import ChatDialogFooter from './ChatDialogFooter';
 
@@ -9,7 +9,7 @@ class ChatDialog extends Component {
     this.state = {
       composedMessage: "",
       messages: this.props.messages,
-    }
+    };
 
     this.textareaElement = null;
   }
@@ -46,10 +46,12 @@ class ChatDialog extends Component {
         return {
           messages: messages,
           composedMessage: "",
-        }
+        };
       });
     }
-    this.textareaElement.focus();
+    if (this.textareaElement) {
+      this.textareaElement.focus();
+    }
   }
 
   render() {
@@ -59,18 +61,18 @@ class ChatDialog extends Component {
       onKeyDown: event => this.onTextareaKeyDown(event),
     };
     const sendButtonProps = {
-      onClick: event => this.sendMessage(),
+      onClick: event => this.sendMessage(event),
     };
     return (
-    <div className="ChatDialog">
-      <p>{this.props.name}</p>
-      <ChatMessageList messages={this.state.messages} />
+      <div className="ChatDialog">
+        <p>{this.props.name}</p>
+        <ChatMessageList messages={this.state.messages} />
 
-      <ChatDialogFooter>
-        <textarea className="MessageTextarea" {...textareaProps} ref={element => this.textareaElement = element}/>
-        <button className="SendButton" {...sendButtonProps}>SEND</button>
-      </ChatDialogFooter>
-    </div>
+        <ChatDialogFooter>
+          <textarea className="MessageTextarea" {...textareaProps} ref={element => this.textareaElement = element}/>
+          <button className="SendButton" {...sendButtonProps}>SEND</button>
+        </ChatDialogFooter>
+      </div>
     );
   }
 }
