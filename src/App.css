@@ -17,6 +17,11 @@
   font-size: large;
 }
 
+.CreateParticipant {
+  font-size: large;
+  margin: 20px;
+}
+
 .ChatDialogGrid {
   display: flex;
   flex-wrap: wrap;
