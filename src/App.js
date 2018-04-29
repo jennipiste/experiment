@@ -75,10 +75,31 @@ class App extends Component {
     // this.setState({dialogs: dialogs});
     axios.get("api/participants/" + this.state.activeParticipant.id + "/dialogs")
       .then(response => {
-        this.setState({
-          dialogs: response.data
-        });
+        const dialogs = response.data;
+        if (dialogs.length) {
+          this.setState({
+            dialogs: dialogs
+          });
+        } else {
+          const names = ["Dialog 1", "Dialog 2"];
+          this.createDialogs(names);
+        }
       });
+  }
+
+  createDialogs = (names) => {
+    names.forEach(name => {
+      axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs', {name: name})
+        .then(response => {
+          this.setState((prevState) => {
+            const dialogs = prevState.dialogs;
+            dialogs.push(response.data);
+            return {
+              dialogs: dialogs
+            };
+          });
+        });
+    });
   }
 
   onParticipantNameChange = (event) => {
