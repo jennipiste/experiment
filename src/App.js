@@ -16,65 +16,69 @@ class App extends Component {
     this.state = {
       dialogs: [],
       participantName: "",
+      participantResponse: null,
       activeParticipant: null,
+      isModalOpen: false,
     };
 
   }
 
-  componentDidMount() {
-    this.initDialogs();
-  }
-
   initDialogs() {
-    let dialogs = [
-      {
-        messages: [
-          {
-            type: 1,
-            message: "First message",
-          },
-          {
-            type: 2,
-            message: "Your message",
-          },
-        ],
-        name: "Chat Dialog 1",
-        id: 1,
-      },
-      {
-        messages: [
-          {
-            type: 1,
-            message: "First message",
-          },
-          {
-            type: 1,
-            message: "Second message",
-          },
-          {
-            type: 2,
-            message: "Your message",
-          },
-        ],
-        name: "Chat Dialog 2",
-        id: 2,
-      },
-      {
-        messages: [
-          {
-            type: 2,
-            message: "Your first message",
-          },
-          {
-            type: 2,
-            message: "Your second message",
-          },
-        ],
-        name: "Chat Dialog 3",
-        id: 3,
-      },
-    ];
-    this.setState({dialogs: dialogs});
+    // const dialogs = [
+    //   {
+    //     messages: [
+    //       {
+    //         type: 1,
+    //         message: "First message",
+    //       },
+    //       {
+    //         type: 2,
+    //         message: "Your message",
+    //       },
+    //     ],
+    //     name: "Chat Dialog 1",
+    //     id: 1,
+    //   },
+    //   {
+    //     messages: [
+    //       {
+    //         type: 1,
+    //         message: "First message",
+    //       },
+    //       {
+    //         type: 1,
+    //         message: "Second message",
+    //       },
+    //       {
+    //         type: 2,
+    //         message: "Your message",
+    //       },
+    //     ],
+    //     name: "Chat Dialog 2",
+    //     id: 2,
+    //   },
+    //   {
+    //     messages: [
+    //       {
+    //         type: 2,
+    //         message: "Your first message",
+    //       },
+    //       {
+    //         type: 2,
+    //         message: "Your second message",
+    //       },
+    //     ],
+    //     name: "Chat Dialog 3",
+    //     id: 3,
+    //   },
+    // ];
+    // this.setState({dialogs: dialogs});
+    axios.get("api/participants/" + this.state.activeParticipant.id + "/dialogs")
+      .then(response => {
+        this.setState({
+          dialogs: response.data
+        });
+      });
   }
 
   onParticipantNameChange = (event) => {

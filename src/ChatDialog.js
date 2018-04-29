@@ -1,6 +1,7 @@
 import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
 import ChatMessageList from './ChatMessageList';
 import ChatDialogFooter from './ChatDialogFooter';
+import axios from 'axios';
 
 class ChatDialog extends Component {
   constructor(props) {
@@ -15,13 +16,16 @@ class ChatDialog extends Component {
   }
 
   componentDidMount() {
-    this.setState({messages: this.props.messages});
+    this.initMessages();
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (!this.props.messages.lenght) {
-      this.setState({messages: nextProps.messages});
-    }
+  initMessages = () => {
+    axios.get("api/participants/" + this.props.participant + "/dialogs/" + this.props.id + "/messages")
+      .then(response => {
+        this.setState({
+          messages: response.data
+        });
+      });
   }
 
   onTextareaValueChange = (target) => {
@@ -36,18 +40,26 @@ class ChatDialog extends Component {
     }
   }
 
+  clearTextarea = () => {
+    this.textareaElement.value = "";
+  }
+
   sendMessage = () => {
     if (this.state.composedMessage.length) {
       const composedMessage = this.state.composedMessage;
-      this.textareaElement.value = "";
-      this.setState((prevState) => {
-        let messages = prevState.messages;
-        messages.push({message: composedMessage, type: 2});
-        return {
-          messages: messages,
-          composedMessage: "",
-        };
-      });
+      axios.post("api/participants/" + this.props.participant + "/dialogs/" + this.props.id + "/messages", {message: composedMessage})
+        .then(response => {
+          if (response.status === 201) {
+            this.setState((prevState) => {
+              const messages = prevState.messages;
+              messages.push(response.data);
+              return {
+                messages: messages,
+                composedMessage: "",
+              };
+            }, this.clearTextarea);
+          }
+        });
     }
     if (this.textareaElement) {
       this.textareaElement.focus();
