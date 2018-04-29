@@ -44,26 +44,40 @@ class ChatDialog extends Component {
     this.textareaElement.value = "";
   }
 
+  updateMessages = (newMessage) => {
+    this.setState((prevState) => {
+      const messages = prevState.messages;
+      messages.push(newMessage);
+      return {
+        messages: messages,
+        composedMessage: "",
+      };
+    });
+  }
+
   sendMessage = () => {
     if (this.state.composedMessage.length) {
       const composedMessage = this.state.composedMessage;
       axios.post("api/participants/" + this.props.participant + "/dialogs/" + this.props.id + "/messages", {message: composedMessage})
         .then(response => {
           if (response.status === 201) {
-            this.setState((prevState) => {
-              const messages = prevState.messages;
-              messages.push(response.data);
-              return {
-                messages: messages,
-                composedMessage: "",
-              };
-            }, this.clearTextarea);
+            this.updateMessages(response.data);
+            this.clearTextarea();
           }
         });
     }
     if (this.textareaElement) {
       this.textareaElement.focus();
     }
+  }
+
+  sendSystemMessage = (message) => {
+    axios.post("api/dialogs/" + this.props.id + "/messages", {message: message})
+      .then(response => {
+        if (response.status === 201) {
+          this.updateMessages(response.data);
+        }
+      });
   }
 
   render() {
