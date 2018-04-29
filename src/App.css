@@ -22,6 +22,34 @@
   margin: 20px;
 }
 
+.Backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.3);
+  padding: 50px;
+}
+
+.Modal {
+  background-color: #fff;
+  border-radius: 5px;
+  max-width: 500px;
+  min-height: 200px;
+  margin: 0 auto;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.ModalFooter button {
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+
 .ChatDialogGrid {
   display: flex;
   flex-wrap: wrap;

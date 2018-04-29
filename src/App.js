@@ -4,6 +4,7 @@ import axios from'axios';
 import axiosDefaults from 'axios/lib/defaults';
 import ChatDialogGrid from './ChatDialogGrid';
 import ChatDialogList from './ChatDialogList';
+import Modal from './Modal';
 import './App.css';
 
 axiosDefaults.baseURL = 'http://localhost:8000';
@@ -82,20 +83,61 @@ class App extends Component {
 
   createParticipant = (event) => {
     event.preventDefault();
-    axios.post('api/participants', {name: this.state.participantName})
+    axios.post("api/participants", {name: this.state.participantName})
       .then(response => {
-        this.setState({
-          activeParticipant: response.data,
-        });
+        if (response.status === 201) {
+          this.setState({
+            activeParticipant: response.data,
+            participantName: "",
+          }, this.initDialogs);
+        } else if (response.status === 200) {
+          // If participant already exists, show modal
+          this.setState({
+            isModalOpen: true,
+            participantResponse: response.data,
+          });
+        }
       });
   }
 
+  onUseExistingParticipant = () => {
+    this.setState((prevState) => {
+      return {
+        activeParticipant: prevState.participantResponse,
+        participantName: "",
+        participantResponse: null,
+        isModalOpen: false,
+      };
+    }, this.initDialogs);
+  }
+
+  onCreateNewParticipant = () => {
+    this.setState({
+      participantResponse: null,
+      isModalOpen: false,
+    });
+  }
+
   render() {
+    const modalProps = {
+      text: 'Participant with name "' + this.state.participantName + '" already exists. Do you want to use the existing participant or create new participant with different name?',
+      actions: [
+        {
+          text: "Use existing",
+          onClick: this.onUseExistingParticipant,
+        },
+        {
+          text: "Create new",
+          onClick: this.onCreateNewParticipant,
+        }
+      ]
+    };
+
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Chat multitasking experiment</h1>
-          <p className="App-intro">{this.state.activeParticipant && "Welcome " + this.state.activeParticipant.name + "! "}Let's test how many chats you can handle</p>
+          {this.state.activeParticipant && <p className="App-intro">{"Welcome " + this.state.activeParticipant.name + "! "}Let's test how many chats you can handle</p>}
         </header>
         {this.state.activeParticipant ? (
           <div>
@@ -112,6 +154,7 @@ class App extends Component {
             </form>
           </div>
         )}
+        {this.state.isModalOpen && <Modal {...modalProps}/>}
       </div>
     );
   }
