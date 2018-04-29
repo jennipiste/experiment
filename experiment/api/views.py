@@ -32,11 +32,24 @@ class ChatDialogListCreateAPIView(generics.ListCreateAPIView):
     serializer_class = ChatDialogSerializer
     queryset = ChatDialog.objects.all()
 
+    def initial(self, *args, **kwargs):
+        super(ChatDialogListCreateAPIView, self).initial(*args, **kwargs)
+        participant_id = self.kwargs['participant_id']
+        try:
+            self.participant = Participant.objects.get(id=participant_id)
+        except Participant.DoesNotExist:
+            raise NotFound("Participant not found")
+
     def get_queryset(self):
         queryset = super(ChatDialogListCreateAPIView, self).get_queryset()
-        participant_id = self.kwargs['participant_id']
-        participant = Participant.objects.get(id=participant_id)
-        return queryset.filter(participant=participant)
+        return queryset.filter(participant=self.participant)
+
+    def create(self, request, *args, **kwargs):
+        dialog = ChatDialog.objects.create(
+            name=request.data.get('name'),
+            participant=self.participant,
+        )
+        return Response(self.get_serializer(dialog).data, status=status.HTTP_201_CREATED)
 
 
 class ParticipantChatMessageListCreateAPIView(generics.ListCreateAPIView):
@@ -45,40 +58,29 @@ class ParticipantChatMessageListCreateAPIView(generics.ListCreateAPIView):
 
     def initial(self, *args, **kwargs):
         super(ParticipantChatMessageListCreateAPIView, self).initial(*args, **kwargs)
-        self.participant_id = self.kwargs['participant_id']
-        self.dialog_id = self.kwargs['dialog_id']
+        participant_id = self.kwargs['participant_id']
+        dialog_id = self.kwargs['dialog_id']
+        try:
+            self.participant = Participant.objects.get(id=participant_id)
+        except Participant.DoesNotExist:
+            raise NotFound("Participant not found")
+        else:
+            try:
+                self.dialog = ChatDialog.objects.get(id=dialog_id, participant=self.participant)
+            except ChatDialog.DoesNotExist:
+                raise NotFound("Dialog for participant not found")
 
     def get_queryset(self):
         queryset = super(ParticipantChatMessageListCreateAPIView, self).get_queryset()
-        try:
-            participant = Participant.objects.get(id=self.participant_id)
-        except Participant.DoesNotExist:
-            raise NotFound("Participant not found")
-        else:
-            try:
-                dialog = ChatDialog.objects.get(id=self.dialog_id, participant=participant)
-            except ChatDialog.DoesNotExist:
-                raise NotFound("Dialog for participant not found")
-        return queryset.filter(chat_dialog=dialog)
+        return queryset.filter(chat_dialog=self.dialog)
 
     def create(self, request, *args, **kwargs):
-        try:
-            participant = Participant.objects.get(id=self.participant_id)
-        except Participant.DoesNotExist:
-            raise NotFound("Participant not found")
-        else:
-            try:
-                dialog = ChatDialog.objects.get(id=self.dialog_id, participant=participant)
-            except ChatDialog.DoesNotExist:
-                raise NotFound("Dialog for participant not found")
-
         message = ChatMessage.objects.create(
             message=request.data.get('message'),
-            sender=participant,
+            sender=self.participant,
             type=2,
-            chat_dialog=dialog,
+            chat_dialog=self.dialog,
         )
-
         return Response(self.get_serializer(message).data, status=status.HTTP_201_CREATED)
 
 
@@ -88,27 +90,21 @@ class ChatMessageListCreateAPIView(generics.ListCreateAPIView):
 
     def initial(self, *args, **kwargs):
         super(ChatMessageListCreateAPIView, self).initial(*args, **kwargs)
-        self.dialog_id = self.kwargs['dialog_id']
+        dialog_id = self.kwargs['dialog_id']
+        try:
+            self.dialog = ChatDialog.objects.get(id=dialog_id)
+        except ChatDialog.DoesNotExist:
+            raise NotFound("Dialog for participant not found")
 
     def get_queryset(self):
         queryset = super(ChatMessageListCreateAPIView, self).get_queryset()
-        try:
-            dialog = ChatDialog.objects.get(id=self.dialog_id)
-        except ChatDialog.DoesNotExist:
-            raise NotFound("Dialog for participant not found")
-        return queryset.filter(chat_dialog=dialog)
+        return queryset.filter(chat_dialog=self.dialog)
 
     def create(self, request, *args, **kwargs):
-        try:
-            dialog = ChatDialog.objects.get(id=self.dialog_id)
-        except ChatDialog.DoesNotExist:
-            raise NotFound("Dialog for participant not found")
-
         message = ChatMessage.objects.create(
             message=request.data.get('message'),
             sender=None,
             type=1,
-            chat_dialog=dialog,
+            chat_dialog=self.dialog,
         )
-
         return Response(self.get_serializer(message).data, status=status.HTTP_201_CREATED)
