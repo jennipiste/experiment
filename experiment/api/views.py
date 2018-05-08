@@ -28,12 +28,12 @@ class ParticipantListCreateAPIView(generics.ListCreateAPIView):
         return response
 
 
-class ChatDialogListCreateAPIView(generics.ListCreateAPIView):
+class ParticipantChatDialogListCreateAPIView(generics.ListCreateAPIView):
     serializer_class = ChatDialogSerializer
     queryset = ChatDialog.objects.all()
 
     def initial(self, *args, **kwargs):
-        super(ChatDialogListCreateAPIView, self).initial(*args, **kwargs)
+        super(ParticipantChatDialogListCreateAPIView, self).initial(*args, **kwargs)
         participant_id = self.kwargs['participant_id']
         try:
             self.participant = Participant.objects.get(id=participant_id)
@@ -41,7 +41,7 @@ class ChatDialogListCreateAPIView(generics.ListCreateAPIView):
             raise NotFound("Participant not found")
 
     def get_queryset(self):
-        queryset = super(ChatDialogListCreateAPIView, self).get_queryset()
+        queryset = super(ParticipantChatDialogListCreateAPIView, self).get_queryset()
         return queryset.filter(participant=self.participant)
 
     def create(self, request, *args, **kwargs):
@@ -50,6 +50,13 @@ class ChatDialogListCreateAPIView(generics.ListCreateAPIView):
             participant=self.participant,
         )
         return Response(self.get_serializer(dialog).data, status=status.HTTP_201_CREATED)
+
+
+class ChatDialogUpdateAPIView(generics.UpdateAPIView):
+    serializer_class = ChatDialogSerializer
+    queryset = ChatDialog.objects.all()
+    lookup_field = 'id'
+    lookup_url_kwarg = 'dialog_id'
 
 
 class ParticipantChatMessageListCreateAPIView(generics.ListCreateAPIView):
@@ -75,7 +82,11 @@ class ParticipantChatMessageListCreateAPIView(generics.ListCreateAPIView):
         return queryset.filter(chat_dialog=self.dialog)
 
     def create(self, request, *args, **kwargs):
-        latest_question = ChatMessage.objects.filter(type=1, chat_dialog=self.dialog).latest('created_at')
+        try:
+            latest_question = ChatMessage.objects.filter(type=1, chat_dialog=self.dialog).latest('created_at')
+        except ChatMessage.DoesNotExist:
+            latest_question = None
+
         message = ChatMessage.objects.create(
             message=request.data.get('message'),
             sender=self.participant,

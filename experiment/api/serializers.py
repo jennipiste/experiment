@@ -21,6 +21,7 @@ class ChatDialogSerializer(serializers.ModelSerializer):
             'id',
             'name',
             'participant',
+            'is_ended',
             'created_at',
         ]
 

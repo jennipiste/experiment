@@ -68,6 +68,10 @@
   border: 3px solid red;
 }
 
+.CloseDialog {
+  flex-basis: 276px;
+}
+
 .ChatMessageList {
   flex-basis: 276px;
   overflow-y: scroll;

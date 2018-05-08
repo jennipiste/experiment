@@ -32,25 +32,30 @@ class App extends Component {
             dialogs: dialogs
           });
         } else {
-          const names = ["Dialog 1", "Dialog 2", "Dialog 3", "Dialog 4"];
-          this.createDialogs(names);
+          this.createDialogs();
         }
       });
   }
 
-  createDialogs = (names) => {
-    names.forEach(name => {
-      axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs', {name: name})
-        .then(response => {
-          this.setState((prevState) => {
-            const dialogs = prevState.dialogs;
+  createDialogs = () => {
+    let dialogs = [];
+    axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs', {name: "Dialog1"})
+      .then(response => {
+        dialogs.push(response.data);
+        axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs', {name: "Dialog2"})
+          .then(response => {
             dialogs.push(response.data);
-            return {
-              dialogs: dialogs
-            };
+            axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs', {name: "Dialog3"})
+              .then(response => {
+                dialogs.push(response.data);
+                axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs', {name: "Dialog4"})
+                  .then(response => {
+                    dialogs.push(response.data);
+                    this.setState({dialogs: dialogs});
+                  });
+              });
           });
-        });
-    });
+      });
   }
 
   onParticipantNameChange = (event) => {
@@ -96,7 +101,7 @@ class App extends Component {
 
   render() {
     const modalProps = {
-      text: 'Participant with name "' + this.state.participantName + '" already exists. Do you want to use the existing participant or create new participant with different name?',
+      text: 'Participant with name "' + this.state.participantName + '" already exists. Do you want to use the existing participant or create a new participant with different name?',
       actions: [
         {
           text: "Use existing",
@@ -117,8 +122,8 @@ class App extends Component {
         </header>
         {this.state.activeParticipant ? (
           <div>
-            <Route path="/exp1" render={() => <ChatDialogGrid dialogs={this.state.dialogs}/>} />
-            <Route path="/exp2" render={() => <ChatDialogList dialogs={this.state.dialogs}/>}/>
+            <Route path="/exp1" render={() => <ChatDialogGrid dialogs={this.state.dialogs} />} />
+            <Route path="/exp2" render={() => <ChatDialogList dialogs={this.state.dialogs} />} />
           </div>
         ) : (
           <div className="CreateParticipant">
