@@ -24,55 +24,6 @@ class App extends Component {
   }
 
   initDialogs() {
-    // const dialogs = [
-    //   {
-    //     messages: [
-    //       {
-    //         type: 1,
-    //         message: "First message",
-    //       },
-    //       {
-    //         type: 2,
-    //         message: "Your message",
-    //       },
-    //     ],
-    //     name: "Chat Dialog 1",
-    //     id: 1,
-    //   },
-    //   {
-    //     messages: [
-    //       {
-    //         type: 1,
-    //         message: "First message",
-    //       },
-    //       {
-    //         type: 1,
-    //         message: "Second message",
-    //       },
-    //       {
-    //         type: 2,
-    //         message: "Your message",
-    //       },
-    //     ],
-    //     name: "Chat Dialog 2",
-    //     id: 2,
-    //   },
-    //   {
-    //     messages: [
-    //       {
-    //         type: 2,
-    //         message: "Your first message",
-    //       },
-    //       {
-    //         type: 2,
-    //         message: "Your second message",
-    //       },
-    //     ],
-    //     name: "Chat Dialog 3",
-    //     id: 3,
-    //   },
-    // ];
-    // this.setState({dialogs: dialogs});
     axios.get("api/participants/" + this.state.activeParticipant.id + "/dialogs")
       .then(response => {
         const dialogs = response.data;
@@ -81,7 +32,7 @@ class App extends Component {
             dialogs: dialogs
           });
         } else {
-          const names = ["Dialog 1", "Dialog 2"];
+          const names = ["Dialog 1", "Dialog 2", "Dialog 3", "Dialog 4"];
           this.createDialogs(names);
         }
       });

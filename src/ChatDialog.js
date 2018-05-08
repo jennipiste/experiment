@@ -10,6 +10,7 @@ class ChatDialog extends Component {
     this.state = {
       composedMessage: "",
       messages: this.props.messages,
+      unread: false,
     };
 
     this.textareaElement = null;
@@ -51,6 +52,7 @@ class ChatDialog extends Component {
       return {
         messages: messages,
         composedMessage: "",
+        unread: newMessage.type === 1 ? true : false,
       };
     });
   }
@@ -89,8 +91,9 @@ class ChatDialog extends Component {
     const sendButtonProps = {
       onClick: event => this.sendMessage(event),
     };
+    const systemMessage = "system message";
     return (
-      <div className="ChatDialog">
+      <div className={"ChatDialog" + (this.state.unread ? " unread" : "")}>
         <p>{this.props.name}</p>
         <ChatMessageList messages={this.state.messages} />
 
@@ -98,6 +101,8 @@ class ChatDialog extends Component {
           <textarea className="MessageTextarea" {...textareaProps} ref={element => this.textareaElement = element}/>
           <button className="SendButton" {...sendButtonProps}>SEND</button>
         </ChatDialogFooter>
+        {/* for debugging purposes */}
+        <button onClick={() => this.sendSystemMessage(systemMessage)}>system message</button>
       </div>
     );
   }
