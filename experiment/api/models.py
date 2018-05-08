@@ -22,14 +22,15 @@ class ChatDialog(models.Model):
 
 class ChatMessage(models.Model):
     MESSAGE_TYPES = (
-        (1, "incoming"),
-        (2, "outgoing"),
+        (1, "question"),
+        (2, "answer"),
     )
     created_at = models.DateTimeField(auto_now_add=True)
     message = models.TextField()
     sender = models.ForeignKey(Participant, null=True)
     type = models.IntegerField(choices=MESSAGE_TYPES)
     chat_dialog = models.ForeignKey(ChatDialog)
+    answer_to = models.ForeignKey('self', null=True)
 
     def __str__(self):
-        return u"message: {0}, type: {}, sender: {}".format(self.message, self.type, self.sender)
+        return u"message: {0}, type: {1}, sender: {2}".format(self.message, self.type, self.sender)
