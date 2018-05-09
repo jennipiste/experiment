@@ -47,6 +47,7 @@ class ParticipantChatDialogListCreateAPIView(generics.ListCreateAPIView):
     def create(self, request, *args, **kwargs):
         dialog = ChatDialog.objects.create(
             name=request.data.get('name'),
+            subject=request.data.get('subject'),
             participant=self.participant,
         )
         return Response(self.get_serializer(dialog).data, status=status.HTTP_201_CREATED)

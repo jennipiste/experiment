@@ -14,8 +14,11 @@ class Participant(models.Model):
 class ChatDialog(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     name = models.CharField(max_length=400)
+    subject = models.CharField(max_length=400, null=True)
     participant = models.ForeignKey(Participant)
     is_ended = models.BooleanField(default=False)
+    ended_at = models.DateTimeField(null=True)
+    closed_at = models.DateTimeField(null=True)
 
     def __str__(self):
         return u"name: {0}, id: {1}".format(self.name, self.id)

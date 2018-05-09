@@ -39,16 +39,16 @@ class App extends Component {
 
   createDialogs = () => {
     let dialogs = [];
-    axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs', {name: "Dialog1"})
+    axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs', {name: "Dialog1", subject: "kamera"})
       .then(response => {
         dialogs.push(response.data);
-        axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs', {name: "Dialog2"})
+        axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs', {name: "Dialog2", subject: "pöytätennis"})
           .then(response => {
             dialogs.push(response.data);
-            axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs', {name: "Dialog3"})
+            axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs', {name: "Dialog3", subject: "kuulokkeet"})
               .then(response => {
                 dialogs.push(response.data);
-                axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs', {name: "Dialog4"})
+                axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs', {name: "Dialog4", subject: "liesituuletin"})
                   .then(response => {
                     dialogs.push(response.data);
                     this.setState({dialogs: dialogs});

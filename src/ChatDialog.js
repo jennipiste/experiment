@@ -16,6 +16,7 @@ class ChatDialog extends Component {
     };
 
     this.textareaElement = null;
+    this.pdf = require("./manuals/" + this.props.subject + ".pdf");
   }
 
   componentDidMount() {
@@ -27,7 +28,7 @@ class ChatDialog extends Component {
       .then(response => {
         this.setState({
           messages: response.data,
-          unread: response.data.slice(-1)[0].type === 1,
+          unread: response.data.length && response.data.slice(-1)[0].type === 1,
           is_ended: this.props.is_ended,
         });
       });
@@ -99,6 +100,14 @@ class ChatDialog extends Component {
     this.setState({isShown: false});
   }
 
+  openPDF = (event) => {
+    event.preventDefault();
+    const left = window.screenX + window.outerWidth;
+    console.log(left);
+    window.open(this.pdf + "#3", 'newwindow', 'fullscreen=yes, left=' + left + '');
+    return false;
+  }
+
   render() {
     const textareaProps = {
       maxLength: 2000,
@@ -114,6 +123,7 @@ class ChatDialog extends Component {
         {this.state.isShown &&
         <div className={"ChatDialog" + (this.state.unread ? " unread" : "")}>
           <p>{this.props.name}</p>
+          {this.props.subject && <a href={this.pdf} onClick={(event) => this.openPDF(event)}>{this.props.subject}</a>}
           {this.state.is_ended ? (
             <div className="CloseDialog"><button onClick={() => this.closeChatDialog()}>Close</button></div>
           ) : (

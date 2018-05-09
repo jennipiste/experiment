@@ -20,9 +20,12 @@ class ChatDialogSerializer(serializers.ModelSerializer):
         fields = [
             'id',
             'name',
+            'subject',
             'participant',
             'is_ended',
             'created_at',
+            'ended_at',
+            'closed_at',
         ]
 
 
