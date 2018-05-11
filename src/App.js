@@ -2,6 +2,7 @@ import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
 import { Route } from 'react-router-dom';
 import axios from'axios';
 import axiosDefaults from 'axios/lib/defaults';
+import nth from 'lodash/nth';
 import ChatDialogGrid from './ChatDialogGrid';
 import ChatDialogList from './ChatDialogList';
 import Modal from './Modal';
@@ -14,13 +15,35 @@ class App extends Component {
     super(props);
 
     this.state = {
+      dialogIndex: 1,
       dialogs: [],
+      subjectIndex: 0,
       participantName: "",
       participantResponse: null,
       activeParticipant: null,
       isModalOpen: false,
     };
 
+    this.subjects = [
+      'astianpesukone',
+      'cheerleading',
+      'jääkaappi',
+      'kamera',
+      'kouluratsastus',
+      'kuulokkeet',
+      'lattialiesi',
+      'liesituuletin',
+      'miekkailu',
+      'mikroaaltouuni',
+      'pöytätennis',
+      'puhelin',
+      'pyykinpesukone',
+      'stereot',
+      'suunnistus',
+      'tabletti',
+      'televisio',
+      'tennis',
+    ];
   }
 
   initDialogs() {
@@ -32,30 +55,79 @@ class App extends Component {
             dialogs: dialogs
           });
         } else {
-          this.createDialogs();
+          this.createInitialDialogs();
         }
       });
   }
 
-  createDialogs = () => {
+  createInitialDialogs = () => {
     let dialogs = [];
-    axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs', {name: "Dialog1", subject: "kamera"})
-      .then(response => {
+    let dialogIndex = this.state.dialogIndex;
+    let subjectIndex = this.state.subjectIndex;
+    axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs',
+      {
+        name: "Dialog " + dialogIndex,
+        subject: nth(this.onCreateNewParticipantsubjects, subjectIndex),
+      }
+    ).then(response => {
+      dialogs.push(response.data);
+      dialogIndex++;
+      subjectIndex++;
+      axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs',
+        {
+          name: "Dialog " + dialogIndex,
+          subject: nth(this.subjects, subjectIndex),
+        }
+      ).then(response => {
         dialogs.push(response.data);
-        axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs', {name: "Dialog2", subject: "pöytätennis"})
-          .then(response => {
+        dialogIndex++;
+        subjectIndex++;
+        axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs',
+          {
+            name: "Dialog " + dialogIndex,
+            subject: nth(this.subjects, subjectIndex),
+          }
+        ).then(response => {
+          dialogs.push(response.data);
+          dialogIndex++;
+          subjectIndex++;
+          axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs',
+            {
+              name: "Dialog " + dialogIndex,
+              subject: nth(this.subjects, subjectIndex),
+            }).then(response => {
             dialogs.push(response.data);
-            axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs', {name: "Dialog3", subject: "kuulokkeet"})
-              .then(response => {
-                dialogs.push(response.data);
-                axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs', {name: "Dialog4", subject: "liesituuletin"})
-                  .then(response => {
-                    dialogs.push(response.data);
-                    this.setState({dialogs: dialogs});
-                  });
-              });
+            dialogIndex++;
+            subjectIndex++;
+            this.setState({
+              dialogs: dialogs,
+              dialogIndex: dialogIndex,
+              subjectIndex: subjectIndex,
+            });
           });
+        });
       });
+    });
+  }
+
+  createNewDialog = () => {
+    let dialogs = this.state.dialogs;
+    let dialogIndex = this.state.dialogIndex;
+    let subjectIndex = this.state.subjectIndex;
+    axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs',
+      {
+        name: "Dialog " + dialogIndex,
+        subject: nth(this.subjects, subjectIndex),
+      }
+    ).then(response => {
+      dialogs.push(response.data);
+      dialogIndex++;
+      this.setState({
+        dialogs: dialogs,
+        dialogIndex: dialogIndex,
+        subjectIndex: subjectIndex,
+      });
+    });
   }
 
   onParticipantNameChange = (event) => {
@@ -122,6 +194,7 @@ class App extends Component {
         </header>
         {this.state.activeParticipant ? (
           <div>
+            <button onClick={this.createNewDialog}>Get new dialog</button>
             <Route path="/exp1" render={() => <ChatDialogGrid dialogs={this.state.dialogs} />} />
             <Route path="/exp2" render={() => <ChatDialogList dialogs={this.state.dialogs} />} />
           </div>
