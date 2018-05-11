@@ -22,9 +22,10 @@ class ChatDialogSerializer(serializers.ModelSerializer):
             'name',
             'subject',
             'participant',
-            'is_ended',
             'created_at',
+            'is_ended',
             'ended_at',
+            'is_closed',
             'closed_at',
         ]
 

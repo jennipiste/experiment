@@ -18,6 +18,7 @@ class ChatDialog(models.Model):
     participant = models.ForeignKey(Participant)
     is_ended = models.BooleanField(default=False)
     ended_at = models.DateTimeField(null=True)
+    is_closed = models.BooleanField(default=False)
     closed_at = models.DateTimeField(null=True)
 
     def __str__(self):
