@@ -23,13 +23,23 @@ class ChatDialog extends Component {
     this.initMessages();
   }
 
-  initMessages = () => {
-    axios.get("api/participants/" + this.props.participant + "/dialogs/" + this.props.id + "/messages")
+  componentWillReceiveProps(nextProps) {
+    this.initMessages(nextProps);
+  }
+
+  initMessages = (props=this.props) => {  // props can be either nextProps or this.props
+    axios.get("api/participants/" + props.participant + "/dialogs/" + props.id + "/messages")
       .then(response => {
         this.setState({
           messages: response.data,
           unread: response.data.length && response.data.slice(-1)[0].type === 1,
         });
+        if (props.exp === 2) {
+          this.setState({
+            isEnded: props.is_ended,
+            isClosed: props.is_closed,
+          });
+        }
       });
   }
 
@@ -124,7 +134,7 @@ class ChatDialog extends Component {
     const systemMessage = "system message";
     return (
       <div>
-        {!this.state.isClosed &&
+        {(!this.state.isClosed || this.props.exp === 2) &&
         <div className={"ChatDialog" + (this.state.unread ? " unread" : "")}>
           <p>{this.props.name}</p>
           {this.props.subject && <a href={this.pdf} onClick={(event) => this.openPDF(event)}>{this.props.subject}</a>}

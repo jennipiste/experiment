@@ -4,7 +4,6 @@ import axios from'axios';
 import axiosDefaults from 'axios/lib/defaults';
 import nth from 'lodash/nth';
 import filter from 'lodash/filter';
-import remove from 'lodash/remove';
 import ChatDialogGrid from './ChatDialogGrid';
 import ChatDialogList from './ChatDialogList';
 import Modal from './Modal';
