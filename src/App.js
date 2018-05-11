@@ -3,6 +3,8 @@ import { Route } from 'react-router-dom';
 import axios from'axios';
 import axiosDefaults from 'axios/lib/defaults';
 import nth from 'lodash/nth';
+import filter from 'lodash/filter';
+import remove from 'lodash/remove';
 import ChatDialogGrid from './ChatDialogGrid';
 import ChatDialogList from './ChatDialogList';
 import Modal from './Modal';
@@ -17,6 +19,7 @@ class App extends Component {
     this.state = {
       dialogIndex: 1,
       dialogs: [],
+      openDialogsCount: 0,
       subjectIndex: 0,
       participantName: "",
       participantResponse: null,
@@ -52,7 +55,8 @@ class App extends Component {
         const dialogs = response.data;
         if (dialogs.length) {
           this.setState({
-            dialogs: dialogs
+            dialogs: dialogs,
+            openDialogsCount: filter(dialogs, (dialog) => !dialog.is_ended).length,
           });
         } else {
           this.createInitialDialogs();
@@ -67,7 +71,7 @@ class App extends Component {
     axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs',
       {
         name: "Dialog " + dialogIndex,
-        subject: nth(this.onCreateNewParticipantsubjects, subjectIndex),
+        subject: nth(this.subjects, subjectIndex),
       }
     ).then(response => {
       dialogs.push(response.data);
@@ -103,6 +107,7 @@ class App extends Component {
               dialogs: dialogs,
               dialogIndex: dialogIndex,
               subjectIndex: subjectIndex,
+              openDialogsCount: dialogs.length,
             });
           });
         });
@@ -114,6 +119,7 @@ class App extends Component {
     let dialogs = this.state.dialogs;
     let dialogIndex = this.state.dialogIndex;
     let subjectIndex = this.state.subjectIndex;
+    let openDialogsCount = this.state.openDialogsCount;
     axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs',
       {
         name: "Dialog " + dialogIndex,
@@ -122,11 +128,23 @@ class App extends Component {
     ).then(response => {
       dialogs.push(response.data);
       dialogIndex++;
+      openDialogsCount++;
       this.setState({
         dialogs: dialogs,
         dialogIndex: dialogIndex,
         subjectIndex: subjectIndex,
+        openDialogsCount: openDialogsCount,
       });
+    });
+  }
+
+  onChatDialogClose = () => {
+    this.setState((prevState) => {
+      let openDialogsCount = prevState.openDialogsCount;
+      openDialogsCount--;
+      return {
+        openDialogsCount: openDialogsCount,
+      };
     });
   }
 
@@ -194,9 +212,9 @@ class App extends Component {
         </header>
         {this.state.activeParticipant ? (
           <div>
-            <button onClick={this.createNewDialog}>Get new dialog</button>
-            <Route path="/exp1" render={() => <ChatDialogGrid dialogs={this.state.dialogs} />} />
-            <Route path="/exp2" render={() => <ChatDialogList dialogs={this.state.dialogs} />} />
+            {this.state.openDialogsCount < 4 && <button onClick={this.createNewDialog}>Get new dialog</button>}
+            <Route path="/exp1" render={() => <ChatDialogGrid dialogs={this.state.dialogs} onChatDialogClose={this.onChatDialogClose} />} />
+            <Route path="/exp2" render={() => <ChatDialogList dialogs={this.state.dialogs} onChatDialogClose={this.onChatDialogClose} />} />
           </div>
         ) : (
           <div className="CreateParticipant">

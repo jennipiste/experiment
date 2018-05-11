@@ -11,8 +11,8 @@ class ChatDialog extends Component {
       composedMessage: "",
       messages: [],
       unread: false,
-      is_ended: this.props.is_ended,
-      isShown: !this.props.is_ended,
+      isEnded: this.props.is_ended,
+      isClosed: this.props.is_closed,
     };
 
     this.textareaElement = null;
@@ -29,7 +29,6 @@ class ChatDialog extends Component {
         this.setState({
           messages: response.data,
           unread: response.data.length && response.data.slice(-1)[0].type === 1,
-          is_ended: this.props.is_ended,
         });
       });
   }
@@ -91,19 +90,24 @@ class ChatDialog extends Component {
     axios.patch("api/dialogs/" + this.props.id, {is_ended: true})
       .then(response => {
         if (response.status === 200) {
-          this.setState({is_ended: true});
+          this.setState({isEnded: true});
         }
       });
   }
 
   closeChatDialog = () => {
-    this.setState({isShown: false});
+    axios.patch("api/dialogs/" + this.props.id, {is_closed: true})
+      .then(response => {
+        if (response.status === 200) {
+          this.setState({isClosed: true});
+          this.props.onChatDialogClose();
+        }
+      });
   }
 
   openPDF = (event) => {
     event.preventDefault();
     const left = window.screenX + window.outerWidth;
-    console.log(left);
     window.open(this.pdf + "#3", 'newwindow', 'fullscreen=yes, left=' + left + '');
     return false;
   }
@@ -120,11 +124,11 @@ class ChatDialog extends Component {
     const systemMessage = "system message";
     return (
       <div>
-        {this.state.isShown &&
+        {!this.state.isClosed &&
         <div className={"ChatDialog" + (this.state.unread ? " unread" : "")}>
           <p>{this.props.name}</p>
           {this.props.subject && <a href={this.pdf} onClick={(event) => this.openPDF(event)}>{this.props.subject}</a>}
-          {this.state.is_ended ? (
+          {this.state.isEnded ? (
             <div className="CloseDialog"><button onClick={() => this.closeChatDialog()}>Close</button></div>
           ) : (
             <ChatMessageList messages={this.state.messages} />
