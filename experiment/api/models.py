@@ -15,6 +15,7 @@ class ChatDialog(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     name = models.CharField(max_length=400)
     subject = models.CharField(max_length=400, null=True)
+    subject_page = models.IntegerField(null=True)
     participant = models.ForeignKey(Participant)
     is_ended = models.BooleanField(default=False)
     ended_at = models.DateTimeField(null=True)
