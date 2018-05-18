@@ -18,7 +18,7 @@ class ChatDialog extends Component {
     };
 
     this.textareaElement = null;
-    this.pdf = require("./manuals/" + this.props.subject + ".pdf");
+    this.pdf;
     this.questionTimeout;
   }
 
@@ -27,6 +27,7 @@ class ChatDialog extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    this.pdf = require("./manuals/" + nextProps.subject + ".pdf");
     this.initMessages(nextProps);
   }
 
@@ -41,15 +42,22 @@ class ChatDialog extends Component {
         }, () => {
           // If there is no messages, send the first question
           if (!this.state.messages.length) {
-            this.setState({questionIndex: 0}, () => {
+            this.setState({
+              questionIndex: 0
+            }, () => {
               let questionIndex = this.state.questionIndex;
-              const nextQuestion = questions[this.props.subject][questionIndex];
+              const nextQuestion = questions[props.subject][questionIndex];
               this.sendSystemMessage(nextQuestion);
               questionIndex++;
               this.setState({
                 questionIndex: questionIndex
               });
             });
+          }
+          if (props.isActive) {
+            if (this.textareaElement) {
+              this.textareaElement.focus();
+            }
           }
         });
       });
@@ -127,9 +135,7 @@ class ChatDialog extends Component {
       this.questionTimeout = setTimeout(() => this.sendSystemMessage(nextQuestion), milliSeconds);
       // Increase questionIndex
       questionIndex++;
-      this.setState({
-        questionIndex: questionIndex
-      });
+      this.setState({questionIndex: questionIndex});
     } else {
       this.endChatDialog();
     }
