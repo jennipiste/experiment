@@ -4,7 +4,7 @@ import ChatListItem from './ChatListItem';
 import map from 'lodash/map';
 import find from 'lodash/find';
 import filter from 'lodash/filter';
-import remove from 'lodash/remove';
+
 
 class ChatDialogList extends Component {
   constructor(props) {
@@ -13,16 +13,19 @@ class ChatDialogList extends Component {
     this.state = {
       activeDialog: null,
       dialogs: [],
+      dialogsWithUnreadMessages: [],
     };
   }
 
   componentWillReceiveProps(nextProps) {
-    let activeDialog = find(nextProps.dialogs, (dialog) => !dialog.is_closed);
     if (!this.props.dialogs.lenght) {
       this.setState({
-        activeDialog: activeDialog,
         dialogs: nextProps.dialogs,
       });
+    }
+    if (!this.state.activeDialog) {
+      let activeDialog = find(nextProps.dialogs, (dialog) => !dialog.is_closed);
+      this.setState({activeDialog: activeDialog});
     }
   }
 
@@ -31,28 +34,35 @@ class ChatDialogList extends Component {
     this.setState({activeDialog: dialog});
   }
 
-  onChatDialogClose = () => {
-    let dialogs = this.state.dialogs;
-    remove(dialogs, (dialog) => dialog.id === this.state.activeDialog.id);
-    let nextActive = find(this.props.dialogs, (dialog) => !dialog.is_closed);
-    this.setState({
-      dialogs: dialogs,
-      activeDialog: nextActive,
-    });
-    this.props.onChatDialogClose();
+  markDialogUnread = (dialogID) => {
+    let dialogsWithUnreadMessages = this.state.dialogsWithUnreadMessages;
+    dialogsWithUnreadMessages.push(dialogID);
+    this.setState({dialogsWithUnreadMessages: dialogsWithUnreadMessages});
+  }
+
+  markDialogRead = (dialogID) => {
+    let dialogsWithUnreadMessages = this.state.dialogsWithUnreadMessages;
+    let index = dialogsWithUnreadMessages.indexOf(dialogID);
+    dialogsWithUnreadMessages.splice(index, 1);
+    this.setState({dialogsWithUnreadMessages: dialogsWithUnreadMessages});
   }
 
   render() {
-    let dialogs = map(filter(this.props.dialogs, (dialog) => !dialog.is_closed), (dialog, index) => {
-      return <ChatListItem {...dialog} key={index} onChatListItemClick={this.onChatListItemClick} isActive={this.state.activeDialog && this.state.activeDialog.id === dialog.id} />;
+    let chats = map(filter(this.props.dialogs, (dialog) => !dialog.is_closed), (dialog, index) => {
+      return <ChatListItem {...dialog} key={index} onChatListItemClick={this.onChatListItemClick} isActive={this.state.activeDialog && this.state.activeDialog.id === dialog.id} isUnread={this.state.dialogsWithUnreadMessages.includes(dialog.id)}/>;
+    });
+    let dialogs = map(this.props.dialogs, (dialog, index) => {
+      return <ChatDialog {...dialog} key={index} onCreateNewChatDialog={this.props.onCreateNewChatDialog} isActive={this.state.activeDialog && this.state.activeDialog.id === dialog.id} markDialogUnread={this.markDialogUnread} markDialogRead={this.markDialogRead} />;
     });
 
     return (
       <div className="ChatDialogList">
         <div className="ChatList">
+          {chats}
+        </div>
+        <div>
           {dialogs}
         </div>
-        {this.state.activeDialog && <ChatDialog {...this.state.activeDialog} onChatDialogClose={this.onChatDialogClose} exp={2} />}
       </div>
     );
   }

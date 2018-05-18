@@ -4,6 +4,7 @@ import axios from'axios';
 import axiosDefaults from 'axios/lib/defaults';
 import nth from 'lodash/nth';
 import filter from 'lodash/filter';
+import findIndex from 'lodash/findIndex';
 import ChatDialogGrid from './ChatDialogGrid';
 import ChatDialogList from './ChatDialogList';
 import Modal from './Modal';
@@ -30,7 +31,7 @@ class App extends Component {
       'astianpesukone',
       'cheerleading',
       'jääkaappi',
-      'kamera',
+      // 'kamera',
       'kouluratsastus',
       'kuulokkeet',
       'lattialiesi',
@@ -42,7 +43,7 @@ class App extends Component {
       'pyykinpesukone',
       'stereot',
       'suunnistus',
-      'tabletti',
+      // 'tabletti',
       'televisio',
       'tennis',
     ];
@@ -114,7 +115,7 @@ class App extends Component {
     });
   }
 
-  createNewDialog = () => {
+  createNewDialog = (replaceDialogID) => {
     let dialogs = this.state.dialogs;
     let dialogIndex = this.state.dialogIndex;
     let subjectIndex = this.state.subjectIndex;
@@ -125,9 +126,12 @@ class App extends Component {
         subject: nth(this.subjects, subjectIndex),
       }
     ).then(response => {
-      dialogs.push(response.data);
+      const index = findIndex(dialogs, {id: replaceDialogID});
+      dialogs.splice(index, 1, response.data);
       dialogIndex++;
+      subjectIndex++;
       openDialogsCount++;
+
       this.setState({
         dialogs: dialogs,
         dialogIndex: dialogIndex,
@@ -144,6 +148,11 @@ class App extends Component {
       return {
         openDialogsCount: openDialogsCount,
       };
+    }, () => {
+      if (this.state.openDialogsCount < 4) {
+        console.log("set timeout for new dialog");
+        setTimeout(this.showGetNewButton, 10000);
+      }
     });
   }
 
@@ -211,9 +220,8 @@ class App extends Component {
         </header>
         {this.state.activeParticipant ? (
           <div>
-            {this.state.openDialogsCount < 4 && <button onClick={this.createNewDialog}>Get new dialog</button>}
-            <Route path="/exp1" render={() => <ChatDialogGrid dialogs={this.state.dialogs} onChatDialogClose={this.onChatDialogClose} />} />
-            <Route path="/exp2" render={() => <ChatDialogList dialogs={this.state.dialogs} onChatDialogClose={this.onChatDialogClose} />} />
+            <Route path="/exp1" render={() => <ChatDialogGrid dialogs={this.state.dialogs} onChatDialogClose={this.onChatDialogClose} onCreateNewChatDialog={this.createNewDialog} />} />
+            <Route path="/exp2" render={() => <ChatDialogList dialogs={this.state.dialogs} onChatDialogClose={this.onChatDialogClose} onCreateNewChatDialog={this.createNewDialog} />} />
           </div>
         ) : (
           <div className="CreateParticipant">

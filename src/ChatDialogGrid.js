@@ -5,7 +5,7 @@ import map from 'lodash/map';
 class ChatDialogGrid extends Component {
   render() {
     let dialogs = map(this.props.dialogs, (dialog, index) => {
-      return <ChatDialog {...dialog} key={index} onChatDialogClose={this.props.onChatDialogClose} exp={1} />;
+      return <ChatDialog {...dialog} key={index} onCreateNewChatDialog={this.props.onCreateNewChatDialog} isActive={true} />;
     });
 
     return (

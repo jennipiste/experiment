@@ -55,6 +55,14 @@
   flex-wrap: wrap;
 }
 
+ChatDialog.inactive {
+  display: none;
+}
+
+ChatDialog.active {
+  display: block;
+}
+
 .ChatDialog {
   border: 1px solid #000;
   margin: 20px;
@@ -68,7 +76,17 @@
   border: 3px solid red;
 }
 
-.CloseDialog {
+.ChatDialog.ended {
+  color: grey;
+  border: 1px solid grey;
+}
+
+.Subject {
+  text-transform: capitalize;
+  margin: 20px;
+}
+
+.EndedDialog {
   flex-basis: 276px;
 }
 
@@ -120,15 +138,22 @@
 }
 
 .ChatList {
-  flex-basis: 200px;
+  flex-basis: 300px;
   margin-top: 20px;
 }
 
 .ChatListItem {
-  padding: 20px;
+  padding: 20px 30px;
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
 }
 
 .ChatListItem.active {
   background-color: #E7E7E7;
+}
+
+span.unread {
+  color: red;
+  margin: 20px 10px;
 }
