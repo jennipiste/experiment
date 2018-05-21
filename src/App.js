@@ -49,6 +49,14 @@ class App extends Component {
     ];
   }
 
+  componentDidMount() {
+    window.addEventListener('beforeunload', (event) => this.confirmUnloadEvent(event));
+  }
+
+  confirmUnloadEvent = (event) => {
+    event.preventDefault();
+  }
+
   initDialogs() {
     axios.get("api/participants/" + this.state.activeParticipant.id + "/dialogs")
       .then(response => {
