@@ -15,15 +15,18 @@ class ChatDialog extends Component {
       isEnded: this.props.is_ended,
       isClosed: this.props.is_closed,
       questionIndex: 0,
+      activeElement: null,
     };
 
     this.textareaElement = null;
-    this.pdf = null;
+    this.pdf = require("./manuals/" + this.props.subject + ".pdf");
     this.questionTimeout = null;
   }
 
   componentDidMount() {
     this.initMessages();
+    window.addEventListener('blur', this.onWindowBlur);
+    window.addEventListener('focus', this.onWindowFocus);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -33,6 +36,20 @@ class ChatDialog extends Component {
 
   componentWillUnmount() {
     clearTimeout(this.questionTimeout);
+  }
+
+  onWindowBlur = () => {
+    console.log("window blur");
+    this.setState({activeElement: document.activeElement});
+  }
+
+  onWindowFocus = () => {
+    console.log("window focus");
+    const activeElement = this.state.activeElement;
+    if (activeElement) {
+      console.log("active element", activeElement);
+      activeElement.focus();
+    }
   }
 
   initMessages = (props=this.props) => {  // props can be either nextProps or this.props
@@ -134,7 +151,8 @@ class ChatDialog extends Component {
 
   setTimeoutForNewQuestion = () => {
     let questionIndex = this.state.questionIndex;
-    if (questionIndex < 3) {
+    if (questions[this.props.subject][questionIndex]) {
+    // if (questionIndex < 3) {
       const nextQuestion = questions[this.props.subject][questionIndex];
       const milliSeconds = this.getTimeoutMilliSeconds();
       // Set timeout for next question
@@ -185,6 +203,7 @@ class ChatDialog extends Component {
     const sendButtonProps = {
       onClick: event => this.sendMessage(event),
     };
+    console.log(this.pdf);
     return (
       <div>
         {this.props.isActive &&
@@ -199,7 +218,7 @@ class ChatDialog extends Component {
                 {this.props.subject && <a className="Subject" href={this.pdf} onClick={(event) => this.openPDF(event)}>{this.props.subject}</a>}
                 <ChatMessageList messages={this.state.messages} />
                 <ChatDialogFooter>
-                  <textarea className="MessageTextarea" {...textareaProps} ref={element => this.textareaElement = element}/>
+                  <textarea className="MessageTextarea" {...textareaProps} ref={element => this.textareaElement = element} autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck="false" />
                   <button className="SendButton" {...sendButtonProps}>SEND</button>
                 </ChatDialogFooter>
                 {/* for debugging purposes */}

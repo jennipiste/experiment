@@ -1,7 +1,7 @@
 let questions = {
-  'astianpesukone': [
+  'Astianpesukone': [
     "Kuinka leveä astianpesukone on?",
-    "Mikä on päivittäisen käytön ensimmäinen vaihe?",
+    "Mikä on koneen käynnistyksen ensimmäinen vaihe päivittäisessä käytössä?",
     "Mikä ohjelma on tarkoitettu erittäin likaisten astioiden pesuun (ohjelman numero)?",
     "Mitä lämpötilaa tämä ohjelma käyttää?",
     "Mikä on virhetilanne, jos näytössä näkyy merkintä ,20?",
@@ -9,74 +9,73 @@ let questions = {
     "Mitä Hygiene-lisätoiminnolla saavutetaan?",
 
   ],
-  'cheerleading': [
-    "Kuinka suuri kilpailualue on SM-kilpailuissa?",
+  'Cheerleadingin kilpailusäännöt': [
+    "Kuinka suuri kilpailualue on cheerleadingin SM-kilpailuissa?",
     "Kuinka monta ulkoista spotteria joukkueella saa olla kilpailussa enintään?",
     "Kuinka monta pistettä rankaistaan ylimääräisestä ulkoisesta spotterista?",
     "Saako ulkoinen spotteri tukea pyramidia?",
-    "Mikä on sarjamääräysten mukainen maksimikesto musiikille Suome mestaruus -kilpailuissa?",
+    "Mikä on sarjamääräysten mukainen maksimikesto musiikille Suomen mestaruus -kilpailuissa?",
     "Entä joukkueen maksimikoko?",
     "Kuinka monta tuomaria kaikissa kilpailuissa on oltava vähintään?",
     "Onko esityksessä pakko käyttää musiikkia?",
     "Kuinka monta mainosta esiintymisasuissa saa olla?",
   ],
-  'jääkaappi': [
+  'Jääkaappi': [
     "Kuinka kauas sähköliedestä jääkaappi tulee vähintään asettaa?",
     "Mitä pitää tehdä, kun jääkaappia kytkettäessä kuuluu hälytysääni?",
-    "Kuinka kylmälle pakastinosan voi korkeintaan säätää?",
+    "Mikä on kylmin lämpötila, jolle pakastinosan voi säätää?",
     "Miten pikapakastuksen saa päälle?",
     "Mikä saattaa olla syynä, jos laitteen jäähdytys ei toimi, mutta lämpötilanäyttö ja sisävalo toimivat?",
     "Mikä on huoltopalvelun puhelinnumero?",
     "Onko normaalia, että laitteesta kuuluu naksahduksia?",
 
   ],
-  // 'kamera': [],
-  'kouluratsastus': [
-    "Kuinka monta suoritusta sama hevonen voi korkeintaan tehdä yhtenä kilpailupäivänä?",
+  'Kouluratsastuksen kilpailusäännöt': [
+    "Kuinka monta suoritusta sama hevonen voi korkeintaan tehdä yhtenä kilpailupäivänä kouluratsastuksessa?",
     "Millainen päähine kilpailuasuun kuuluu?",
     "Onko turvaliivin käyttö kilpailussa pakollista?",
     "Kuinka painava ratsastaja saa korkeintaan olla?",
-    "Kuinka monta pistettä rankaistaan ensimmäisestä virheestä?",
+    "Kuinka monta pistettä tuomarit voivat korkeintaan antaa ohjelman liikkeistä?",
     "Minkä nimisiä ovat ohjelmissa ratsastettavat tiet?",
 
   ],
-  'kuulokkeet': [
+  'Langattomat Bluetooth-kuulokkeet': [
     "Mitä kaikkea pakkaukseen sisältyy?",
     "Kuinka suuri on kuulokkeiden toimintasäde?",
-    "Kuinka kauan kuulokkeiden lataaminen kestää?",
+    "Kuinka kauan kuulokkeiden lataaminen yleensä kestää?",
     "Mikä on kuulokkeiden salasana, mikäli sitä tarvitaan pariliitosta muodostaessa?",
     "Miten voi siirtyä eteenpäin musiikissa?",
     "Entä mykistää mikrofonin puhelun aikana?",
     "Kuulokkeiden ollessa latauksessa, mistä voi päätellä, että akku on täynnä?",
     "Mikä on vialla, jos kuulokkeista kuuluu rätinää?"
   ],
-  'lattialiesi': [
-    "Onko uunissa kiertoilma-toimintoa?",
-    "Missä lämpötilassa porsaankyljykset suositellaan paistamaan?",
+  'Liesi': [
+    "Kuuluuko uunin toimintoihin kiertoilma-toiminto?",
+    "Voiko uunin asentaa 200 mm päähän seinästä?",
     "Kuinka monta kannatintasoa uunissa on?",
     "Kuinka paljon tyhjää tilaa lieden päällä pitää vähintään olla?",
-    "Voiko uunin sijoittaa 20 cm päähän seinästä?",
+    "Missä lämpötilassa porsaankyljykset suositellaan paistamaan?",
 
   ],
-  'liesituuletin': [
+  'Liesituuletin': [
     "Mille teholle liesituuletin menee käynnistettäessä (ohjauspaneeli vaihtoehto 1)?",
-    "Miten äänimerkin saa päälle?",
+    "Miten kyseisellä ohjauspaneelilla saa äänimerkin päälle?",
     "Entä tuulettimen jälkikäynnin?",
     "Mitä puhdistusainetta tulee käyttää laitteen alumiini- ja muoviosien puhdistukseen?",
     "Kuinka usein rasvasuodatin pitää puhdistaa?",
     "Laitteen valo ei pala. Millaisen hehkulampun siihen voi vaihtaa (tuotekoodi)?",
   ],
-  'miekkailu': [
-    "Mikä kolmesta miekasta saa olla painavin?",
+  'Miekkailu': [
+    "Mikä kolmesta miekkatyypistä saa olla painavin?",
     "Kuinka paljon se saa painaa?",
     "Mikä on kalpa-miekkailun osuma-alue?",
     "Entä säilä-miekkailun?",
     "Mitä muita varusteita miekkailussa käytetään miekan lisäksi?",
     "Kuinka monta pistettä vaaditaan ottelun voittoon?",
     "Kuinka pitkä on otteluaika näiden pisteiden keräämiseen?",
-    "Minkä komennon jälkeen miekkailuottelu alkaa?",
+    "Minkä on taistelukomento, jonka jälkeen miekkailuottelu alkaa?",
   ],
-  'mikroaaltouuni': [
+  'Mikroaaltouuni': [
     "Miksi metalliastia on sopimaton mikroon?",
     "Mitä on tapahtunut, jos mikron näytössä palaa kolme nollaa?",
     "Mikä on suurin valittava teho?",
@@ -84,7 +83,7 @@ let questions = {
     "Mikä on mikron leveys?",
 
   ],
-  'pöytätennis': [
+  'Pöytätenniksen säännöt': [
     "Mitkä ovat pöydän mitat pöytätenniksessä?",
     "Kuinka korkealle syötön kuuluu nousta ennen lyöntiä?",
     "Täytän maaliskuussa 15 vuotta. Saanko osallistua pelikaudella (1.7-30.6) M14-luokkaan?",
@@ -93,30 +92,44 @@ let questions = {
     "Muutin Suomeen maaliskuussa 2018. Voinko osallistua miesten TOP-12-turnaukseen joulukuussa 2018?",
 
   ],
-  'puhelin': [
-    "Mikä on Samsung DeX?",
-
-  ],
-  'pyykinpesukone': [
+  'Pyykinpesukone': [
     "Mikä on pyykinpesukoneen maksimitäyttömäärä?",
     "Mitä tarkoittaa virhemerkintä E40?",
     "Saako pesukoneen kytkeä jatkojohtoon, jos se on hyvin vedeltä suojattu?",
     "Millä ohjelmalla pesen polyesteria sisältävät vaatteet?",
     "Voiko pesuohjelman asettaa käynnistymään vuorokauden päästä?",
   ],
-  'stereot': [
+  'Samsung Galaxy S9': [
+    "Mikä on Samsung DeX?",
 
   ],
-  'suunnistus': [],
-  // 'tabletti': [],
-  'televisio': [],
-  'tennis': [],
+  'Stereot': [
+
+  ],
+  'Suunnistuksen lajisäännöt': [
+    "Kuinka montaa seuraa kilpailija voi edustaa yleisessä suunnistuskilpailussa?",
+    "Miten kilpailun keskeyttänyt kilpailija poistuu suunnistusalueelta?",
+    "Mitä välineitä voi käyttää suunnistustehtävän selvittämiseen?",
+    "Saako kilpailija ylittää rautatien suorituksen aikana?",
+    "",
+  ],
+  'Televisio': [
+    "Mikä on minimi verkkoyhteyden nopeus, jotta televisio voi muodostaa internet-yhteyden?",
+    "Minkä valikkopolun takaa voi asettaa Smart Hubin käynnistymään automaattisesti?",
+    "",
+  ],
+  'Tenniksen kilpailumääräykset': [
+    "Kuinka montaa palloa tennisotteluissa voi korkeintaan käyttää?",
+    "Minkä tasoiset pelaajat pelaavat luokassa C?",
+    "Kuinka pitkään taukoon pelaaja on oikeutettu kahden saman luokan kaksinpelin välissä?",
+    "Mitä sääntöjä on pelaajan vaatetuksessa?",
+  ],
 };
 
 export default questions;
 
 let answers = {
-  'astianpesukone': [
+  'Astianpesukone': [
     "596 mm",
     "Vesihanan avaaminen",
     "3",
@@ -126,7 +139,7 @@ let answers = {
     "Parempi hygieniataso",
 
   ],
-  'cheerleading': [
+  'Cheerleadingin kilpailusäännöt': [
     "14x16 metriä",
     "6",
     "10",
@@ -137,7 +150,7 @@ let answers = {
     "On",
     "2",
   ],
-  'jääkaappi': [
+  'Jääkaappi': [
     "3 cm",
     "Painaa lämpötilavalitsinta 1",
     "-24 astetta",
@@ -146,8 +159,7 @@ let answers = {
     "0207 510 700",
     "On",
   ],
-  // 'kamera': [],
-  'kouluratsastus': [
+  'Kouluratsastuksen kilpailusäännöt': [
     "2",
     "Knalli tai silinteri",
     "Ei",
@@ -156,7 +168,7 @@ let answers = {
     "Voltti, serpentiini ja volttikahdeksikko",
 
   ],
-  'kuulokkeet': [
+  'Langattomat Bluetooth-kuulokkeet': [
     "Kuulokkeet, USB-latauskaapeli ja pikaopas",
     "10 metriä",
     "2 tuntia",
@@ -167,7 +179,7 @@ let answers = {
     "Laite ei ole toiminta-alueella",
 
   ],
-  'lattialiesi': [
+  'Liesi': [
     "Ei",
     "190-210 astetta",
     "4",
@@ -175,7 +187,7 @@ let answers = {
     "Ei",
 
   ],
-  'liesituuletin': [
+  'Liesituuletin': [
     "2",
     "Painamalla käynnistys- ja + painikkeita samanaikaisesti 3 sekunnin ajan",
     "Painamalla - kunnes merkki ilmestyy näyttöön",
@@ -184,7 +196,7 @@ let answers = {
     "HSGSB/C/UB-30-230-E14",
 
   ],
-  'miekkailu': [
+  'Miekkailu': [
     "Kalpa",
     "770 grammaa",
     "Koko keho",
@@ -194,7 +206,7 @@ let answers = {
     "3",
     "Allez! (Alkakaa!)",
   ],
-  'mikroaaltouuni': [
+  'Mikroaaltouuni': [
     "Mikroaallot eivät läpäise metallia (ja ruoka jää kylmäksi)",
     "Sähkökatko",
     "800 W",
@@ -202,7 +214,7 @@ let answers = {
     "382 mm",
 
   ],
-  'pöytätennis': [
+  'Pöytätenniksen säännöt': [
     "Pituus 274 cm ja leveys 152,5 cm",
     "16 cm",
     "Kyllä",
@@ -211,11 +223,7 @@ let answers = {
     "Et",
 
   ],
-  'puhelin': [
-    "Palvelu jonka avulla puhelinta voi käyttää tietokoneen tapaan yhdistämällä puhelimen ulkoiseen näyttöön",
-
-  ],
-  'pyykinpesukone': [
+  'Pyykinpesukone': [
     "7 kg",
     "Luukku on auki tai se on suljettu virheellisesti",
     "Ei",
@@ -223,9 +231,27 @@ let answers = {
     "Ei",
 
   ],
-  'stereot': [],
-  'suunnistus': [],
-  // 'tabletti': [],
-  'televisio': [],
-  'tennis': [],
+  'Samsung Galaxy S9': [
+    "Palvelu jonka avulla puhelinta voi käyttää tietokoneen tapaan yhdistämällä puhelimen ulkoiseen näyttöön",
+
+  ],
+  'Stereot': [],
+  'Suunnistuksen lajisäännöt': [
+    "Kilpailukarttaa, rastinmääritteitä ja kompassia",
+    "Yhtä",
+    "Maalin kautta (vaikuttamatta kilpailun kulkuun)",
+    "Kyllä",
+    "",
+  ],
+  'Televisio': [
+    "10 Mbps",
+    "Asetukset -> Järjestelmä -> Asiantuntijan asetukset > Suorita Smart Hub automaattisesti",
+
+  ],
+  'Tenniksen kilpailumääräykset': [
+    "6",
+    "13-24",
+    "60 min",
+    "Pelipaita tennikseen tarkoitettu tekninen paita tai kauluspaita"
+  ],
 };

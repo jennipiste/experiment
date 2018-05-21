@@ -28,25 +28,25 @@ class App extends Component {
     };
 
     this.subjects = [
-      'astianpesukone',
-      'cheerleading',
-      'jääkaappi',
-      // 'kamera',
-      'kouluratsastus',
-      'kuulokkeet',
-      'lattialiesi',
-      'liesituuletin',
-      'miekkailu',
-      'mikroaaltouuni',
-      'pöytätennis',
-      'puhelin',
-      'pyykinpesukone',
-      'stereot',
-      'suunnistus',
-      // 'tabletti',
-      'televisio',
-      'tennis',
+      'Astianpesukone',
+      'Cheerleadingin kilpailusäännöt',
+      'Jääkaappi',
+      'Kouluratsastuksen kilpailusäännöt',
+      'Langattomat Bluetooth-kuulokkeet',
+      'Liesi',
+      'Liesituuletin',
+      'Miekkailu',
+      'Mikroaaltouuni',
+      'Pöytätenniksen säännöt',
+      'Pyykinpesukone',
+      'Samsung Galaxy S9',
+      'Stereot',
+      'Suunnistuksen lajisäännöt',
+      'Televisio',
+      'Tenniksen kilpailumääräykset',
     ];
+
+    this.inputElement = null;
   }
 
   componentDidMount() {
@@ -203,6 +203,7 @@ class App extends Component {
       participantResponse: null,
       isModalOpen: false,
     });
+    this.inputElement.focus();
   }
 
   render() {
@@ -235,7 +236,7 @@ class App extends Component {
           <div className="CreateParticipant">
             <form onSubmit={this.createParticipant}>
               <label>Name:
-                <input type="text" value={this.state.participantName} onChange={this.onParticipantNameChange} />
+                <input type="text" value={this.state.participantName} onChange={this.onParticipantNameChange} ref={element => this.inputElement = element} />
               </label>
               <input type="submit" value="Start" />
             </form>
