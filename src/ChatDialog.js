@@ -18,8 +18,8 @@ class ChatDialog extends Component {
     };
 
     this.textareaElement = null;
-    this.pdf;
-    this.questionTimeout;
+    this.pdf = null;
+    this.questionTimeout = null;
   }
 
   componentDidMount() {
@@ -29,6 +29,10 @@ class ChatDialog extends Component {
   componentWillReceiveProps(nextProps) {
     this.pdf = require("./manuals/" + nextProps.subject + ".pdf");
     this.initMessages(nextProps);
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.questionTimeout);
   }
 
   initMessages = (props=this.props) => {  // props can be either nextProps or this.props
@@ -89,10 +93,12 @@ class ChatDialog extends Component {
         unread: newMessage.type === 1 ? true : false,
       };
     }, () => {
-      if (newMessage.type === 1) {
-        this.props.markDialogUnread(this.props.id);
-      } else {
-        this.props.markDialogRead(this.props.id);
+      if (this.props.exp === 2) {
+        if (newMessage.type === 1) {
+          this.props.markDialogUnread(this.props.id);
+        } else {
+          this.props.markDialogRead(this.props.id);
+        }
       }
     });
   }

@@ -52,7 +52,7 @@ class ChatDialogList extends Component {
       return <ChatListItem {...dialog} key={index} onChatListItemClick={this.onChatListItemClick} isActive={this.state.activeDialog && this.state.activeDialog.id === dialog.id} isUnread={this.state.dialogsWithUnreadMessages.includes(dialog.id)}/>;
     });
     let dialogs = map(this.props.dialogs, (dialog, index) => {
-      return <ChatDialog {...dialog} key={index} onCreateNewChatDialog={this.props.onCreateNewChatDialog} isActive={this.state.activeDialog && this.state.activeDialog.id === dialog.id} markDialogUnread={this.markDialogUnread} markDialogRead={this.markDialogRead} />;
+      return <ChatDialog {...dialog} key={index} onCreateNewChatDialog={this.props.onCreateNewChatDialog} isActive={this.state.activeDialog && this.state.activeDialog.id === dialog.id} markDialogUnread={this.markDialogUnread} markDialogRead={this.markDialogRead} exp={2} />;
     });
 
     return (
