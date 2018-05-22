@@ -133,17 +133,13 @@ class ChatDialog extends Component {
 
   getTimeoutMilliSeconds = (questionIndex) => {
     const waitTime = waitTimes[this.props.dialog.subject][questionIndex];
-    console.log(waitTime);
     return waitTime * 1000;
   }
 
   setTimeoutForNewQuestion = () => {
-    console.log("set timeout for NEXT question");
     let questionIndex = this.state.questionIndex;
     // If there are questions left for the subject, set timeout for next
-    // if (questions[this.props.dialog.subject][questionIndex]) {
-    console.log(questionIndex);
-    if (questionIndex < 3) {
+    if (questions[this.props.dialog.subject][questionIndex]) {
       const nextQuestion = questions[this.props.dialog.subject][questionIndex];
       const timeoutMilliSeconds = this.getTimeoutMilliSeconds(questionIndex);
       // Set timeout for next question

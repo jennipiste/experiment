@@ -4,12 +4,10 @@ import axios from'axios';
 import axiosDefaults from 'axios/lib/defaults';
 import nth from 'lodash/nth';
 import filter from 'lodash/filter';
-import find from 'lodash/filter';
 import ChatDialogGrid from './ChatDialogGrid';
 import ChatDialogList from './ChatDialogList';
 import Modal from './Modal';
 import questions from './questions';
-import waitTimes from './wait_times';
 import './App.css';
 
 axiosDefaults.baseURL = 'http://localhost:8000';
