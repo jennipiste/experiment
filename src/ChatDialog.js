@@ -3,6 +3,8 @@ import ChatMessageList from './ChatMessageList';
 import ChatDialogFooter from './ChatDialogFooter';
 import axios from 'axios';
 import questions from './questions';
+import waitTimes from './wait_times';
+import filter from 'lodash/filter';
 
 class ChatDialog extends Component {
   constructor(props) {
@@ -12,25 +14,24 @@ class ChatDialog extends Component {
       composedMessage: "",
       messages: [],
       unread: false,
-      isEnded: this.props.is_ended,
-      isClosed: this.props.is_closed,
-      questionIndex: 0,
+      isEnded: this.props.dialog ? this.props.dialog.is_ended : false,
+      questionIndex: 1,  // Start from the second question, first is already sent
       activeElement: null,
     };
 
     this.textareaElement = null;
-    this.pdf = require("./manuals/" + this.props.subject + ".pdf");
+    this.pdf = this.props.dialog ? require("./manuals/" + this.props.dialog.subject + ".pdf") : null;
     this.questionTimeout = null;
   }
 
   componentDidMount() {
     this.initMessages();
-    window.addEventListener('blur', this.onWindowBlur);
-    window.addEventListener('focus', this.onWindowFocus);
+    // window.addEventListener('blur', this.onWindowBlur);
+    // window.addEventListener('focus', this.onWindowFocus);
   }
 
   componentWillReceiveProps(nextProps) {
-    this.pdf = require("./manuals/" + nextProps.subject + ".pdf");
+    this.pdf = nextProps.dialog ? require("./manuals/" + nextProps.dialog.subject + ".pdf") : null;
     this.initMessages(nextProps);
   }
 
@@ -38,50 +39,38 @@ class ChatDialog extends Component {
     clearTimeout(this.questionTimeout);
   }
 
-  onWindowBlur = () => {
-    console.log("window blur");
-    this.setState({activeElement: document.activeElement});
-  }
+  // onWindowBlur = () => {
+  //   console.log("window blur");
+  //   this.setState({activeElement: document.activeElement});
+  // }
 
-  onWindowFocus = () => {
-    console.log("window focus");
-    const activeElement = this.state.activeElement;
-    if (activeElement) {
-      console.log("active element", activeElement);
-      activeElement.focus();
-    }
-  }
+  // onWindowFocus = () => {
+  //   console.log("window focus");
+  //   const activeElement = this.state.activeElement;
+  //   if (activeElement) {
+  //     console.log("active element", activeElement);
+  //     activeElement.focus();
+  //   }
+  // }
 
   initMessages = (props=this.props) => {  // props can be either nextProps or this.props
-    axios.get("api/participants/" + props.participant + "/dialogs/" + props.id + "/messages")
-      .then(response => {
-        this.setState({
-          messages: response.data,
-          unread: response.data.length && response.data.slice(-1)[0].type === 1,
-          isEnded: props.is_ended,
-          isClosed: props.is_closed,
-        }, () => {
-          // If there is no messages, send the first question
-          if (!this.state.messages.length) {
-            this.setState({
-              questionIndex: 0
-            }, () => {
-              let questionIndex = this.state.questionIndex;
-              const nextQuestion = questions[props.subject][questionIndex];
-              this.sendSystemMessage(nextQuestion);
-              questionIndex++;
-              this.setState({
-                questionIndex: questionIndex
-              });
-            });
-          }
-          if (props.isActive) {
-            if (this.textareaElement) {
-              this.textareaElement.focus();
+    if (props.dialog) {
+      axios.get("api/participants/" + props.dialog.participant + "/dialogs/" + props.dialog.id + "/messages")
+        .then(response => {
+          this.setState({
+            messages: response.data,
+            unread: response.data.length && response.data.slice(-1)[0].type === 1,
+            isEnded: props.dialog ? props.dialog.is_ended : false,
+            questionIndex: filter(response.data, (message) => message.type === 1).length,  // Set questionIndex according to already asked questions
+          }, () => {
+            if (this.props.exp === 2 && props.isActive) {
+              if (this.textareaElement) {
+                this.textareaElement.focus();
+              }
             }
-          }
+          });
         });
-      });
+    }
   }
 
   onTextareaValueChange = (target) => {
@@ -110,11 +99,12 @@ class ChatDialog extends Component {
         unread: newMessage.type === 1 ? true : false,
       };
     }, () => {
+      // For experiment 2, mark dialog read or unread
       if (this.props.exp === 2) {
         if (newMessage.type === 1) {
-          this.props.markDialogUnread(this.props.id);
+          this.props.markDialogUnread(this.props.dialog.id);
         } else {
-          this.props.markDialogRead(this.props.id);
+          this.props.markDialogRead(this.props.dialog.id);
         }
       }
     });
@@ -123,7 +113,7 @@ class ChatDialog extends Component {
   sendMessage = () => {
     if (this.state.composedMessage.length) {
       const composedMessage = this.state.composedMessage;
-      axios.post("api/participants/" + this.props.participant + "/dialogs/" + this.props.id + "/messages", {message: composedMessage})
+      axios.post("api/participants/" + this.props.dialog.participant + "/dialogs/" + this.props.dialog.id + "/messages", {message: composedMessage})
         .then(response => {
           if (response.status === 201) {
             this.updateMessages(response.data);
@@ -141,32 +131,33 @@ class ChatDialog extends Component {
     }
   }
 
-  getTimeoutMilliSeconds = () => {
-    // TODO: get real values from data
-    const max = 120;
-    const min = 10;
-    const random = Math.random() * (max - min) + min;
-    return random * 1000;
+  getTimeoutMilliSeconds = (questionIndex) => {
+    const waitTime = waitTimes[this.props.dialog.subject][questionIndex];
+    console.log(waitTime);
+    return waitTime * 1000;
   }
 
   setTimeoutForNewQuestion = () => {
+    console.log("set timeout for NEXT question");
     let questionIndex = this.state.questionIndex;
-    if (questions[this.props.subject][questionIndex]) {
-    // if (questionIndex < 3) {
-      const nextQuestion = questions[this.props.subject][questionIndex];
-      const milliSeconds = this.getTimeoutMilliSeconds();
+    // If there are questions left for the subject, set timeout for next
+    // if (questions[this.props.dialog.subject][questionIndex]) {
+    console.log(questionIndex);
+    if (questionIndex < 3) {
+      const nextQuestion = questions[this.props.dialog.subject][questionIndex];
+      const timeoutMilliSeconds = this.getTimeoutMilliSeconds(questionIndex);
       // Set timeout for next question
-      this.questionTimeout = setTimeout(() => this.sendSystemMessage(nextQuestion), milliSeconds);
-      // Increase questionIndex
+      this.questionTimeout = setTimeout(() => this.sendSystemMessage(nextQuestion), timeoutMilliSeconds);
       questionIndex++;
       this.setState({questionIndex: questionIndex});
     } else {
-      this.endChatDialog();
+      // Otherwise end the chat after 2 seconds
+      setTimeout(this.endChatDialog, 5000);
     }
   }
 
   sendSystemMessage = (message) => {
-    axios.post("api/dialogs/" + this.props.id + "/messages", {message: message})
+    axios.post("api/dialogs/" + this.props.dialog.id + "/messages", {message: message})
       .then(response => {
         if (response.status === 201) {
           this.updateMessages(response.data);
@@ -175,15 +166,15 @@ class ChatDialog extends Component {
   }
 
   endChatDialog = () => {
-    axios.patch("api/dialogs/" + this.props.id, {is_ended: true})
+    axios.patch("api/dialogs/" + this.props.dialog.id, {is_ended: true})
       .then(response => {
         if (response.status === 200) {
-          // Clear timeout for next question
+          // Clear question timeout and set dialog ended
           clearTimeout(this.questionTimeout);
+          this.questionTimeout = null;
           this.setState({isEnded: true});
+          this.props.markDialogEnded(this.props.dialogIndex);
         }
-        // Set timeout to create new dialog
-        setTimeout(() => this.props.onCreateNewChatDialog(this.props.id), 10000);
       });
   }
 
@@ -197,25 +188,30 @@ class ChatDialog extends Component {
   render() {
     const textareaProps = {
       maxLength: 2000,
+      value: this.state.composedMessage,
       onChange: event => this.onTextareaValueChange(event.target),
       onKeyDown: event => this.onTextareaKeyDown(event),
     };
     const sendButtonProps = {
       onClick: event => this.sendMessage(event),
     };
-    console.log(this.pdf);
     return (
       <div>
         {this.props.isActive &&
           <div>
-            {this.state.isEnded ? (
+            {!this.props.dialog &&
+              <div className="ChatDialog"></div>
+            }
+            {this.state.isEnded && this.props.dialog !== null &&
               <div className="ChatDialog ended">
-                <p className="Subject">{this.props.subject}</p>
+                <p className="Subject">{this.props.dialog.subject}</p>
                 <p>This dialog has ended!</p>
+                <button onClick={() => this.props.onEndedOKClick(this.props.dialogIndex)}>OK</button>
               </div>
-            ) : (
+            }
+            {!this.state.isEnded && this.props.dialog !== null &&
               <div className={"ChatDialog" + (this.state.unread ? " unread" : "")}>
-                {this.props.subject && <a className="Subject" href={this.pdf} onClick={(event) => this.openPDF(event)}>{this.props.subject}</a>}
+                <a className="Subject" href={this.pdf} onClick={(event) => this.openPDF(event)}>{this.props.dialog.subject}</a>
                 <ChatMessageList messages={this.state.messages} />
                 <ChatDialogFooter>
                   <textarea className="MessageTextarea" {...textareaProps} ref={element => this.textareaElement = element} autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck="false" />
@@ -225,7 +221,7 @@ class ChatDialog extends Component {
                 <button onClick={() => this.sendSystemMessage("system message")}>system message</button>
                 <button onClick={() => this.endChatDialog()}>end dialog</button>
               </div>
-            )}
+            }
           </div>
         }
       </div>

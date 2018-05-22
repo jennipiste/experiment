@@ -4,10 +4,12 @@ import axios from'axios';
 import axiosDefaults from 'axios/lib/defaults';
 import nth from 'lodash/nth';
 import filter from 'lodash/filter';
-import findIndex from 'lodash/findIndex';
+import find from 'lodash/filter';
 import ChatDialogGrid from './ChatDialogGrid';
 import ChatDialogList from './ChatDialogList';
 import Modal from './Modal';
+import questions from './questions';
+import waitTimes from './wait_times';
 import './App.css';
 
 axiosDefaults.baseURL = 'http://localhost:8000';
@@ -18,7 +20,7 @@ class App extends Component {
 
     this.state = {
       dialogIndex: 1,
-      dialogs: [],
+      dialogs: [null, null, null, null],
       openDialogsCount: 0,
       subjectIndex: 0,
       participantName: "",
@@ -39,8 +41,8 @@ class App extends Component {
       'Mikroaaltouuni',
       'Pöytätenniksen säännöt',
       'Pyykinpesukone',
-      'Samsung Galaxy S9',
-      'Stereot',
+      // 'Samsung Galaxy S9',
+      // 'Stereot',
       'Suunnistuksen lajisäännöt',
       'Televisio',
       'Tenniksen kilpailumääräykset',
@@ -57,7 +59,7 @@ class App extends Component {
     event.preventDefault();
   }
 
-  initDialogs() {
+  initParticipantDialogs = () => {
     axios.get("api/participants/" + this.state.activeParticipant.id + "/dialogs")
       .then(response => {
         const dialogs = response.data;
@@ -73,57 +75,18 @@ class App extends Component {
   }
 
   createInitialDialogs = () => {
-    let dialogs = [];
-    let dialogIndex = this.state.dialogIndex;
-    let subjectIndex = this.state.subjectIndex;
-    axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs',
-      {
-        name: "Dialog " + dialogIndex,
-        subject: nth(this.subjects, subjectIndex),
-      }
-    ).then(response => {
-      dialogs.push(response.data);
-      dialogIndex++;
-      subjectIndex++;
-      axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs',
-        {
-          name: "Dialog " + dialogIndex,
-          subject: nth(this.subjects, subjectIndex),
-        }
-      ).then(response => {
-        dialogs.push(response.data);
-        dialogIndex++;
-        subjectIndex++;
-        axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs',
-          {
-            name: "Dialog " + dialogIndex,
-            subject: nth(this.subjects, subjectIndex),
-          }
-        ).then(response => {
-          dialogs.push(response.data);
-          dialogIndex++;
-          subjectIndex++;
-          axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs',
-            {
-              name: "Dialog " + dialogIndex,
-              subject: nth(this.subjects, subjectIndex),
-            }).then(response => {
-            dialogs.push(response.data);
-            dialogIndex++;
-            subjectIndex++;
-            this.setState({
-              dialogs: dialogs,
-              dialogIndex: dialogIndex,
-              subjectIndex: subjectIndex,
-              openDialogsCount: dialogs.length,
-            });
-          });
-        });
-      });
-    });
+    // Create 4 dialogs, first dialog right away, others with timeouts
+    this.createNewDialog(0);
+    setTimeout(() => this.createNewDialog(1), 11579.39);
+    setTimeout(() => this.createNewDialog(2), 55353.783);
+    setTimeout(() => this.createNewDialog(3), 214118.54);
   }
 
-  createNewDialog = (replaceDialogID) => {
+  sendSystemMessage = (dialogID, message) => {
+    return axios.post("api/dialogs/" + dialogID + "/messages", {message: message});
+  }
+
+  createNewDialog = (oldDialogListID) => {
     let dialogs = this.state.dialogs;
     let dialogIndex = this.state.dialogIndex;
     let subjectIndex = this.state.subjectIndex;
@@ -134,34 +97,41 @@ class App extends Component {
         subject: nth(this.subjects, subjectIndex),
       }
     ).then(response => {
-      const index = findIndex(dialogs, {id: replaceDialogID});
-      dialogs.splice(index, 1, response.data);
-      dialogIndex++;
-      subjectIndex++;
-      openDialogsCount++;
-
-      this.setState({
-        dialogs: dialogs,
-        dialogIndex: dialogIndex,
-        subjectIndex: subjectIndex,
-        openDialogsCount: openDialogsCount,
-      });
+      // Send first message to the dialog
+      let message = questions[response.data.subject][0];
+      this.sendSystemMessage(response.data.id, message)
+        .then(() => {
+          // Replace old dialog with the new one
+          dialogs.splice(oldDialogListID, 1, response.data);
+          dialogIndex++;
+          subjectIndex++;
+          openDialogsCount++;
+          this.setState({
+            dialogs: dialogs,
+            dialogIndex: dialogIndex,
+            subjectIndex: subjectIndex,
+            openDialogsCount: openDialogsCount,
+          });
+        });
     });
   }
 
-  onChatDialogClose = () => {
-    this.setState((prevState) => {
-      let openDialogsCount = prevState.openDialogsCount;
-      openDialogsCount--;
-      return {
-        openDialogsCount: openDialogsCount,
-      };
-    }, () => {
-      if (this.state.openDialogsCount < 4) {
-        console.log("set timeout for new dialog");
-        setTimeout(this.showGetNewButton, 10000);
-      }
-    });
+  markDialogEnded = (dialogListID) => {
+    let dialogs = this.state.dialogs;
+    let dialog = dialogs[dialogListID];
+    dialog.is_ended = true;
+    dialogs.splice(dialogListID, 1, dialog);
+    this.setState({dialogs: dialogs});
+  }
+
+  onEndedOKClick = (dialogListID) => {
+    // Replace old dialog with null
+    let dialogs = this.state.dialogs;
+    dialogs.splice(dialogListID, 1, null);
+    this.setState({dialogs: dialogs});
+    // Set timeout to create new dialog for that place
+    // TODO: replace with real timeout
+    setTimeout(() => this.createNewDialog(dialogListID), 10000);
   }
 
   onParticipantNameChange = (event) => {
@@ -176,7 +146,7 @@ class App extends Component {
           this.setState({
             activeParticipant: response.data,
             participantName: "",
-          }, this.initDialogs);
+          }, this.initParticipantDialogs);
         } else if (response.status === 200) {
           // If participant already exists, show modal
           this.setState({
@@ -195,7 +165,7 @@ class App extends Component {
         participantResponse: null,
         isModalOpen: false,
       };
-    }, this.initDialogs);
+    }, this.initParticipantDialogs);
   }
 
   onCreateNewParticipant = () => {
@@ -229,8 +199,8 @@ class App extends Component {
         </header>
         {this.state.activeParticipant ? (
           <div>
-            <Route path="/exp1" render={() => <ChatDialogGrid dialogs={this.state.dialogs} onChatDialogClose={this.onChatDialogClose} onCreateNewChatDialog={this.createNewDialog} />} />
-            <Route path="/exp2" render={() => <ChatDialogList dialogs={this.state.dialogs} onChatDialogClose={this.onChatDialogClose} onCreateNewChatDialog={this.createNewDialog} />} />
+            <Route path="/exp1" render={() => <ChatDialogGrid dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onEndedOKClick={this.onEndedOKClick} />} />
+            <Route path="/exp2" render={() => <ChatDialogList dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onEndedOKClick={this.onEndedOKClick} />} />
           </div>
         ) : (
           <div className="CreateParticipant">

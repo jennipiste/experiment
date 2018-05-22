@@ -2,8 +2,6 @@ import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
 import ChatDialog from './ChatDialog';
 import ChatListItem from './ChatListItem';
 import map from 'lodash/map';
-import find from 'lodash/find';
-import filter from 'lodash/filter';
 
 
 class ChatDialogList extends Component {
@@ -11,7 +9,7 @@ class ChatDialogList extends Component {
     super(props);
 
     this.state = {
-      activeDialog: null,
+      activeDialogIndex: null,
       dialogs: [],
       dialogsWithUnreadMessages: [],
     };
@@ -23,15 +21,14 @@ class ChatDialogList extends Component {
         dialogs: nextProps.dialogs,
       });
     }
-    if (!this.state.activeDialog) {
-      let activeDialog = find(nextProps.dialogs, (dialog) => !dialog.is_closed);
-      this.setState({activeDialog: activeDialog});
+    if (!this.state.activeDialogIndex) {
+      const activeDialogIndex = 0;
+      this.setState({activeDialogIndex: activeDialogIndex});
     }
   }
 
-  onChatListItemClick = (event, chat_id) => {
-    const dialog = find(this.state.dialogs, (dialog) => { return dialog.id === chat_id; });
-    this.setState({activeDialog: dialog});
+  onChatListItemClick = (event, index) => {
+    this.setState({activeDialogIndex: index});
   }
 
   markDialogUnread = (dialogID) => {
@@ -48,11 +45,11 @@ class ChatDialogList extends Component {
   }
 
   render() {
-    let chats = map(filter(this.props.dialogs, (dialog) => !dialog.is_closed), (dialog, index) => {
-      return <ChatListItem {...dialog} key={index} onChatListItemClick={this.onChatListItemClick} isActive={this.state.activeDialog && this.state.activeDialog.id === dialog.id} isUnread={this.state.dialogsWithUnreadMessages.includes(dialog.id)}/>;
+    let chats = map(this.props.dialogs, (dialog, index) => {
+      return <ChatListItem dialog={dialog} key={index} dialogIndex={index} onChatListItemClick={this.onChatListItemClick} isActive={this.state.activeDialogIndex === index} isUnread={dialog && this.state.dialogsWithUnreadMessages.includes(index)}/>;
     });
     let dialogs = map(this.props.dialogs, (dialog, index) => {
-      return <ChatDialog {...dialog} key={index} onCreateNewChatDialog={this.props.onCreateNewChatDialog} isActive={this.state.activeDialog && this.state.activeDialog.id === dialog.id} markDialogUnread={this.markDialogUnread} markDialogRead={this.markDialogRead} exp={2} />;
+      return <ChatDialog dialog={dialog} key={index} dialogIndex={index} onEndedOKClick={this.props.onEndedOKClick} isActive={this.state.activeDialogIndex === index} markDialogEnded={this.props.markDialogEnded} markDialogUnread={this.markDialogUnread} markDialogRead={this.markDialogRead} exp={2} />;
     });
 
     return (
