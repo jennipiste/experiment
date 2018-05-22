@@ -73,7 +73,7 @@ ChatDialog.active {
 }
 
 .ChatDialog.unread {
-  border: 3px solid red;
+  border: 1px solid red;
 }
 
 .ChatDialog.ended {
@@ -82,7 +82,6 @@ ChatDialog.active {
 }
 
 .Subject {
-  text-transform: capitalize;
   margin: 20px;
 }
 
@@ -147,6 +146,7 @@ ChatDialog.active {
   cursor: pointer;
   display: flex;
   justify-content: space-between;
+  text-align: left;
 }
 
 .ChatListItem.active {
