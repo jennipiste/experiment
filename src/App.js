@@ -51,10 +51,17 @@ class App extends Component {
 
   componentDidMount() {
     window.addEventListener('beforeunload', (event) => this.confirmUnloadEvent(event));
+    window.addEventListener('keydown', (event) => this.onKeydownEvent(event));
   }
 
   confirmUnloadEvent = (event) => {
     event.preventDefault();
+  }
+
+  onKeydownEvent = (event) => {
+    if ((event.metaKey || event.ctrlKey) && event.keyCode === 70) {
+      event.preventDefault();
+    }
   }
 
   initParticipantDialogs = () => {
