@@ -26,8 +26,6 @@ class ChatDialog extends Component {
 
   componentDidMount() {
     this.initMessages();
-    // window.addEventListener('blur', this.onWindowBlur);
-    // window.addEventListener('focus', this.onWindowFocus);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -38,20 +36,6 @@ class ChatDialog extends Component {
   componentWillUnmount() {
     clearTimeout(this.questionTimeout);
   }
-
-  // onWindowBlur = () => {
-  //   console.log("window blur");
-  //   this.setState({activeElement: document.activeElement});
-  // }
-
-  // onWindowFocus = () => {
-  //   console.log("window focus");
-  //   const activeElement = this.state.activeElement;
-  //   if (activeElement) {
-  //     console.log("active element", activeElement);
-  //     activeElement.focus();
-  //   }
-  // }
 
   initMessages = (props=this.props) => {  // props can be either nextProps or this.props
     if (props.dialog) {
@@ -174,13 +158,6 @@ class ChatDialog extends Component {
       });
   }
 
-  openPDF = (event) => {
-    event.preventDefault();
-    const left = window.screenX + window.outerWidth;
-    window.open(this.pdf, 'newwindow', 'fullscreen=yes, left=' + left + '');
-    return false;
-  }
-
   render() {
     const textareaProps = {
       maxLength: 2000,
@@ -207,15 +184,15 @@ class ChatDialog extends Component {
             }
             {!this.state.isEnded && this.props.dialog !== null &&
               <div className={"ChatDialog" + (this.state.unread ? " unread" : "")}>
-                <a className="Subject" href={this.pdf} onClick={(event) => this.openPDF(event)}>{this.props.dialog.subject}</a>
+                <a className="Subject" href={this.pdf} onClick={(event) => this.props.onSubjectClick(event, this.props.dialog.subject)}>{this.props.dialog.subject}</a>
                 <ChatMessageList messages={this.state.messages} />
                 <ChatDialogFooter>
                   <textarea className="MessageTextarea" {...textareaProps} ref={element => this.textareaElement = element} autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck="false" />
                   <button className="SendButton" {...sendButtonProps}>SEND</button>
                 </ChatDialogFooter>
                 {/* for debugging purposes */}
-                <button onClick={() => this.sendSystemMessage("system message")}>system message</button>
-                <button onClick={() => this.endChatDialog()}>end dialog</button>
+                {/* <button onClick={() => this.sendSystemMessage("system message")}>system message</button>
+                <button onClick={() => this.endChatDialog()}>end dialog</button> */}
               </div>
             }
           </div>

@@ -191,12 +191,12 @@ class App extends Component {
 
     return (
       <div className="App">
-        <header className="App-header">
+        {/* <header className="App-header">
           <h1 className="App-title">Chat multitasking experiment</h1>
           {this.state.activeParticipant && <p className="App-intro">{"Welcome " + this.state.activeParticipant.name + "! "}Let's test how many chats you can handle</p>}
-        </header>
+        </header> */}
         {this.state.activeParticipant ? (
-          <div>
+          <div className="AppContent">
             <Route path="/exp1" render={() => <ChatDialogGrid dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onEndedOKClick={this.onEndedOKClick} />} />
             <Route path="/exp2" render={() => <ChatDialogList dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onEndedOKClick={this.onEndedOKClick} />} />
           </div>

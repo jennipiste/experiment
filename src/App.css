@@ -1,3 +1,7 @@
+html, body, #root, .App, .AppContent, .ChatDialogGrid {
+  height: 100%;
+}
+
 .App {
   text-align: center;
 }
@@ -52,7 +56,13 @@
 
 .ChatDialogGrid {
   display: flex;
+}
+
+.ChatDialogGrid .Dialogs {
+  display: flex;
   flex-wrap: wrap;
+  flex-basis: 1000px;
+  flex-shrink: 0;
 }
 
 ChatDialog.inactive {
