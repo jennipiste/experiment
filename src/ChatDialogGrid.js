@@ -17,8 +17,12 @@ class ChatDialogGrid extends Component {
     event.preventDefault();
     this.pdf = require("./manuals/" + subject + ".pdf");
     this.setState({
-      showPDF: true,
-      subject: subject,
+      showPDF: false,
+    }, () => {
+      this.setState({
+        showPDF: true,
+        subject: subject,
+      });
     });
   }
 
