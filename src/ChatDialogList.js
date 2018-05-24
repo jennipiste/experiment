@@ -11,7 +11,7 @@ class ChatDialogList extends Component {
     this.state = {
       activeDialogIndex: null,
       dialogs: [],
-      dialogsWithUnreadMessages: [],
+      unreadDialogs: [false, false, false, false],
       showPDF: false,
       subject: null,
     };
@@ -46,22 +46,21 @@ class ChatDialogList extends Component {
     });
   }
 
-  markDialogUnread = (dialogID) => {
-    let dialogsWithUnreadMessages = this.state.dialogsWithUnreadMessages;
-    dialogsWithUnreadMessages.push(dialogID);
-    this.setState({dialogsWithUnreadMessages: dialogsWithUnreadMessages});
+  markDialogUnread = (dialogIndex) => {
+    let unreadDialogs = this.state.unreadDialogs;
+    unreadDialogs[dialogIndex] = true;
+    this.setState({unreadDialogs: unreadDialogs});
   }
 
-  markDialogRead = (dialogID) => {
-    let dialogsWithUnreadMessages = this.state.dialogsWithUnreadMessages;
-    let index = dialogsWithUnreadMessages.indexOf(dialogID);
-    dialogsWithUnreadMessages.splice(index, 1);
-    this.setState({dialogsWithUnreadMessages: dialogsWithUnreadMessages});
+  markDialogRead = (dialogIndex) => {
+    let unreadDialogs = this.state.unreadDialogs;
+    unreadDialogs[dialogIndex] = false;
+    this.setState({unreadDialogs: unreadDialogs});
   }
 
   render() {
     let chats = map(this.props.dialogs, (dialog, index) => {
-      return <ChatListItem dialog={dialog} key={index} dialogIndex={index} onChatListItemClick={this.onChatListItemClick} isActive={this.state.activeDialogIndex === index} isUnread={dialog && this.state.dialogsWithUnreadMessages.includes(index)}/>;
+      return <ChatListItem dialog={dialog} key={index} dialogIndex={index} onChatListItemClick={this.onChatListItemClick} isActive={this.state.activeDialogIndex === index} isUnread={dialog && this.state.unreadDialogs[index]}/>;
     });
     let dialogs = map(this.props.dialogs, (dialog, index) => {
       return <ChatDialog dialog={dialog} key={index} dialogIndex={index} onEndedOKClick={this.props.onEndedOKClick} isActive={this.state.activeDialogIndex === index} markDialogEnded={this.props.markDialogEnded} markDialogUnread={this.markDialogUnread} markDialogRead={this.markDialogRead} onSubjectClick={this.onSubjectClick} exp={2} />;

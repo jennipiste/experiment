@@ -13,7 +13,7 @@ class ChatDialog extends Component {
     this.state = {
       composedMessage: "",
       messages: [],
-      unread: false,
+      unread: true,  // At first they all are unread
       isEnded: this.props.dialog ? this.props.dialog.is_ended : false,
       questionIndex: 1,  // Start from the second question, first is already sent
       activeElement: null,
@@ -26,6 +26,7 @@ class ChatDialog extends Component {
 
   componentDidMount() {
     this.initMessages();
+    this.props.markDialogUnread(this.props.dialogIndex);  // Dialogs are unread at the beginning
   }
 
   componentWillReceiveProps(nextProps) {
@@ -86,9 +87,9 @@ class ChatDialog extends Component {
       // For experiment 2, mark dialog read or unread
       if (this.props.exp === 2) {
         if (newMessage.type === 1) {
-          this.props.markDialogUnread(this.props.dialog.id);
+          this.props.markDialogUnread(this.props.dialogIndex);
         } else {
-          this.props.markDialogRead(this.props.dialog.id);
+          this.props.markDialogRead(this.props.dialogIndex);
         }
       }
     });

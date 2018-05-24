@@ -164,6 +164,7 @@ ChatDialog.active {
   display: flex;
   justify-content: space-between;
   text-align: left;
+  flex-shrink: 0;
 }
 
 .ChatListItem.active {
