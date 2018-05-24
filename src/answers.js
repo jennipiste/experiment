@@ -6,19 +6,19 @@ const answers = {
     "70 astetta",
     "Koneeseen jää vettä",
     "7",
-    "Parempi hygieniataso",
+    // "Parempi hygieniataso",
 
   ],
   'Cheerleadingin kilpailusäännöt': [
     "14x16 metriä",
     "6",
     "10",
-    "Ei",
+    // "Ei",
     "2:30",
     "24",
     // "3",
     "On",
-    "2",
+    // "2",
   ],
   'Jääkaappi': [
     "3 cm",
@@ -31,9 +31,9 @@ const answers = {
   ],
   'Kouluratsastuksen kilpailusäännöt': [
     "2",
-    "Knalli tai silinteri",
+    "Kypärä, knalli ja silinteri",
     "Ei",
-    "Painorajoitusta ei ole",
+    // "Painorajoitusta ei ole",
     // "10",
     // "Voltti, serpentiini ja volttikahdeksikko",
 
