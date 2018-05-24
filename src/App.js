@@ -41,8 +41,8 @@ class App extends Component {
       'Pyykinpesukone',
       // 'Samsung Galaxy S9',
       // 'Stereot',
-      'Suunnistuksen lajisäännöt',
-      'Televisio',
+      // 'Suunnistuksen lajisäännöt',
+      // 'Televisio',
       'Tenniksen kilpailumääräykset',
     ];
 
@@ -83,8 +83,8 @@ class App extends Component {
     // Create 4 dialogs, first dialog right away, others with timeouts
     this.createNewDialog(0);
     setTimeout(() => this.createNewDialog(1), 11579.39);
-    setTimeout(() => this.createNewDialog(2), 55353.783);
-    setTimeout(() => this.createNewDialog(3), 214118.54);
+    setTimeout(() => this.createNewDialog(2), 35353.783);
+    setTimeout(() => this.createNewDialog(3), 114118.54);
   }
 
   sendSystemMessage = (dialogID, message) => {

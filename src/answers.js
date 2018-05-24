@@ -1,7 +1,7 @@
 const answers = {
   'Astianpesukone': [
     "596 mm",
-    "Vesihanan avaaminen",
+    // "Vesihanan avaaminen",
     "3",
     "70 astetta",
     "Koneeseen jää vettä",
@@ -16,14 +16,14 @@ const answers = {
     "Ei",
     "2:30",
     "24",
-    "3",
+    // "3",
     "On",
     "2",
   ],
   'Jääkaappi': [
     "3 cm",
     "Painaa lämpötilavalitsinta 1",
-    "-24 astetta",
+    // "-24 astetta",
     "Painamalla lämpötilavalitsinta 1 niin monta kertaa kunnes näyttö super 2 syttyy",
     "Demotoiminto on kytketty toimintaan",
     "0207 510 700",
@@ -34,8 +34,8 @@ const answers = {
     "Knalli tai silinteri",
     "Ei",
     "Painorajoitusta ei ole",
-    "2",
-    "Voltti, serpentiini ja volttikahdeksikko",
+    // "10",
+    // "Voltti, serpentiini ja volttikahdeksikko",
 
   ],
   'Langattomat Bluetooth-kuulokkeet': [
@@ -43,14 +43,14 @@ const answers = {
     "10 metriä",
     "2 tuntia",
     "0000",
-    "Painamalla + näppäintä pitkään",
+    // "Painamalla + näppäintä pitkään",
     "Painamalla + ja - näppäimiä",
     "Punainen valo on sammunut",
-    "Laite ei ole toiminta-alueella",
+    // "Laite ei ole toiminta-alueella",
 
   ],
   'Liesi': [
-    "Ei",
+    // "Ei",
     "190-210 astetta",
     "4",
     "650 mm",
@@ -59,8 +59,8 @@ const answers = {
   ],
   'Liesituuletin': [
     "2",
-    "Painamalla käynnistys- ja + painikkeita samanaikaisesti 3 sekunnin ajan",
-    "Painamalla - kunnes merkki ilmestyy näyttöön",
+    // "Painamalla käynnistys- ja + painikkeita samanaikaisesti 3 sekunnin ajan",
+    // "Painamalla - kunnes merkki ilmestyy näyttöön",
     "Lasinpesuainetta",
     "2 kuukauden välein",
     "HSGSB/C/UB-30-230-E14",
@@ -69,11 +69,11 @@ const answers = {
   'Miekkailu': [
     "Kalpa",
     "770 grammaa",
-    "Koko keho",
     "Koko vartalo vyötäröstä ylöspäin",
-    "Maskia, miekkailutakkia ja -housuja, miekkailuhanskaa ja vartalojohtoa",
+    // "Koko keho",
+    // "Maskia, miekkailutakkia ja -housuja, miekkailuhanskaa ja vartalojohtoa",
     "5",
-    "3",
+    "3 minuutissa",
     "Allez! (Alkakaa!)",
   ],
   'Mikroaaltouuni': [
@@ -89,40 +89,35 @@ const answers = {
     "16 cm",
     "Kyllä",
     "11",
-    "Paidan, shortsien ja hameen väri täytyy olla selvästi eri kuin käytetyn pallon väri",
+    // "Paidan, shortsien ja hameen väri täytyy olla selvästi eri kuin käytetyn pallon väri",
     "Et",
 
   ],
   'Pyykinpesukone': [
     "7 kg",
     "Luukku on auki tai se on suljettu virheellisesti",
-    "Ei",
+    // "Ei",
     "Hienopesu",
     "Ei",
 
   ],
-  // 'Samsung Galaxy S9': [
-  //   "Palvelu jonka avulla puhelinta voi käyttää tietokoneen tapaan yhdistämällä puhelimen ulkoiseen näyttöön",
+  // 'Suunnistuksen lajisäännöt': [
+  //   "Kilpailukarttaa, rastinmääritteitä ja kompassia",
+  //   "Yhtä",
+  //   "Maalin kautta (vaikuttamatta kilpailun kulkuun)",
+  //   "Kyllä",
+  // ],
+  // 'Televisio': [
+  //   "10 Mbps",
+  //   "Asetukset -> Järjestelmä -> Asiantuntijan asetukset > Suorita Smart Hub automaattisesti",
 
   // ],
-  // 'Stereot': [],
-  'Suunnistuksen lajisäännöt': [
-    "Kilpailukarttaa, rastinmääritteitä ja kompassia",
-    "Yhtä",
-    "Maalin kautta (vaikuttamatta kilpailun kulkuun)",
-    "Kyllä",
-  ],
-  'Televisio': [
-    "10 Mbps",
-    "Asetukset -> Järjestelmä -> Asiantuntijan asetukset > Suorita Smart Hub automaattisesti",
-
-  ],
-  'Tenniksen kilpailumääräykset': [
-    "6",
-    "13-24",
-    "60 min",
-    "Pelipaita tennikseen tarkoitettu tekninen paita tai kauluspaita"
-  ],
+  // 'Tenniksen kilpailumääräykset': [
+  //   "6",
+  //   "13-24",
+  //   "60 min",
+  //   "Pelipaita tennikseen tarkoitettu tekninen paita tai kauluspaita"
+  // ],
 };
 
 export default answers;
