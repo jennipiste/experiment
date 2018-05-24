@@ -37,7 +37,7 @@ class ChatDialogGrid extends Component {
           {dialogs}
         </div>
         {this.state.showPDF &&
-          <iframe src={this.pdf} width="100%" frameBorder="0"></iframe>
+          <iframe src={this.pdf} width="100%" frameBorder="0" title="PDF"></iframe>
         }
       </div>
     );

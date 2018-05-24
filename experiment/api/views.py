@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+from django.utils import timezone
 from rest_framework import generics
 from rest_framework import status
 from rest_framework.response import Response
@@ -58,6 +59,25 @@ class ChatDialogUpdateAPIView(generics.UpdateAPIView):
     queryset = ChatDialog.objects.all()
     lookup_field = 'id'
     lookup_url_kwarg = 'dialog_id'
+
+    def update(self, request, *args, **kwargs):
+        dialog_id = self.kwargs['dialog_id']
+        try:
+            dialog = ChatDialog.objects.get(id=dialog_id)
+        except ChatDialog.DoesNotExist:
+            raise NotFound("Dialog not found")
+
+        data = request.data
+        if 'is_ended' in data:
+            data['ended_at'] = timezone.now()
+
+        if 'is_closed' in data:
+            data['closed_at'] = timezone.now()
+
+        serializer = self.get_serializer(dialog, data=data, partial=True)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
 
 class ParticipantChatMessageListCreateAPIView(generics.ListCreateAPIView):

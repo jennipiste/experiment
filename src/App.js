@@ -129,14 +129,20 @@ class App extends Component {
     this.setState({dialogs: dialogs});
   }
 
-  onEndedOKClick = (dialogListID) => {
-    // Replace old dialog with null
-    let dialogs = this.state.dialogs;
-    dialogs.splice(dialogListID, 1, null);
-    this.setState({dialogs: dialogs});
-    // Set timeout to create new dialog for that place
-    // TODO: replace with real timeout
-    setTimeout(() => this.createNewDialog(dialogListID), 10000);
+  onEndedOKClick = (dialogListID, dialogID) => {
+    // Set close time to database
+    axios.patch("api/dialogs/" + dialogID, {is_closed: true})
+      .then(response => {
+        if (response.status === 200) {
+          // Replace old dialog with null
+          let dialogs = this.state.dialogs;
+          dialogs.splice(dialogListID, 1, null);
+          this.setState({dialogs: dialogs});
+          // Set timeout to create new dialog for that place
+          // TODO: replace with real timeout
+          setTimeout(() => this.createNewDialog(dialogListID), 10000);
+        }
+      });
   }
 
   onParticipantNameChange = (event) => {

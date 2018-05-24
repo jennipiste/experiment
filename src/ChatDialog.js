@@ -180,7 +180,7 @@ class ChatDialog extends Component {
               <div className="ChatDialog ended">
                 <p className="Subject">{this.props.dialog.subject}</p>
                 <p>This dialog has ended!</p>
-                <button onClick={() => this.props.onEndedOKClick(this.props.dialogIndex)}>OK</button>
+                <button onClick={() => this.props.onEndedOKClick(this.props.dialogIndex, this.props.dialog.id)}>OK</button>
               </div>
             }
             {!this.state.isEnded && this.props.dialog !== null &&
@@ -192,8 +192,8 @@ class ChatDialog extends Component {
                   <button className="SendButton" {...sendButtonProps}>SEND</button>
                 </ChatDialogFooter>
                 {/* for debugging purposes */}
-                {/* <button onClick={() => this.sendSystemMessage("system message")}>system message</button>
-                <button onClick={() => this.endChatDialog()}>end dialog</button> */}
+                <button onClick={() => this.sendSystemMessage("system message")}>system message</button>
+                <button onClick={() => this.endChatDialog()}>end dialog</button>
               </div>
             }
           </div>
