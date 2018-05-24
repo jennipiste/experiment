@@ -12,6 +12,8 @@ class ChatDialogList extends Component {
       activeDialogIndex: null,
       dialogs: [],
       dialogsWithUnreadMessages: [],
+      showPDF: false,
+      subject: null,
     };
   }
 
@@ -29,6 +31,19 @@ class ChatDialogList extends Component {
 
   onChatListItemClick = (event, index) => {
     this.setState({activeDialogIndex: index});
+  }
+
+  onSubjectClick = (event, subject) => {
+    event.preventDefault();
+    this.pdf = require("./manuals/" + subject + ".pdf");
+    this.setState({
+      showPDF: false,
+    }, () => {
+      this.setState({
+        showPDF: true,
+        subject: subject,
+      });
+    });
   }
 
   markDialogUnread = (dialogID) => {
@@ -49,7 +64,7 @@ class ChatDialogList extends Component {
       return <ChatListItem dialog={dialog} key={index} dialogIndex={index} onChatListItemClick={this.onChatListItemClick} isActive={this.state.activeDialogIndex === index} isUnread={dialog && this.state.dialogsWithUnreadMessages.includes(index)}/>;
     });
     let dialogs = map(this.props.dialogs, (dialog, index) => {
-      return <ChatDialog dialog={dialog} key={index} dialogIndex={index} onEndedOKClick={this.props.onEndedOKClick} isActive={this.state.activeDialogIndex === index} markDialogEnded={this.props.markDialogEnded} markDialogUnread={this.markDialogUnread} markDialogRead={this.markDialogRead} exp={2} />;
+      return <ChatDialog dialog={dialog} key={index} dialogIndex={index} onEndedOKClick={this.props.onEndedOKClick} isActive={this.state.activeDialogIndex === index} markDialogEnded={this.props.markDialogEnded} markDialogUnread={this.markDialogUnread} markDialogRead={this.markDialogRead} onSubjectClick={this.onSubjectClick} exp={2} />;
     });
 
     return (
@@ -57,9 +72,12 @@ class ChatDialogList extends Component {
         <div className="ChatList">
           {chats}
         </div>
-        <div>
+        <div className="Dialogs">
           {dialogs}
         </div>
+        {this.state.showPDF &&
+          <iframe src={this.pdf} width="100%" frameBorder="0"></iframe>
+        }
       </div>
     );
   }
