@@ -35,6 +35,9 @@ class ChatDialog extends Component {
     this.pdf = nextProps.dialog ? require("./manuals/" + nextProps.dialog.subject + ".pdf") : null;
     if (nextProps.dialog !== this.props.dialog) {
       this.initMessages(nextProps);
+      if (this.props.exp === 2) {
+        this.props.markDialogUnread(this.props.dialogIndex);
+      }
     }
   }
 
@@ -168,6 +171,9 @@ class ChatDialog extends Component {
           this.questionTimeout = null;
           this.setState({isEnded: true});
           if (this.props.exp === 2) {
+            // Mark dialog unread because user has to know that is has eneded
+            // TODO: how it should be indicated
+            this.props.markDialogUnread(this.props.dialogIndex);
             this.props.markDialogEnded(this.props.dialogIndex);
           }
         }
