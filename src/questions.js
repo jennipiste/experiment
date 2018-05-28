@@ -22,7 +22,7 @@ const questions = {
   ],
   'Jääkaappi': [
     "Kuinka kauas sähköliedestä jääkaappi tulee vähintään sijoittaa?",
-    "Mitä pitää tehdä, kun jääkaappia kytkettäessä kuuluu hälytysääni?",
+    "Olen kytkemässä jääkaappia toimintaan, ja siitä kuuluu hälytysääni. Mitä teen?",
     // "Mikä on kylmin lämpötila, jolle pakastinosan voi säätää?",
     "Miten pikapakastuksen saa päälle?",
     "Mikä saattaa olla syynä, jos laitteen jäähdytys ei toimi, mutta lämpötilanäyttö ja sisävalo toimivat?",
@@ -33,7 +33,7 @@ const questions = {
   'Kouluratsastuksen kilpailusäännöt': [
     "Kuinka monta suoritusta sama hevonen voi korkeintaan tehdä yhtenä kilpailupäivänä kouluratsastuksessa?",
     "Mitkä ovat kolme vaihtoehtoa päähineeksi kilpailuasussa?",
-    "Onko turvaliivin käyttö kilpailussa pakollista?",
+    "Onko turvaliivin käyttö kilpailuasussa pakollista?",
     // "Kuinka painava ratsastaja saa korkeintaan olla?",
     // "Kuinka monta pistettä tuomarit voivat korkeintaan antaa ohjelman liikkeistä?",
     // "Minkä nimisiä ovat ohjelmissa ratsastettavat tiet?",

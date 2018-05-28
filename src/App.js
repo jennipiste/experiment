@@ -43,7 +43,7 @@ class App extends Component {
       // 'Stereot',
       // 'Suunnistuksen lajisäännöt',
       // 'Televisio',
-      'Tenniksen kilpailumääräykset',
+      // 'Tenniksen kilpailumääräykset',
     ];
 
     this.inputElement = null;
@@ -84,7 +84,7 @@ class App extends Component {
     this.createNewDialog(0);
     setTimeout(() => this.createNewDialog(1), 11579.39);
     setTimeout(() => this.createNewDialog(2), 35353.783);
-    setTimeout(() => this.createNewDialog(3), 114118.54);
+    setTimeout(() => this.createNewDialog(3), 74118.54);
   }
 
   sendSystemMessage = (dialogID, message) => {

@@ -26,12 +26,16 @@ class ChatDialog extends Component {
 
   componentDidMount() {
     this.initMessages();
-    this.props.markDialogUnread(this.props.dialogIndex);  // Dialogs are unread at the beginning
+    if (this.props.exp === 2) {
+      this.props.markDialogUnread(this.props.dialogIndex);  // Dialogs are unread at the beginning
+    }
   }
 
   componentWillReceiveProps(nextProps) {
     this.pdf = nextProps.dialog ? require("./manuals/" + nextProps.dialog.subject + ".pdf") : null;
-    this.initMessages(nextProps);
+    if (nextProps.dialog !== this.props.dialog) {
+      this.initMessages(nextProps);
+    }
   }
 
   componentWillUnmount() {
@@ -46,7 +50,7 @@ class ChatDialog extends Component {
             messages: response.data,
             unread: response.data.length && response.data.slice(-1)[0].type === 1,
             isEnded: props.dialog ? props.dialog.is_ended : false,
-            questionIndex: filter(response.data, (message) => message.type === 1).length,  // Set questionIndex according to already asked questions
+            questionIndex: 1,
           }, () => {
             if (this.props.exp === 2 && props.isActive) {
               if (this.textareaElement) {
@@ -122,19 +126,28 @@ class ChatDialog extends Component {
   }
 
   setTimeoutForNewQuestion = () => {
-    let questionIndex = this.state.questionIndex;
-    // If there are questions left for the subject, set timeout for next
-    if (questions[this.props.dialog.subject][questionIndex]) {
-      const nextQuestion = questions[this.props.dialog.subject][questionIndex];
-      const timeoutMilliSeconds = this.getTimeoutMilliSeconds(questionIndex);
-      // Set timeout for next question
-      this.questionTimeout = setTimeout(() => this.sendSystemMessage(nextQuestion), timeoutMilliSeconds);
-      questionIndex++;
-      this.setState({questionIndex: questionIndex});
-    } else {
-      // Otherwise end the chat after 2 seconds
-      setTimeout(this.endChatDialog, 5000);
-    }
+    console.log("set timeout for new question, for dialog", this.props.dialogIndex);
+    this.setState((prevState) => {
+      let questionIndex = prevState.questionIndex;
+      console.log("question index is", questionIndex, "for dialog", this.props.dialogIndex);
+      // If there are questions left for the subject, set timeout for next
+      if (questions[this.props.dialog.subject][questionIndex]) {
+        const nextQuestion = questions[this.props.dialog.subject][questionIndex];
+        const timeoutMilliSeconds = this.getTimeoutMilliSeconds(questionIndex);
+        // Set timeout for next question
+        this.questionTimeout = setTimeout(() => this.sendSystemMessage(nextQuestion), timeoutMilliSeconds);
+        questionIndex++;
+        console.log("now set new question index", questionIndex, "for dialog", this.props.dialogIndex);
+        return {
+          questionIndex: questionIndex,
+        };
+      } else {
+        // Otherwise end the chat after 5 seconds
+        console.log("end chat after 5 secs, dialog", this.props.dialogIndex);
+        setTimeout(this.endChatDialog, 5000);
+        return;
+      }
+    });
   }
 
   sendSystemMessage = (message) => {
@@ -154,7 +167,9 @@ class ChatDialog extends Component {
           clearTimeout(this.questionTimeout);
           this.questionTimeout = null;
           this.setState({isEnded: true});
-          this.props.markDialogEnded(this.props.dialogIndex);
+          if (this.props.exp === 2) {
+            this.props.markDialogEnded(this.props.dialogIndex);
+          }
         }
       });
   }
