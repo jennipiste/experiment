@@ -129,7 +129,7 @@ class App extends Component {
     this.setState({dialogs: dialogs});
   }
 
-  onEndedOKClick = (dialogListID, dialogID) => {
+  onCloseButtonClick = (dialogListID, dialogID) => {
     if (this.state.activeParticipant === "testi") {
       let dialogs = this.state.dialogs;
       dialogs.splice(dialogListID, 1, null);
@@ -245,18 +245,20 @@ class App extends Component {
         </header> */}
         {this.state.activeParticipant ? (
           <div className="AppContent">
-            <Route path="/exp1" render={() => <ChatDialogGrid dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onEndedOKClick={this.onEndedOKClick} />} />
-            <Route path="/exp2" render={() => <ChatDialogList dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onEndedOKClick={this.onEndedOKClick} />} />
+            <Route path="/exp1" render={() => <ChatDialogGrid dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onCloseButtonClick={this.onCloseButtonClick} />} />
+            <Route path="/exp2" render={() => <ChatDialogList dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onCloseButtonClick={this.onCloseButtonClick} />} />
           </div>
         ) : (
           <div className="CreateParticipant">
+            <p>Ennen varsinaisen kokeen aloitusta, harjoittele käyttöä suorittamalla pieni testi.</p>
+            <button className="TestButton" onClick={this.onTestButtonClick}>Käynnistä testi</button>
+            <p>Testin jälkeen voit siirtyä varsinaiseen kokeeseen kirjoittamalla nimesi ja painamalla 'Aloita'.</p>
             <form className="CreateParticipantForm" onSubmit={this.createParticipant}>
               <label>Nimi:
                 <input className="ParticipantInput" type="text" value={this.state.participantName} onChange={this.onParticipantNameChange} ref={element => this.inputElement = element} />
               </label>
               <input className="SubmitButton" type="submit" value="Aloita" />
             </form>
-            <button className="TestButton" onClick={this.onTestButtonClick}>Käynnistä testi</button>
           </div>
         )}
         {this.state.isModalOpen && <Modal {...modalProps}/>}

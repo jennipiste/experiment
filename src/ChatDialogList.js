@@ -73,7 +73,7 @@ class ChatDialogList extends Component {
       return <ChatListItem dialog={dialog} key={index} dialogIndex={index} onChatListItemClick={this.onChatListItemClick} isActive={this.state.activeDialogIndex === index} isUnread={dialog && this.state.unreadDialogs[index]} isEnded={dialog && dialog.is_ended}/>;
     });
     let dialogs = map(this.props.dialogs, (dialog, index) => {
-      return <ChatDialog dialog={dialog} key={index} dialogIndex={index} onEndedOKClick={this.props.onEndedOKClick} isActive={this.state.activeDialogIndex === index} markDialogEnded={this.props.markDialogEnded} markDialogUnread={this.markDialogUnread} markDialogRead={this.markDialogRead} onSubjectClick={this.onSubjectClick} exp={2} />;
+      return <ChatDialog dialog={dialog} key={index} dialogIndex={index} onCloseButtonClick={this.props.onCloseButtonClick} isActive={this.state.activeDialogIndex === index} markDialogEnded={this.props.markDialogEnded} markDialogUnread={this.markDialogUnread} markDialogRead={this.markDialogRead} onSubjectClick={this.onSubjectClick} exp={2} />;
     });
 
     return (

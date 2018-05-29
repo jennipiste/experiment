@@ -249,32 +249,28 @@ class ChatDialog extends Component {
       onClick: event => this.sendMessage(event),
     };
     return (
-      <div>
-        {this.props.isActive &&
-          <div>
-            {!this.props.dialog &&
-              <div className="ChatDialog"></div>
-            }
-            {this.state.isEnded && this.props.dialog !== null &&
-              <div className="ChatDialog Ended">
-                <p className="Subject">{this.props.dialog.subject}</p>
-                <p>Tämä dialogi on päättynyt!</p>
-                <button className="EndedButton" onClick={() => this.props.onEndedOKClick(this.props.dialogIndex, this.props.dialog.id)}>OK</button>
-              </div>
-            }
-            {!this.state.isEnded && this.props.dialog !== null &&
-              <div className={"ChatDialog" + (this.state.unread ? " Unread" : "")}>
-                <a className="Subject" href={this.pdf} onClick={(event) => this.props.onSubjectClick(event, this.props.dialog.subject)}>{this.props.dialog.subject}</a>
-                <ChatMessageList messages={this.state.messages} />
-                <ChatDialogFooter>
-                  <textarea className="MessageTextarea" {...textareaProps} ref={element => this.textareaElement = element} autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck="false" />
-                  <button className="SendButton" {...sendButtonProps}>Lähetä</button>
-                </ChatDialogFooter>
-                {/* for debugging purposes */}
-                {/* <button onClick={() => this.sendSystemMessage("system message")}>system message</button>
-                <button onClick={() => this.endChatDialog()}>end dialog</button> */}
-              </div>
-            }
+      <div className={"Dialog" + (this.props.exp === 1 ? " Exp1" : " Exp2") + (this.props.isActive ? " Active" : " Inactive")}>
+        {!this.props.dialog &&
+          <div className="ChatDialog"></div>
+        }
+        {this.state.isEnded && this.props.dialog !== null &&
+          <div className="ChatDialog Ended">
+            <p className="Subject">{this.props.dialog.subject}</p>
+            <p>Tämä dialogi on päättynyt!</p>
+            <button className="CloseButton" onClick={() => this.props.onCloseButtonClick(this.props.dialogIndex, this.props.dialog.id)}>Sulje</button>
+          </div>
+        }
+        {!this.state.isEnded && this.props.dialog !== null &&
+          <div className={"ChatDialog" + (this.state.unread ? " Unread" : "")}>
+            <a className="Subject" href={this.pdf} onClick={(event) => this.props.onSubjectClick(event, this.props.dialog.subject)}>{this.props.dialog.subject}</a>
+            <ChatMessageList messages={this.state.messages} />
+            <ChatDialogFooter>
+              <textarea className="MessageTextarea" {...textareaProps} ref={element => this.textareaElement = element} autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck="false" />
+              <button className="SendButton" {...sendButtonProps}>Lähetä</button>
+            </ChatDialogFooter>
+            {/* for debugging purposes */}
+            {/* <button onClick={() => this.sendSystemMessage("system message")}>system message</button>
+            <button onClick={() => this.endChatDialog()}>end dialog</button> */}
           </div>
         }
       </div>
