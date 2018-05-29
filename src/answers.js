@@ -45,7 +45,7 @@ const answers = {
     "0000",
     // "Painamalla + näppäintä pitkään",
     "Painamalla + ja - näppäimiä",
-    "Punainen valo on sammunut",
+    // "Punainen valo on sammunut",
     // "Laite ei ole toiminta-alueella",
 
   ],
@@ -90,7 +90,7 @@ const answers = {
     "Kyllä",
     "11",
     // "Paidan, shortsien ja hameen väri täytyy olla selvästi eri kuin käytetyn pallon väri",
-    "Et",
+    // "Et",
 
   ],
   'Pyykinpesukone': [

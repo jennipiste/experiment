@@ -1,5 +1,5 @@
 const questions = {
-  'Astianpesukone': [
+  'Astianpesukone': [  // 5
     "Kuinka leveä astianpesukone on?",
     // "Mikä on koneen käynnistyksen ensimmäinen vaihe päivittäisessä käytössä?",
     "Mikä ohjelma on tarkoitettu erittäin likaisten astioiden pesuun (ohjelman numero)?",
@@ -7,20 +7,19 @@ const questions = {
     "Mikä on ongelma, jos näytössä näkyy merkintä ,20?",
     "Mihin asentoon vedenpehmennin tulee asettaa, jos veden kovuus on 32°dH?",
     // "Mitä Hygiene-lisätoiminnolla saavutetaan?",
-
   ],
-  'Cheerleadingin kilpailusäännöt': [
+  'Cheerleadingin kilpailusäännöt': [  // 6
     "Kuinka suuri kilpailualue on cheerleadingin SM-kilpailuissa?",
     "Kuinka monta ulkoista spotteria joukkueella saa olla kilpailussa enintään?",
     "Kuinka monta pistettä rankaistaan ylimääräisestä ulkoisesta spotterista?",
     // "Saako ulkoinen spotteri tukea huojuvaa pyramidia?",
-    "Mikä on sarjamääräysten mukainen maksimikesto musiikille Suomen mestaruus -kilpailuissa?",
+    "Mikä on sarjamääräyksissä määritelty maksimikesto musiikille Suomen mestaruus -kilpailuissa, aikuisten level 6 naisten sarjassa?",
     "Entä joukkueen maksimikoko?",
     // "Kuinka monta tuomaria kaikissa kilpailuissa on oltava vähintään?",
     "Onko esityksessä pakko käyttää musiikkia?",
     // "Kuinka monta mainosta esiintymisasuissa saa olla?",
   ],
-  'Jääkaappi': [
+  'Jääkaappi': [  // 6
     "Kuinka kauas sähköliedestä jääkaappi tulee vähintään sijoittaa?",
     "Olen kytkemässä jääkaappia toimintaan, ja siitä kuuluu hälytysääni. Mitä teen?",
     // "Mikä on kylmin lämpötila, jolle pakastinosan voi säätää?",
@@ -30,7 +29,7 @@ const questions = {
     "Onko normaalia, että laitteesta kuuluu naksahduksia?",
 
   ],
-  'Kouluratsastuksen kilpailusäännöt': [
+  'Kouluratsastuksen kilpailusäännöt': [  // 3
     "Kuinka monta suoritusta sama hevonen voi korkeintaan tehdä yhtenä kilpailupäivänä kouluratsastuksessa?",
     "Mitkä ovat kolme vaihtoehtoa päähineeksi kilpailuasussa?",
     "Onko turvaliivin käyttö kilpailuasussa pakollista?",
@@ -39,17 +38,17 @@ const questions = {
     // "Minkä nimisiä ovat ohjelmissa ratsastettavat tiet?",
 
   ],
-  'Langattomat Bluetooth-kuulokkeet': [
+  'Langattomat Bluetooth-kuulokkeet': [  // 5
     "Mitä kaikkea pakkaukseen sisältyy?",
     "Kuinka suuri on kuulokkeiden toimintasäde?",
     "Kuinka kauan kuulokkeiden lataaminen yleensä kestää?",
     "Mikä on kuulokkeiden salasana, mikäli sitä tarvitaan pariliitosta muodostaessa?",
     // "Millä painikkeella voi siirtyä eteenpäin musiikissa?",
     "Miten voi mykistää mikrofonin puhelun aikana?",
-    "Kuulokkeiden ollessa latauksessa, mistä voi päätellä, että akku on täynnä?",
+    // "Kuulokkeiden ollessa latauksessa, mistä voi päätellä, että akku on täynnä?",
     // "Mikä on vialla, jos kuulokkeista kuuluu rätinää?"
   ],
-  'Liesi': [
+  'Liesi': [  // 4
     // "Kuuluuko uunin toimintoihin kiertoilma-toiminto?",
     "Voiko uunin asentaa 200 mm päähän seinästä?",
     "Kuinka monta kannatintasoa uunissa on?",
@@ -57,7 +56,7 @@ const questions = {
     "Missä lämpötilassa porsaankyljykset suositellaan paistamaan uunissa?",
 
   ],
-  'Liesituuletin': [
+  'Liesituuletin': [  // 4
     "Mille teholle liesituuletin menee käynnistettäessä (ohjauspaneeli vaihtoehto 1)?",
     // "Miten kyseisellä ohjauspaneelilla saa äänimerkin päälle?",
     // "Entä tuulettimen jälkikäynnin?",
@@ -65,7 +64,7 @@ const questions = {
     "Kuinka usein rasvasuodatin pitää puhdistaa?",
     "Laitteen valo ei pala. Millaisen hehkulampun siihen voi vaihtaa (tuotekoodi)?",
   ],
-  'Miekkailu': [
+  'Miekkailu': [  // 6
     "Mikä kolmesta miekkatyypistä (kalpa, floretti, säilä) saa olla painavin?",
     "Kuinka paljon se saa painaa?",
     "Mikä on säilä-miekkailun osuma-alue?",
@@ -75,7 +74,7 @@ const questions = {
     "Missä ajassa nämä pistot tulee suorittaa?",
     "Minkä on taistelukomento, jonka jälkeen miekkailuottelu alkaa?",
   ],
-  'Mikroaaltouuni': [
+  'Mikroaaltouuni': [  // 5
     "Miksi metalliastia on sopimaton mikroon?",
     "Mitä on tapahtunut, jos mikron näytössä palaa kolme nollaa?",
     "Mikä on suurin valittava teho?",
@@ -83,16 +82,16 @@ const questions = {
     "Mikä on mikron leveys?",
 
   ],
-  'Pöytätenniksen säännöt': [
+  'Pöytätenniksen säännöt': [  // 4
     "Mitkä ovat pöydän mitat pöytätenniksessä?",
     "Kuinka korkealle syötön kuuluu nousta pelaajan kämmenestä?",
     "Täytän maaliskuussa 15 vuotta. Saanko osallistua pelikaudella (1.7-30.6) M14-luokkaan?",
     "Kuinka monella pisteellä voittaa erän?",
     // "Mitä värirajoituksia peliasussa on?",
-    "Muutin Suomeen maaliskuussa 2018. Voinko osallistua miesten TOP-12-turnaukseen joulukuussa 2018?",
+    // "Muutin Suomeen maaliskuussa 2018. Voinko osallistua miesten TOP-12-turnaukseen joulukuussa 2018?",
 
   ],
-  'Pyykinpesukone': [
+  'Pyykinpesukone': [  // 4
     "Mikä on pyykinpesukoneen maksimitäyttömäärä?",
     "Mitä tarkoittaa virhemerkintä E40?",
     // "Saako pesukoneen kytkeä jatkojohtoon, jos se on hyvin vedeltä suojattu?",
