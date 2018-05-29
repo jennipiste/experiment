@@ -130,19 +130,25 @@ class App extends Component {
   }
 
   onEndedOKClick = (dialogListID, dialogID) => {
-    // Set close time to database
-    axios.patch("api/dialogs/" + dialogID, {is_closed: true})
-      .then(response => {
-        if (response.status === 200) {
-          // Replace old dialog with null
-          let dialogs = this.state.dialogs;
-          dialogs.splice(dialogListID, 1, null);
-          this.setState({dialogs: dialogs});
-          // Set timeout to create new dialog for that place
-          // TODO: replace with real timeout
-          setTimeout(() => this.createNewDialog(dialogListID), 10000);
-        }
-      });
+    if (this.state.activeParticipant === "testi") {
+      let dialogs = this.state.dialogs;
+      dialogs.splice(dialogListID, 1, null);
+      this.setState({dialogs: dialogs});
+    } else {
+      // Set close time to database
+      axios.patch("api/dialogs/" + dialogID, {is_closed: true})
+        .then(response => {
+          if (response.status === 200) {
+            // Replace old dialog with null
+            let dialogs = this.state.dialogs;
+            dialogs.splice(dialogListID, 1, null);
+            this.setState({dialogs: dialogs});
+            // Set timeout to create new dialog for that place
+            // TODO: replace with real timeout
+            setTimeout(() => this.createNewDialog(dialogListID), 10000);
+          }
+        });
+    }
   }
 
   onParticipantNameChange = (event) => {
@@ -187,6 +193,35 @@ class App extends Component {
     this.inputElement.focus();
   }
 
+  createTestDialogs = () => {
+    const testDialogs = [{
+      subject: "Televisio",
+      participant: "testi",
+      is_ended: false,
+      is_closed: false,
+    }, {
+      subject: "Tenniksen kilpailumääräykset",
+      participant: "testi",
+      is_ended: false,
+      is_closed: false,
+    }];
+    // Create first dialog right away
+    let dialogs = this.state.dialogs;
+    dialogs.splice(0, 1, testDialogs[0]);
+    this.setState({dialogs: dialogs});
+    // Set timeout for the second dialog
+    setTimeout(() => {
+      let dialogs = this.state.dialogs;
+      dialogs.splice(1, 1, testDialogs[1]);
+      this.setState({dialogs: dialogs});
+    }, 10000);
+  }
+
+  onTestButtonClick = () => {
+    this.setState({activeParticipant: "testi"});
+    this.createTestDialogs();
+  }
+
   render() {
     const modalProps = {
       text: 'Participant with name "' + this.state.participantName + '" already exists. Do you want to use the existing participant or create a new participant with different name?',
@@ -215,12 +250,13 @@ class App extends Component {
           </div>
         ) : (
           <div className="CreateParticipant">
-            <form onSubmit={this.createParticipant}>
-              <label>Name:
-                <input type="text" value={this.state.participantName} onChange={this.onParticipantNameChange} ref={element => this.inputElement = element} />
+            <form className="CreateParticipantForm" onSubmit={this.createParticipant}>
+              <label>Nimi:
+                <input className="ParticipantInput" type="text" value={this.state.participantName} onChange={this.onParticipantNameChange} ref={element => this.inputElement = element} />
               </label>
-              <input type="submit" value="Start" />
+              <input className="SubmitButton" type="submit" value="Aloita" />
             </form>
+            <button className="TestButton" onClick={this.onTestButtonClick}>Käynnistä testi</button>
           </div>
         )}
         {this.state.isModalOpen && <Modal {...modalProps}/>}

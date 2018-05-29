@@ -4,13 +4,14 @@ class ChatListItem extends Component {
   render() {
     return (
       <div>
-        <div className={"ChatListItem " + (this.props.isActive ? "active" : "")} onClick={event => this.props.onChatListItemClick(event, this.props.dialogIndex)} >
+        <div className={"ChatListItem" + (this.props.isActive ? " Active" : "") + (this.props.isEnded ? " Ended" : "")} onClick={event => this.props.onChatListItemClick(event, this.props.dialogIndex)} >
           {this.props.dialog ? (
             <span className="Subject">{this.props.dialog.subject}</span>
           ) : (
-            <span className="Subject">Dialog not yet started</span>
+            <span className="Subject Ended">Ei käynnissä olevaa dialogia</span>
           )}
-          {this.props.isUnread && <span className="unread">new!</span>}
+          {(this.props.isUnread && !this.props.isEnded) && <span className="Unread">new!</span>}
+          {this.props.isEnded && <span className="Ended">ended!</span>}
         </div>
       </div>
     );

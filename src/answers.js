@@ -107,17 +107,17 @@ const answers = {
   //   "Maalin kautta (vaikuttamatta kilpailun kulkuun)",
   //   "Kyllä",
   // ],
-  // 'Televisio': [
-  //   "10 Mbps",
-  //   "Asetukset -> Järjestelmä -> Asiantuntijan asetukset > Suorita Smart Hub automaattisesti",
+  'Televisio': [
+    "10 Mbps",
+    "Asetukset -> Järjestelmä -> Asiantuntijan asetukset > Suorita Smart Hub automaattisesti",
 
-  // ],
-  // 'Tenniksen kilpailumääräykset': [
-  //   "6",
-  //   "13-24",
-  //   "60 min",
-  //   "Pelipaita tennikseen tarkoitettu tekninen paita tai kauluspaita"
-  // ],
+  ],
+  'Tenniksen kilpailumääräykset': [
+    "6",
+    "13-24",
+    // "60 min",
+    // "Pelipaita tennikseen tarkoitettu tekninen paita tai kauluspaita"
+  ],
 };
 
 export default answers;

@@ -17,6 +17,16 @@ class ChatDialogList extends Component {
     };
   }
 
+  componentDidMount() {
+    if (!this.props.dialogs.lenght) {
+      this.setState({
+        dialogs: this.props.dialogs,
+      });
+    }
+    const activeDialogIndex = 0;
+    this.setState({activeDialogIndex: activeDialogIndex});
+  }
+
   componentWillReceiveProps(nextProps) {
     if (!this.props.dialogs.lenght) {
       this.setState({
@@ -60,7 +70,7 @@ class ChatDialogList extends Component {
 
   render() {
     let chats = map(this.props.dialogs, (dialog, index) => {
-      return <ChatListItem dialog={dialog} key={index} dialogIndex={index} onChatListItemClick={this.onChatListItemClick} isActive={this.state.activeDialogIndex === index} isUnread={dialog && this.state.unreadDialogs[index]}/>;
+      return <ChatListItem dialog={dialog} key={index} dialogIndex={index} onChatListItemClick={this.onChatListItemClick} isActive={this.state.activeDialogIndex === index} isUnread={dialog && this.state.unreadDialogs[index]} isEnded={dialog && dialog.is_ended}/>;
     });
     let dialogs = map(this.props.dialogs, (dialog, index) => {
       return <ChatDialog dialog={dialog} key={index} dialogIndex={index} onEndedOKClick={this.props.onEndedOKClick} isActive={this.state.activeDialogIndex === index} markDialogEnded={this.props.markDialogEnded} markDialogUnread={this.markDialogUnread} markDialogRead={this.markDialogRead} onSubjectClick={this.onSubjectClick} exp={2} />;

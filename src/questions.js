@@ -105,16 +105,16 @@ const questions = {
   //   "Mitä välineitä voi käyttää suunnistustehtävän selvittämiseen?",
   //   "Saako kilpailija ylittää rautatien suorituksen aikana?",
   // ],
-  // 'Televisio': [
-  //   "Mikä on minimi verkkoyhteyden nopeus, jotta televisio voi muodostaa internet-yhteyden?",
-  //   "Minkä valikkopolun takaa voi asettaa Smart Hubin käynnistymään automaattisesti?",
-  // ],
-  // 'Tenniksen kilpailumääräykset': [
-  //   "Kuinka montaa palloa tennisotteluissa voi korkeintaan käyttää?",
-  //   "Minkä tasoiset pelaajat pelaavat luokassa C?",
-  //   "Kuinka pitkään taukoon pelaaja on oikeutettu kahden saman luokan kaksinpelin välissä?",
-  //   "Mitä sääntöjä on pelaajan vaatetuksessa?",
-  // ],
+  'Televisio': [
+    "Mikä on minimi verkkoyhteyden nopeus, jotta televisio voi muodostaa internet-yhteyden?",
+    "Minkä valikkopolun takaa voi asettaa Smart Hubin käynnistymään automaattisesti?",
+  ],
+  'Tenniksen kilpailumääräykset': [
+    "Kuinka montaa palloa tennisotteluissa voi korkeintaan käyttää?",
+    "Minkä tasoiset pelaajat pelaavat luokassa C?",
+    // "Kuinka pitkään taukoon pelaaja on oikeutettu kahden saman luokan kaksinpelin välissä?",
+    // "Mitä sääntöjä on pelaajan vaatetuksessa?",
+  ],
 };
 
 export default questions;
