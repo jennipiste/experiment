@@ -109,7 +109,7 @@ const answers = {
   // ],
   'Televisio': [
     "10 Mbps",
-    "Asetukset -> Järjestelmä -> Asiantuntijan asetukset > Suorita Smart Hub automaattisesti",
+    "Näyttää television asetukset",
 
   ],
   'Tenniksen kilpailumääräykset': [

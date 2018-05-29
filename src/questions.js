@@ -106,7 +106,7 @@ const questions = {
   // ],
   'Televisio': [
     "Mikä on minimi verkkoyhteyden nopeus, jotta televisio voi muodostaa internet-yhteyden?",
-    "Minkä valikkopolun takaa voi asettaa Smart Hubin käynnistymään automaattisesti?",
+    "Jos kytkee USB-näppäimistön televisioon, mitä Windows-näppäin tekee?",
   ],
   'Tenniksen kilpailumääräykset': [
     "Kuinka montaa palloa tennisotteluissa voi korkeintaan käyttää?",
