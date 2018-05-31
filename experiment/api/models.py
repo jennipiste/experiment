@@ -4,8 +4,13 @@ from django.db import models
 
 
 class Participant(models.Model):
+    PARTICIPANT_GROUPS = (
+        (1, "notification1"),
+        (2, "notification2"),
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     name = models.CharField(max_length=400, unique=True)
+    group = models.IntegerField(choices=PARTICIPANT_GROUPS, null=True)
 
     def __str__(self):
         return u"name: {0}, id: {1}".format(self.name, self.id)

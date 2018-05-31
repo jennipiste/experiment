@@ -46,10 +46,13 @@ class ParticipantChatDialogListCreateAPIView(generics.ListCreateAPIView):
         return queryset.filter(participant=self.participant)
 
     def create(self, request, *args, **kwargs):
+        # Create every second participant to group 1 and every second to group 2
+        latest_group = Participant.objects.latest('created_at').group
         dialog = ChatDialog.objects.create(
             name=request.data.get('name'),
             subject=request.data.get('subject'),
             participant=self.participant,
+            group=1 if not latest_group or latest_group==2 else 2
         )
         return Response(self.get_serializer(dialog).data, status=status.HTTP_201_CREATED)
 

@@ -10,6 +10,7 @@ class ParticipantSerializer(serializers.ModelSerializer):
         fields = [
             'id',
             'name',
+            'group',
             'created_at',
         ]
 
