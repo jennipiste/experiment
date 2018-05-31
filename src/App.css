@@ -117,10 +117,6 @@ textarea, input, button, select {
   flex-direction: column;
 }
 
-.ChatDialog.Unread {
-  border: 1px solid red;
-}
-
 .ChatDialog.Ended {
   border: 1px solid grey;
 }
@@ -148,16 +144,23 @@ textarea, input, button, select {
 
 .QuestionMessage {
   align-self: flex-start;
-  margin-left: 20px;
+  margin: 10px 60px 0px 20px;
   text-align: left;
-  padding-right: 40px;
+  border-radius: 5px 5px 5px 0px;
+  background-color: grey;
+  color: white;
+}
+
+.Unread .QuestionMessage:last-of-type {
+  background-color: red;
 }
 
 .AnswerMessage {
   align-self: flex-end;
-  margin-right: 20px;
+  margin: 10px 20px 0px 60px;
   text-align: right;
-  padding-left: 40px;
+  border-radius: 5px 5px 0px 5px;
+  background-color: lightgray
 }
 
 .ChatMessage p {
