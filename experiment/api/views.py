@@ -19,14 +19,18 @@ class ParticipantListCreateAPIView(generics.ListCreateAPIView):
         # Check if participant already exists
         try:
             participant = Participant.objects.get(name=name)
+            response_status = status.HTTP_200_OK
         except Participant.DoesNotExist:
-            response = super(ParticipantListCreateAPIView, self).create(request, *args, **kwargs)
-        else:
-            serializer = self.get_serializer(participant, data=request.data, partial=False)
-            serializer.is_valid(raise_exception=True)
-            serializer.save()
-            response = Response(serializer.data, status=status.HTTP_200_OK)
-        return response
+            latest_group = Participant.objects.latest('created_at').group
+            participant = Participant.objects.create(
+                name=name,
+                group=1 if not latest_group or latest_group==2 else 2
+            )
+            response_status = status.HTTP_201_CREATED
+        serializer = self.get_serializer(participant, data=request.data, partial=False)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=response_status)
 
 
 class ParticipantChatDialogListCreateAPIView(generics.ListCreateAPIView):
@@ -47,12 +51,10 @@ class ParticipantChatDialogListCreateAPIView(generics.ListCreateAPIView):
 
     def create(self, request, *args, **kwargs):
         # Create every second participant to group 1 and every second to group 2
-        latest_group = Participant.objects.latest('created_at').group
         dialog = ChatDialog.objects.create(
             name=request.data.get('name'),
             subject=request.data.get('subject'),
             participant=self.participant,
-            group=1 if not latest_group or latest_group==2 else 2
         )
         return Response(self.get_serializer(dialog).data, status=status.HTTP_201_CREATED)
 
