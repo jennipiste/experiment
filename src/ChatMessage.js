@@ -4,7 +4,7 @@ class ChatMessage extends Component {
   render() {
     return (
       <div className={"ChatMessage " + (this.props.type === 1 ? "QuestionMessage" : "AnswerMessage")}>
-        <p >{this.props.message}</p>
+        <p>{this.props.message}</p>
       </div>
     );
   }

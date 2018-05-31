@@ -3,11 +3,9 @@ import { Route } from 'react-router-dom';
 import axios from'axios';
 import axiosDefaults from 'axios/lib/defaults';
 import nth from 'lodash/nth';
-import filter from 'lodash/filter';
 import ChatDialogGrid from './ChatDialogGrid';
 import ChatDialogList from './ChatDialogList';
 import Modal from './Modal';
-import questions from './questions';
 import './App.css';
 
 axiosDefaults.baseURL = 'http://localhost:8000';
@@ -19,21 +17,25 @@ class App extends Component {
     this.state = {
       dialogIndex: 1,
       dialogs: [null, null, null, null],
-      openDialogsCount: 0,
       subjectIndex: 0,
       participantName: "",
       participantResponse: null,
       activeParticipant: null,
-      isModalOpen: false,
+      isParticipantModalOpen: false,
+      isChangeExpModalOpen: false,
+      experimentPart: 1,
+      experimentUI: null,
     };
 
-    this.subjects = [
+    this.firstSubjects = [
       'Astianpesukone',
       'Cheerleadingin kilpailusäännöt',
       'Jääkaappi',
       'Kouluratsastuksen kilpailusäännöt',
       'Langattomat Bluetooth-kuulokkeet',
       'Liesi',
+    ];
+    this.secondSubjects = [
       'Liesituuletin',
       'Miekkailu',
       'Mikroaaltouuni',
@@ -47,6 +49,7 @@ class App extends Component {
     ];
 
     this.inputElement = null;
+    this.timeouts = [];
   }
 
   componentDidMount() {
@@ -64,64 +67,97 @@ class App extends Component {
     }
   }
 
-  initParticipantDialogs = () => {
-    axios.get("api/participants/" + this.state.activeParticipant.id + "/dialogs")
-      .then(response => {
-        const dialogs = response.data;
-        if (dialogs.length) {
-          this.setState({
-            dialogs: dialogs,
-            openDialogsCount: filter(dialogs, (dialog) => !dialog.is_ended).length,
-          });
-        } else {
-          this.createInitialDialogs();
-        }
-      });
+  clearTimeouts = () => {
+    this.timeouts.forEach(timeout => {
+      clearTimeout(timeout);
+    });
+    this.timeouts = [];
+  }
+
+  changeExperiment = () => {
+    this.setState({isChangeExpModalOpen: true});
+    this.clearTimeouts();
+    this.endChatDialogs();
+  }
+
+  finishExperiment = () => {
+    this.setState({isFinishExpModalOpen: true});
+    this.clearTimeouts();
+    this.endChatDialogs();
+  }
+
+  endChatDialog = (dialog) => {
+    console.log("end chat dialog");
+    axios.patch("api/dialogs/" + dialog.id, {is_ended: true});
+  }
+
+  endChatDialogs = () => {
+    console.log("end dialogs");
+    this.state.dialogs.forEach((dialog, index) => {
+      if (dialog) {
+        this.endChatDialog(dialog);
+        this.markDialogEnded(index);
+      }
+    });
+  }
+
+  startFirstPart = () => {
+    console.log("this.state.activeParticipant", this.state.activeParticipant);
+    this.setState({
+      experimentUI: this.state.activeParticipant.group,
+    }, () => {
+      this.expTimeout = setTimeout(() => this.changeExperiment(), 20000);
+      this.createInitialDialogs();
+    });
+  }
+
+  startSecondPart = () => {
+    this.setState((prevState) => {
+      return {
+        dialogs: [null, null, null, null],
+        isChangeExpModalOpen: false,
+        experimentPart: 2,
+        experimentUI: prevState.experimentUI === 1 ? 2 : 1,
+      };
+    }, () => {
+      this.createInitialDialogs();
+      this.expTimeout = setTimeout(() => this.finishExperiment(), 20000);
+    });
   }
 
   createInitialDialogs = () => {
     // Create 4 dialogs, first dialog right away, others with timeouts
     this.createNewDialog(0);
-    setTimeout(() => this.createNewDialog(1), 11579.39);
-    setTimeout(() => this.createNewDialog(2), 35353.783);
-    setTimeout(() => this.createNewDialog(3), 74118.54);
-  }
-
-  sendSystemMessage = (dialogID, message) => {
-    return axios.post("api/dialogs/" + dialogID + "/messages", {message: message});
+    this.timeouts.push(setTimeout(() => this.createNewDialog(1), 11579.39));
+    this.timeouts.push(setTimeout(() => this.createNewDialog(2), 35353.783));
+    this.timeouts.push(setTimeout(() => this.createNewDialog(3), 74118.54));
   }
 
   createNewDialog = (oldDialogListID) => {
+    const subjects = this.state.experimentPart === 1 ? this.firstSubjects : this.secondSubjects;
     let dialogs = this.state.dialogs;
     let dialogIndex = this.state.dialogIndex;
     let subjectIndex = this.state.subjectIndex;
-    let openDialogsCount = this.state.openDialogsCount;
     axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs',
       {
         name: "Dialog " + dialogIndex,
-        subject: nth(this.subjects, subjectIndex),
+        subject: nth(subjects, subjectIndex),
       }
     ).then(response => {
-      // Send first message to the dialog
-      let message = questions[response.data.subject][0];
-      this.sendSystemMessage(response.data.id, message)
-        .then(() => {
-          // Replace old dialog with the new one
-          dialogs.splice(oldDialogListID, 1, response.data);
-          dialogIndex++;
-          subjectIndex++;
-          openDialogsCount++;
-          this.setState({
-            dialogs: dialogs,
-            dialogIndex: dialogIndex,
-            subjectIndex: subjectIndex,
-            openDialogsCount: openDialogsCount,
-          });
-        });
+      // Replace old dialog with the new one
+      dialogs.splice(oldDialogListID, 1, response.data);
+      dialogIndex++;
+      subjectIndex++;
+      this.setState({
+        dialogs: dialogs,
+        dialogIndex: dialogIndex,
+        subjectIndex: subjectIndex,
+      });
     });
   }
 
   markDialogEnded = (dialogListID) => {
+    console.log("mark dialog ended", dialogListID);
     let dialogs = this.state.dialogs;
     let dialog = dialogs[dialogListID];
     dialog.is_ended = true;
@@ -145,7 +181,7 @@ class App extends Component {
             this.setState({dialogs: dialogs});
             // Set timeout to create new dialog for that place
             // TODO: replace with real timeout
-            setTimeout(() => this.createNewDialog(dialogListID), 10000);
+            this.timeouts.push(setTimeout(() => this.createNewDialog(dialogListID), 10000));
           }
         });
     }
@@ -163,11 +199,11 @@ class App extends Component {
           this.setState({
             activeParticipant: response.data,
             participantName: "",
-          }, this.initParticipantDialogs);
+          }, this.startFirstPart);
         } else if (response.status === 200) {
           // If participant already exists, show modal
           this.setState({
-            isModalOpen: true,
+            isParticipantModalOpen: true,
             participantResponse: response.data,
           });
         }
@@ -180,15 +216,15 @@ class App extends Component {
         activeParticipant: prevState.participantResponse,
         participantName: "",
         participantResponse: null,
-        isModalOpen: false,
+        isParticipantModalOpen: false,
       };
-    }, this.initParticipantDialogs);
+    }, this.startFirstPart);
   }
 
   onCreateNewParticipant = () => {
     this.setState({
       participantResponse: null,
-      isModalOpen: false,
+      isParticipantModalOpen: false,
     });
     this.inputElement.focus();
   }
@@ -199,22 +235,24 @@ class App extends Component {
       participant: "testi",
       is_ended: false,
       is_closed: false,
+      created_at: new Date(),
     }, {
       subject: "Tenniksen kilpailumääräykset",
       participant: "testi",
       is_ended: false,
       is_closed: false,
+      created_at: new Date(),
     }];
     // Create first dialog right away
     let dialogs = this.state.dialogs;
     dialogs.splice(0, 1, testDialogs[0]);
     this.setState({dialogs: dialogs});
     // Set timeout for the second dialog
-    setTimeout(() => {
+    this.timeouts.push(setTimeout(() => {
       let dialogs = this.state.dialogs;
       dialogs.splice(1, 1, testDialogs[1]);
       this.setState({dialogs: dialogs});
-    }, 10000);
+    }, 10000));
   }
 
   onTestButtonClick = () => {
@@ -223,7 +261,7 @@ class App extends Component {
   }
 
   render() {
-    const modalProps = {
+    const participantModalProps = {
       text: 'Participant with name "' + this.state.participantName + '" already exists. Do you want to use the existing participant or create a new participant with different name?',
       actions: [
         {
@@ -237,16 +275,30 @@ class App extends Component {
       ]
     };
 
+    const changeExpModalProps = {
+      text: 'First part of the experiment is now over! Have a 5 minutes break.',
+      actions: [
+        {
+          text: "Start second part",
+          onClick: this.startSecondPart,
+        }
+      ]
+    };
+
+    const finishExpModalProps = {
+      text: 'Experiment over!!!!',
+      actions: []
+    };
+
     return (
       <div className="App">
-        {/* <header className="App-header">
-          <h1 className="App-title">Chat multitasking experiment</h1>
-          {this.state.activeParticipant && <p className="App-intro">{"Welcome " + this.state.activeParticipant.name + "! "}Let's test how many chats you can handle</p>}
-        </header> */}
-        {this.state.activeParticipant ? (
+        {this.state.activeParticipant && this.state.experimentUI ? (
           <div className="AppContent">
-            <Route path="/exp1" render={() => <ChatDialogGrid dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onCloseButtonClick={this.onCloseButtonClick} />} />
-            <Route path="/exp2" render={() => <ChatDialogList dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onCloseButtonClick={this.onCloseButtonClick} />} />
+            {this.state.experimentUI === 1 ? (
+              <ChatDialogGrid dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onCloseButtonClick={this.onCloseButtonClick} />
+            ) : (
+              <ChatDialogList dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onCloseButtonClick={this.onCloseButtonClick} />
+            )}
           </div>
         ) : (
           <div className="CreateParticipant">
@@ -261,7 +313,9 @@ class App extends Component {
             </form>
           </div>
         )}
-        {this.state.isModalOpen && <Modal {...modalProps}/>}
+        {this.state.isParticipantModalOpen && <Modal {...participantModalProps}/>}
+        {this.state.isChangeExpModalOpen && <Modal {...changeExpModalProps}/>}
+        {this.state.isFinishExpModalOpen && <Modal {...finishExpModalProps}/>}
       </div>
     );
   }

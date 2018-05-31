@@ -13,58 +13,70 @@ class ChatDialog extends Component {
     this.state = {
       composedMessage: "",
       messages: [],
-      unread: true,  // At first they all are unread
-      isEnded: this.props.dialog ? this.props.dialog.is_ended : false,
-      questionIndex: 1,  // Start from the second question, first is already sent
-      activeElement: null,
+      isUnread: false,
+      isEnded: false,
+      questionIndex: 0,
+      questionWaitTime: null,
     };
 
     this.textareaElement = null;
     this.pdf = this.props.dialog ? require("./manuals/" + this.props.dialog.subject + ".pdf") : null;
     this.questionTimeout = null;
+    this.timer = null;
   }
 
   componentDidMount() {
     this.initMessages();
-    if (this.props.exp === 2) {
-      this.props.markDialogUnread(this.props.dialogIndex);  // Dialogs are unread at the beginning
-    }
   }
 
   componentWillReceiveProps(nextProps) {
-    this.pdf = nextProps.dialog ? require("./manuals/" + nextProps.dialog.subject + ".pdf") : null;
+    if (nextProps.dialog && nextProps.dialog.is_ended) {
+      this.setState({
+        isEnded: true,
+      });
+      clearTimeout(this.questionTimeout);
+      clearInterval(this.timer);
+    }
     if (nextProps.dialog !== this.props.dialog) {
+      this.pdf = nextProps.dialog ? require("./manuals/" + nextProps.dialog.subject + ".pdf") : null;
       this.initMessages(nextProps);
-      if (this.props.exp === 2) {
-        this.props.markDialogUnread(this.props.dialogIndex);
-      }
     }
   }
 
   componentWillUnmount() {
     clearTimeout(this.questionTimeout);
+    clearInterval(this.timer);
+  }
+
+  increaseWaitTime = (createdAT) => {
+    const start = new Date(createdAT);
+    this.setState({questionWaitTime: new Date() - start});
   }
 
   initMessages = (props=this.props) => {  // props can be either nextProps or this.props
-    if (props.dialog) {
+    const dialog = props.dialog;
+    if (dialog) {
       if (props.dialog.participant === "testi") {
         this.initTestMessages(props);
       } else {
-        axios.get("api/participants/" + props.dialog.participant + "/dialogs/" + props.dialog.id + "/messages")
-          .then(response => {
-            this.setState({
-              messages: response.data,
-              unread: response.data.length && response.data.slice(-1)[0].type === 1,
-              isEnded: props.dialog ? props.dialog.is_ended : false,
-              questionIndex: 1,
-            }, () => {
-              if (this.props.exp === 2 && props.isActive) {
-                if (this.textareaElement) {
-                  this.textareaElement.focus();
-                }
-              }
-            });
-          });
+        this.setState({
+          messages: [],
+          isEnded: dialog.is_ended,
+          isUnread: false,
+          questionWaitTime: null,
+        });
+        console.log("SHOULD SEND FIRST MESSAGE");
+        // Send the first message
+        const firstQuestion = questions[dialog.subject][0];
+        this.sendSystemMessage(firstQuestion, dialog);
+        this.setState({
+          questionIndex: 1
+        });
+        if (props.exp === 2 && props.isActive) {
+          if (this.textareaElement) {
+            this.textareaElement.focus();
+          }
+        }
       }
     }
   }
@@ -72,7 +84,8 @@ class ChatDialog extends Component {
   initTestMessages = (props) => {
     const firstMessage = {
       message: questions[props.dialog.subject][0],
-      type: 1
+      type: 1,
+      created_at: new Date(),
     };
 
     let messages = this.state.messages;
@@ -80,9 +93,10 @@ class ChatDialog extends Component {
     this.setState({
       messages: messages,
       questionIndex: 1,
-      unread: true,
+      isUnread: true,
       isEnded: false,
     });
+    this.timer = setInterval(() => this.increaseWaitTime(firstMessage.created_at), 50);
   }
 
   onTextareaValueChange = (target) => {
@@ -97,18 +111,15 @@ class ChatDialog extends Component {
     }
   }
 
-  clearTextarea = () => {
-    this.textareaElement.value = "";
-  }
-
   updateMessages = (newMessage) => {
+    console.log("update messages");
     this.setState((prevState) => {
       const messages = prevState.messages;
       messages.push(newMessage);
       return {
         messages: messages,
         composedMessage: newMessage.type === 1 ? prevState.composedMessage : "",
-        unread: newMessage.type === 1 ? true : false,
+        isUnread: newMessage.type === 1 ? true : false,
       };
     }, () => {
       // For experiment 2, mark dialog read or unread
@@ -121,14 +132,13 @@ class ChatDialog extends Component {
       }
       // Set timeout for next question only after user's first message
       const previousMessageIndex = this.state.messages.length - 2;
-      if (this.state.messages[previousMessageIndex].type === 1) {
+      if (previousMessageIndex >= 0 && this.state.messages[previousMessageIndex].type === 1) {
         if (this.props.dialog.participant === "testi") {
           this.setTimeoutForNewTestQuestion();
         } else {
           this.setTimeoutForNewQuestion();
         }
       }
-      this.clearTextarea();
     });
   }
 
@@ -136,12 +146,14 @@ class ChatDialog extends Component {
     if (this.state.composedMessage.length) {
       const composedMessage = this.state.composedMessage;
       if (this.props.dialog.participant === "testi") {
+        // Set the message to state
         const newMessage = {
           message: composedMessage,
           type: 2,
         };
         this.updateMessages(newMessage);
       } else {
+        // Post new message
         axios.post("api/participants/" + this.props.dialog.participant + "/dialogs/" + this.props.dialog.id + "/messages", {message: composedMessage})
           .then(response => {
             if (response.status === 201) {
@@ -149,8 +161,11 @@ class ChatDialog extends Component {
             }
           });
       }
+      clearInterval(this.timer);
+      this.setState({questionWaitTime: null});
     }
     if (this.textareaElement) {
+      this.textareaElement.value = "";
       this.textareaElement.focus();
     }
   }
@@ -169,8 +184,10 @@ class ChatDialog extends Component {
           const newMessage = {
             message: nextQuestion,
             type: 1,
+            created_at: new Date(),
           };
           this.updateMessages(newMessage);
+          this.timer = setInterval(() => this.increaseWaitTime(newMessage.created_at), 50);
         }, 8000);
         questionIndex++;
         return {
@@ -185,6 +202,7 @@ class ChatDialog extends Component {
   setTimeoutForNewQuestion = () => {
     this.setState((prevState) => {
       let questionIndex = prevState.questionIndex;
+      console.log("questionIndex", questionIndex, "for dialogIndex", this.props.dialogIndex);
       // If there are questions left for the subject, set timeout for next
       if (questions[this.props.dialog.subject][questionIndex]) {
         const nextQuestion = questions[this.props.dialog.subject][questionIndex];
@@ -203,11 +221,12 @@ class ChatDialog extends Component {
     });
   }
 
-  sendSystemMessage = (message) => {
-    axios.post("api/dialogs/" + this.props.dialog.id + "/messages", {message: message})
+  sendSystemMessage = (message, dialog=this.props.dialog) => {
+    axios.post("api/dialogs/" + dialog.id + "/messages", {message: message})
       .then(response => {
         if (response.status === 201) {
           this.updateMessages(response.data);
+          this.timer = setInterval(() => this.increaseWaitTime(response.data.created_at), 50);
         }
       });
   }
@@ -229,7 +248,12 @@ class ChatDialog extends Component {
           // Clear question timeout and set dialog ended
           clearTimeout(this.questionTimeout);
           this.questionTimeout = null;
-          this.setState({isEnded: true});
+          clearInterval(this.timer);
+          this.timer = null;
+          this.setState({
+            isEnded: true,
+            questionWaitTime: null,
+          });
           if (this.props.exp === 2) {
             // Mark dialog unread because user has to know that is has eneded
             this.props.markDialogEnded(this.props.dialogIndex);
@@ -248,6 +272,7 @@ class ChatDialog extends Component {
     const sendButtonProps = {
       onClick: event => this.sendMessage(event),
     };
+    let waitTime = (this.state.questionWaitTime / 1000).toFixed(0);
     return (
       <div className={"Dialog" + (this.props.exp === 1 ? " Exp1" : " Exp2") + (this.props.isActive ? " Active" : " Inactive")}>
         {!this.props.dialog &&
@@ -261,16 +286,17 @@ class ChatDialog extends Component {
           </div>
         }
         {!this.state.isEnded && this.props.dialog !== null &&
-          <div className={"ChatDialog" + (this.state.unread ? " Unread" : "")}>
+          <div className={"ChatDialog" + (this.state.isUnread ? " Unread" : "")}>
             <a className="Subject" href={this.pdf} onClick={(event) => this.props.onSubjectClick(event, this.props.dialog.subject)}>{this.props.dialog.subject}</a>
+            {this.state.isUnread && this.state.questionWaitTime && <span>{waitTime}</span>}
             <ChatMessageList messages={this.state.messages} />
             <ChatDialogFooter>
               <textarea className="MessageTextarea" {...textareaProps} ref={element => this.textareaElement = element} autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck="false" />
               <button className="SendButton" {...sendButtonProps}>Lähetä</button>
             </ChatDialogFooter>
             {/* for debugging purposes */}
-            {/* <button onClick={() => this.sendSystemMessage("system message")}>system message</button>
-            <button onClick={() => this.endChatDialog()}>end dialog</button> */}
+            <button onClick={() => this.sendSystemMessage("system message")}>system message</button>
+            <button onClick={() => this.endChatDialog()}>end dialog</button>
           </div>
         }
       </div>
