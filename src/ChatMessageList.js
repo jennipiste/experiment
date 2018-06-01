@@ -13,14 +13,17 @@ class ChatMessageList extends Component {
   }
 
   scrollToBottom = () => {
+    console.log("scroll")
     const scrollableHeight = this.listElement.scrollHeight - this.listElement.clientHeight;
     if (this.listElement.scrollTop !== scrollableHeight) {
       this.listElement.scrollTop = scrollableHeight;
     }
   }
 
-  componentDidUpdate() {
-    this.scrollToBottom();
+  componentWillUpdate(nextProps) {
+    if (nextProps.messages !== this.props.messages) {
+      this.scrollToBottom();
+    }
   }
 
   render() {

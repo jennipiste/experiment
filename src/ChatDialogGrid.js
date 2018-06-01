@@ -28,7 +28,17 @@ class ChatDialogGrid extends Component {
 
   render() {
     let dialogs = map(this.props.dialogs, (dialog, index) => {
-      return <ChatDialog dialog={dialog} key={index} dialogIndex={index} markDialogEnded={this.props.markDialogEnded} onCloseButtonClick={this.props.onCloseButtonClick} isActive={true} exp={1} onSubjectClick={this.onSubjectClick} />;
+      return <ChatDialog
+        participant={this.props.participant}
+        exp={1}
+        key={index}
+        dialog={dialog}
+        dialogIndex={index}
+        isActive={true}
+        markDialogEnded={this.props.markDialogEnded}
+        onSubjectClick={this.onSubjectClick}
+        onCloseButtonClick={this.props.onCloseButtonClick}
+      />;
     });
 
     return (

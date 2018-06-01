@@ -56,7 +56,7 @@ class ChatDialog extends Component {
   initMessages = (props=this.props) => {  // props can be either nextProps or this.props
     const dialog = props.dialog;
     if (dialog) {
-      if (props.dialog.participant === "testi") {
+      if (props.participant.name === "testi") {
         this.initTestMessages(props);
       } else {
         this.setState({
@@ -133,7 +133,7 @@ class ChatDialog extends Component {
       // Set timeout for next question only after user's first message
       const previousMessageIndex = this.state.messages.length - 2;
       if (previousMessageIndex >= 0 && this.state.messages[previousMessageIndex].type === 1) {
-        if (this.props.dialog.participant === "testi") {
+        if (this.props.participant.name === "testi") {
           this.setTimeoutForNewTestQuestion();
         } else {
           this.setTimeoutForNewQuestion();
@@ -145,7 +145,7 @@ class ChatDialog extends Component {
   sendMessage = () => {
     if (this.state.composedMessage.length) {
       const composedMessage = this.state.composedMessage;
-      if (this.props.dialog.participant === "testi") {
+      if (this.props.participant.name === "testi") {
         // Set the message to state
         const newMessage = {
           message: composedMessage,
@@ -154,7 +154,7 @@ class ChatDialog extends Component {
         this.updateMessages(newMessage);
       } else {
         // Post new message
-        axios.post("api/participants/" + this.props.dialog.participant + "/dialogs/" + this.props.dialog.id + "/messages", {message: composedMessage})
+        axios.post("api/participants/" + this.props.participant.id + "/dialogs/" + this.props.dialog.id + "/messages", {message: composedMessage})
           .then(response => {
             if (response.status === 201) {
               this.updateMessages(response.data);
@@ -274,7 +274,7 @@ class ChatDialog extends Component {
     };
     let waitTime = (this.state.questionWaitTime / 1000).toFixed(0);
     return (
-      <div className={"Dialog" + (this.props.exp === 1 ? " Exp1" : " Exp2") + (this.props.isActive ? " Active" : " Inactive")}>
+      <div className={"Dialog" + (this.props.isActive ? " Active" : " Inactive")}>
         {!this.props.dialog &&
           <div className="ChatDialog"></div>
         }
@@ -286,7 +286,7 @@ class ChatDialog extends Component {
           </div>
         }
         {!this.state.isEnded && this.props.dialog !== null &&
-          <div className={"ChatDialog" + (this.state.isUnread ? " Unread" : "")}>
+          <div className={"ChatDialog" + (this.state.isUnread ? " Unread" : "") + (this.props.participant.group === 1 ? " Notification1" : " Notification2")}>
             <a className="Subject" href={this.pdf} onClick={(event) => this.props.onSubjectClick(event, this.props.dialog.subject)}>{this.props.dialog.subject}</a>
             {this.state.isUnread && this.state.questionWaitTime && <span>{waitTime}</span>}
             <ChatMessageList messages={this.state.messages} />

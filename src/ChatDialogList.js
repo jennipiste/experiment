@@ -70,10 +70,30 @@ class ChatDialogList extends Component {
 
   render() {
     let chats = map(this.props.dialogs, (dialog, index) => {
-      return <ChatListItem dialog={dialog} key={index} dialogIndex={index} onChatListItemClick={this.onChatListItemClick} isActive={this.state.activeDialogIndex === index} isUnread={dialog && this.state.unreadDialogs[index]} isEnded={dialog && dialog.is_ended}/>;
+      return <ChatListItem
+        key={index}
+        dialog={dialog}
+        dialogIndex={index}
+        isActive={this.state.activeDialogIndex === index}
+        isUnread={dialog && this.state.unreadDialogs[index]}
+        isEnded={dialog && dialog.is_ended}
+        onChatListItemClick={this.onChatListItemClick}
+      />;
     });
     let dialogs = map(this.props.dialogs, (dialog, index) => {
-      return <ChatDialog dialog={dialog} key={index} dialogIndex={index} onCloseButtonClick={this.props.onCloseButtonClick} isActive={this.state.activeDialogIndex === index} markDialogEnded={this.props.markDialogEnded} markDialogUnread={this.markDialogUnread} markDialogRead={this.markDialogRead} onSubjectClick={this.onSubjectClick} exp={2} />;
+      return <ChatDialog
+        participant={this.props.participant}
+        exp={2}
+        key={index}
+        dialog={dialog}
+        dialogIndex={index}
+        isActive={this.state.activeDialogIndex === index}
+        markDialogEnded={this.props.markDialogEnded}
+        markDialogUnread={this.markDialogUnread}
+        markDialogRead={this.markDialogRead}
+        onSubjectClick={this.onSubjectClick}
+        onCloseButtonClick={this.props.onCloseButtonClick}
+      />;
     });
 
     return (

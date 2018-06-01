@@ -1,5 +1,4 @@
 import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
-import { Route } from 'react-router-dom';
 import axios from'axios';
 import axiosDefaults from 'axios/lib/defaults';
 import nth from 'lodash/nth';
@@ -15,16 +14,17 @@ class App extends Component {
     super(props);
 
     this.state = {
-      dialogIndex: 1,
       dialogs: [null, null, null, null],
+      dialogIndex: 1,
       subjectIndex: 0,
       participantName: "",
       participantResponse: null,
       activeParticipant: null,
-      isParticipantModalOpen: false,
-      isChangeExpModalOpen: false,
       experimentPart: 1,
       experimentUI: null,
+      isParticipantModalOpen: false,
+      isChangeExpModalOpen: false,
+      isFinishExpModalOpen: false,
     };
 
     this.firstSubjects = [
@@ -86,6 +86,22 @@ class App extends Component {
     this.endChatDialogs();
   }
 
+  closeExperiment = () => {
+    this.setState({
+      dialogs: [null, null, null, null],
+      dialogIndex: 1,
+      subjectIndex: 0,
+      participantName: "",
+      participantResponse: null,
+      activeParticipant: null,
+      experimentPart: 1,
+      experimentUI: null,
+      isParticipantModalOpen: false,
+      isChangeExpModalOpen: false,
+      isFinishExpModalOpen: false,
+    });
+  }
+
   endChatDialog = (dialog) => {
     console.log("end chat dialog");
     axios.patch("api/dialogs/" + dialog.id, {is_ended: true});
@@ -104,9 +120,10 @@ class App extends Component {
   startFirstPart = () => {
     console.log("this.state.activeParticipant", this.state.activeParticipant);
     this.setState({
-      experimentUI: this.state.activeParticipant.group,
+      experimentUI: this.state.activeParticipant.first_ui,
     }, () => {
-      this.expTimeout = setTimeout(() => this.changeExperiment(), 20000);
+      // End first part after 10 minutes
+      this.expTimeout = setTimeout(() => this.changeExperiment(), 600000);
       this.createInitialDialogs();
     });
   }
@@ -166,7 +183,7 @@ class App extends Component {
   }
 
   onCloseButtonClick = (dialogListID, dialogID) => {
-    if (this.state.activeParticipant === "testi") {
+    if (this.state.activeParticipant.name === "testi") {
       let dialogs = this.state.dialogs;
       dialogs.splice(dialogListID, 1, null);
       this.setState({dialogs: dialogs});
@@ -230,15 +247,16 @@ class App extends Component {
   }
 
   createTestDialogs = () => {
+    console.log("create test dialogs");
     const testDialogs = [{
       subject: "Televisio",
-      participant: "testi",
+      participant: this.state.activeParticipant,
       is_ended: false,
       is_closed: false,
       created_at: new Date(),
     }, {
       subject: "Tenniksen kilpailumääräykset",
-      participant: "testi",
+      participant: this.state.activeParticipant,
       is_ended: false,
       is_closed: false,
       created_at: new Date(),
@@ -256,7 +274,16 @@ class App extends Component {
   }
 
   onTestButtonClick = () => {
-    this.setState({activeParticipant: "testi"});
+    console.log("test button click");
+    const testParticipant = {
+      name: "testi",
+      group: 1,
+      first_ui: 1,
+    };
+    this.setState({
+      activeParticipant: testParticipant,
+      experimentUI: 1,
+    });
     this.createTestDialogs();
   }
 
@@ -287,7 +314,12 @@ class App extends Component {
 
     const finishExpModalProps = {
       text: 'Experiment over!!!!',
-      actions: []
+      actions: [
+        {
+          text: "OK",
+          onClick: this.closeExperiment,
+        }
+      ]
     };
 
     return (
@@ -295,9 +327,9 @@ class App extends Component {
         {this.state.activeParticipant && this.state.experimentUI ? (
           <div className="AppContent">
             {this.state.experimentUI === 1 ? (
-              <ChatDialogGrid dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onCloseButtonClick={this.onCloseButtonClick} />
+              <ChatDialogGrid dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onCloseButtonClick={this.onCloseButtonClick} participant={this.state.activeParticipant}/>
             ) : (
-              <ChatDialogList dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onCloseButtonClick={this.onCloseButtonClick} />
+              <ChatDialogList dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onCloseButtonClick={this.onCloseButtonClick} participant={this.state.activeParticipant}/>
             )}
           </div>
         ) : (
@@ -306,9 +338,8 @@ class App extends Component {
             <button className="TestButton" onClick={this.onTestButtonClick}>Käynnistä testi</button>
             <p>Testin jälkeen voit siirtyä varsinaiseen kokeeseen kirjoittamalla nimesi ja painamalla 'Aloita'.</p>
             <form className="CreateParticipantForm" onSubmit={this.createParticipant}>
-              <label>Nimi:
-                <input className="ParticipantInput" type="text" value={this.state.participantName} onChange={this.onParticipantNameChange} ref={element => this.inputElement = element} />
-              </label>
+              <label>Nimi:</label>
+              <input className="ParticipantInput" type="text" value={this.state.participantName} onChange={this.onParticipantNameChange} ref={element => this.inputElement = element} />
               <input className="SubmitButton" type="submit" value="Aloita" />
             </form>
           </div>
