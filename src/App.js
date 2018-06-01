@@ -103,12 +103,10 @@ class App extends Component {
   }
 
   endChatDialog = (dialog) => {
-    console.log("end chat dialog");
     axios.patch("api/dialogs/" + dialog.id, {is_ended: true});
   }
 
   endChatDialogs = () => {
-    console.log("end dialogs");
     this.state.dialogs.forEach((dialog, index) => {
       if (dialog) {
         this.endChatDialog(dialog);
@@ -118,7 +116,6 @@ class App extends Component {
   }
 
   startFirstPart = () => {
-    console.log("this.state.activeParticipant", this.state.activeParticipant);
     this.setState({
       experimentUI: this.state.activeParticipant.first_ui,
     }, () => {
@@ -155,26 +152,27 @@ class App extends Component {
     let dialogs = this.state.dialogs;
     let dialogIndex = this.state.dialogIndex;
     let subjectIndex = this.state.subjectIndex;
-    axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs',
-      {
-        name: "Dialog " + dialogIndex,
-        subject: nth(subjects, subjectIndex),
-      }
-    ).then(response => {
-      // Replace old dialog with the new one
-      dialogs.splice(oldDialogListID, 1, response.data);
-      dialogIndex++;
-      subjectIndex++;
-      this.setState({
-        dialogs: dialogs,
-        dialogIndex: dialogIndex,
-        subjectIndex: subjectIndex,
+    if (subjects[subjectIndex]) {
+      axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs',
+        {
+          name: "Dialog " + dialogIndex,
+          subject: nth(subjects, subjectIndex),
+        }
+      ).then(response => {
+        // Replace old dialog with the new one
+        dialogs.splice(oldDialogListID, 1, response.data);
+        dialogIndex++;
+        subjectIndex++;
+        this.setState({
+          dialogs: dialogs,
+          dialogIndex: dialogIndex,
+          subjectIndex: subjectIndex,
+        });
       });
-    });
+    }
   }
 
   markDialogEnded = (dialogListID) => {
-    console.log("mark dialog ended", dialogListID);
     let dialogs = this.state.dialogs;
     let dialog = dialogs[dialogListID];
     dialog.is_ended = true;
@@ -247,7 +245,6 @@ class App extends Component {
   }
 
   createTestDialogs = () => {
-    console.log("create test dialogs");
     const testDialogs = [{
       subject: "Televisio",
       participant: this.state.activeParticipant,
@@ -274,7 +271,6 @@ class App extends Component {
   }
 
   onTestButtonClick = () => {
-    console.log("test button click");
     const testParticipant = {
       name: "testi",
       group: 1,

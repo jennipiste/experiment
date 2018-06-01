@@ -149,7 +149,7 @@ textarea, input, button, select {
 
 .QuestionMessage {
   align-self: flex-start;
-  margin: 10px 60px 0px 20px;
+  margin: 10px 60px 0px 15px;
   text-align: left;
   border-radius: 5px 5px 5px 0px;
   background-color: grey;
@@ -166,7 +166,7 @@ textarea, input, button, select {
 
 .AnswerMessage {
   align-self: flex-end;
-  margin: 10px 20px 0px 60px;
+  margin: 10px 15px 0px 60px;
   text-align: right;
   border-radius: 5px 5px 0px 5px;
   background-color: lightgray
@@ -180,7 +180,7 @@ textarea, input, button, select {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  margin: 10px;
+  margin: 15px;
 }
 
 .SendButton {
