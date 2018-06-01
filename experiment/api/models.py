@@ -8,12 +8,19 @@ class Participant(models.Model):
         (1, "notification1"),
         (2, "notification2"),
     )
+    EXPERIMENT_UIS = (
+        (1, "UI1"),
+        (2, "UI2"),
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     name = models.CharField(max_length=400, unique=True)
+    # Which notification type is shown
     group = models.IntegerField(choices=PARTICIPANT_GROUPS, null=True)
+    # Which UI is shown first
+    first_ui = models.IntegerField(choices=EXPERIMENT_UIS, null=True)
 
     def __str__(self):
-        return u"name: {0}, id: {1}".format(self.name, self.id)
+        return u"name: {0}, id: {1}, group={2}".format(self.name, self.id, self.group)
 
 
 class ChatDialog(models.Model):

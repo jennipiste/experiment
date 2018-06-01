@@ -11,6 +11,7 @@ class ParticipantSerializer(serializers.ModelSerializer):
             'id',
             'name',
             'group',
+            'first_ui',
             'created_at',
         ]
 

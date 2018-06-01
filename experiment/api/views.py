@@ -21,10 +21,16 @@ class ParticipantListCreateAPIView(generics.ListCreateAPIView):
             participant = Participant.objects.get(name=name)
             response_status = status.HTTP_200_OK
         except Participant.DoesNotExist:
+            # Create every second participant to group 1 and every second to group 2 (notification type)
             latest_group = Participant.objects.latest('created_at').group
+            group = 1 if not latest_group or latest_group == 2 else 2
+            # Every second participant in both groups is starting with UI 1 and every second with UI 2
+            latest_ui_in_group = Participant.objects.filter(group=group).latest('created_at').first_ui
+            first_ui = 1 if not latest_ui_in_group or latest_ui_in_group == 2 else 2
             participant = Participant.objects.create(
                 name=name,
-                group=1 if not latest_group or latest_group==2 else 2
+                group=group,
+                first_ui=first_ui,
             )
             response_status = status.HTTP_201_CREATED
         serializer = self.get_serializer(participant, data=request.data, partial=False)
@@ -50,7 +56,6 @@ class ParticipantChatDialogListCreateAPIView(generics.ListCreateAPIView):
         return queryset.filter(participant=self.participant)
 
     def create(self, request, *args, **kwargs):
-        # Create every second participant to group 1 and every second to group 2
         dialog = ChatDialog.objects.create(
             name=request.data.get('name'),
             subject=request.data.get('subject'),
