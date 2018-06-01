@@ -37,6 +37,7 @@ textarea, input, button, select {
 
 .CreateParticipantForm .SubmitButton {
   margin-left: 10px;
+  align-self: center;
 }
 
 .CreateParticipantForm .ParticipantInput {
@@ -69,6 +70,10 @@ textarea, input, button, select {
   justify-content: space-evenly;
 }
 
+.ModalContent {
+  margin: 40px;
+}
+
 .ModalFooter button {
   padding: 10px;
   margin: 10px;
@@ -99,12 +104,12 @@ textarea, input, button, select {
   display: none;
 }
 
-.Dialog.Exp1 {
+.ChatDialogGrid .Dialog {
   width: 50%;
   height: 50%;
 }
 
-.Dialog.Exp2 {
+.ChatDialogList .Dialog {
   width: 100%;
   height: 70%;
 }
@@ -151,8 +156,12 @@ textarea, input, button, select {
   color: white;
 }
 
-.Unread .QuestionMessage:last-of-type {
+.Unread.Notification1 .QuestionMessage:last-of-type {
   background-color: red;
+}
+
+.Unread.Notification2 .QuestionMessage:last-of-type {
+  background-color: green;
 }
 
 .AnswerMessage {
