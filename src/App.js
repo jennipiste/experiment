@@ -25,6 +25,8 @@ class App extends Component {
       isParticipantModalOpen: false,
       isChangeExpModalOpen: false,
       isFinishExpModalOpen: false,
+      showPDF: false,
+      subject: null,
     };
 
     this.firstSubjects = [
@@ -283,6 +285,19 @@ class App extends Component {
     this.createTestDialogs();
   }
 
+  onSubjectClick = (event, subject) => {
+    event.preventDefault();
+    this.pdf = require("./manuals/" + subject + ".pdf");
+    this.setState({
+      showPDF: false,
+    }, () => {
+      this.setState({
+        showPDF: true,
+        subject: subject,
+      });
+    });
+  }
+
   render() {
     const participantModalProps = {
       text: 'Participant with name "' + this.state.participantName + '" already exists. Do you want to use the existing participant or create a new participant with different name?',
@@ -323,10 +338,13 @@ class App extends Component {
         {this.state.activeParticipant && this.state.experimentUI ? (
           <div className="AppContent">
             {this.state.experimentUI === 1 ? (
-              <ChatDialogGrid dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onCloseButtonClick={this.onCloseButtonClick} participant={this.state.activeParticipant}/>
+              <ChatDialogGrid dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onCloseButtonClick={this.onCloseButtonClick} onSubjectClick={this.onSubjectClick} participant={this.state.activeParticipant}/>
             ) : (
-              <ChatDialogList dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onCloseButtonClick={this.onCloseButtonClick} participant={this.state.activeParticipant}/>
+              <ChatDialogList dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onCloseButtonClick={this.onCloseButtonClick} onSubjectClick={this.onSubjectClick} participant={this.state.activeParticipant}/>
             )}
+            {this.state.showPDF &&
+              <iframe src={this.pdf} width="50%" height="100%" frameBorder="0" title="PDF"></iframe>
+            }
           </div>
         ) : (
           <div className="CreateParticipant">

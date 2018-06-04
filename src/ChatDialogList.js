@@ -12,8 +12,6 @@ class ChatDialogList extends Component {
       activeDialogIndex: null,
       dialogs: [],
       waitingDialogs: [false, false, false, false],
-      showPDF: false,
-      subject: null,
     };
   }
 
@@ -41,19 +39,6 @@ class ChatDialogList extends Component {
 
   onChatListItemClick = (event, index) => {
     this.setState({activeDialogIndex: index});
-  }
-
-  onSubjectClick = (event, subject) => {
-    event.preventDefault();
-    this.pdf = require("./manuals/" + subject + ".pdf");
-    this.setState({
-      showPDF: false,
-    }, () => {
-      this.setState({
-        showPDF: true,
-        subject: subject,
-      });
-    });
   }
 
   markDialogWaiting = (dialogIndex, waitingStartedAt) => {
@@ -91,7 +76,7 @@ class ChatDialogList extends Component {
         markDialogEnded={this.props.markDialogEnded}
         markDialogWaiting={this.markDialogWaiting}
         markDialogNotWaiting={this.markDialogNotWaiting}
-        onSubjectClick={this.onSubjectClick}
+        onSubjectClick={this.props.onSubjectClick}
         onCloseButtonClick={this.props.onCloseButtonClick}
       />;
     });
@@ -104,9 +89,6 @@ class ChatDialogList extends Component {
         <div className="Dialogs">
           {dialogs}
         </div>
-        {this.state.showPDF &&
-          <iframe src={this.pdf} width="100%" frameBorder="0" title="PDF"></iframe>
-        }
       </div>
     );
   }

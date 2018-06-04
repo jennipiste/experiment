@@ -3,28 +3,6 @@ import ChatDialog from './ChatDialog';
 import map from 'lodash/map';
 
 class ChatDialogGrid extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showPDF: false,
-      subject: null,
-    };
-
-    this.pdf = this.state.subject ? require("./manuals/" + this.state.subject + ".pdf") : null;
-  }
-
-  onSubjectClick = (event, subject) => {
-    event.preventDefault();
-    this.pdf = require("./manuals/" + subject + ".pdf");
-    this.setState({
-      showPDF: false,
-    }, () => {
-      this.setState({
-        showPDF: true,
-        subject: subject,
-      });
-    });
-  }
 
   render() {
     let dialogs = map(this.props.dialogs, (dialog, index) => {
@@ -36,7 +14,7 @@ class ChatDialogGrid extends Component {
         dialogIndex={index}
         isActive={true}
         markDialogEnded={this.props.markDialogEnded}
-        onSubjectClick={this.onSubjectClick}
+        onSubjectClick={this.props.onSubjectClick}
         onCloseButtonClick={this.props.onCloseButtonClick}
       />;
     });
@@ -46,9 +24,6 @@ class ChatDialogGrid extends Component {
         <div className="Dialogs">
           {dialogs}
         </div>
-        {this.state.showPDF &&
-          <iframe src={this.pdf} width="100%" frameBorder="0" title="PDF"></iframe>
-        }
       </div>
     );
   }
