@@ -11,7 +11,7 @@ class ChatDialogList extends Component {
     this.state = {
       activeDialogIndex: null,
       dialogs: [],
-      unreadDialogs: [false, false, false, false],
+      waitingDialogs: [false, false, false, false],
       showPDF: false,
       subject: null,
     };
@@ -56,16 +56,16 @@ class ChatDialogList extends Component {
     });
   }
 
-  markDialogUnread = (dialogIndex) => {
-    let unreadDialogs = this.state.unreadDialogs;
-    unreadDialogs[dialogIndex] = true;
-    this.setState({unreadDialogs: unreadDialogs});
+  markDialogWaiting = (dialogIndex, waitingStartedAt) => {
+    let waitingDialogs = this.state.waitingDialogs;
+    waitingDialogs[dialogIndex] = waitingStartedAt;
+    this.setState({waitingDialogs: waitingDialogs});
   }
 
-  markDialogRead = (dialogIndex) => {
-    let unreadDialogs = this.state.unreadDialogs;
-    unreadDialogs[dialogIndex] = false;
-    this.setState({unreadDialogs: unreadDialogs});
+  markDialogNotWaiting = (dialogIndex) => {
+    let waitingDialogs = this.state.waitingDialogs;
+    waitingDialogs[dialogIndex] = null;
+    this.setState({waitingDialogs: waitingDialogs});
   }
 
   render() {
@@ -75,7 +75,7 @@ class ChatDialogList extends Component {
         dialog={dialog}
         dialogIndex={index}
         isActive={this.state.activeDialogIndex === index}
-        isUnread={dialog && this.state.unreadDialogs[index]}
+        waitingStartedAt={dialog && this.state.waitingDialogs[index]}
         isEnded={dialog && dialog.is_ended}
         onChatListItemClick={this.onChatListItemClick}
       />;
@@ -89,8 +89,8 @@ class ChatDialogList extends Component {
         dialogIndex={index}
         isActive={this.state.activeDialogIndex === index}
         markDialogEnded={this.props.markDialogEnded}
-        markDialogUnread={this.markDialogUnread}
-        markDialogRead={this.markDialogRead}
+        markDialogWaiting={this.markDialogWaiting}
+        markDialogNotWaiting={this.markDialogNotWaiting}
         onSubjectClick={this.onSubjectClick}
         onCloseButtonClick={this.props.onCloseButtonClick}
       />;

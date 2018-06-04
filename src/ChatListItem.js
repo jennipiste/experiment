@@ -1,4 +1,6 @@
 import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
+import WaitTime from './WaitTime';
+
 
 class ChatListItem extends Component {
   render() {
@@ -10,7 +12,9 @@ class ChatListItem extends Component {
           ) : (
             <span className="Subject Ended">Ei käynnissä olevaa dialogia</span>
           )}
-          {(this.props.isUnread && !this.props.isEnded) && <span className="Unread">new!</span>}
+          {(this.props.waitingStartedAt && !this.props.isEnded) && <span className="Unread">
+            <WaitTime waitingStartedAt={this.props.waitingStartedAt} />
+          </span>}
           {this.props.isEnded && <span className="Ended">ended!</span>}
         </div>
       </div>

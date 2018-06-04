@@ -123,9 +123,9 @@ class ChatDialog extends Component {
       // For experiment 2, mark dialog read or unread
       if (this.props.exp === 2) {
         if (newMessage.type === 1) {
-          this.props.markDialogUnread(this.props.dialogIndex);
+          this.props.markDialogWaiting(this.props.dialogIndex, newMessage.created_at);
         } else {
-          this.props.markDialogRead(this.props.dialogIndex);
+          this.props.markDialogNotWaiting(this.props.dialogIndex);
         }
       }
       // Set timeout for next question only after user's first message
