@@ -296,7 +296,7 @@ class ChatDialog extends Component {
             }
             <ChatMessageList messages={this.state.messages} />
             <ChatDialogFooter>
-              <textarea className="MessageTextarea" {...textareaProps} ref={element => this.textareaElement = element} autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck="false" />
+              <textarea className="MessageTextarea" {...textareaProps} ref={element => this.textareaElement = element} autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck="false" placeholder="Kirjoita tähän"/>
               <button className="SendButton" {...sendButtonProps}>Lähetä</button>
             </ChatDialogFooter>
             {/* for debugging purposes */}

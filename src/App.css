@@ -200,7 +200,8 @@ textarea, input, button, select {
 .MessageTextarea {
   resize: none;
   flex-grow: 1;
-  height: 70px;
+  height: 50px;
+  padding: 10px;
 }
 
 .ChatDialogList {
