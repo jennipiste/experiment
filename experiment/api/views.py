@@ -22,15 +22,18 @@ class ParticipantListCreateAPIView(generics.ListCreateAPIView):
             response_status = status.HTTP_200_OK
         except Participant.DoesNotExist:
             # Create every second participant to group 1 and every second to group 2 (notification type)
-            latest_group = Participant.objects.latest('created_at').group
-            group = 1 if not latest_group or latest_group == 2 else 2
-            # Every second participant in both groups is starting with UI 1 and every second with UI 2
-            latest_ui_in_group = Participant.objects.filter(group=group).latest('created_at').first_ui
-            first_ui = 1 if not latest_ui_in_group or latest_ui_in_group == 2 else 2
+            latest_notification = Participant.objects.latest('created_at').notification
+            notification = 1 if not latest_notification or latest_notification == 2 else 2
+            # Each participant in both notification groups is assigned into one of the four groups with different order of conditions
+            latest_group = Participant.objects.filter(notification=notification).latest('created_at').group
+            if not latest_group or latest_group == 4:
+                group = 1
+            else:
+                group = latest_group + 1
             participant = Participant.objects.create(
                 name=name,
                 group=group,
-                first_ui=first_ui,
+                notification=notification,
             )
             response_status = status.HTTP_201_CREATED
         serializer = self.get_serializer(participant, data=request.data, partial=False)

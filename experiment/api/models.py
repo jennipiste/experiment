@@ -4,23 +4,42 @@ from django.db import models
 
 
 class Participant(models.Model):
+    """
+    Participant belongs into one of four groups
+    Each group has different order of conditions
+
+    Conditions:
+    A = layout 1, 3 dialogs
+    B = layout 2, 3 dialogs
+    C = Layout 1, 4 dialogs
+    D = layout 2, 4 dialogs
+
+    Balanced latin square: (https://explorable.com/counterbalanced-measures-design)
+    Group   1st 2nd 3rd 4th
+    1       A   B   D   C
+    2       B   C   A   D
+    3       C   D   B   A
+    4       D   A   C   B
+    """
     PARTICIPANT_GROUPS = (
-        (1, "notification1"),
-        (2, "notification2"),
+        (1, "group1"),
+        (2, "group2"),
+        (3, "group3"),
+        (4, "group4"),
     )
-    EXPERIMENT_UIS = (
-        (1, "UI1"),
-        (2, "UI2"),
+    NOTIFICATION_TYPES = (
+        (1, "notification1"),  # Passive notification
+        (2, "notification2"),  # Aggressive notification
     )
     created_at = models.DateTimeField(auto_now_add=True)
     name = models.CharField(max_length=400, unique=True)
     # Which notification type is shown
+    notification = models.IntegerField(choices=NOTIFICATION_TYPES, null=True)
+    # Which group participant belongs in
     group = models.IntegerField(choices=PARTICIPANT_GROUPS, null=True)
-    # Which UI is shown first
-    first_ui = models.IntegerField(choices=EXPERIMENT_UIS, null=True)
 
     def __str__(self):
-        return u"name: {0}, id: {1}, group={2}".format(self.name, self.id, self.group)
+        return u"name: {0}, id: {1}, group: {2}, notification: {3}".format(self.name, self.id, self.group, self.notification)
 
 
 class ChatDialog(models.Model):
