@@ -82,9 +82,6 @@ class ChatDialogUpdateAPIView(generics.UpdateAPIView):
         if 'is_ended' in data:
             data['ended_at'] = timezone.now()
 
-        if 'is_closed' in data:
-            data['closed_at'] = timezone.now()
-
         serializer = self.get_serializer(dialog, data=data, partial=True)
         serializer.is_valid(raise_exception=True)
         serializer.save()
