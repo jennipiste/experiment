@@ -32,14 +32,13 @@ class Participant(models.Model):
         (2, "notification2"),  # Aggressive notification
     )
     created_at = models.DateTimeField(auto_now_add=True)
-    name = models.CharField(max_length=400, unique=True)
     # Which notification type is shown
     notification = models.IntegerField(choices=NOTIFICATION_TYPES, null=True)
     # Which group participant belongs in
     group = models.IntegerField(choices=PARTICIPANT_GROUPS, null=True)
 
     def __str__(self):
-        return u"name: {0}, id: {1}, group: {2}, notification: {3}".format(self.name, self.id, self.group, self.notification)
+        return u"id: {0}, group: {1}, notification: {2}".format(self.id, self.group, self.notification)
 
 
 class ChatDialog(models.Model):
