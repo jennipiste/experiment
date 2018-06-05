@@ -9,9 +9,8 @@ class ParticipantSerializer(serializers.ModelSerializer):
         model = Participant
         fields = [
             'id',
-            'name',
             'group',
-            'first_ui',
+            'notification',
             'created_at',
         ]
 

@@ -15,31 +15,29 @@ class ParticipantListCreateAPIView(generics.ListCreateAPIView):
     queryset = Participant.objects.all()
 
     def create(self, request, *args, **kwargs):
-        name = request.data.get('name')
-        # Check if participant already exists
+        # Create every second participant to group 1 and every second to group 2 (notification type)
         try:
-            participant = Participant.objects.get(name=name)
-            response_status = status.HTTP_200_OK
-        except Participant.DoesNotExist:
-            # Create every second participant to group 1 and every second to group 2 (notification type)
             latest_notification = Participant.objects.latest('created_at').notification
-            notification = 1 if not latest_notification or latest_notification == 2 else 2
-            # Each participant in both notification groups is assigned into one of the four groups with different order of conditions
+        except Participant.DoesNotExist:
+            latest_notification = None
+        notification = 1 if not latest_notification or latest_notification == 2 else 2
+        # Each participant in both notification groups is assigned into one of the four groups with different order of conditions
+        try:
             latest_group = Participant.objects.filter(notification=notification).latest('created_at').group
-            if not latest_group or latest_group == 4:
-                group = 1
-            else:
-                group = latest_group + 1
-            participant = Participant.objects.create(
-                name=name,
-                group=group,
-                notification=notification,
-            )
-            response_status = status.HTTP_201_CREATED
+        except Participant.DoesNotExist:
+            latest_group = None
+        if not latest_group or latest_group == 4:
+            group = 1
+        else:
+            group = latest_group + 1
+        participant = Participant.objects.create(
+            group=group,
+            notification=notification,
+        )
         serializer = self.get_serializer(participant, data=request.data, partial=False)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        return Response(serializer.data, status=response_status)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
 class ParticipantChatDialogListCreateAPIView(generics.ListCreateAPIView):
