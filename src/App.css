@@ -100,6 +100,7 @@ textarea, input, button, select {
 
 .ChatDialog.Ended {
   border: 1px solid grey;
+  opacity: 0.5;
 }
 
 .Ended {
@@ -178,6 +179,10 @@ textarea, input, button, select {
 
 .SendButton:hover {
   background-color: rgb(230, 230, 230);
+}
+
+.SendButton:disabled {
+  cursor: inherit;
 }
 
 .MessageTextarea {

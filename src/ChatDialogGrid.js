@@ -8,14 +8,14 @@ class ChatDialogGrid extends Component {
     let dialogs = map(this.props.dialogs, (dialog, index) => {
       return <ChatDialog
         participant={this.props.participant}
-        exp={1}
+        layout={1}
         key={index}
         dialog={dialog}
         dialogIndex={index}
         isActive={true}
         markDialogEnded={this.props.markDialogEnded}
         onSubjectClick={this.props.onSubjectClick}
-        onCloseButtonClick={this.props.onCloseButtonClick}
+        endChatDialog={this.props.endChatDialog}
       />;
     });
 

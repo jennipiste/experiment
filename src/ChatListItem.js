@@ -15,7 +15,6 @@ class ChatListItem extends Component {
           {(this.props.waitingStartedAt && !this.props.isEnded) && <span className="Unread">
             <WaitTime waitingStartedAt={this.props.waitingStartedAt} />
           </span>}
-          {this.props.isEnded && <span className="Ended">ended!</span>}
         </div>
       </div>
     );

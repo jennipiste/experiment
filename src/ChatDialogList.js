@@ -68,7 +68,7 @@ class ChatDialogList extends Component {
     let dialogs = map(this.props.dialogs, (dialog, index) => {
       return <ChatDialog
         participant={this.props.participant}
-        exp={2}
+        layout={2}
         key={index}
         dialog={dialog}
         dialogIndex={index}
@@ -77,7 +77,7 @@ class ChatDialogList extends Component {
         markDialogWaiting={this.markDialogWaiting}
         markDialogNotWaiting={this.markDialogNotWaiting}
         onSubjectClick={this.props.onSubjectClick}
-        onCloseButtonClick={this.props.onCloseButtonClick}
+        endChatDialog={this.props.endChatDialog}
       />;
     });
 

@@ -164,14 +164,18 @@ class App extends Component {
     });
   }
 
-  endChatDialog = (dialog) => {
+  endChatDialog = (dialog, dialogIndex) => {
     axios.patch("api/dialogs/" + dialog.id, {is_ended: true});
+    // If the part is not over, set timeout for new dialog
+    if (!this.state.isPartOver) {
+      this.timeouts.push(setTimeout(() => this.createNewDialog(dialogIndex), 10000));
+    }
   }
 
   endChatDialogs = () => {
     this.state.dialogs.forEach((dialog, index) => {
       if (dialog) {
-        this.endChatDialog(dialog);
+        this.endChatDialog(dialog, index);
         this.markDialogEnded(index);
       }
     });
@@ -280,9 +284,9 @@ class App extends Component {
         {this.state.participant && this.state.experimentLayout ? (
           <div className="AppContent">
             {this.state.experimentLayout === 1 ? (
-              <ChatDialogGrid dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onSubjectClick={this.onSubjectClick} participant={this.state.participant}/>
+              <ChatDialogGrid dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onSubjectClick={this.onSubjectClick} participant={this.state.participant} endChatDialog={this.endChatDialog}/>
             ) : (
-              <ChatDialogList dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onSubjectClick={this.onSubjectClick} participant={this.state.participant}/>
+              <ChatDialogList dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onSubjectClick={this.onSubjectClick} participant={this.state.participant} endChatDialog={this.endChatDialog}/>
             )}
             {this.state.showPDF &&
               <iframe src={this.pdf} width="50%" height="100%" frameBorder="0" title="PDF"></iframe>
