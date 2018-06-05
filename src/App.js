@@ -14,17 +14,15 @@ class App extends Component {
     super(props);
 
     this.state = {
-      dialogs: [null, null, null, null],
       dialogIndex: 1,
       subjectIndex: 0,
-      participantName: "",
-      participantResponse: null,
-      activeParticipant: null,
+      participant: null,
+      experimentConditions: [],  // Based on participant's group, the order of 4 different conditions
       experimentPart: 1,
-      experimentUI: null,
-      isParticipantModalOpen: false,
-      isChangeExpModalOpen: false,
-      isFinishExpModalOpen: false,
+      experimentLayout: null,  // Layout 1 or 2
+      dialogCount: null,  // 3 or 4 dialogs
+      dialogs: [],
+      isPartOver: false,
       showPDF: false,
       subject: null,
     };
@@ -49,6 +47,10 @@ class App extends Component {
       // 'Televisio',
       // 'Tenniksen kilpailumääräykset',
     ];
+
+    // TODO:
+    this.thirdSubjects = [];
+    this.fourthSubjects = [];
 
     this.inputElement = null;
     this.timeouts = [];
@@ -76,31 +78,89 @@ class App extends Component {
     this.timeouts = [];
   }
 
-  changeExperiment = () => {
-    this.setState({isChangeExpModalOpen: true});
-    this.clearTimeouts();
-    this.endChatDialogs();
+  createParticipant = () => {
+    axios.post("api/participants")
+      .then(response => {
+        if (response.status === 201) {
+          let group = response.data.group;
+          let conditions;
+          if (group === 1) {
+            conditions = ["A", "B", "D", "C"];
+          } else if (group === 2) {
+            conditions = ["B", "C", "A", "D"];
+          } else if (group === 3) {
+            conditions = ["C", "D", "B", "A"];
+          } else {
+            conditions = ["D", "A", "C", "B"];
+          }
+          this.setState({
+            participant: response.data,
+            experimentConditions: conditions,
+          }, this.startFirstPart);
+        }
+      });
   }
 
-  finishExperiment = () => {
-    this.setState({isFinishExpModalOpen: true});
+  startFirstPart = () => {
+    this.setState((prevState) => {
+      const currentCondition = prevState.experimentConditions[prevState.experimentPart-1];
+      const experimentLayout = currentCondition === "A" || currentCondition === "C" ? 1 : 2;
+      const dialogCount = currentCondition === "A" || currentCondition === "B" ? 3 : 4;
+      const dialogs = new Array(dialogCount).fill(null);
+      return {
+        experimentLayout: experimentLayout,
+        dialogCount: dialogCount,
+        dialogs: dialogs,
+      };
+    }, () => {
+      // End first part after 10 minutes
+      this.expTimeout = setTimeout(() => this.changeExperiment(), 60000);
+      this.createInitialDialogs();
+    });
+  }
+
+  startNextPart = () => {
+    this.setState((prevState) => {
+      let part = prevState.experimentPart;
+      part++;
+      const nextCondition = prevState.experimentConditions[part-1];
+      const experimentLayout = nextCondition === "A" || nextCondition === "C" ? 1 : 2;
+      const dialogCount = nextCondition === "A" || nextCondition === "B" ? 3 : 4;
+      const dialogs = new Array(dialogCount).fill(null);
+      return {
+        experimentPart: part,
+        experimentLayout: experimentLayout,
+        subjectIndex: 0,
+        dialogCount: dialogCount,
+        dialogs: dialogs,
+        isPartOver: false,
+      };
+    }, () => {
+      this.createInitialDialogs();
+      // End the part after 10 minutes
+      this.expTimeout = setTimeout(() => this.changeExperiment(), 20000);
+    });
+  }
+
+  changeExperiment = () => {
+    this.setState({isPartOver: true});
     this.clearTimeouts();
     this.endChatDialogs();
   }
 
   closeExperiment = () => {
     this.setState({
-      dialogs: [null, null, null, null],
       dialogIndex: 1,
       subjectIndex: 0,
-      participantName: "",
-      participantResponse: null,
-      activeParticipant: null,
+      participant: null,
+      experimentConditions: [],
       experimentPart: 1,
-      experimentUI: null,
-      isParticipantModalOpen: false,
-      isChangeExpModalOpen: false,
-      isFinishExpModalOpen: false,
+      experimentLayout: null,
+      dialogCount: null,
+      dialogs: [],
+      isPartOver: false,
+      showPDF: false,
+      subject: null,
     });
   }
 
@@ -117,45 +177,24 @@ class App extends Component {
     });
   }
 
-  startFirstPart = () => {
-    this.setState({
-      experimentUI: this.state.activeParticipant.first_ui,
-    }, () => {
-      // End first part after 10 minutes
-      this.expTimeout = setTimeout(() => this.changeExperiment(), 600000);
-      this.createInitialDialogs();
-    });
-  }
-
-  startSecondPart = () => {
-    this.setState((prevState) => {
-      return {
-        dialogs: [null, null, null, null],
-        isChangeExpModalOpen: false,
-        experimentPart: 2,
-        experimentUI: prevState.experimentUI === 1 ? 2 : 1,
-      };
-    }, () => {
-      this.createInitialDialogs();
-      this.expTimeout = setTimeout(() => this.finishExperiment(), 20000);
-    });
-  }
-
   createInitialDialogs = () => {
-    // Create 4 dialogs, first dialog right away, others with timeouts
+    // Create 3 or 4 dialogs, first dialog right away, others with timeouts
     this.createNewDialog(0);
     this.timeouts.push(setTimeout(() => this.createNewDialog(1), 11579.39));
     this.timeouts.push(setTimeout(() => this.createNewDialog(2), 35353.783));
-    this.timeouts.push(setTimeout(() => this.createNewDialog(3), 74118.54));
+    if (this.state.dialogCount === 4) {
+      this.timeouts.push(setTimeout(() => this.createNewDialog(3), 74118.54));
+    }
   }
 
   createNewDialog = (oldDialogListID) => {
+    // TODO: Divide subjects into 4 parts
     const subjects = this.state.experimentPart === 1 ? this.firstSubjects : this.secondSubjects;
     let dialogs = this.state.dialogs;
     let dialogIndex = this.state.dialogIndex;
     let subjectIndex = this.state.subjectIndex;
     if (subjects[subjectIndex]) {
-      axios.post('api/participants/' + this.state.activeParticipant.id + '/dialogs',
+      axios.post('api/participants/' + this.state.participant.id + '/dialogs',
         {
           name: "Dialog " + dialogIndex,
           subject: nth(subjects, subjectIndex),
@@ -182,109 +221,6 @@ class App extends Component {
     this.setState({dialogs: dialogs});
   }
 
-  onCloseButtonClick = (dialogListID, dialogID) => {
-    if (this.state.activeParticipant.name === "testi") {
-      let dialogs = this.state.dialogs;
-      dialogs.splice(dialogListID, 1, null);
-      this.setState({dialogs: dialogs});
-    } else {
-      // Set close time to database
-      axios.patch("api/dialogs/" + dialogID, {is_closed: true})
-        .then(response => {
-          if (response.status === 200) {
-            // Replace old dialog with null
-            let dialogs = this.state.dialogs;
-            dialogs.splice(dialogListID, 1, null);
-            this.setState({dialogs: dialogs});
-            // Set timeout to create new dialog for that place
-            // TODO: replace with real timeout
-            this.timeouts.push(setTimeout(() => this.createNewDialog(dialogListID), 10000));
-          }
-        });
-    }
-  }
-
-  onParticipantNameChange = (event) => {
-    this.setState({participantName: event.target.value});
-  }
-
-  createParticipant = (event) => {
-    event.preventDefault();
-    axios.post("api/participants", {name: this.state.participantName})
-      .then(response => {
-        if (response.status === 201) {
-          this.setState({
-            activeParticipant: response.data,
-            participantName: "",
-          }, this.startFirstPart);
-        } else if (response.status === 200) {
-          // If participant already exists, show modal
-          this.setState({
-            isParticipantModalOpen: true,
-            participantResponse: response.data,
-          });
-        }
-      });
-  }
-
-  onUseExistingParticipant = () => {
-    this.setState((prevState) => {
-      return {
-        activeParticipant: prevState.participantResponse,
-        participantName: "",
-        participantResponse: null,
-        isParticipantModalOpen: false,
-      };
-    }, this.startFirstPart);
-  }
-
-  onCreateNewParticipant = () => {
-    this.setState({
-      participantResponse: null,
-      isParticipantModalOpen: false,
-    });
-    this.inputElement.focus();
-  }
-
-  createTestDialogs = () => {
-    const testDialogs = [{
-      subject: "Televisio",
-      participant: this.state.activeParticipant,
-      is_ended: false,
-      is_closed: false,
-      created_at: new Date(),
-    }, {
-      subject: "Tenniksen kilpailumääräykset",
-      participant: this.state.activeParticipant,
-      is_ended: false,
-      is_closed: false,
-      created_at: new Date(),
-    }];
-    // Create first dialog right away
-    let dialogs = this.state.dialogs;
-    dialogs.splice(0, 1, testDialogs[0]);
-    this.setState({dialogs: dialogs});
-    // Set timeout for the second dialog
-    this.timeouts.push(setTimeout(() => {
-      let dialogs = this.state.dialogs;
-      dialogs.splice(1, 1, testDialogs[1]);
-      this.setState({dialogs: dialogs});
-    }, 10000));
-  }
-
-  onTestButtonClick = () => {
-    const testParticipant = {
-      name: "testi",
-      group: 1,
-      first_ui: 1,
-    };
-    this.setState({
-      activeParticipant: testParticipant,
-      experimentUI: 1,
-    });
-    this.createTestDialogs();
-  }
-
   onSubjectClick = (event, subject) => {
     event.preventDefault();
     this.pdf = require("./manuals/" + subject + ".pdf");
@@ -299,32 +235,38 @@ class App extends Component {
   }
 
   render() {
-    const participantModalProps = {
-      text: 'Participant with name "' + this.state.participantName + '" already exists. Do you want to use the existing participant or create a new participant with different name?',
+    const afterFirstPartModalProps = {
+      text: 'Kokeen ensimmäinen osuus on ohi. Nouse hetkeksi seisomaan ja pyöräytä hartioitasi. Seuraava osuus alkaa viimeistään viiden minuutin kuluttua, mutta voit aloittaa sen heti kun olet valmis.',
       actions: [
         {
-          text: "Use existing",
-          onClick: this.onUseExistingParticipant,
-        },
-        {
-          text: "Create new",
-          onClick: this.onCreateNewParticipant,
+          text: "Aloita toinen osuus",
+          onClick: this.startNextPart,
         }
       ]
     };
 
-    const changeExpModalProps = {
-      text: 'First part of the experiment is now over! Have a 5 minutes break.',
+    const afterSecondPartModalProps = {
+      text: 'Kokeen toinen osuus on ohi. Nouse hetkeksi seisomaan ja pyöräytä hartioitasi. Seuraava osuus alkaa viimeistään viiden minuutin kuluttua, mutta voit aloittaa sen heti kun olet valmis.',
       actions: [
         {
-          text: "Start second part",
-          onClick: this.startSecondPart,
+          text: "Aloita kolmas osuus",
+          onClick: this.startNextPart,
         }
       ]
     };
 
-    const finishExpModalProps = {
-      text: 'Experiment over!!!!',
+    const afterThirdPartModalProps = {
+      text: 'Kokeen kolmas osuus on ohi. Nouse hetkeksi seisomaan ja pyöräytä hartioitasi. Viimeinen osuus alkaa viimeistään viiden minuutin kuluttua, mutta voit aloittaa sen heti kun olet valmis.',
+      actions: [
+        {
+          text: "Aloita viimeinen osuus",
+          onClick: this.startNextPart,
+        }
+      ]
+    };
+
+    const afterFourthPartModalProps = {
+      text: 'Viimeinen osuus on nyt ohi. Kiitos! Seuraavaksi täytä vielä paperilla olevat kyselyt.',
       actions: [
         {
           text: "OK",
@@ -335,32 +277,24 @@ class App extends Component {
 
     return (
       <div className="App">
-        {this.state.activeParticipant && this.state.experimentUI ? (
+        {this.state.participant && this.state.experimentLayout ? (
           <div className="AppContent">
-            {this.state.experimentUI === 1 ? (
-              <ChatDialogGrid dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onCloseButtonClick={this.onCloseButtonClick} onSubjectClick={this.onSubjectClick} participant={this.state.activeParticipant}/>
+            {this.state.experimentLayout === 1 ? (
+              <ChatDialogGrid dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onSubjectClick={this.onSubjectClick} participant={this.state.participant}/>
             ) : (
-              <ChatDialogList dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onCloseButtonClick={this.onCloseButtonClick} onSubjectClick={this.onSubjectClick} participant={this.state.activeParticipant}/>
+              <ChatDialogList dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onSubjectClick={this.onSubjectClick} participant={this.state.participant}/>
             )}
             {this.state.showPDF &&
               <iframe src={this.pdf} width="50%" height="100%" frameBorder="0" title="PDF"></iframe>
             }
           </div>
         ) : (
-          <div className="CreateParticipant">
-            <p>Ennen varsinaisen kokeen aloitusta, harjoittele käyttöä suorittamalla pieni testi.</p>
-            <button className="TestButton" onClick={this.onTestButtonClick}>Käynnistä testi</button>
-            <p>Testin jälkeen voit siirtyä varsinaiseen kokeeseen kirjoittamalla nimesi ja painamalla 'Aloita'.</p>
-            <form className="CreateParticipantForm" onSubmit={this.createParticipant}>
-              <label>Nimi:</label>
-              <input className="ParticipantInput" type="text" value={this.state.participantName} onChange={this.onParticipantNameChange} ref={element => this.inputElement = element} />
-              <input className="SubmitButton" type="submit" value="Aloita" />
-            </form>
-          </div>
+          <button className="StartButton" onClick={this.createParticipant}>Aloita koe</button>
         )}
-        {this.state.isParticipantModalOpen && <Modal {...participantModalProps}/>}
-        {this.state.isChangeExpModalOpen && <Modal {...changeExpModalProps}/>}
-        {this.state.isFinishExpModalOpen && <Modal {...finishExpModalProps}/>}
+        {this.state.isPartOver && this.state.experimentPart === 1 && <Modal {...afterFirstPartModalProps}/>}
+        {this.state.isPartOver && this.state.experimentPart === 2 && <Modal {...afterSecondPartModalProps}/>}
+        {this.state.isPartOver && this.state.experimentPart === 3 && <Modal {...afterThirdPartModalProps}/>}
+        {this.state.isPartOver && this.state.experimentPart === 4 && <Modal {...afterFourthPartModalProps}/>}
       </div>
     );
   }

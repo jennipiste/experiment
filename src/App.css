@@ -10,46 +10,16 @@ textarea, input, button, select {
   text-align: center;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 2em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
 .AppContent {
   display: flex;
 }
 
-.CreateParticipant {
-  font-size: large;
-  margin: 100px;
-}
-
-.CreateParticipantForm {
-  display: flex;
-  justify-content: center;
-}
-
-.CreateParticipantForm .SubmitButton {
-  margin-left: 10px;
-  align-self: center;
-}
-
-.CreateParticipantForm .ParticipantInput {
-  margin-left: 10px;
-}
-
-.TestButton {
-  margin-bottom: 100px;
+.StartButton {
+  margin-top: 100px;
+  width: 140px;
+  height: 60px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .Backdrop {
@@ -125,6 +95,7 @@ textarea, input, button, select {
   width: 84%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .ChatDialog.Ended {
@@ -133,6 +104,13 @@ textarea, input, button, select {
 
 .Ended {
   color: grey;
+}
+
+.WaitTime {
+  position: absolute;
+  right: 20px;
+  top: 30px;
+  color: red;
 }
 
 .Subject {

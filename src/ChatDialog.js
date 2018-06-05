@@ -291,8 +291,10 @@ class ChatDialog extends Component {
         {!this.state.isEnded && this.props.dialog !== null &&
           <div className={"ChatDialog" + (this.state.isUnread ? " Unread" : "") + (this.props.participant.group === 1 ? " Notification1" : " Notification2")}>
             <a className="Subject" href={this.pdf} onClick={(event) => this.props.onSubjectClick(event, this.props.dialog.subject)}>{this.props.dialog.subject}</a>
-            {this.state.isUnread && this.state.isWaiting &&
-              <WaitTime waitingStartedAt={this.state.waitingStartedAt} />
+            {this.state.isUnread && this.state.isWaiting && this.props.exp !== 2 &&
+              <div class="WaitTime">
+                <WaitTime waitingStartedAt={this.state.waitingStartedAt} />
+              </div>
             }
             <ChatMessageList messages={this.state.messages} />
             <ChatDialogFooter>
