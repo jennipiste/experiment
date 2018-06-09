@@ -27,8 +27,8 @@ class WaitTime extends Component {
   render() {
     let waitTime = (this.state.waitTime / 1000).toFixed(0);
     return(
-      <div>
-        {waitTime}
+      <div className="WaitTime">
+        <span>{waitTime}</span>
       </div>
     );
   }

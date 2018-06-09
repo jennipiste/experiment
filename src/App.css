@@ -14,11 +14,22 @@ textarea, input, button, select {
   display: flex;
 }
 
+.ParticipantForm {
+  margin: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ParticipantInput {
+  margin-left: 10px;
+}
+
 .StartButton {
-  margin-top: 100px;
-  width: 140px;
-  height: 60px;
-  font-size: 16px;
+  margin-top: 50px;
+  width: 100px;
+  height: 40px;
+  font-size: 14px;
   cursor: pointer;
 }
 
@@ -45,7 +56,7 @@ textarea, input, button, select {
 }
 
 .ModalContent {
-  margin: 40px;
+  margin: 20px;
 }
 
 .ModalFooter button {
@@ -107,11 +118,57 @@ textarea, input, button, select {
   color: grey;
 }
 
-.WaitTime {
+.TitleWaitTime {
   position: absolute;
   right: 20px;
-  top: 30px;
+  top: 20px;
+}
+
+.WaitTime {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ff0000;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 0 rgba(255, 0, 0, 0.4);
+  /* animation: pulse 2s infinite; */
+}
+
+/* @-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4);
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4);
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
+    box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4);
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4);
+  }
+} */
+
+.UnreadNotification {
   color: red;
+  margin: 20px 10px;
+  align-self: center;
+  margin: 0;
 }
 
 .Subject {
@@ -140,12 +197,8 @@ textarea, input, button, select {
   color: white;
 }
 
-.Unread.Notification1 .QuestionMessage:last-of-type {
+.Unread .QuestionMessage:last-of-type {
   background-color: red;
-}
-
-.Unread.Notification2 .QuestionMessage:last-of-type {
-  background-color: green;
 }
 
 .AnswerMessage {
@@ -211,7 +264,7 @@ textarea, input, button, select {
 }
 
 .ChatListItem {
-  padding: 20px 38px;
+  padding: 20px 30px;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -229,19 +282,6 @@ textarea, input, button, select {
   flex-basis: 70%;
   flex-grow: 0;
   flex-shrink: 0;
-  align-self: center;
-  margin: 0;
-}
-
-span.Unread {
-  color: red;
-  margin: 20px 10px;
-  align-self: center;
-  margin: 0;
-}
-
-span.Ended {
-  margin: 20px 10px;
   align-self: center;
   margin: 0;
 }

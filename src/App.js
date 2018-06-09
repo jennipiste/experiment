@@ -1,7 +1,7 @@
 import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
-import axios from'axios';
+import axios from 'axios';
 import axiosDefaults from 'axios/lib/defaults';
-import nth from 'lodash/nth';
+import filter from 'lodash/filter';
 import ChatDialogGrid from './ChatDialogGrid';
 import ChatDialogList from './ChatDialogList';
 import Modal from './Modal';
@@ -14,6 +14,7 @@ class App extends Component {
     super(props);
 
     this.state = {
+      participantNumber: "",
       dialogIndex: 1,
       subjectIndex: 0,
       participant: null,
@@ -78,8 +79,9 @@ class App extends Component {
     this.timeouts = [];
   }
 
-  createParticipant = () => {
-    axios.post("api/participants")
+  createParticipant = (event) => {
+    event.preventDefault();
+    axios.post("api/participants", {number: this.state.participantNumber})
       .then(response => {
         if (response.status === 201) {
           let group = response.data.group;
@@ -111,10 +113,11 @@ class App extends Component {
         experimentLayout: experimentLayout,
         dialogCount: dialogCount,
         dialogs: dialogs,
+        // subjects: this.subjects,
       };
     }, () => {
       // End first part after 10 minutes
-      this.expTimeout = setTimeout(() => this.changeExperiment(), 60000);
+      this.expTimeout = setTimeout(() => this.changeExperiment(), 480000);
       this.createInitialDialogs();
     });
   }
@@ -138,7 +141,7 @@ class App extends Component {
     }, () => {
       this.createInitialDialogs();
       // End the part after 10 minutes
-      this.expTimeout = setTimeout(() => this.changeExperiment(), 20000);
+      this.expTimeout = setTimeout(() => this.changeExperiment(), 480000);
     });
   }
 
@@ -168,7 +171,7 @@ class App extends Component {
     axios.patch("api/dialogs/" + dialog.id, {is_ended: true});
     // If the part is not over, set timeout for new dialog
     if (!this.state.isPartOver) {
-      this.timeouts.push(setTimeout(() => this.createNewDialog(dialogIndex), 10000));
+      this.timeouts.push(setTimeout(() => this.createNewDialog(dialogIndex), 2000));
     }
   }
 
@@ -184,34 +187,78 @@ class App extends Component {
   createInitialDialogs = () => {
     // Create 3 or 4 dialogs, first dialog right away, others with timeouts
     this.createNewDialog(0);
-    this.timeouts.push(setTimeout(() => this.createNewDialog(1), 11579.39));
-    this.timeouts.push(setTimeout(() => this.createNewDialog(2), 35353.783));
+    this.timeouts.push(setTimeout(() => this.createNewDialog(1), 10000));
+    this.timeouts.push(setTimeout(() => this.createNewDialog(2), 20000));
     if (this.state.dialogCount === 4) {
-      this.timeouts.push(setTimeout(() => this.createNewDialog(3), 74118.54));
+      this.timeouts.push(setTimeout(() => this.createNewDialog(3), 30000));
     }
   }
 
   createNewDialog = (oldDialogListID) => {
-    // TODO: Divide subjects into 4 parts
-    const subjects = this.state.experimentPart === 1 ? this.firstSubjects : this.secondSubjects;
     let dialogs = this.state.dialogs;
     let dialogIndex = this.state.dialogIndex;
-    let subjectIndex = this.state.subjectIndex;
-    if (subjects[subjectIndex]) {
-      axios.post('api/participants/' + this.state.participant.id + '/dialogs',
-        {
-          name: "Dialog " + dialogIndex,
-          subject: nth(subjects, subjectIndex),
-        }
-      ).then(response => {
-        // Replace old dialog with the new one
-        dialogs.splice(oldDialogListID, 1, response.data);
-        dialogIndex++;
-        subjectIndex++;
-        this.setState({
-          dialogs: dialogs,
-          dialogIndex: dialogIndex,
-          subjectIndex: subjectIndex,
+    // let subjectIndex = this.state.subjectIndex;
+
+    let subject;
+    let unusedSubjects = filter(this.subjects, (subject) => {
+      return this.state.usedSubjects.indexOf(subject) === -1;
+    });
+    if (unusedSubjects.length === 0) {
+      alert("Voi paska aiheet loppu, jatketaan samoilla tässä testissä");
+      this.setState({
+        usedSubjects: []
+      }, () => {
+        subject = this.subjects[Math.floor(Math.random() * this.subjects.length)];
+        this.setState((prevState) => {
+          let usedSubjects = prevState.usedSubjects;
+          usedSubjects.push(subject);
+          return {
+            usedSubjects: usedSubjects,
+          };
+        }, () => {
+          axios.post('api/participants/' + this.state.participant.id + '/dialogs',
+            {
+              name: "Dialog " + dialogIndex,
+              subject: subject,
+            }
+          ).then(response => {
+            // Replace old dialog with the new one
+            dialogs.splice(oldDialogListID, 1, response.data);
+            dialogIndex++;
+            // subjectIndex++;
+            this.setState({
+              dialogs: dialogs,
+              dialogIndex: dialogIndex,
+              // subjectIndex: subjectIndex,
+            });
+          });
+        });
+      });
+    } else {
+      // Take random subject from array and remove it from state
+      subject = unusedSubjects[Math.floor(Math.random() * unusedSubjects.length)];
+      this.setState((prevState) => {
+        let usedSubjects = prevState.usedSubjects;
+        usedSubjects.push(subject);
+        return {
+          usedSubjects: usedSubjects,
+        };
+      }, () => {
+        axios.post('api/participants/' + this.state.participant.id + '/dialogs',
+          {
+            name: "Dialog " + dialogIndex,
+            subject: subject,
+          }
+        ).then(response => {
+          // Replace old dialog with the new one
+          dialogs.splice(oldDialogListID, 1, response.data);
+          dialogIndex++;
+          // subjectIndex++;
+          this.setState({
+            dialogs: dialogs,
+            dialogIndex: dialogIndex,
+            // subjectIndex: subjectIndex,
+          });
         });
       });
     }
@@ -238,9 +285,14 @@ class App extends Component {
     });
   }
 
+  onParticipantNumberChange = (event) => {
+    this.setState({participantNumber: event.target.value});
+  }
+
   render() {
     const afterFirstPartModalProps = {
-      text: 'Kokeen ensimmäinen osuus on ohi. Nouse hetkeksi seisomaan ja pyöräytä hartioitasi. Seuraava osuus alkaa viimeistään viiden minuutin kuluttua, mutta voit aloittaa sen heti kun olet valmis.',
+      text1: 'Kokeen ensimmäinen osuus on ohi.',
+      text2: 'Nouse hetkeksi seisomaan ja pyöräytä hartioitasi. Seuraava osuus alkaa viimeistään viiden minuutin kuluttua, mutta voit aloittaa sen heti kun olet valmis.',
       actions: [
         {
           text: "Aloita toinen osuus",
@@ -250,7 +302,8 @@ class App extends Component {
     };
 
     const afterSecondPartModalProps = {
-      text: 'Kokeen toinen osuus on ohi. Nouse hetkeksi seisomaan ja pyöräytä hartioitasi. Seuraava osuus alkaa viimeistään viiden minuutin kuluttua, mutta voit aloittaa sen heti kun olet valmis.',
+      text1: 'Kokeen toinen osuus on ohi.',
+      text2: 'Nouse hetkeksi seisomaan ja pyöräytä hartioitasi. Seuraava osuus alkaa viimeistään viiden minuutin kuluttua, mutta voit aloittaa sen heti kun olet valmis.',
       actions: [
         {
           text: "Aloita kolmas osuus",
@@ -260,7 +313,8 @@ class App extends Component {
     };
 
     const afterThirdPartModalProps = {
-      text: 'Kokeen kolmas osuus on ohi. Nouse hetkeksi seisomaan ja pyöräytä hartioitasi. Viimeinen osuus alkaa viimeistään viiden minuutin kuluttua, mutta voit aloittaa sen heti kun olet valmis.',
+      text1: 'Kokeen kolmas osuus on ohi.',
+      text2: 'Nouse hetkeksi seisomaan ja pyöräytä hartioitasi. Viimeinen osuus alkaa viimeistään viiden minuutin kuluttua, mutta voit aloittaa sen heti kun olet valmis.',
       actions: [
         {
           text: "Aloita viimeinen osuus",
@@ -270,7 +324,8 @@ class App extends Component {
     };
 
     const afterFourthPartModalProps = {
-      text: 'Viimeinen osuus on nyt ohi. Kiitos! Seuraavaksi täytä vielä paperilla olevat kyselyt.',
+      text1: 'Viimeinen osuus on nyt ohi. Kiitos!',
+      text2: 'Seuraavaksi täytä vielä paperilla olevat kyselyt.',
       actions: [
         {
           text: "OK",
@@ -293,7 +348,12 @@ class App extends Component {
             }
           </div>
         ) : (
-          <button className="StartButton" onClick={this.createParticipant}>Aloita koe</button>
+          <form className="ParticipantForm" onSubmit={this.createParticipant}>
+            <label>Osallistujanumero:
+              <input className="ParticipantInput" type="text" value={this.state.participantNumber} onChange={this.onParticipantNumberChange} />
+            </label>
+            <input className="StartButton" type="submit" value="Aloita koe" />
+          </form>
         )}
         {this.state.isPartOver && this.state.experimentPart === 1 && <Modal {...afterFirstPartModalProps}/>}
         {this.state.isPartOver && this.state.experimentPart === 2 && <Modal {...afterSecondPartModalProps}/>}

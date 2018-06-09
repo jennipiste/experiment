@@ -11,7 +11,10 @@ class Modal extends React.Component {
     return (
       <div className="Backdrop">
         <div className="Modal">
-          <div className="ModalContent">{this.props.text}</div>
+          <div className="ModalContent">
+            <p>{this.props.text1}</p>
+            <p>{this.props.text2}</p>
+          </div>
           <div className="ModalFooter">{modalActions}</div>
         </div>
       </div>

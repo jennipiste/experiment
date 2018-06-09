@@ -136,7 +136,7 @@ class ChatDialog extends Component {
   }
 
   getTimeoutMilliSeconds = (questionIndex) => {
-    const waitTime = waitTimes[this.props.dialog.subject][questionIndex];
+    const waitTime = waitTimes[this.props.dialog.subject][questionIndex-1];
     return waitTime * 1000;
   }
 
@@ -212,10 +212,10 @@ class ChatDialog extends Component {
         {!this.props.dialog ? (
           <div className="ChatDialog"></div>
         ) : (
-          <div className={"ChatDialog" + (this.state.isUnread ? " Unread" : "") + (this.state.isEnded ? " Ended" : "") + (this.props.participant.notification === 1 ? " Notification1" : " Notification2")}>
+          <div className={"ChatDialog" + (this.state.isUnread ? " Unread" : "") + (this.state.isEnded ? " Ended" : "")}>
             <a className="Subject" href={this.pdf} onClick={(event) => this.props.onSubjectClick(event, this.props.dialog.subject)}>{this.props.dialog.subject}</a>
-            {this.state.isUnread && this.state.isWaiting && this.props.layout !== 2 &&
-              <div class="WaitTime">
+            {this.state.isUnread && this.state.isWaiting && this.props.layout !== 2 && this.props.participant.notification === 2 &&
+              <div className="TitleWaitTime">
                 <WaitTime waitingStartedAt={this.state.waitingStartedAt} />
               </div>
             }
@@ -225,8 +225,8 @@ class ChatDialog extends Component {
               <button className="SendButton" {...sendButtonProps}>Lähetä</button>
             </ChatDialogFooter>
             {/* for debugging purposes */}
-            {/* <button onClick={() => this.sendSystemMessage("system message")}>system message</button>
-            <button onClick={() => this.endChatDialog()}>end dialog</button> */}
+            {/* <button onClick={() => this.sendSystemMessage("system message")}>system message</button> */}
+            <button onClick={() => this.endChatDialog()}>end dialog</button>
           </div>
         )}
       </div>

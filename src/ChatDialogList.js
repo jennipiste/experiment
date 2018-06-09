@@ -21,8 +21,7 @@ class ChatDialogList extends Component {
         dialogs: this.props.dialogs,
       });
     }
-    const activeDialogIndex = 0;
-    this.setState({activeDialogIndex: activeDialogIndex});
+    this.setState({activeDialogIndex: 0});
   }
 
   componentWillReceiveProps(nextProps) {
@@ -31,9 +30,8 @@ class ChatDialogList extends Component {
         dialogs: nextProps.dialogs,
       });
     }
-    if (!this.state.activeDialogIndex) {
-      const activeDialogIndex = 0;
-      this.setState({activeDialogIndex: activeDialogIndex});
+    if (this.props.dialogs !== nextProps.dialogs || !this.state.activeDialogIndex) {
+      this.setState({activeDialogIndex: 0});
     }
   }
 
@@ -63,6 +61,7 @@ class ChatDialogList extends Component {
         waitingStartedAt={dialog && this.state.waitingDialogs[index]}
         isEnded={dialog && dialog.is_ended}
         onChatListItemClick={this.onChatListItemClick}
+        notification={this.props.participant.notification}
       />;
     });
     let dialogs = map(this.props.dialogs, (dialog, index) => {
