@@ -16,7 +16,6 @@ class App extends Component {
     this.state = {
       participantNumber: "",
       dialogIndex: 1,
-      subjectIndex: 0,
       participant: null,
       experimentConditions: [],  // Based on participant's group, the order of 4 different conditions
       experimentPart: 1,
@@ -135,7 +134,6 @@ class App extends Component {
       return {
         experimentPart: part,
         experimentLayout: experimentLayout,
-        subjectIndex: 0,
         dialogCount: dialogCount,
         dialogs: dialogs,
         isPartOver: false,
@@ -156,7 +154,6 @@ class App extends Component {
   closeExperiment = () => {
     this.setState({
       dialogIndex: 1,
-      subjectIndex: 0,
       participant: null,
       experimentConditions: [],
       experimentPart: 1,
@@ -199,7 +196,6 @@ class App extends Component {
   createNewDialog = (oldDialogListID) => {
     let dialogs = this.state.dialogs;
     let dialogIndex = this.state.dialogIndex;
-    // let subjectIndex = this.state.subjectIndex;
 
     let subject;
     let unusedSubjects = filter(this.subjects, (subject) => {
@@ -222,16 +218,15 @@ class App extends Component {
             {
               name: "Dialog " + dialogIndex,
               subject: subject,
+              experiment_part: this.state.experimentPart,
             }
           ).then(response => {
             // Replace old dialog with the new one
             dialogs.splice(oldDialogListID, 1, response.data);
             dialogIndex++;
-            // subjectIndex++;
             this.setState({
               dialogs: dialogs,
               dialogIndex: dialogIndex,
-              // subjectIndex: subjectIndex,
             });
           });
         });
@@ -250,16 +245,15 @@ class App extends Component {
           {
             name: "Dialog " + dialogIndex,
             subject: subject,
+            experiment_part: this.state.experimentPart,
           }
         ).then(response => {
           // Replace old dialog with the new one
           dialogs.splice(oldDialogListID, 1, response.data);
           dialogIndex++;
-          // subjectIndex++;
           this.setState({
             dialogs: dialogs,
             dialogIndex: dialogIndex,
-            // subjectIndex: subjectIndex,
           });
         });
       });

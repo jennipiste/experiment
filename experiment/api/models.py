@@ -44,10 +44,17 @@ class Participant(models.Model):
 
 
 class ChatDialog(models.Model):
+    EXPERIMENT_PARTS = (
+        (1, "part1"),
+        (2, "part2"),
+        (3, "part3"),
+        (4, "part4"),
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     name = models.CharField(max_length=400)
     subject = models.CharField(max_length=400, null=True)
     participant = models.ForeignKey(Participant)
+    experiment_part = models.IntegerField(choices=EXPERIMENT_PARTS, null=True)
     is_ended = models.BooleanField(default=False)
     ended_at = models.DateTimeField(null=True)
 

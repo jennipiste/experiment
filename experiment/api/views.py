@@ -62,6 +62,7 @@ class ParticipantChatDialogListCreateAPIView(generics.ListCreateAPIView):
             name=request.data.get('name'),
             subject=request.data.get('subject'),
             participant=self.participant,
+            experiment_part=request.data.get('experiment_part')
         )
         return Response(self.get_serializer(dialog).data, status=status.HTTP_201_CREATED)
 
