@@ -26,38 +26,40 @@ class App extends Component {
       isPartOver: false,
       showPDF: false,
       subject: null,
+      usedSubjects: [],
     };
 
-    this.firstSubjects = [
+    this.subjects = [
+      'Arkkupakastin',
+      'Jalkapallosäännöt',
+      'Kamiina',
+      'Kiuas',
+      'Lämpöpumppu',
+      'Nelikopteri',
+      'Taekwondon kilpailusäännöt',
+      'Televisio',
+      'Suunnistuksen lajisäännöt',
+      'Puhelin',
+      'Liesituuletin',
       'Astianpesukone',
       'Cheerleadingin kilpailusäännöt',
       'Jääkaappi',
       'Kouluratsastuksen kilpailusäännöt',
       'Langattomat Bluetooth-kuulokkeet',
-      'Liesi',
-    ];
-    this.secondSubjects = [
-      'Liesituuletin',
+      'Uuni',
       'Miekkailu',
       'Mikroaaltouuni',
       'Pöytätenniksen säännöt',
       'Pyykinpesukone',
-      // 'Samsung Galaxy S9',
+      'Tenniksen kilpailumääräykset',
       // 'Stereot',
-      // 'Suunnistuksen lajisäännöt',
-      // 'Televisio',
-      // 'Tenniksen kilpailumääräykset',
     ];
-
-    // TODO:
-    this.thirdSubjects = [];
-    this.fourthSubjects = [];
-
     this.inputElement = null;
     this.timeouts = [];
   }
 
   componentDidMount() {
+    this.setState({subjects: this.subjects});
     window.addEventListener('beforeunload', (event) => this.confirmUnloadEvent(event));
     window.addEventListener('keydown', (event) => this.onKeydownEvent(event));
   }
