@@ -11,6 +11,7 @@ class ParticipantSerializer(serializers.ModelSerializer):
             'id',
             'group',
             'notification',
+            'number',
             'created_at',
         ]
 

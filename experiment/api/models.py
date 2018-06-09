@@ -36,9 +36,11 @@ class Participant(models.Model):
     notification = models.IntegerField(choices=NOTIFICATION_TYPES, null=True)
     # Which group participant belongs in
     group = models.IntegerField(choices=PARTICIPANT_GROUPS, null=True)
+    # The number of the participant
+    number = models.IntegerField(null=True, unique=True)
 
     def __str__(self):
-        return u"id: {0}, group: {1}, notification: {2}".format(self.id, self.group, self.notification)
+        return u"number: {0}, group: {1}, notification: {2}".format(self.number, self.group, self.notification)
 
 
 class ChatDialog(models.Model):

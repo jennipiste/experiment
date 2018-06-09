@@ -33,6 +33,7 @@ class ParticipantListCreateAPIView(generics.ListCreateAPIView):
         participant = Participant.objects.create(
             group=group,
             notification=notification,
+            number=request.data.get('number')
         )
         serializer = self.get_serializer(participant, data=request.data, partial=False)
         serializer.is_valid(raise_exception=True)
