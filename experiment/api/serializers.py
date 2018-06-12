@@ -25,6 +25,7 @@ class ChatDialogSerializer(serializers.ModelSerializer):
             'subject',
             'participant',
             'experiment_part',
+            'experiment_condition',
             'created_at',
             'is_ended',
             'ended_at',

@@ -50,11 +50,18 @@ class ChatDialog(models.Model):
         (3, "part3"),
         (4, "part4"),
     )
+    EXPERIMENT_CONDITIONS = (
+        ("A", "conditionA"),
+        ("B", "conditionB"),
+        ("C", "conditionC"),
+        ("D", "conditionD"),
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     name = models.CharField(max_length=400)
     subject = models.CharField(max_length=400, null=True)
     participant = models.ForeignKey(Participant)
     experiment_part = models.IntegerField(choices=EXPERIMENT_PARTS, null=True)
+    experiment_condition = models.CharField(choices=EXPERIMENT_CONDITIONS, null=True, max_length=2)
     is_ended = models.BooleanField(default=False)
     ended_at = models.DateTimeField(null=True)
 
