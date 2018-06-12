@@ -24,6 +24,7 @@ class ChatDialog extends Component {
     this.textareaElement = null;
     this.pdf = this.props.dialog ? require("./manuals/" + this.props.dialog.subject + ".pdf") : null;
     this.questionTimeout = null;
+    this.areYouThereTimeout = null;
   }
 
   componentDidMount() {
@@ -106,10 +107,17 @@ class ChatDialog extends Component {
           this.props.markDialogNotWaiting(this.props.dialogIndex);
         }
       }
-      // Set timeout for next question only after user's first message
-      const previousMessageIndex = this.state.messages.length - 2;
-      if (previousMessageIndex >= 0 && this.state.messages[previousMessageIndex].type === 1) {
-        this.setTimeoutForNewQuestion();
+      const re = /pieni hetki/i;
+      const isPieniHetkiMessage = newMessage.message.match(re);
+      if (isPieniHetkiMessage) {
+        // Set timeout for "Are you still there" question
+        this.areYouThereTimeout = setTimeout(() => this.sendSystemMessage("Oletko vielä siellä?"), 180000);
+      } else {
+        // Set timeout for next question only after user's first message
+        const previousMessageIndex = this.state.messages.length - 2;
+        if ((newMessage.type === 2 && previousMessageIndex >= 0 && this.state.messages[previousMessageIndex].type === 1) || (newMessage.type === 2 && this.state.messages[previousMessageIndex].message.match(re))) {
+          this.setTimeoutForNewQuestion();
+        }
       }
     });
   }
@@ -117,6 +125,7 @@ class ChatDialog extends Component {
   sendMessage = () => {
     if (this.state.composedMessage.length) {
       const composedMessage = this.state.composedMessage;
+      clearTimeout(this.areYouThereTimeout);
       // Post new message
       axios.post("api/participants/" + this.props.participant.id + "/dialogs/" + this.props.dialog.id + "/messages", {message: composedMessage})
         .then(response => {
@@ -141,35 +150,43 @@ class ChatDialog extends Component {
   }
 
   setTimeoutForNewQuestion = () => {
-    this.setState((prevState) => {
-      let questionIndex = prevState.questionIndex;
-      // If there are questions left for the subject, set timeout for next
-      if (questions[this.props.dialog.subject][questionIndex]) {
-        const nextQuestion = questions[this.props.dialog.subject][questionIndex];
-        const timeoutMilliSeconds = this.getTimeoutMilliSeconds(questionIndex);
-        // Set timeout for next question
-        this.questionTimeout = setTimeout(() => this.sendSystemMessage(nextQuestion), timeoutMilliSeconds);
-        questionIndex++;
-        return {
-          questionIndex: questionIndex,
-        };
-      } else {
-        // Otherwise end the chat after 5 seconds
-        setTimeout(this.endChatDialog, 5000);
-        return;
-      }
-    });
+    if (!this.state.isEnded) {
+      this.setState((prevState) => {
+        let questionIndex = prevState.questionIndex;
+        // If there are questions left for the subject, set timeout for next
+        if (questions[this.props.dialog.subject][questionIndex]) {
+          const nextQuestion = questions[this.props.dialog.subject][questionIndex];
+          const timeoutMilliSeconds = this.getTimeoutMilliSeconds(questionIndex);
+          // Set timeout for next question
+          this.questionTimeout = setTimeout(() => this.sendSystemMessage(nextQuestion), timeoutMilliSeconds);
+          questionIndex++;
+          return {
+            questionIndex: questionIndex,
+          };
+        } else {
+          // Otherwise end the chat after 5 seconds
+          setTimeout(this.endChatDialog, 5000);
+          return;
+        }
+      });
+    }
   }
 
   sendSystemMessage = (message, dialog=this.props.dialog) => {
+    clearTimeout(this.areYouThereTimeout);
     axios.post("api/dialogs/" + dialog.id + "/messages", {message: message})
       .then(response => {
         if (response.status === 201) {
           this.updateMessages(response.data);
-          this.setState({
-            isWaiting: true,
-            waitingStartedAt: response.data.created_at,
-          });
+          const re = /Oletko vielä siellä\?/i;
+          if (!message.match(re) || !this.state.isWaiting) {
+            this.setState({
+              isWaiting: true,
+              waitingStartedAt: response.data.created_at,
+            });
+          }
+          // Set timeout for "Are you still there" question
+          this.areYouThereTimeout = setTimeout(() => this.sendSystemMessage("Oletko vielä siellä?"), 180000);
         }
       });
   }
@@ -178,7 +195,9 @@ class ChatDialog extends Component {
     this.props.endChatDialog(this.props.dialog, this.props.dialogIndex);
     // Clear question timeout and set dialog ended
     clearTimeout(this.questionTimeout);
+    clearTimeout(this.areYouThereTimeout);
     this.questionTimeout = null;
+    this.areYouThereTimeout = null;
     this.setState({
       isEnded: true,
       isWaiting: false,
