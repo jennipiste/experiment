@@ -114,10 +114,9 @@ class App extends Component {
         experimentLayout: experimentLayout,
         dialogCount: dialogCount,
         dialogs: dialogs,
-        // subjects: this.subjects,
       };
     }, () => {
-      // End first part after 10 minutes
+      // End first part after 8 minutes
       this.expTimeout = setTimeout(() => this.changeExperiment(), 480000);
       this.createInitialDialogs();
     });
@@ -137,10 +136,11 @@ class App extends Component {
         dialogCount: dialogCount,
         dialogs: dialogs,
         isPartOver: false,
+        showPDF: false,
       };
     }, () => {
       this.createInitialDialogs();
-      // End the part after 10 minutes
+      // End the part after 8 minutes
       this.expTimeout = setTimeout(() => this.changeExperiment(), 480000);
     });
   }
@@ -163,6 +163,7 @@ class App extends Component {
       isPartOver: false,
       showPDF: false,
       subject: null,
+      usedSubjects: [],
     });
   }
 
@@ -170,7 +171,7 @@ class App extends Component {
     axios.patch("api/dialogs/" + dialog.id, {is_ended: true});
     // If the part is not over, set timeout for new dialog
     if (!this.state.isPartOver) {
-      this.timeouts.push(setTimeout(() => this.createNewDialog(dialogIndex), 2000));
+      this.timeouts.push(setTimeout(() => this.createNewDialog(dialogIndex), 5000));
     }
   }
 
@@ -202,7 +203,7 @@ class App extends Component {
       return this.state.usedSubjects.indexOf(subject) === -1;
     });
     if (unusedSubjects.length === 0) {
-      alert("Voi paska aiheet loppu, jatketaan samoilla tässä testissä");
+      alert("Aiheet loppu, jatketaan samoilla tässä testissä ja korjataan myöhemmin");
       this.setState({
         usedSubjects: []
       }, () => {
@@ -213,22 +214,6 @@ class App extends Component {
           return {
             usedSubjects: usedSubjects,
           };
-        }, () => {
-          axios.post('api/participants/' + this.state.participant.id + '/dialogs',
-            {
-              name: "Dialog " + dialogIndex,
-              subject: subject,
-              experiment_part: this.state.experimentPart,
-            }
-          ).then(response => {
-            // Replace old dialog with the new one
-            dialogs.splice(oldDialogListID, 1, response.data);
-            dialogIndex++;
-            this.setState({
-              dialogs: dialogs,
-              dialogIndex: dialogIndex,
-            });
-          });
         });
       });
     } else {
@@ -240,24 +225,24 @@ class App extends Component {
         return {
           usedSubjects: usedSubjects,
         };
-      }, () => {
-        axios.post('api/participants/' + this.state.participant.id + '/dialogs',
-          {
-            name: "Dialog " + dialogIndex,
-            subject: subject,
-            experiment_part: this.state.experimentPart,
-          }
-        ).then(response => {
-          // Replace old dialog with the new one
-          dialogs.splice(oldDialogListID, 1, response.data);
-          dialogIndex++;
-          this.setState({
-            dialogs: dialogs,
-            dialogIndex: dialogIndex,
-          });
-        });
       });
     }
+    axios.post('api/participants/' + this.state.participant.id + '/dialogs',
+      {
+        name: "Dialog " + dialogIndex,
+        subject: subject,
+        experiment_part: this.state.experimentPart,
+        experiment_condition: this.state.experimentConditions[this.state.experimentPart-1],
+      }
+    ).then(response => {
+      // Replace old dialog with the new one
+      dialogs.splice(oldDialogListID, 1, response.data);
+      dialogIndex++;
+      this.setState({
+        dialogs: dialogs,
+        dialogIndex: dialogIndex,
+      });
+    });
   }
 
   markDialogEnded = (dialogListID) => {
@@ -288,7 +273,7 @@ class App extends Component {
   render() {
     const afterFirstPartModalProps = {
       text1: 'Kokeen ensimmäinen osuus on ohi.',
-      text2: 'Nouse hetkeksi seisomaan ja pyöräytä hartioitasi. Seuraava osuus alkaa viimeistään viiden minuutin kuluttua, mutta voit aloittaa sen heti kun olet valmis.',
+      text2: 'Nouse hetkeksi seisomaan ja pyöräytä hartioitasi. Voit aloittaa seuraavan osuuden heti kun olet valmis, mutta kuitenkin viimeistään viiden minuutin kuluttua.',
       actions: [
         {
           text: "Aloita toinen osuus",
@@ -299,7 +284,7 @@ class App extends Component {
 
     const afterSecondPartModalProps = {
       text1: 'Kokeen toinen osuus on ohi.',
-      text2: 'Nouse hetkeksi seisomaan ja pyöräytä hartioitasi. Seuraava osuus alkaa viimeistään viiden minuutin kuluttua, mutta voit aloittaa sen heti kun olet valmis.',
+      text2: 'Nouse hetkeksi seisomaan ja pyöräytä hartioitasi. Voit aloittaa seuraavan osuuden heti kun olet valmis, mutta kuitenkin viimeistään viiden minuutin kuluttua.',
       actions: [
         {
           text: "Aloita kolmas osuus",
@@ -310,7 +295,7 @@ class App extends Component {
 
     const afterThirdPartModalProps = {
       text1: 'Kokeen kolmas osuus on ohi.',
-      text2: 'Nouse hetkeksi seisomaan ja pyöräytä hartioitasi. Viimeinen osuus alkaa viimeistään viiden minuutin kuluttua, mutta voit aloittaa sen heti kun olet valmis.',
+      text2: 'Nouse hetkeksi seisomaan ja pyöräytä hartioitasi. Voit aloittaa viimeisen osuuden heti kun olet valmis, mutta kuitenkin viimeistään viiden minuutin kuluttua',
       actions: [
         {
           text: "Aloita viimeinen osuus",
@@ -320,8 +305,8 @@ class App extends Component {
     };
 
     const afterFourthPartModalProps = {
-      text1: 'Viimeinen osuus on nyt ohi. Kiitos!',
-      text2: 'Seuraavaksi täytä vielä paperilla olevat kyselyt.',
+      text1: 'Viimeinen osuus on nyt ohi.',
+      text2: 'Kiitos!',
       actions: [
         {
           text: "OK",

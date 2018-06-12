@@ -12,14 +12,9 @@ class ChatListItem extends Component {
           ) : (
             <span className="Subject Ended">Ei käynnissä olevaa dialogia</span>
           )}
-          {(this.props.waitingStartedAt && !this.props.isEnded) &&
-          <span className="UnreadNotification">
-            {this.props.notification === 1 ? (
-              <i className="fa fa-circle"></i>
-            ) : (
-              <WaitTime waitingStartedAt={this.props.waitingStartedAt} />
-            )}
-          </span>}
+          {this.props.waitingStartedAt && !this.props.isEnded &&
+            <WaitTime waitingStartedAt={this.props.waitingStartedAt} />
+          }
         </div>
       </div>
     );

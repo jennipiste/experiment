@@ -12,6 +12,7 @@ textarea, input, button, select {
 
 .AppContent {
   display: flex;
+  background-color: #fafafa;
 }
 
 .ParticipantForm {
@@ -70,12 +71,24 @@ textarea, input, button, select {
   width: 50%;
 }
 
+.ChatDialogList {
+  display: flex;
+  height: 100%;
+  width: 50%;
+}
+
 .ChatDialogGrid .Dialogs {
   display: flex;
   flex-wrap: wrap;
   flex-grow: 1;
   flex-shrink: 0;
   margin: 40px;
+}
+
+.ChatDialogList .Dialogs {
+  flex-basis: 65%;
+  flex-shrink: 0;
+  margin-top: 0;
 }
 
 .Dialog {
@@ -98,23 +111,83 @@ textarea, input, button, select {
 .ChatDialogList .Dialog {
   width: 100%;
   height: 70%;
+  background-color: #fff;
+  border: 1px solid #e7e7e7;
 }
 
 .ChatDialog {
-  border: 1px solid #000;
-  height: 86%;
-  width: 84%;
+  height: 90%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   position: relative;
 }
 
+.ChatDialogGrid .ChatDialog {
+  border: 1px solid #000;
+  background-color: #fff;
+}
+
+.ChatDialogList .ChatDialog {
+  margin-top: 20px;
+  border: none;
+}
+
+.ChatList {
+  flex-basis: 35%;
+  flex-shrink: 0;
+  border-top: 1px solid #e7e7e7;
+}
+
+.ChatListItem {
+  padding: 20px 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  flex-shrink: 0;
+  height: 80px;
+  border-bottom: 1px solid #e7e7e7;
+  position: relative;
+}
+
+.ChatListItem.Active {
+  background-color: #fff;
+}
+
+div .ChatListItem.Active ::after {
+  content: "";
+  background-color: #fff;
+  height: 120px;
+  width: 30px;
+  position: absolute;
+  top: 0;
+  left: 400px;
+}
+
+.Subject {
+  margin: 30px;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.ChatListItem .Subject {
+  flex-basis: 80%;
+  flex-basis: 70%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  align-self: center;
+  margin: 0;
+}
+
+.ChatDialog .Subject {
+  max-width: 60%;
+  align-self: center;
+}
+
 .ChatDialog.Ended {
   border: 1px solid grey;
   opacity: 0.5;
-}
-
-.Ended {
   color: grey;
 }
 
@@ -133,52 +206,7 @@ textarea, input, button, select {
   border-radius: 50%;
   background: #ff0000;
   color: #fff;
-  cursor: pointer;
-  box-shadow: 0 0 0 rgba(255, 0, 0, 0.4);
-  /* animation: pulse 2s infinite; */
-}
-
-/* @-webkit-keyframes pulse {
-  0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4);
-  }
-  70% {
-    -webkit-box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
-  }
-  100% {
-    -webkit-box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4);
-  }
-}
-@keyframes pulse {
-  0% {
-    -moz-box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4);
-    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4);
-  }
-  70% {
-    -moz-box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
-    box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
-  }
-  100% {
-    -moz-box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4);
-    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4);
-  }
-} */
-
-.UnreadNotification {
-  color: red;
-  margin: 20px 10px;
   align-self: center;
-  margin: 0;
-}
-
-.Subject {
-  margin: 30px;
-  font-size: 18px;
-  text-decoration: none;
-}
-
-.EndedDialog {
-  flex-basis: 80%;
 }
 
 .ChatMessageList {
@@ -190,11 +218,15 @@ textarea, input, button, select {
 
 .QuestionMessage {
   align-self: flex-start;
-  margin: 10px 60px 0px 15px;
+  margin: 10px 60px 0px 20px;
   text-align: left;
   border-radius: 5px 5px 5px 0px;
   background-color: grey;
   color: white;
+}
+
+.QuestionMessage + .AnswerMessage {
+  margin-top: 20px;
 }
 
 .Unread .QuestionMessage:last-of-type {
@@ -203,10 +235,14 @@ textarea, input, button, select {
 
 .AnswerMessage {
   align-self: flex-end;
-  margin: 10px 15px 0px 60px;
+  margin: 10px 20px 0px 60px;
   text-align: right;
   border-radius: 5px 5px 0px 5px;
   background-color: lightgray
+}
+
+.AnswerMessage + .QuestionMessage {
+  margin-top: 20px;
 }
 
 .ChatMessage p {
@@ -217,14 +253,14 @@ textarea, input, button, select {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  margin: 15px;
+  margin: 20px;
 }
 
 .SendButton {
   height: 72px;
   width: 76px;
   font-size: 14px;
-  margin-left: 5px;
+  margin-left: 10px;
   background-color: rgb(239, 239, 239);
   border: 1px solid grey;
   cursor: pointer;
@@ -243,60 +279,4 @@ textarea, input, button, select {
   flex-grow: 1;
   height: 50px;
   padding: 10px;
-}
-
-.ChatDialogList {
-  display: flex;
-  height: 100%;
-  width: 50%;
-}
-
-.ChatDialogList .Dialogs {
-  flex-basis: 65%;
-  flex-shrink: 0;
-  margin-top: 30px;
-}
-
-.ChatList {
-  flex-basis: 35%;
-  flex-shrink: 0;
-  margin-top: 30px;
-}
-
-.ChatListItem {
-  padding: 20px 30px;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  text-align: left;
-  flex-shrink: 0;
-  height: 80px;
-}
-
-.ChatListItem.Active {
-  background-color: #E7E7E7;
-}
-
-.ChatListItem .Subject {
-  flex-basis: 80%;
-  flex-basis: 70%;
-  flex-grow: 0;
-  flex-shrink: 0;
-  align-self: center;
-  margin: 0;
-}
-
-.CloseButton {
-  width: 80px;
-  height: 50px;
-  align-self: center;
-  cursor: pointer;
-  margin-top: 30px;
-  background-color: rgb(239, 239, 239);
-  border: 1px solid grey;
-  font-size: 14px;
-}
-
-.CloseButton:hover {
-  background-color: rgb(230, 230, 230);
 }

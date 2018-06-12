@@ -214,7 +214,7 @@ class ChatDialog extends Component {
         ) : (
           <div className={"ChatDialog" + (this.state.isUnread ? " Unread" : "") + (this.state.isEnded ? " Ended" : "")}>
             <a className="Subject" href={this.pdf} onClick={(event) => this.props.onSubjectClick(event, this.props.dialog.subject)}>{this.props.dialog.subject}</a>
-            {this.state.isUnread && this.state.isWaiting && this.props.layout !== 2 && this.props.participant.notification === 2 &&
+            {this.state.isUnread && this.state.isWaiting && this.props.layout !== 2 &&
               <div className="TitleWaitTime">
                 <WaitTime waitingStartedAt={this.state.waitingStartedAt} />
               </div>
@@ -226,7 +226,7 @@ class ChatDialog extends Component {
             </ChatDialogFooter>
             {/* for debugging purposes */}
             {/* <button onClick={() => this.sendSystemMessage("system message")}>system message</button> */}
-            <button onClick={() => this.endChatDialog()}>end dialog</button>
+            {/* <button onClick={() => this.endChatDialog()}>end dialog</button> */}
           </div>
         )}
       </div>
