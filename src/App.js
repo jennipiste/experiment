@@ -43,7 +43,6 @@ class App extends Component {
       'Astianpesukone',
       'Cheerleadingin kilpailusäännöt',
       'Jääkaappi',
-      'Kouluratsastuksen kilpailusäännöt',
       'Langattomat Bluetooth-kuulokkeet',
       'Uuni',
       'Miekkailu',
@@ -51,6 +50,7 @@ class App extends Component {
       'Pöytätenniksen säännöt',
       'Pyykinpesukone',
       'Tenniksen kilpailumääräykset',
+      // 'Kouluratsastuksen kilpailusäännöt',
       // 'Stereot',
     ];
     this.inputElement = null;

@@ -1,21 +1,21 @@
 const questions = {
-  'Astianpesukone': [  // DONE
+  'Astianpesukone': [
     "Hei!",
     "Ostin astianpesukoneen, ja minulla olisi muutama kysymys siihen liittyen. Mikä ohjelma on tarkoitettu erittäin likaisten astioiden pesuun (ohjelman numero)?",
     "Selvä, mitä lämpötilaa tämä ohjelma käyttää?",
-    "Asuinpaikassani veden kovuus on 32°dH, mihin asentoon vedenpehmennin tulee siis asettaa?",
+    "Sitten vielä yksi kysymys koneen asetuksista. Asuinpaikassani veden kovuus on 32°dH, mihin asentoon vedenpehmennin tulee siis asettaa?",
     "Kiitos paljon avusta ja hyvää päivänjatkoa",
     // "Nyt tuossa näytössä näkyy merkintä ,20, mikä mahtaa olla ongelma?",
     // "Kuinka leveä astianpesukone on?",
     // "Mikä on koneen käynnistyksen ensimmäinen vaihe päivittäisessä käytössä?",
     // "Mitä Hygiene-lisätoiminnolla saavutetaan?",
   ],
-  'Cheerleadingin kilpailusäännöt': [  // DONE
+  'Cheerleadingin kilpailusäännöt': [
     "Moi!",
-    "Joukkueemme on osallistumassa cheerleadingin SM-kisoihin. Haluaisin selvittää muutaman asian kilpailusäännöistä. Kuinka suuri kilpailualue on SM-kisoissa?",
+    "Joukkueemme on osallistumassa cheerleadingin SM-kisoihin ja haluaisin selvittää muutaman asian kilpailusäännöistä. Kuinka suuri kilpailualue on SM-kisoissa?",
     "Entä kuinka monta ulkoista spotteria joukkueella saa olla kilpailussa enintään?",
     "Saako ulkoinen spotteri tukea huojuvaa pyramidia?",
-    "Kuinka monta pistettä rankaistaan, jos meillä olisi ylimääräinen ulkoinen spotteri?",
+    // "Kuinka monta pistettä rankaistaan, jos meillä olisi ylimääräinen ulkoinen spotteri?",
     "Kiitos vastauksista!",
     // "Kisaamme naisten level 6 sarjassa, mikä on sarjamääräysten mukaan musiikin maksimikesto?",
     // "Entä joukkueen maksimikoko?",
@@ -23,54 +23,43 @@ const questions = {
     // "Onko esityksessä pakko käyttää musiikkia?",
     // "Kuinka monta mainosta esiintymisasuissa saa olla?",
   ],
-  'Jääkaappi': [  // DONE
+  'Jääkaappi': [
     "Hei",
     "Tarvitsisin apua jääkaapin asennuksessa. Kuinka kauas sähköliedestä jääkaappi tulee vähintään sijoittaa?",
     "Olen kytkemässä jääkaappia toimintaan, laitoin juuri pistokkeen seinään ja nyt kuuluu joku hälytysääni. Mitä teen?",
-    "Jääkaapista kuuluu naksahduksia, onko se normaalia?",
+    "Jääkaapista kuuluu välillä naksahduksia. Kuuluvatko ne normaaleihin käyntiääniin?",
     "Voisin vielä varmuuden vuoksi ottaa talteen huoltopalvelun puhelinnumeron, mikä se on?",
     "Hienoa, pärjään varmaan näillä. Kiitos avusta",
     // "Mikä saattaa olla syynä, jos laitteen jäähdytys ei toimi, mutta lämpötilanäyttö ja sisävalo toimivat?",
     // "Miten pikapakastuksen saa päälle?",
     // "Mikä on kylmin lämpötila, jolle pakastinosan voi säätää?",
   ],
-  'Kouluratsastuksen kilpailusäännöt': [  // DONE
-    "Hei",
-    "Olen osallistumassa ensimmäistä kertaa kouluratsastuskilpailuun, mutta säännöt ovat hieman hukassa. Kuinka monta suoritusta sama hevonen voi korkeintaan tehdä yhtenä kilpailupäivänä?",
-    "Onko kilpailuasussa pakko käyttää turvaliiviä?",
-    "Millä pisteasteikolla tuomarit arvostelevat kunkin ohjelman liikkeen?",
-    "Kiitos!"
-    // "Mitä päähinettä voin pitää ratsastaessa, jos en käytä kypärää?",
-    // "Kuinka painava ratsastaja saa korkeintaan olla?",
-    // "Kuinka monta pistettä tuomarit voivat korkeintaan antaa ohjelman liikkeistä?",
-    // "Minkä nimisiä ovat ohjelmissa ratsastettavat tiet?",
-  ],
-  'Langattomat Bluetooth-kuulokkeet': [  // DONE
+  'Langattomat Bluetooth-kuulokkeet': [
     "Moi.",
-    "Ostin juuri uudet Bluetooth-kuulokkeet ja tarvitsisin vastauksen muutamaan kysymykseen. Mitä kaikkea pakkauksessa pitäisi olla?",
+    "Ostin juuri uudet Bluetooth-kuulokkeet ja tarvitsisin vastauksen muutamaan kysymykseen. Mitä kaikkea pakkauksen pitäisi sisältää?",
     "OK, minulta näyttäisi puuttuvan ohjeet ja siksi tässä kyselen. Yritin muodostaa pariliitosta, mutta se kysyy jotain salasanaa. Mikä se mahtaa olla?",
-    "Kuulokkeista kuuluu välillä rätinää, mistä se voisi johtua?",
-    "Aivan. Kuinka suuri toimintasäde on?",
+    "Kuinka kauan kuulokkeiden lataaminen pitäisi yleensä kestää?",
+    "Kuinka suuri kuulokkeiden toimintasäde on?",
     "Selvä juttu, kiitos vastauksista!",
+    // "Kuulokkeista kuuluu välillä rätinää, mistä se voisi johtua?",
     // "Millä painikkeella voi siirtyä eteenpäin musiikissa?",
     // "Mistä tiedän, että akku on täynnä kun lataan kuulokkeita?",
-    // "Kuinka kauan kuulokkeiden lataaminen pitäisi yleensä kestää?",
     // "Kiinnostaisi vielä tietää, miten voin kuulokkeiden avulla mykistää mikrofonin puhelun aikana?",
   ],
-  'Uuni': [  // DONE
+  'Uuni': [
     "Hei!",
-    "Harkitsen tässä uunin ostoa, mutta haluaisin ensin tietää uunin mitoista vähän. Voiko uunin asentaa 200 mm päähän seinästä?",
-    "Hyvä, entä kuinka paljon tyhjää tilaa lieden päällä pitää vähintään olla?",
-    "Mikä on leveimmän keittolevyn halkaisija?",
+    "Harkitsen tässä uunin ostoa, mutta haluaisin ensin tietää laitteen mitoista vähän. Mikä on leveimmän keittolevyn halkaisija?",
     "Entä kuinka monta kannatintasoa uunissa on?",
+    "Sitten vielä pari kysymystä uunin asennuksesta. Voiko uunin asentaa 200 mm päähän seinästä?",
+    "Hyvä, entä kuinka paljon tyhjää tilaa lieden päällä pitää vähintään olla?",
     "Kuulostaa sopivalta, kiitos avusta!",
     // "Kuuluuko uunin toimintoihin kiertoilma-toiminto?",
     // "Missä lämpötilassa porsaankyljykset suositellaan paistamaan uunissa?",
   ],
-  'Miekkailu': [  // DONE
+  'Miekkailu': [
     "Moi!",
-    "Olen miettinyt miekkailun aloittamista, mutta en tiedä, mikä kolmesta miekkailulajista pitäisi valita. Mikä kolmesta miekkatyypistä saa olla painavin?",
-    "Kuinka paljon se saa painaa?",
+    "Olen miettinyt miekkailun aloittamista, mutta en tiedä mikä kolmesta miekkailulajista pitäisi valita. Mikä kolmesta miekkatyypistä (kalpa, floretti, säilä) saa olla painavin?",
+    "Kuinka paljon se saa enintään painaa?",
     "Sitten vielä kiinnostaisi osuma-alueet. Mikä on säilä-miekkailun osuma-alue?",
     "Entä kalpa-miekkailun?",
     "Selvä juttu, mietiskelen vielä. Kiitos!",
@@ -82,28 +71,28 @@ const questions = {
   ],
   'Mikroaaltouuni': [ // DONE
     "Heippa",
-    "Minulla olisi pari kysymystä viime viikolla ostamastani mikrosta. Mikron näytössä palaa kolme nollaa, mitä on tapahtunut?",
-    "Mikä on suurin valittava teho?",
+    "Minulla olisi pari kysymystä viime viikolla ostamastani mikrosta. Luulen että siinä on jokin häiriö, koska näytössä palaa kolme nollaa. Mikä voisi olla syy tähän?",
+    "Selvä. Entä mikä on suurin teho jonka voin valita?",
     "Mitä tällä teholla tulisi kuumentaa?",
     "Olen kuullut, että metalliastiaa ei saisi laittaa mikroon, mistä se johtuu?",
     "Aivan. Tässä oli varmaankin kaikki tällä erää. Kiitos avusta",
     // "Mikä on mikron leveys?",
   ],
-  'Pöytätenniksen säännöt': [  // DONE
+  'Pöytätenniksen säännöt': [
     "Moi",
-    "Meillä on tässä kaverin kanssa erimielisyyksiä pöytätenniksen säännöistä. Mitkä pöydän mitat ovat?",
+    "Meillä on tässä kaverin kanssa erimielisyyksiä pöytätenniksen säännöistä. Mikä on pöydän pituus?",
     "Kuinka korkealle pallon kuuluu nousta pelaajan kämmenestä syötössä?",
-    "Kuinka monta pistettä vähintään vaaditaan erän voittoon?",
+    "Entä kuinka kuinka monta pistettä pelaajan pitää vähintään saada, jotta voi voittaa erän?",
     "Kiitos, saatiin asiat selväksi!",
     // "Täytän maaliskuussa 15 vuotta. Saanko osallistua pelikaudella (1.7-30.6) M14-luokkaan?",
     // "Mitä värirajoituksia peliasussa on?",
     // "Muutin Suomeen maaliskuussa 2018. Voinko osallistua miesten TOP-12-turnaukseen joulukuussa 2018?",
   ],
-  'Pyykinpesukone': [  // DONE
+  'Pyykinpesukone': [
     "Hei!",
-    "Olen miettinyt pesukoneen ostoa, ja haluasin kysyä pari juttua ennen päätöstä. Mikä on pyykinpesukoneen maksimitäyttömäärä?",
-    "Entä koneen leveys?",
-    "Voiko pesuohjelman asettaa käynnistymään vuorokauden päästä?",
+    "Olen miettinyt pesukoneen ostoa, ja haluasin kysyä pari juttua ennen päätöstä. Mikä on koneen leveys?",
+    "Entä maksimitäyttömäärä?",
+    "Voiko koneen lisätoimintoihin kuuluvalla ajastuksella ajastaa koneen käynnistymään vuorokauden päästä?",
     "Okei, pitää miettiä vielä. Kiitos avusta!",
     // "Mitä tarkoittaa virhemerkintä E40?",
     // "Saako pesukoneen kytkeä jatkojohtoon, jos se on hyvin vedeltä suojattu?",
@@ -127,7 +116,7 @@ const questions = {
     // "Miten saan äänimerkin päälle? Laitteessani on ohjauspaneeli 1",
     // "Entä tuulettimen jälkikäynnin?",
   ],
-  'Suunnistuksen lajisäännöt': [
+  'Suunnistuksen lajisäännöt': [  // SHOULD BE REMOVED??
     "Moikka",
     "Olen ajatellut osallistua suunnistuskilpailuun, ja olisi muutama kysymys siihen liittyen. Voinko edustaa yleisessä suunnistuskilpailussa useampaa kuin yhtä seuraa?",
     "Saanko käyttää juostessa piikkareita?",
@@ -137,17 +126,17 @@ const questions = {
     // "Mitä välineitä voi käyttää suunnistustehtävän selvittämiseen?",
     // "Saako kilpailija ylittää rautatien suorituksen aikana?",
   ],
-  'Puhelin': [  //
+  'Puhelin': [  // SHOULD BE REMOVED?
     "Hei",
     "Minulle sanottiin, että ostamassani puhelimessa on kaksi sovellusta, joilla saan ladattua uusia sovelluksia. Mitkä ne ovat?",
     "Mitä Bixby Vision -sovellus tekee?",
     "Entä Samsung DeX",
     "Selvä juttu, kiitos paljon!",
   ],
-  'Tenniksen kilpailumääräykset': [  // DONE
+  'Tenniksen kilpailumääräykset': [
     "Moi.",
     "Ajattelin ilmoittautua tenniskisoihin, mutta edellisistä on niin kauan aikaa, että haluaisin tarkistaa pari juttua. Olen tasolla 14, mihin tasoluokkaan minun kuuluu osallistua?",
-    "Olen vähän huolissani omasta jaksamisestani, kuinka pitkä tauko kahden saman luokan ottelussa on vähintään?",
+    "Olen vähän huolissani omasta jaksamisestani, kuinka pitkä tauko kahden normaalipituisen saman luokan ottelussa on vähintään?",
     "Asia selvä, kiitos vastauksista!",
     // "Kuinka montaa palloa tennisotteluissa voi korkeintaan käyttää?",
     // "Kuinka pitkään taukoon pelaaja on oikeutettu kahden saman luokan kaksinpelin välissä?",
@@ -162,29 +151,30 @@ const questions = {
   ],
   'Jalkapallosäännöt': [
     "Moi!",
-    "Ajattelin pitää tietovisan eri urheilulajeista ja mietin tässä jalkapallokysymyksiä, tarvitsisin niihin vastaukset. Ensimmäiseksi, mikä on sivurajan minimipituus kansainvälisessä ottelussa?",
+    "Ajattelin pitää tietovisan eri urheilulajeista ja mietin tässä jalkapallokysymyksiä, tarvitsisin niihin vastaukset. Ensimmäiseksi, mikä on pelikentän sivurajan minimipituus?",
     "Mikä on pallon ympärysmitta?",
-    "Kuinka monta pelaajaa joukkueessa saa olla?",
+    "Kuinka monta pelaajaa joukkueessa saa olla enintään?",
     "Sitten vielä yksi. Kuinka kaukana vastapuolen pelaajien pitää olla kulmakaaresta kulmapotkutilanteessa?",
     "Kiitoksia näistä!",
   ],
   'Arkkupakastin': [
     "Hei!",
     "Tarvitsisin vastauksen muutamaan kysymykseen, jotta tiedän ostanko arkkupakastimen. Kuinka leveä pakastin on?",
-    "Voinko asentaa pakastimen varastoon, jossa on talvella +5 astetta lämmintä?",
+    "Sitten kysymys asennuksesta. Voinko asentaa pakastimen varastoon, jossa on talvella +5 astetta lämmintä?",
     "Tarvitseeko pakastinta sulattaa?",
     "Kiitos paljon, taidan ostaa tämän pakastimen.",
   ],
   'Kiuas': [
     "Moi!",
-    "Minulla olisi pari kysymystä koskien kiuastanne. Kuinka kaukana kiukaan pitää olla sen takana olevasta seinästä?",
+    "Minulla olisi pari kysymystä koskien kiuastanne. Millä etäisyydellä kiukaan pitää olla sen takana olevasta seinästä?",
     "Mikä on pisin aika, jonka päähän kiukaan voi ajastaa lämpenemään?",
-    "Saako kiukaalle heittää merivettä?",
+    "Saako löylyvetenä käyttää merivettä?",
     "Kiitos vastauksista!",
   ],
   'Lämpöpumppu': [
     "Hei",
     "Lämpöpumppuni ohjausjärjestelmän vihreä merkkivalo alkoi vilkkumaan eilen, mitä se tarkoittaa?",
+    "Mikä asetus pitää olla päällä, jotta ohjausjärjestelmä sallii vain sähkövastuksen toiminnan?",
     "Entä mikä on oletussäätö lämpötilalle, jos otan lämmityksen pois?",
     "Okei, kiitos tiedosta!",
   ],
@@ -192,7 +182,8 @@ const questions = {
     "Moi!",
     "Kiinnostaisi tietää muutama juttu tästä nelikopterista. Kuinka painava kopteri on?",
     "Entä mikä on sen maksiminopeus?",
-    "Palaako kopteri itse kotiin, jos akku on lopussa?",
+    "Kuuluko kotiinpaluutoimintoon kotiin paluu, jos akku on vähissä?",
+    "Kuinka pitkä takuu kopterilla on?",
     "Selvä, kiitos!",
   ],
   'Taekwondon kilpailusäännöt': [
@@ -202,15 +193,21 @@ const questions = {
     "Mitä punnituksessa pitää olla päällä?",
     "Kiitos paljon avusta!",
   ],
-  //
-  //
-  // KESKEN
-  //
-  //
-  'Stereot': [
-    "",
-  ],
+  // 'Stereot': [
+  //   "",
+  // ],
   // 'Mäkihyppy': []
+  // 'Kouluratsastuksen kilpailusäännöt': [
+  //   "Hei",
+  //   "Olen osallistumassa ensimmäistä kertaa kouluratsastuskilpailuun, mutta säännöt ovat hieman hukassa. Kuinka monta suoritusta sama hevonen voi korkeintaan tehdä yhtenä kilpailupäivänä?",
+  //   "Onko kilpailuasussa pakko käyttää turvaliiviä?",
+  //   "Millä pisteasteikolla tuomarit arvostelevat kunkin ohjelman liikkeen?",
+  //   "Kiitos!"
+  //   "Mitä päähinettä voin pitää ratsastaessa, jos en käytä kypärää?",
+  //   "Kuinka painava ratsastaja saa korkeintaan olla?",
+  //   "Kuinka monta pistettä tuomarit voivat korkeintaan antaa ohjelman liikkeistä?",
+  //   "Minkä nimisiä ovat ohjelmissa ratsastettavat tiet?",
+  // ],
 };
 
 export default questions;
