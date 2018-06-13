@@ -101,9 +101,9 @@ class ChatDialog extends Component {
     }, () => {
       // For experiment 2, mark dialog read or unread
       if (this.props.layout === 2) {
-        if (newMessage.type === 1) {
+        if (newMessage.type === 1 && !this.state.isWaiting) {
           this.props.markDialogWaiting(this.props.dialogIndex, newMessage.created_at);
-        } else {
+        } else if (newMessage.type === 2) {
           this.props.markDialogNotWaiting(this.props.dialogIndex);
         }
       }
@@ -173,22 +173,27 @@ class ChatDialog extends Component {
   }
 
   sendSystemMessage = (message, dialog=this.props.dialog) => {
-    clearTimeout(this.areYouThereTimeout);
-    axios.post("api/dialogs/" + dialog.id + "/messages", {message: message})
-      .then(response => {
-        if (response.status === 201) {
-          this.updateMessages(response.data);
-          const re = /Oletko vielä siellä\?/i;
-          if (!message.match(re) || !this.state.isWaiting) {
-            this.setState({
-              isWaiting: true,
-              waitingStartedAt: response.data.created_at,
-            });
+    const re = /Oletko vielä siellä\?/i;
+    if (message.match(re) && this.state.composedMessage.length) {
+      // Don't send "Are you still there" yet because the user is writing, but schedule new message
+      this.areYouThereTimeout = setTimeout(() => this.sendSystemMessage("Oletko vielä siellä?"), 60000);
+    } else {
+      clearTimeout(this.areYouThereTimeout);
+      axios.post("api/dialogs/" + dialog.id + "/messages", {message: message})
+        .then(response => {
+          if (response.status === 201) {
+            this.updateMessages(response.data);
+            if (!message.match(re) || !this.state.isWaiting) {
+              this.setState({
+                isWaiting: true,
+                waitingStartedAt: response.data.created_at,
+              });
+            }
+            // Set timeout for "Are you still there" question
+            this.areYouThereTimeout = setTimeout(() => this.sendSystemMessage("Oletko vielä siellä?"), 180000);
           }
-          // Set timeout for "Are you still there" question
-          this.areYouThereTimeout = setTimeout(() => this.sendSystemMessage("Oletko vielä siellä?"), 180000);
-        }
-      });
+        });
+    }
   }
 
   endChatDialog = () => {
