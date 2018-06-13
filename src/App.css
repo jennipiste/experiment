@@ -134,8 +134,9 @@ textarea, input, button, select {
 }
 
 .ChatList {
-  flex-basis: 35%;
+  max-width: 35%;
   flex-shrink: 0;
+  flex-grow: 0;
   border-top: 1px solid #e7e7e7;
 }
 
@@ -165,6 +166,22 @@ div .ChatListItem.Active ::after {
   left: 99%;
 }
 
+.ChatListItem .Content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 78%;
+}
+
+.ChatListItem .LastMessage {
+  font-size: 14px;
+  color: #7b7b7b;
+  max-height: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .Subject {
   margin: 30px;
   font-size: 18px;
@@ -172,11 +189,9 @@ div .ChatListItem.Active ::after {
 }
 
 .ChatListItem .Subject {
-  flex-basis: 80%;
-  flex-basis: 70%;
+  flex-basis: 68%;
   flex-grow: 0;
   flex-shrink: 0;
-  align-self: center;
   margin: 0;
 }
 

@@ -101,6 +101,7 @@ class ChatDialog extends Component {
     }, () => {
       // For experiment 2, mark dialog read or unread
       if (this.props.layout === 2) {
+        this.props.setLastMessage(this.props.dialogIndex, newMessage.message);
         if (newMessage.type === 1 && !this.state.isWaiting) {
           this.props.markDialogWaiting(this.props.dialogIndex, newMessage.created_at);
         } else if (newMessage.type === 2) {
