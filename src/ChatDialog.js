@@ -190,8 +190,10 @@ class ChatDialog extends Component {
                 waitingStartedAt: response.data.created_at,
               });
             }
-            // Set timeout for "Are you still there" question
-            this.areYouThereTimeout = setTimeout(() => this.sendSystemMessage("Oletko vielä siellä?"), 180000);
+            // Set timeout for "Are you still there" question (only if last message has not been sent yet)
+            if (questions[this.props.dialog.subject][this.state.questionIndex]) {
+              this.areYouThereTimeout = setTimeout(() => this.sendSystemMessage("Oletko vielä siellä?"), 180000);
+            }
           }
         });
     }
