@@ -12,7 +12,7 @@ textarea, input, button, select {
 
 .AppContent {
   display: flex;
-  background-color: #fafafa;
+  background-color: #f8f8f8;
 }
 
 .ParticipantForm {
@@ -162,7 +162,7 @@ div .ChatListItem.Active ::after {
   width: 30px;
   position: absolute;
   top: 0;
-  left: 400px;
+  left: 99%;
 }
 
 .Subject {
@@ -261,13 +261,13 @@ div .ChatListItem.Active ::after {
   width: 76px;
   font-size: 14px;
   margin-left: 10px;
-  background-color: rgb(239, 239, 239);
+  background-color: #fafafa;
   border: 1px solid grey;
   cursor: pointer;
 }
 
 .SendButton:hover {
-  background-color: rgb(230, 230, 230);
+  background-color: #f3f3f3;
 }
 
 .SendButton:disabled {
