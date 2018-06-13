@@ -134,7 +134,7 @@ textarea, input, button, select {
 }
 
 .ChatList {
-  max-width: 35%;
+  width: 35%;
   flex-shrink: 0;
   flex-grow: 0;
   border-top: 1px solid #e7e7e7;
@@ -163,7 +163,7 @@ div .ChatListItem.Active ::after {
   width: 30px;
   position: absolute;
   top: 0;
-  left: 99%;
+  left: 98%;
 }
 
 .ChatListItem .Content {
