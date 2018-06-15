@@ -1,11 +1,12 @@
 import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
+import axios from 'axios';
 import ChatMessageList from './ChatMessageList';
 import ChatDialogFooter from './ChatDialogFooter';
 import WaitTime from './WaitTime';
-import axios from 'axios';
 import questions from './questions';
 import waitTimes from './wait_times';
 
+let d3 = require('d3-random');
 
 class ChatDialog extends Component {
   constructor(props) {
@@ -38,6 +39,7 @@ class ChatDialog extends Component {
         isWaiting: false,
       });
       clearTimeout(this.questionTimeout);
+      clearTimeout(this.areYouThereTimeout);
     }
     if (nextProps.dialog !== this.props.dialog) {
       this.pdf = nextProps.dialog ? require("./manuals/" + nextProps.dialog.subject + ".pdf") : null;
@@ -112,7 +114,8 @@ class ChatDialog extends Component {
       const isPieniHetkiMessage = newMessage.message.match(re);
       if (isPieniHetkiMessage) {
         // Set timeout for "Are you still there" question
-        this.areYouThereTimeout = setTimeout(() => this.sendSystemMessage("Oletko vielä siellä?"), 180000);
+        const timeout = this.getAreYouThereTimeout();
+        this.areYouThereTimeout = setTimeout(() => this.sendSystemMessage("Oletko vielä siellä?"), timeout);
       } else {
         // Set timeout for next question only after user's first message
         const previousMessageIndex = this.state.messages.length - 2;
@@ -145,7 +148,7 @@ class ChatDialog extends Component {
     }
   }
 
-  getTimeoutMilliSeconds = (questionIndex) => {
+  getNewMessageTimeout = (questionIndex) => {
     const waitTime = waitTimes[this.props.dialog.subject][questionIndex-1];
     return waitTime * 1000;
   }
@@ -157,7 +160,7 @@ class ChatDialog extends Component {
         // If there are questions left for the subject, set timeout for next
         if (questions[this.props.dialog.subject][questionIndex]) {
           const nextQuestion = questions[this.props.dialog.subject][questionIndex];
-          const timeoutMilliSeconds = this.getTimeoutMilliSeconds(questionIndex);
+          const timeoutMilliSeconds = this.getNewMessageTimeout(questionIndex);
           // Set timeout for next question
           this.questionTimeout = setTimeout(() => this.sendSystemMessage(nextQuestion), timeoutMilliSeconds);
           questionIndex++;
@@ -173,11 +176,17 @@ class ChatDialog extends Component {
     }
   }
 
+  getAreYouThereTimeout = () => {
+    let random = d3.randomNormal(150, 20);
+    return random() * 1000;
+  }
+
   sendSystemMessage = (message, dialog=this.props.dialog) => {
     const re = /Oletko vielä siellä\?/i;
     if (message.match(re) && this.state.composedMessage.length) {
       // Don't send "Are you still there" yet because the user is writing, but schedule new message
-      this.areYouThereTimeout = setTimeout(() => this.sendSystemMessage("Oletko vielä siellä?"), 60000);
+      const timeout = this.getAreYouThereTimeout();
+      this.areYouThereTimeout = setTimeout(() => this.sendSystemMessage("Oletko vielä siellä?"), timeout);
     } else {
       clearTimeout(this.areYouThereTimeout);
       axios.post("api/dialogs/" + dialog.id + "/messages", {message: message})
@@ -192,7 +201,8 @@ class ChatDialog extends Component {
             }
             // Set timeout for "Are you still there" question (only if last message has not been sent yet)
             if (questions[this.props.dialog.subject][this.state.questionIndex]) {
-              this.areYouThereTimeout = setTimeout(() => this.sendSystemMessage("Oletko vielä siellä?"), 180000);
+              const timeout = this.getAreYouThereTimeout();
+              this.areYouThereTimeout = setTimeout(() => this.sendSystemMessage("Oletko vielä siellä?"), timeout);
             }
           }
         });
