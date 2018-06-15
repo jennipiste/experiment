@@ -47,7 +47,7 @@ textarea, input, button, select {
 .Modal {
   background-color: #fff;
   border-radius: 5px;
-  max-width: 500px;
+  max-width: 900px;
   min-height: 200px;
   margin: 0 auto;
   padding: 30px;
@@ -58,6 +58,41 @@ textarea, input, button, select {
 
 .ModalContent {
   margin: 20px;
+}
+
+.Labels {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+  align-items: center;
+}
+
+.Labels label {
+  margin-left: 24px;
+  max-width: 100px;
+}
+
+.Question {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.RadioButtons {
+  margin-right: 120px;
+}
+
+.RadioButtons input {
+  margin-left: 17px;
+  cursor: pointer;
+}
+
+.QuestionnaireSubmitButton {
+  margin-top: 40px;
+  float: right;
+  margin-right: 176px;
+  cursor: pointer;
+  height: 24px;
 }
 
 .ModalFooter button {
@@ -116,7 +151,7 @@ textarea, input, button, select {
 }
 
 .ChatDialog {
-  height: 90%;
+  height: 94%;
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -189,7 +224,7 @@ div .ChatListItem.Active ::after {
 }
 
 .ChatListItem .Subject {
-  flex-basis: 68%;
+  flex-basis: 56%;
   flex-grow: 0;
   flex-shrink: 0;
   margin: 0;
@@ -200,10 +235,13 @@ div .ChatListItem.Active ::after {
   align-self: center;
 }
 
-.ChatDialog.Ended {
+.ChatDialogGrid .ChatDialog.Ended {
   border: 1px solid grey;
-  opacity: 0.5;
+}
+
+.Ended {
   color: grey;
+  opacity: 0.5;
 }
 
 .TitleWaitTime {

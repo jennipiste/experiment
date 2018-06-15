@@ -270,49 +270,67 @@ class App extends Component {
     this.setState({participantNumber: event.target.value});
   }
 
+  submitQuestionnaire = (q1, q2, q3, q4, q5) => {
+    axios.post('api/participants/' + this.state.participant.id + '/questionnaires',
+      {
+        q1: q1,
+        q2: q2,
+        q3: q3,
+        q4: q4,
+        q5: q5,
+        experiment_part: this.state.experimentPart,
+        experiment_condition: this.state.experimentConditions[this.state.experimentPart-1],
+      }
+    );
+  }
+
   render() {
     const afterFirstPartModalProps = {
-      text1: 'Kokeen ensimmäinen osuus on ohi.',
-      text2: 'Nouse hetkeksi seisomaan ja pyöräytä hartioitasi. Voit aloittaa seuraavan osuuden heti kun olet valmis, mutta kuitenkin viimeistään viiden minuutin kuluttua.',
+      text1: 'Kokeen ensimmäinen osuus on ohi. Täytä seuraavaksi kysely ensimmäisen osuuden käyttöliittymästä.',
+      text2: 'Kiitos! Voit nousta hetkeksi seisomaan ja pyöräyttää hartioitasi. Aloita sen jälkeen toinen osuus.',
       actions: [
         {
           text: "Aloita toinen osuus",
           onClick: this.startNextPart,
         }
-      ]
+      ],
+      submitQuestionnaire: this.submitQuestionnaire,
     };
 
     const afterSecondPartModalProps = {
-      text1: 'Kokeen toinen osuus on ohi.',
-      text2: 'Nouse hetkeksi seisomaan ja pyöräytä hartioitasi. Voit aloittaa seuraavan osuuden heti kun olet valmis, mutta kuitenkin viimeistään viiden minuutin kuluttua.',
+      text1: 'Kokeen toinen osuus on ohi. Täytä seuraavaksi kysely toisen osuuden käyttöliittymästä.',
+      text2: 'Kiitos! Voit nousta hetkeksi seisomaan ja pyöräyttää hartioitasi. Aloita sen jälkeen kolmas osuus.',
       actions: [
         {
           text: "Aloita kolmas osuus",
           onClick: this.startNextPart,
         }
-      ]
+      ],
+      submitQuestionnaire: this.submitQuestionnaire,
     };
 
     const afterThirdPartModalProps = {
-      text1: 'Kokeen kolmas osuus on ohi.',
-      text2: 'Nouse hetkeksi seisomaan ja pyöräytä hartioitasi. Voit aloittaa viimeisen osuuden heti kun olet valmis, mutta kuitenkin viimeistään viiden minuutin kuluttua',
+      text1: 'Kokeen kolmas osuus on ohi. Täytä seuraavaksi kysely kolmannen osuuden käyttöliittymästä.',
+      text2: 'Kiitos! Voit nousta hetkeksi seisomaan ja pyöräyttää hartioitasi. Aloita sen jälkeen viimeinen osuus.',
       actions: [
         {
           text: "Aloita viimeinen osuus",
           onClick: this.startNextPart,
         }
-      ]
+      ],
+      submitQuestionnaire: this.submitQuestionnaire,
     };
 
     const afterFourthPartModalProps = {
-      text1: 'Viimeinen osuus on nyt ohi.',
-      text2: 'Kiitos!',
+      text1: 'Viimeinen osuus on nyt ohi. Täytä vielä kysely viimeisen osuuden käyttöliittymästä.',
+      text2: 'Kiitos osallistumisesta!',
       actions: [
         {
           text: "OK",
           onClick: this.closeExperiment,
         }
-      ]
+      ],
+      submitQuestionnaire: this.submitQuestionnaire,
     };
 
     return (
