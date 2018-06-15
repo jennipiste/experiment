@@ -83,3 +83,22 @@ class ChatMessage(models.Model):
 
     def __str__(self):
         return u"message: {0}, type: {1}, sender: {2}".format(self.message, self.type, self.sender)
+
+
+class Questionnaire(models.Model):
+    VALUES = (
+        (1, "täysin eri mieltä"),
+        (2, "jokseenkin eri mieltä"),
+        (3, "ei samaa eikä eri mieltä"),
+        (4, "jokseenkin samaa mieltä"),
+        (5, "täysin samaa mieltä"),
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    participant = models.ForeignKey(Participant)
+    experiment_part = models.IntegerField(choices=ChatDialog.EXPERIMENT_PARTS, null=True)
+    experiment_condition = models.CharField(choices=ChatDialog.EXPERIMENT_CONDITIONS, null=True, max_length=2)
+    q1 = models.IntegerField(choices=VALUES)
+    q2 = models.IntegerField(choices=VALUES)
+    q3 = models.IntegerField(choices=VALUES)
+    q4 = models.IntegerField(choices=VALUES)
+    q5 = models.IntegerField(choices=VALUES)
