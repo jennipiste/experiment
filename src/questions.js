@@ -118,8 +118,8 @@ const questions = {
   ],
   'Suunnistuksen lajisäännöt': [  // SHOULD BE REMOVED??
     "Moikka",
-    "Olen ajatellut osallistua suunnistuskilpailuun, ja olisi muutama kysymys siihen liittyen. Voinko edustaa yleisessä suunnistuskilpailussa useampaa kuin yhtä seuraa?",
-    "Saanko käyttää juostessa piikkareita?",
+    "Olen ajatellut osallistua suunnistuskilpailuun, ja olisi muutama kysymys siihen liittyen. Onko minulla oikeus edustaa useampaa kuin yhtä seuraa yleisessä suunnistuskilpailussa?",
+    "Kuuluvatko piikkarit sallittuihin välineisiin?",
     "Harmi. Entä onko rautatien ylitys kiellettyä?",
     "Siinä taisi olla kaikki, kiitos avusta!",
     // "Miten kilpailun keskeyttänyt kilpailija poistuu suunnistusalueelta?",
@@ -128,7 +128,7 @@ const questions = {
   ],
   'Puhelin': [  // SHOULD BE REMOVED?
     "Hei",
-    "Minulle sanottiin, että ostamassani puhelimessa on kaksi sovellusta, joilla saan ladattua uusia sovelluksia. Mitkä ne ovat?",
+    "Minulle sanottiin, että ostamassani puhelimessa on kaksi sovellusta, joilla saan asennettua uusia sovelluksia. Mitkä ne ovat?",
     "Mitä Bixby Vision -sovellus tekee?",
     "Entä Samsung DeX",
     "Selvä juttu, kiitos paljon!",
@@ -161,7 +161,7 @@ const questions = {
     "Hei!",
     "Tarvitsisin vastauksen muutamaan kysymykseen, jotta tiedän ostanko arkkupakastimen. Kuinka leveä pakastin on?",
     "Sitten kysymys asennuksesta. Voinko asentaa pakastimen varastoon, jossa on talvella +5 astetta lämmintä?",
-    "Tarvitseeko pakastinta sulattaa?",
+    "Entä mikä on alhaisin lämpötila, jolle pakastimen voi säätää käyttöpaneelista?",
     "Kiitos paljon, taidan ostaa tämän pakastimen.",
   ],
   'Kiuas': [
@@ -193,6 +193,21 @@ const questions = {
     "Mitä punnituksessa pitää olla päällä?",
     "Kiitos paljon avusta!",
   ],
+  'Kuivausrumpu': [
+    "Moi!",
+    "Haluaisin kysyä pari kysymystä kuivausrummusta ennen ostopäätöstä. Kuinka leveä kuivausrumpu on?",
+    "Mikä on täysin kuivaksi kuivaavan ohjelman maksimitäyttömäärä?",
+    "Kuuluuko ajastettu kuivaus laitteen lisätoimintoihin?",
+    "Entä onko laitteessa ohjelmaa villa-vaatteille?",
+    "Kiitos avusta!",
+  ],
+  'Agility': [
+    "Hei",
+    "Olen osallistumassa ensimmäistä kertaa agility-kilpailuun. Koirani säkäkorkeus on 40cm, mihin kilpailuluokkaan (koko) minun pitää osallistua?",
+    "Kuinka monta eri tasoluokkaa on olemassa?",
+    "Onko agilitykilpailun tarkoituksena yhtenä osa-aluuena koiran ulkonäön arviointi?",
+    "Selvä juttu, kiitos!",
+  ]
   // 'Stereot': [
   //   "",
   // ],

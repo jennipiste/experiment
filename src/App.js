@@ -37,8 +37,6 @@ class App extends Component {
       'Nelikopteri',
       'Taekwondon kilpailusäännöt',
       'Televisio',
-      'Suunnistuksen lajisäännöt',
-      'Puhelin',
       'Liesituuletin',
       'Astianpesukone',
       'Cheerleadingin kilpailusäännöt',
@@ -50,7 +48,11 @@ class App extends Component {
       'Pöytätenniksen säännöt',
       'Pyykinpesukone',
       'Tenniksen kilpailumääräykset',
+      'Kuivausrumpu',
+      'Agility',
       // 'Kouluratsastuksen kilpailusäännöt',
+      // 'Suunnistuksen lajisäännöt',
+      // 'Puhelin',
       // 'Stereot',
     ];
     this.inputElement = null;
