@@ -333,3 +333,15 @@ div .ChatListItem.Active ::after {
   height: 50px;
   padding: 10px;
 }
+
+.AnswerButtons {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.AnswerButtons button {
+  margin-left: 18px;
+  height: 24px;
+  width: 100px;
+}

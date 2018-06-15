@@ -212,9 +212,16 @@ class ChatDialog extends Component {
       waitingStartedAt: null,
     });
     if (this.props.layout === 2) {
-      // Mark dialog unread because user has to know that is has eneded
       this.props.markDialogEnded(this.props.dialogIndex);
     }
+  }
+
+  composeMessage = (event) => {
+    this.setState({
+      composedMessage: event.target.value
+    }, () => {
+      this.sendMessage();
+    });
   }
 
   render() {
@@ -254,6 +261,11 @@ class ChatDialog extends Component {
             {/* for debugging purposes */}
             {/* <button onClick={() => this.sendSystemMessage("system message")}>system message</button> */}
             {/* <button onClick={() => this.endChatDialog()}>end dialog</button> */}
+            <div className="AnswerButtons">
+              <button onClick={this.composeMessage} value="Hei!" >Hei!</button>
+              <button onClick={this.composeMessage} value="Pieni hetki">Pieni hetki</button>
+              <button onClick={this.composeMessage} value="Eipä kestä!">Eipä kestä!</button>
+            </div>
           </div>
         )}
       </div>
