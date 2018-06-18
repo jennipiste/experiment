@@ -5,6 +5,8 @@ import filter from 'lodash/filter';
 import ChatDialogGrid from './ChatDialogGrid';
 import ChatDialogList from './ChatDialogList';
 import Modal from './Modal';
+import conditions from './conditions';
+import subjects from './subjects';
 import './App.css';
 
 axiosDefaults.baseURL = 'http://localhost:8000';
@@ -28,39 +30,11 @@ class App extends Component {
       usedSubjects: [],
     };
 
-    this.subjects = [
-      'Arkkupakastin',
-      'Jalkapallosäännöt',
-      'Kamiina',
-      'Kiuas',
-      'Lämpöpumppu',
-      'Nelikopteri',
-      'Taekwondon kilpailusäännöt',
-      'Televisio',
-      'Liesituuletin',
-      'Astianpesukone',
-      'Cheerleadingin kilpailusäännöt',
-      'Jääkaappi',
-      'Langattomat Bluetooth-kuulokkeet',
-      'Uuni',
-      'Miekkailu',
-      'Mikroaaltouuni',
-      'Pöytätenniksen säännöt',
-      'Pyykinpesukone',
-      'Tenniksen kilpailumääräykset',
-      'Kuivausrumpu',
-      'Agility',
-      // 'Kouluratsastuksen kilpailusäännöt',
-      // 'Suunnistuksen lajisäännöt',
-      // 'Puhelin',
-      // 'Stereot',
-    ];
     this.inputElement = null;
     this.timeouts = [];
   }
 
   componentDidMount() {
-    this.setState({subjects: this.subjects});
     window.addEventListener('beforeunload', (event) => this.confirmUnloadEvent(event));
     window.addEventListener('keydown', (event) => this.onKeydownEvent(event));
   }
@@ -87,20 +61,11 @@ class App extends Component {
     axios.post("api/participants", {number: this.state.participantNumber})
       .then(response => {
         if (response.status === 201) {
-          let group = response.data.group;
-          let conditions;
-          if (group === 1) {
-            conditions = ["A", "B", "D", "C"];
-          } else if (group === 2) {
-            conditions = ["B", "C", "A", "D"];
-          } else if (group === 3) {
-            conditions = ["C", "D", "B", "A"];
-          } else {
-            conditions = ["D", "A", "C", "B"];
-          }
+          const group = response.data.group;
+          const groupConditions = conditions[group];
           this.setState({
             participant: response.data,
-            experimentConditions: conditions,
+            experimentConditions: groupConditions,
           }, this.startFirstPart);
         }
       });
@@ -201,7 +166,7 @@ class App extends Component {
     let dialogIndex = this.state.dialogIndex;
 
     let subject;
-    let unusedSubjects = filter(this.subjects, (subject) => {
+    let unusedSubjects = filter(subjects, (subject) => {
       return this.state.usedSubjects.indexOf(subject) === -1;
     });
     if (unusedSubjects.length === 0) {
@@ -209,7 +174,7 @@ class App extends Component {
       this.setState({
         usedSubjects: []
       }, () => {
-        subject = this.subjects[Math.floor(Math.random() * this.subjects.length)];
+        subject = subjects[Math.floor(Math.random() * subjects.length)];
         this.setState((prevState) => {
           let usedSubjects = prevState.usedSubjects;
           usedSubjects.push(subject);

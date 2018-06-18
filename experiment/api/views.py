@@ -26,7 +26,7 @@ class ParticipantListCreateAPIView(generics.ListCreateAPIView):
             latest_group = Participant.objects.filter(notification=notification).latest('created_at').group
         except Participant.DoesNotExist:
             latest_group = None
-        if not latest_group or latest_group == 4:
+        if not latest_group or latest_group == 24:
             group = 1
         else:
             group = latest_group + 1

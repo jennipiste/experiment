@@ -5,7 +5,7 @@ from django.db import models
 
 class Participant(models.Model):
     """
-    Participant belongs into one of four groups
+    Participant belongs into one of 24 groups
     Each group has different order of conditions
 
     Conditions:
@@ -14,18 +14,58 @@ class Participant(models.Model):
     C = Layout 1, 4 dialogs
     D = layout 2, 4 dialogs
 
-    Balanced latin square: (https://explorable.com/counterbalanced-measures-design)
+    Latin square: (https://explorable.com/counterbalanced-measures-design)
     Group   1st 2nd 3rd 4th
-    1       A   B   D   C
-    2       B   C   A   D
-    3       C   D   B   A
-    4       D   A   C   B
+    1       A   B   C   D
+    2       A   B   D   C
+    3       A   C   B   D
+    4       A   C   D   B
+    5       A   D   B   C
+    6       A   D   C   B
+    7       B   A   C   D
+    8       B   A   D   C
+    9       B   C   A   D
+    10      B   C   D   A
+    11      B   D   A   C
+    12      B   D   C   A
+    13      C   A   B   D
+    14      C   A   D   B
+    15      C   B   A   D
+    16      C   B   D   A
+    17      C   D   A   B
+    18      C   D   B   A
+    19      D   A   B   C
+    20      D   A   C   B
+    21      D   B   A   C
+    22      D   B   C   A
+    23      D   C   A   B
+    24      D   C   B   A
     """
     PARTICIPANT_GROUPS = (
         (1, "group1"),
         (2, "group2"),
         (3, "group3"),
         (4, "group4"),
+        (5, "group5"),
+        (6, "group6"),
+        (7, "group7"),
+        (8, "group8"),
+        (9, "group9"),
+        (10, "group10"),
+        (11, "group11"),
+        (12, "group12"),
+        (13, "group13"),
+        (14, "group14"),
+        (15, "group15"),
+        (16, "group16"),
+        (17, "group17"),
+        (18, "group18"),
+        (19, "group19"),
+        (20, "group20"),
+        (21, "group21"),
+        (22, "group22"),
+        (23, "group23"),
+        (24, "group24"),
     )
     NOTIFICATION_TYPES = (
         (1, "notification1"),  # Passive notification
