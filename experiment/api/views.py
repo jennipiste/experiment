@@ -15,15 +15,9 @@ class ParticipantListCreateAPIView(generics.ListCreateAPIView):
     queryset = Participant.objects.all()
 
     def create(self, request, *args, **kwargs):
-        # Create every second participant to group 1 and every second to group 2 (notification type)
+        # Each participant is assigned into one of the 24 groups with different order of conditions
         try:
-            latest_notification = Participant.objects.latest('created_at').notification
-        except Participant.DoesNotExist:
-            latest_notification = None
-        notification = 1 if not latest_notification or latest_notification == 2 else 2
-        # Each participant in both notification groups is assigned into one of the four groups with different order of conditions
-        try:
-            latest_group = Participant.objects.filter(notification=notification).latest('created_at').group
+            latest_group = Participant.objects.latest('created_at').group
         except Participant.DoesNotExist:
             latest_group = None
         if not latest_group or latest_group == 24:
@@ -32,7 +26,6 @@ class ParticipantListCreateAPIView(generics.ListCreateAPIView):
             group = latest_group + 1
         participant = Participant.objects.create(
             group=group,
-            notification=notification,
             number=request.data.get('number')
         )
         serializer = self.get_serializer(participant, data=request.data, partial=False)

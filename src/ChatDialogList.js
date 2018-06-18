@@ -68,7 +68,6 @@ class ChatDialogList extends Component {
         waitingStartedAt={dialog && this.state.waitingDialogs[index]}
         isEnded={dialog && dialog.is_ended}
         onChatListItemClick={this.onChatListItemClick}
-        notification={this.props.participant.notification}
         lastMessage={this.state.lastMessages[index]}
       />;
     });
