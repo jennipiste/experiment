@@ -20,6 +20,7 @@ class ChatDialog extends Component {
       questionIndex: 0,
       isWaiting: false,
       waitingStartedAt: null,
+      isFocused: false,
     };
 
     this.textareaElement = null;
@@ -81,6 +82,14 @@ class ChatDialog extends Component {
 
   onTextareaValueChange = (target) => {
     this.setState({composedMessage: target.value});
+  }
+
+  onTextareaFocus = () => {
+    this.setState({isFocused: true});
+  }
+
+  onTextareaBlur = () => {
+    this.setState({isFocused: false});
   }
 
   updateMessages = (newMessage) => {
@@ -235,6 +244,8 @@ class ChatDialog extends Component {
       maxLength: 2000,
       value: this.state.composedMessage,
       onChange: event => this.onTextareaValueChange(event.target),
+      onFocus: this.onTextareaFocus,
+      onBlur: this.onTextareaBlur,
       autoComplete: "off",
       autoCorrect: "off",
       autoCapitalize: "off",
@@ -251,7 +262,7 @@ class ChatDialog extends Component {
         {!this.props.dialog ? (
           <div className="ChatDialog"></div>
         ) : (
-          <div className={"ChatDialog" + (this.state.isUnread ? " Unread" : "") + (this.state.isEnded ? " Ended" : "")}>
+          <div className={"ChatDialog" + (this.state.isUnread ? " Unread" : "") + (this.state.isEnded ? " Ended" : "") + (this.props.layout === 1 && this.state.isFocused ? " Focused" : "")}>
             <a className="Subject" href={this.pdf} onClick={(event) => this.props.onSubjectClick(event, this.props.dialog.subject)}>{this.props.dialog.subject}</a>
             {this.state.isUnread && this.state.isWaiting && this.props.layout !== 2 &&
               <div className="TitleWaitTime">

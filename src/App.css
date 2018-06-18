@@ -159,7 +159,7 @@ textarea, input, button, select {
 }
 
 .ChatDialogGrid .ChatDialog {
-  border: 1px solid #000;
+  border: 1px solid grey;
   background-color: #fff;
 }
 
@@ -235,13 +235,18 @@ div .ChatListItem.Active ::after {
   align-self: center;
 }
 
-.ChatDialogGrid .ChatDialog.Ended {
-  border: 1px solid grey;
-}
-
 .Ended {
   color: grey;
   opacity: 0.5;
+}
+
+.ChatDialogGrid .ChatDialog.Ended {
+  border: 1px solid lightgrey;
+}
+
+.ChatDialogGrid .ChatDialog.Focused {
+  outline: lightgrey auto 5px;
+  box-shadow: 0 0 4px 3px;
 }
 
 .TitleWaitTime {
