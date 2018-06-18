@@ -83,14 +83,6 @@ class ChatDialog extends Component {
     this.setState({composedMessage: target.value});
   }
 
-  onTextareaKeyDown = (event) => {
-    if (event.keyCode === 13 && !event.shiftKey) {
-      event.preventDefault();
-      event.stopPropagation();
-      this.sendMessage();
-    }
-  }
-
   updateMessages = (newMessage) => {
     this.setState((prevState) => {
       const messages = prevState.messages;
@@ -243,7 +235,6 @@ class ChatDialog extends Component {
       maxLength: 2000,
       value: this.state.composedMessage,
       onChange: event => this.onTextareaValueChange(event.target),
-      onKeyDown: event => this.onTextareaKeyDown(event),
       autoComplete: "off",
       autoCorrect: "off",
       autoCapitalize: "off",
