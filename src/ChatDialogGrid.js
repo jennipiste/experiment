@@ -16,6 +16,7 @@ class ChatDialogGrid extends Component {
         markDialogEnded={this.props.markDialogEnded}
         onSubjectClick={this.props.onSubjectClick}
         endChatDialog={this.props.endChatDialog}
+        experimentPartStartedAt={this.props.experimentPartStartedAt}
       />;
     });
 

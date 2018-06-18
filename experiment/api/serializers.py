@@ -27,6 +27,7 @@ class ChatDialogSerializer(serializers.ModelSerializer):
             'experiment_part',
             'experiment_condition',
             'created_at',
+            'created_after_experiment_part_started',
             'is_ended',
             'ended_at',
         ]
@@ -43,6 +44,7 @@ class ChatMessageSerializer(serializers.ModelSerializer):
             'chat_dialog',
             'answer_to',
             'created_at',
+            'created_after_experiment_part_started',
         ]
 
 

@@ -131,16 +131,18 @@ class ChatDialog extends Component {
       const composedMessage = this.state.composedMessage;
       clearTimeout(this.areYouThereTimeout);
       // Post new message
-      axios.post("api/participants/" + this.props.participant.id + "/dialogs/" + this.props.dialog.id + "/messages", {message: composedMessage})
-        .then(response => {
-          if (response.status === 201) {
-            this.updateMessages(response.data);
-            this.setState({
-              isWaiting: false,
-              waitingStartedAt: null,
-            });
-          }
-        });
+      axios.post("api/participants/" + this.props.participant.id + "/dialogs/" + this.props.dialog.id + "/messages", {
+        message: composedMessage,
+        created_after_experiment_part_started: (new Date() - this.props.experimentPartStartedAt) / 1000,
+      }).then(response => {
+        if (response.status === 201) {
+          this.updateMessages(response.data);
+          this.setState({
+            isWaiting: false,
+            waitingStartedAt: null,
+          });
+        }
+      });
     }
     if (this.textareaElement) {
       this.textareaElement.value = "";
@@ -189,23 +191,25 @@ class ChatDialog extends Component {
       this.areYouThereTimeout = setTimeout(() => this.sendSystemMessage("Oletko vielä siellä?"), timeout);
     } else {
       clearTimeout(this.areYouThereTimeout);
-      axios.post("api/dialogs/" + dialog.id + "/messages", {message: message})
-        .then(response => {
-          if (response.status === 201) {
-            this.updateMessages(response.data);
-            if (!message.match(re) || !this.state.isWaiting) {
-              this.setState({
-                isWaiting: true,
-                waitingStartedAt: response.data.created_at,
-              });
-            }
-            // Set timeout for "Are you still there" question (only if last message has not been sent yet)
-            if (questions[this.props.dialog.subject][this.state.questionIndex]) {
-              const timeout = this.getAreYouThereTimeout();
-              this.areYouThereTimeout = setTimeout(() => this.sendSystemMessage("Oletko vielä siellä?"), timeout);
-            }
+      axios.post("api/dialogs/" + dialog.id + "/messages", {
+        message: message,
+        created_after_experiment_part_started: (new Date() - this.props.experimentPartStartedAt) / 1000,
+      }).then(response => {
+        if (response.status === 201) {
+          this.updateMessages(response.data);
+          if (!message.match(re) || !this.state.isWaiting) {
+            this.setState({
+              isWaiting: true,
+              waitingStartedAt: response.data.created_at,
+            });
           }
-        });
+          // Set timeout for "Are you still there" question (only if last message has not been sent yet)
+          if (questions[this.props.dialog.subject][this.state.questionIndex]) {
+            const timeout = this.getAreYouThereTimeout();
+            this.areYouThereTimeout = setTimeout(() => this.sendSystemMessage("Oletko vielä siellä?"), timeout);
+          }
+        }
+      });
     }
   }
 

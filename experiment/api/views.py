@@ -64,6 +64,7 @@ class ParticipantChatDialogListCreateAPIView(generics.ListCreateAPIView):
             participant=self.participant,
             experiment_part=request.data.get('experiment_part'),
             experiment_condition=request.data.get('experiment_condition'),
+            created_after_experiment_part_started=request.data.get('created_after_experiment_part_started'),
         )
         return Response(self.get_serializer(dialog).data, status=status.HTTP_201_CREATED)
 
@@ -125,6 +126,7 @@ class ParticipantChatMessageListCreateAPIView(generics.ListCreateAPIView):
             type=2,
             chat_dialog=self.dialog,
             answer_to=latest_question,
+            created_after_experiment_part_started=request.data.get('created_after_experiment_part_started'),
         )
         return Response(self.get_serializer(message).data, status=status.HTTP_201_CREATED)
 
@@ -151,6 +153,7 @@ class ChatMessageListCreateAPIView(generics.ListCreateAPIView):
             sender=None,
             type=1,
             chat_dialog=self.dialog,
+            created_after_experiment_part_started=request.data.get('created_after_experiment_part_started'),
         )
         return Response(self.get_serializer(message).data, status=status.HTTP_201_CREATED)
 

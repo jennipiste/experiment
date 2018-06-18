@@ -104,6 +104,8 @@ class ChatDialog(models.Model):
     experiment_condition = models.CharField(choices=EXPERIMENT_CONDITIONS, null=True, max_length=2)
     is_ended = models.BooleanField(default=False)
     ended_at = models.DateTimeField(null=True)
+    # How many seconds after the current experiment started the dialog was created
+    created_after_experiment_part_started = models.DecimalField(max_digits=12, decimal_places=6, null=True)
 
     def __str__(self):
         return u"name: {0}, id: {1}".format(self.name, self.id)
@@ -120,6 +122,8 @@ class ChatMessage(models.Model):
     type = models.IntegerField(choices=MESSAGE_TYPES)
     chat_dialog = models.ForeignKey(ChatDialog)
     answer_to = models.ForeignKey('self', null=True)
+    # How many seconds after the current experiment started the dialog was created
+    created_after_experiment_part_started = models.DecimalField(max_digits=12, decimal_places=6, null=True)
 
     def __str__(self):
         return u"message: {0}, type: {1}, sender: {2}".format(self.message, self.type, self.sender)

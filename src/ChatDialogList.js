@@ -86,6 +86,7 @@ class ChatDialogList extends Component {
         setLastMessage={this.setLastMessage}
         onSubjectClick={this.props.onSubjectClick}
         endChatDialog={this.props.endChatDialog}
+        experimentPartStartedAt={this.props.experimentPartStartedAt}
       />;
     });
 

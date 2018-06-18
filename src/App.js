@@ -20,7 +20,8 @@ class App extends Component {
       dialogIndex: 1,
       participant: null,
       experimentConditions: [],  // Based on participant's group, the order of 4 different conditions
-      experimentPart: 1,
+      experimentPart: 0,
+      experimentPartStartedAt: null,  // When the current part started
       experimentLayout: null,  // Layout 1 or 2
       dialogCount: null,  // 3 or 4 dialogs
       dialogs: [],
@@ -62,31 +63,12 @@ class App extends Component {
       .then(response => {
         if (response.status === 201) {
           const group = response.data.group;
-          const groupConditions = conditions[group];
           this.setState({
             participant: response.data,
-            experimentConditions: groupConditions,
-          }, this.startFirstPart);
+            experimentConditions: conditions[group],
+          }, this.startNextPart);
         }
       });
-  }
-
-  startFirstPart = () => {
-    this.setState((prevState) => {
-      const currentCondition = prevState.experimentConditions[prevState.experimentPart-1];
-      const experimentLayout = currentCondition === "A" || currentCondition === "C" ? 1 : 2;
-      const dialogCount = currentCondition === "A" || currentCondition === "B" ? 3 : 4;
-      const dialogs = new Array(dialogCount).fill(null);
-      return {
-        experimentLayout: experimentLayout,
-        dialogCount: dialogCount,
-        dialogs: dialogs,
-      };
-    }, () => {
-      // End first part after 8 minutes
-      this.expTimeout = setTimeout(() => this.changeExperiment(), 480000);
-      this.createInitialDialogs();
-    });
   }
 
   startNextPart = () => {
@@ -99,6 +81,7 @@ class App extends Component {
       const dialogs = new Array(dialogCount).fill(null);
       return {
         experimentPart: part,
+        experimentPartStartedAt: new Date(),
         experimentLayout: experimentLayout,
         dialogCount: dialogCount,
         dialogs: dialogs,
@@ -200,6 +183,7 @@ class App extends Component {
         subject: subject,
         experiment_part: this.state.experimentPart,
         experiment_condition: this.state.experimentConditions[this.state.experimentPart-1],
+        created_after_experiment_part_started: (new Date() - this.state.experimentPartStartedAt) / 1000,
       }
     ).then(response => {
       // Replace old dialog with the new one
@@ -305,9 +289,9 @@ class App extends Component {
         {this.state.participant && this.state.experimentLayout ? (
           <div className="AppContent">
             {this.state.experimentLayout === 1 ? (
-              <ChatDialogGrid dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onSubjectClick={this.onSubjectClick} participant={this.state.participant} endChatDialog={this.endChatDialog}/>
+              <ChatDialogGrid dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onSubjectClick={this.onSubjectClick} participant={this.state.participant} endChatDialog={this.endChatDialog} experimentPartStartedAt={this.state.experimentPartStartedAt} />
             ) : (
-              <ChatDialogList dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onSubjectClick={this.onSubjectClick} participant={this.state.participant} endChatDialog={this.endChatDialog}/>
+              <ChatDialogList dialogs={this.state.dialogs} markDialogEnded={this.markDialogEnded} onSubjectClick={this.onSubjectClick} participant={this.state.participant} endChatDialog={this.endChatDialog} experimentPartStartedAt={this.state.experimentPartStartedAt} />
             )}
             {this.state.showPDF &&
               <iframe src={this.pdf} width="50%" height="100%" frameBorder="0" title="PDF"></iframe>
