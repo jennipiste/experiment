@@ -140,3 +140,19 @@ class Questionnaire(models.Model):
     q3 = models.IntegerField(choices=VALUES)
     q4 = models.IntegerField(choices=VALUES)
     q5 = models.IntegerField(choices=VALUES)
+
+
+class FinalQuestionnaire(models.Model):
+    LAYOUT_VALUES = (
+        (1, "layout1"),
+        (2, "layout2"),
+    )
+    DIALOG_COUNT_VALUES = (
+        (1, "kyllä"),
+        (2, "en")
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    participant = models.ForeignKey(Participant)
+    q1 = models.IntegerField(choices=LAYOUT_VALUES)
+    q2 = models.IntegerField(choices=LAYOUT_VALUES)
+    q3 = models.IntegerField(choices=DIALOG_COUNT_VALUES)

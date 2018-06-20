@@ -6,8 +6,9 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.exceptions import NotFound
 
-from experiment.api.models import Participant, ChatDialog, ChatMessage, Questionnaire
-from experiment.api.serializers import ParticipantSerializer, ChatDialogSerializer, ChatMessageSerializer, QuestionnaireSerializer
+from experiment.api.models import Participant, ChatDialog, ChatMessage, Questionnaire, FinalQuestionnaire
+from experiment.api.serializers import ParticipantSerializer, ChatDialogSerializer, ChatMessageSerializer
+from experiment.api.serializers import QuestionnaireSerializer, FinalQuestionnaireSerializer
 
 
 class ParticipantListCreateAPIView(generics.ListCreateAPIView):
@@ -174,3 +175,25 @@ class ParticipantQuestionnaireCreateAPIView(generics.CreateAPIView):
         )
 
         return Response(self.get_serializer(questionnaire).data, status=status.HTTP_201_CREATED)
+
+
+class ParticipantFinalQuestionnaireCreateAPIView(generics.CreateAPIView):
+    serializer_class = FinalQuestionnaireSerializer
+    queryset = FinalQuestionnaire.objects.all()
+
+    def create(self, request, *args, **kwargs):
+        participant_id = self.kwargs['participant_id']
+        try:
+            participant = Participant.objects.get(id=participant_id)
+        except Participant.DoesNotExist:
+            raise NotFound("Participant not found")
+
+        questionnaire = FinalQuestionnaire.objects.create(
+            participant=participant,
+            q1=request.data.get('q1'),
+            q2=request.data.get('q2'),
+            q3=request.data.get('q3'),
+        )
+
+        return Response(self.get_serializer(questionnaire).data, status=status.HTTP_201_CREATED)
+

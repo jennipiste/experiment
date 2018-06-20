@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from rest_framework import serializers
-from experiment.api.models import ChatDialog, ChatMessage, Participant, Questionnaire
+from experiment.api.models import ChatDialog, ChatMessage, Participant, Questionnaire, FinalQuestionnaire
 
 
 class ParticipantSerializer(serializers.ModelSerializer):
@@ -60,5 +60,18 @@ class QuestionnaireSerializer(serializers.ModelSerializer):
             'q3',
             'q4',
             'q5',
+            'created_at',
+        ]
+
+
+class FinalQuestionnaireSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = FinalQuestionnaire
+        fields = [
+            'id',
+            'participant',
+            'q1',
+            'q2',
+            'q3',
             'created_at',
         ]
