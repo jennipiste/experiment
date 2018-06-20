@@ -58,6 +58,7 @@ class ChatDialog extends Component {
 
   componentWillUnmount() {
     clearTimeout(this.questionTimeout);
+    clearTimeout(this.areYouThereTimeout);
   }
 
   initDialog = (props=this.props) => {  // props can be either nextProps or this.props

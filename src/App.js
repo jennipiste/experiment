@@ -4,7 +4,8 @@ import axiosDefaults from 'axios/lib/defaults';
 import filter from 'lodash/filter';
 import ChatDialogGrid from './ChatDialogGrid';
 import ChatDialogList from './ChatDialogList';
-import Modal from './Modal';
+import Questionnaire from './Questionnaire';
+import FinalQuestionnaire from './FinalQuestionnaire';
 import conditions from './conditions';
 import subjects from './subjects';
 import './App.css';
@@ -29,6 +30,7 @@ class App extends Component {
       showPDF: false,
       subject: null,
       usedSubjects: [],
+      showFinalQuestionnaire: false,
     };
 
     this.inputElement = null;
@@ -114,6 +116,7 @@ class App extends Component {
       showPDF: false,
       subject: null,
       usedSubjects: [],
+      showFinalQuestionnaire: false,
     });
   }
 
@@ -235,9 +238,23 @@ class App extends Component {
     );
   }
 
+  showFinalQuestionnaire = () => {
+    this.setState({showFinalQuestionnaire: true});
+  }
+
+  submitFinalQuestionnaire = (q1, q2, q3) => {
+    axios.post('api/participants/' + this.state.participant.id + '/final_questionnaires',
+      {
+        q1: q1,
+        q2: q2,
+        q3: q3,
+      }
+    );
+  }
+
   render() {
     const afterFirstPartModalProps = {
-      text1: 'Kokeen ensimmäinen osuus on ohi. Täytä seuraavaksi kysely ensimmäisen osuuden käyttöliittymästä.',
+      text1: 'Kokeen ensimmäinen osuus on ohi. Täytä seuraavaksi kysely ensimmäisen osuuden käyttöliittymästä. Kysely ei koske PDF:n käyttöä.',
       text2: 'Kiitos! Voit nousta hetkeksi seisomaan ja pyöräyttää hartioitasi. Aloita sen jälkeen toinen osuus.',
       actions: [
         {
@@ -249,7 +266,7 @@ class App extends Component {
     };
 
     const afterSecondPartModalProps = {
-      text1: 'Kokeen toinen osuus on ohi. Täytä seuraavaksi kysely toisen osuuden käyttöliittymästä.',
+      text1: 'Kokeen toinen osuus on ohi. Täytä seuraavaksi kysely toisen osuuden käyttöliittymästä. Kysely ei koske PDF:n käyttöä.',
       text2: 'Kiitos! Voit nousta hetkeksi seisomaan ja pyöräyttää hartioitasi. Aloita sen jälkeen kolmas osuus.',
       actions: [
         {
@@ -261,7 +278,7 @@ class App extends Component {
     };
 
     const afterThirdPartModalProps = {
-      text1: 'Kokeen kolmas osuus on ohi. Täytä seuraavaksi kysely kolmannen osuuden käyttöliittymästä.',
+      text1: 'Kokeen kolmas osuus on ohi. Täytä seuraavaksi kysely kolmannen osuuden käyttöliittymästä. Kysely ei koske PDF:n käyttöä.',
       text2: 'Kiitos! Voit nousta hetkeksi seisomaan ja pyöräyttää hartioitasi. Aloita sen jälkeen viimeinen osuus.',
       actions: [
         {
@@ -273,15 +290,27 @@ class App extends Component {
     };
 
     const afterFourthPartModalProps = {
-      text1: 'Viimeinen osuus on nyt ohi. Täytä vielä kysely viimeisen osuuden käyttöliittymästä.',
-      text2: 'Kiitos osallistumisesta!',
+      text1: 'Viimeinen osuus on nyt ohi. Täytä vielä kysely viimeisen osuuden käyttöliittymästä. Kysely ei koske PDF:n käyttöä.',
+      text2: 'Kiitos! Täytä vielä viimeinen, lyhyt kysely kokeesta kokonaisuudessaan.',
       actions: [
         {
-          text: "OK",
-          onClick: this.closeExperiment,
+          text: "Täytä viimeinen kysely",
+          onClick: this.showFinalQuestionnaire,
         }
       ],
       submitQuestionnaire: this.submitQuestionnaire,
+    };
+
+    const finalQuestionnaireProps = {
+      text1: 'Viimeisessä kyselyssä vertaa kahta kokeilemaasi käyttöliittymää. Käyttöliittymä 1 tarkoittaa sitä, jossa kaikki chat-ikkunat ovat koko ajan näkyvissä ja käyttöliittymä 2 sitä, jossa on näkyvissä vain yksi chat-ikkuna kerrallaan.',
+      text2: 'Kiitos osallistumisesta!',
+      actions: [
+        {
+          text: 'OK',
+          onClick: this.closeExperiment,
+        }
+      ],
+      submitQuestionnaire: this.submitFinalQuestionnaire,
     };
 
     return (
@@ -305,10 +334,11 @@ class App extends Component {
             <input className="StartButton" type="submit" value="Aloita koe" />
           </form>
         )}
-        {this.state.isPartOver && this.state.experimentPart === 1 && <Modal {...afterFirstPartModalProps}/>}
-        {this.state.isPartOver && this.state.experimentPart === 2 && <Modal {...afterSecondPartModalProps}/>}
-        {this.state.isPartOver && this.state.experimentPart === 3 && <Modal {...afterThirdPartModalProps}/>}
-        {this.state.isPartOver && this.state.experimentPart === 4 && <Modal {...afterFourthPartModalProps}/>}
+        {this.state.isPartOver && this.state.experimentPart === 1 && <Questionnaire {...afterFirstPartModalProps}/>}
+        {this.state.isPartOver && this.state.experimentPart === 2 && <Questionnaire {...afterSecondPartModalProps}/>}
+        {this.state.isPartOver && this.state.experimentPart === 3 && <Questionnaire {...afterThirdPartModalProps}/>}
+        {this.state.isPartOver && this.state.experimentPart === 4 && <Questionnaire {...afterFourthPartModalProps}/>}
+        {this.state.showFinalQuestionnaire && <FinalQuestionnaire {...finalQuestionnaireProps}/>}
       </div>
     );
   }

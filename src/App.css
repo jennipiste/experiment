@@ -83,8 +83,19 @@ textarea, input, button, select {
 }
 
 .RadioButtons input {
-  margin-left: 17px;
   cursor: pointer;
+}
+
+.Questionnaire .RadioButtons input {
+  margin-left: 17px;
+}
+
+.FinalQuestionnaire .RadioButtons label {
+  margin-left: 26px;
+}
+
+.FinalQuestionnaire .Question:last-of-type label:last-of-type {
+  margin-left: 14px;
 }
 
 .QuestionnaireSubmitButton {
@@ -93,6 +104,10 @@ textarea, input, button, select {
   margin-right: 176px;
   cursor: pointer;
   height: 24px;
+}
+
+.FinalQuestionnaire .QuestionnaireSubmitButton {
+  margin-right: 130px;
 }
 
 .ModalFooter button {
