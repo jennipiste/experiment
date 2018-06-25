@@ -39,6 +39,7 @@ class ChatMessageSerializer(serializers.ModelSerializer):
             'id',
             'message',
             'sender',
+            'sender_type',
             'type',
             'chat_dialog',
             'answer_to',

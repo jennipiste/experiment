@@ -25,7 +25,7 @@ class ChatMessageList extends Component {
 
   render() {
     let messages = map(this.props.messages, (message, index) => {
-      return <ChatMessage message={message.message} type={message.type} key={index} />;
+      return <ChatMessage message={message.message} senderType={message.sender_type} key={index} />;
     });
 
     return (

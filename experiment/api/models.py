@@ -106,14 +106,22 @@ class ChatDialog(models.Model):
 
 
 class ChatMessage(models.Model):
+    MESSAGE_SENDER_TYPES = (
+        (1, "system"),
+        (2, "participant"),
+    )
+    # System message types
     MESSAGE_TYPES = (
-        (1, "question"),
-        (2, "answer"),
+        (1, "hello"),
+        (2, "question"),
+        (3, "are you there"),
+        (4, "thanks"),
     )
     created_at = models.DateTimeField(auto_now_add=True)
     message = models.TextField()
     sender = models.ForeignKey(Participant, null=True)
-    type = models.IntegerField(choices=MESSAGE_TYPES)
+    sender_type = models.IntegerField(choices=MESSAGE_SENDER_TYPES, null=True)
+    type = models.IntegerField(choices=MESSAGE_TYPES, null=True)
     chat_dialog = models.ForeignKey(ChatDialog)
     answer_to = models.ForeignKey('self', null=True)
     # How many seconds after the current experiment started the dialog was created

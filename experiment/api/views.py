@@ -117,7 +117,7 @@ class ParticipantChatMessageListCreateAPIView(generics.ListCreateAPIView):
         message = ChatMessage.objects.create(
             message=request.data.get('message'),
             sender=self.participant,
-            type=2,
+            sender_type=2,
             chat_dialog=self.dialog,
             answer_to=latest_question,
             created_after_experiment_part_started=request.data.get('created_after_experiment_part_started'),
@@ -145,7 +145,8 @@ class ChatMessageListCreateAPIView(generics.ListCreateAPIView):
         message = ChatMessage.objects.create(
             message=request.data.get('message'),
             sender=None,
-            type=1,
+            sender_type=1,
+            type=request.data.get('type'),
             chat_dialog=self.dialog,
             created_after_experiment_part_started=request.data.get('created_after_experiment_part_started'),
         )
