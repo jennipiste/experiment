@@ -95,13 +95,13 @@ textarea, input, button, select {
 }
 
 .FinalQuestionnaire .Question:last-of-type label:last-of-type {
-  margin-left: 14px;
+  margin-left: 15px;
 }
 
 .QuestionnaireSubmitButton {
   margin-top: 40px;
   float: right;
-  margin-right: 176px;
+  margin-right: 167px;
   cursor: pointer;
   height: 24px;
 }

@@ -110,7 +110,7 @@ class ParticipantChatMessageListCreateAPIView(generics.ListCreateAPIView):
 
     def create(self, request, *args, **kwargs):
         try:
-            latest_question = ChatMessage.objects.filter(type=1, chat_dialog=self.dialog).latest('created_at')
+            latest_question = ChatMessage.objects.filter(sender_type=1, type=2, chat_dialog=self.dialog).latest('created_at')
         except ChatMessage.DoesNotExist:
             latest_question = None
 
