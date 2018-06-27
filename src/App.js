@@ -100,7 +100,11 @@ class App extends Component {
   changeExperiment = () => {
     this.setState({isPartOver: true});
     this.clearTimeouts();
-    this.endChatDialogs();
+    this.state.dialogs.forEach((dialog, index) => {
+      if (dialog) {
+        this.markDialogEnded(index);
+      }
+    });
   }
 
   closeExperiment = () => {
@@ -126,15 +130,6 @@ class App extends Component {
     if (!this.state.isPartOver) {
       this.timeouts.push(setTimeout(() => this.createNewDialog(dialogIndex), 5000));
     }
-  }
-
-  endChatDialogs = () => {
-    this.state.dialogs.forEach((dialog, index) => {
-      if (dialog) {
-        this.endChatDialog(dialog, index);
-        this.markDialogEnded(index);
-      }
-    });
   }
 
   createInitialDialogs = () => {
