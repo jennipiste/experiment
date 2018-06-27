@@ -62,7 +62,7 @@ const questions = {
     "Olen perustamassa koripallojoukkuetta ja olisi muutama kysymys. Kuinka monta pelaajaa joukkueessa voi enintään olla?",
     "Mitkä ovat pelikentän pituus ja leveys?",
     "Kuinka monta erää ottelussa pelataan?",
-    "Entä kuinka monta minuuttia on yksi erä?",
+    "Entä kuinka monta minuuttia yksi erä kestää?",
     "Selvä juttu, kiitoksia avusta!"
   ],
   "Kuivauskaappi": [
@@ -77,7 +77,7 @@ const questions = {
     "Haluaisin kysyä pari kysymystä kuivausrummusta ennen ostopäätöstä. Kuinka leveä kuivausrumpu on?",
     "Mikä on täysin kuivaksi kuivaavan ohjelman maksimitäyttömäärä?",
     "Kuuluuko ajastettu kuivaus laitteen lisätoimintoihin?",
-    "Entä onko laitteessa ohjelmaa villa-vaatteille?",
+    "Entä onko laitteessa ohjelmaa villavaatteille?",
     "Kiitos avusta!"
   ],
   "Langattomat Bluetooth-kuulokkeet": [
@@ -113,8 +113,8 @@ const questions = {
     "Moi!",
     "Olen miettinyt miekkailun aloittamista, mutta en tiedä mikä kolmesta miekkailulajista pitäisi valita. Mikä kolmesta miekkatyypistä (kalpa, floretti, säilä) saa olla painavin?",
     "Kuinka paljon se saa enintään painaa?",
-    "Sitten vielä kiinnostaisi osuma-alueet. Mikä on säilä-miekkailun osuma-alue?",
-    "Entä kalpa-miekkailun?",
+    "Sitten vielä kiinnostaisi osuma-alueet. Mikä on säilämiekkailun osuma-alue?",
+    "Entä kalpamiekkailun?",
     "Selvä juttu, mietiskelen vielä. Kiitos!"
   ],
   "Mikroaaltouuni": [
