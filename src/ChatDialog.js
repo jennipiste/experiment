@@ -128,13 +128,14 @@ class ChatDialog extends Component {
     });
   }
 
-  sendMessage = () => {
+  sendMessage = (messageType) => {
     if (this.state.composedMessage.length) {
       const composedMessage = this.state.composedMessage;
       clearTimeout(this.areYouThereTimeout);
       // Post new message
       axios.post("api/participants/" + this.props.participant.id + "/dialogs/" + this.props.dialog.id + "/messages", {
         message: composedMessage,
+        type: messageType,
         created_after_experiment_part_started: (new Date() - this.props.experimentPartStartedAt) / 1000,
       }).then(response => {
         if (response.status === 201) {
@@ -243,11 +244,11 @@ class ChatDialog extends Component {
     }
   }
 
-  composeMessage = (event) => {
+  composeMessage = (event, messageType) => {
     this.setState({
       composedMessage: event.target.value
     }, () => {
-      this.sendMessage();
+      this.sendMessage(messageType);
     });
   }
 
@@ -266,7 +267,7 @@ class ChatDialog extends Component {
       disabled: this.state.isEnded,
     };
     const sendButtonProps = {
-      onClick: event => this.sendMessage(event),
+      onClick: () => this.sendMessage(2),
       disabled: this.state.isEnded,
     };
     return (
@@ -290,9 +291,9 @@ class ChatDialog extends Component {
             {/* <button onClick={() => this.sendSystemMessage("system message")}>system message</button> */}
             {/* <button onClick={() => this.endChatDialog()}>end dialog</button> */}
             <div className="AnswerButtons">
-              <button onClick={this.composeMessage} value="Hei!" >Hei!</button>
-              <button onClick={this.composeMessage} value="Pieni hetki">Pieni hetki</button>
-              <button onClick={this.composeMessage} value="Eipä kestä!">Eipä kestä!</button>
+              <button onClick={(event) => this.composeMessage(event, 1)} value="Hei!" >Hei!</button>
+              <button onClick={(event) => this.composeMessage(event, 3)} value="Pieni hetki">Pieni hetki</button>
+              <button onClick={(event) => this.composeMessage(event, 4)} value="Eipä kestä!">Eipä kestä!</button>
             </div>
           </div>
         )}

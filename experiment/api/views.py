@@ -109,17 +109,19 @@ class ParticipantChatMessageListCreateAPIView(generics.ListCreateAPIView):
         return queryset.filter(chat_dialog=self.dialog)
 
     def create(self, request, *args, **kwargs):
+        message_type = request.data.get('type')
         try:
-            latest_question = ChatMessage.objects.filter(sender_type=1, type=2, chat_dialog=self.dialog).latest('created_at')
+            latest_message = ChatMessage.objects.filter(sender_type=1, type=message_type, chat_dialog=self.dialog).latest('created_at')
         except ChatMessage.DoesNotExist:
-            latest_question = None
+            latest_message = None
 
         message = ChatMessage.objects.create(
             message=request.data.get('message'),
             sender=self.participant,
             sender_type=2,
+            type=message_type,
             chat_dialog=self.dialog,
-            answer_to=latest_question,
+            answer_to=latest_message,
             created_after_experiment_part_started=request.data.get('created_after_experiment_part_started'),
         )
         return Response(self.get_serializer(message).data, status=status.HTTP_201_CREATED)
