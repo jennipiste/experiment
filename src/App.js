@@ -151,7 +151,6 @@ class App extends Component {
       return this.state.usedSubjects.indexOf(subject) === -1;
     });
     if (unusedSubjects.length === 0) {
-      alert("Aiheet loppu, jatketaan samoilla tässä testissä ja korjataan myöhemmin");
       this.setState({
         usedSubjects: []
       }, () => {
