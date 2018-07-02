@@ -112,7 +112,7 @@ class App extends Component {
       dialogIndex: 1,
       participant: null,
       experimentConditions: [],
-      experimentPart: 1,
+      experimentPart: 0,
       experimentLayout: null,
       dialogCount: null,
       dialogs: [],
