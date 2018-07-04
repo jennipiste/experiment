@@ -27,6 +27,21 @@ const questions = {
     "Saako ulkoinen spotteri tukea huojuvaa pyramidia?",
     "Kiitos vastauksista!"
   ],
+  "Generaattori": [
+    "Moikka!",
+    "Missä tätä generaattoria on tarkoitus käyttää?",
+    "Kuinka paljon se painaa?",
+    "Mitä lisävarusteita generaattoriin on saatavana?",
+    "Minkälainen huolto pitäisi tehdä generaattorin käytön ensimmäisenä kuukautena?",
+    "Kiitos vastauksista!",
+  ],
+  "Grilli": [
+    "Moi",
+    "Mietin grillin ostoa ja olisi pari kysymystä siitä. Mitkä ovat grillauspinta-alan pituus ja leveys?",
+    "Kuinka pitkä takuu grillillä on?",
+    "Entä mitä lisävarusteita grilliin on saatavana?",
+    "Kiitos!",
+  ],
   "Jalkapallosäännöt": [
     "Moi!",
     "Ajattelin pitää tietovisan eri urheilulajeista ja mietin tässä jalkapallokysymyksiä, tarvitsisin niihin vastaukset. Ensimmäiseksi, mikä on pelikentän sivurajan minimipituus?",
