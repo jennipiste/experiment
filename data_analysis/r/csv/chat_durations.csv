@@ -1,0 +1,230 @@
+participant;condition;layout;chats;part;topic;duration
+1;A;1;3;3;Pöytätenniksen säännöt;154,98
+1;A;1;3;3;Arkkupakastin;228,21
+1;A;1;3;3;Cheerleadingin kilpailusäännöt;219,22
+1;B;2;3;4;Taekwondon kilpailusäännöt;353,89
+1;B;2;3;4;Langattomat Bluetooth-kuulokkeet;404,09
+1;C;1;4;1;Pyykinpesukone;359,58
+1;D;2;4;2;Päältäajettava ruohonleikkuri;370,21
+1;D;2;4;2;Uuni;401,47
+1;D;2;4;2;Kiuas;361,95
+1;D;2;4;2;Kuivauskaappi;341,79
+2;A;1;3;2;Koripallon pelisäännöt;345,82
+2;A;1;3;2;Astianpesukone;322,56
+2;A;1;3;2;Pyykinpesukone;430,00
+2;B;2;3;3;Mankeli;280,64
+2;B;2;3;3;Agility;251,21
+2;C;1;4;4;Arkkupakastin;458,52
+2;C;1;4;4;Pöytätenniksen säännöt;432,56
+3;A;1;3;2;Astianpesukone;388,34
+3;A;1;3;2;Langattomat Bluetooth-kuulokkeet;333,99
+3;A;1;3;2;Ompelukone;230,65
+3;B;2;3;4;Päältäajettava ruohonleikkuri;220,61
+3;B;2;3;4;Miekkailu;298,71
+3;B;2;3;4;Nelikopteri;425,95
+3;C;1;4;3;Mankeli;170,22
+3;C;1;4;3;Kuivauskaappi;232,60
+3;C;1;4;3;Painepesuri;376,19
+4;A;1;3;4;Lämpöpumppu;426,92
+4;A;1;3;4;Tenniksen kilpailumääräykset;354,05
+4;A;1;3;4;Pöytätenniksen säännöt;223,06
+4;B;2;3;2;Pyykinpesukone;303,47
+4;B;2;3;2;Päältäajettava ruohonleikkuri;295,38
+4;B;2;3;2;Liesituuletin;445,77
+4;C;1;4;3;Miekkailu;382,09
+4;D;2;4;1;Koripallon pelisäännöt;456,56
+4;D;2;4;1;Mankeli;403,61
+4;D;2;4;1;Kuivausrumpu;438,63
+5;A;1;3;4;Cheerleadingin kilpailusäännöt;333,81
+5;A;1;3;4;Liesituuletin;393,97
+5;A;1;3;4;Kamiina;291,08
+5;B;2;3;3;Miekkailu;415,99
+5;B;2;3;3;Jalkapallosäännöt;471,89
+5;B;2;3;3;Koripallon pelisäännöt;401,74
+5;C;1;4;2;Päältäajettava ruohonleikkuri;426,26
+6;A;1;3;1;Mankeli;229,32
+6;A;1;3;1;Pöytätenniksen säännöt;380,16
+6;A;1;3;1;Taekwondon kilpailusäännöt;435,73
+6;B;2;3;2;Päältäajettava ruohonleikkuri;234,42
+6;B;2;3;2;Miekkailu;351,65
+6;C;1;4;3;Jalkapallosäännöt;472,74
+6;C;1;4;3;Kuivausrumpu;315,16
+6;D;2;4;4;Pyykinpesukone;390,72
+6;D;2;4;4;Ompelukone;246,23
+7;A;1;3;1;Televisio;405,57
+7;A;1;3;1;Ompelukone;200,04
+7;A;1;3;1;Kiuas;412,82
+7;B;2;3;2;Koripallon pelisäännöt;392,06
+7;B;2;3;2;Painepesuri;371,73
+7;B;2;3;2;Miekkailu;365,69
+7;C;1;4;4;Päältäajettava ruohonleikkuri;259,06
+7;C;1;4;4;Pyykinpesukone;453,39
+7;C;1;4;4;Cheerleadingin kilpailusäännöt;333,25
+7;D;2;4;3;Pöytätenniksen säännöt;253,12
+7;D;2;4;3;Mankeli;246,42
+7;D;2;4;3;Jalkapallosäännöt;418,86
+7;D;2;4;3;Uuni;433,16
+8;A;1;3;1;Miekkailu;403,93
+8;A;1;3;1;Agility;394,78
+8;B;2;3;3;Astianpesukone;350,27
+8;B;2;3;3;Langattomat Bluetooth-kuulokkeet;321,68
+8;B;2;3;3;Painepesuri;347,82
+8;C;1;4;2;Kuivauskaappi;383,21
+8;C;1;4;2;Taekwondon kilpailusäännöt;391,03
+8;C;1;4;2;Tenniksen kilpailumääräykset;361,31
+8;C;1;4;2;Mankeli;430,45
+8;D;2;4;4;Arkkupakastin;456,88
+8;D;2;4;4;Kuivausrumpu;451,81
+9;A;1;3;1;Mankeli;310,76
+9;A;1;3;1;Kuivauskaappi;299,42
+9;B;2;3;4;Jalkapallosäännöt;351,55
+9;B;2;3;4;Ompelukone;284,93
+9;B;2;3;4;Taekwondon kilpailusäännöt;350,20
+9;C;1;4;2;Langattomat Bluetooth-kuulokkeet;416,88
+9;C;1;4;2;Päältäajettava ruohonleikkuri;331,74
+9;C;1;4;2;Astianpesukone;450,90
+9;C;1;4;2;Cheerleadingin kilpailusäännöt;360,28
+9;D;2;4;3;Koripallon pelisäännöt;414,37
+10;A;1;3;1;Kuivauskaappi;311,61
+10;A;1;3;1;Tenniksen kilpailumääräykset;437,22
+10;B;2;3;3;Ompelukone;359,92
+10;B;2;3;3;Kamiina;452,62
+10;C;1;4;4;Agility;404,95
+10;C;1;4;4;Päältäajettava ruohonleikkuri;418,78
+10;D;2;4;2;Televisio;464,35
+11;A;1;3;2;Lämpöpumppu;356,36
+11;A;1;3;2;Langattomat Bluetooth-kuulokkeet;338,50
+11;B;2;3;1;Koripallon pelisäännöt;309,39
+11;B;2;3;1;Arkkupakastin;251,88
+11;B;2;3;1;Pöytätenniksen säännöt;278,96
+11;C;1;4;3;Cheerleadingin kilpailusäännöt;331,49
+11;C;1;4;3;Mikroaaltouuni;472,12
+11;C;1;4;3;Ompelukone;371,42
+11;D;2;4;4;Uuni;311,75
+11;D;2;4;4;Pyykinpesukone;360,21
+11;D;2;4;4;Päältäajettava ruohonleikkuri;244,65
+11;D;2;4;4;Jalkapallosäännöt;265,98
+12;A;1;3;2;Miekkailu;386,35
+12;B;2;3;1;Pöytätenniksen säännöt;258,27
+12;C;1;4;4;Pyykinpesukone;464,89
+12;C;1;4;4;Mankeli;395,53
+12;D;2;4;3;Agility;406,94
+13;A;1;3;3;Langattomat Bluetooth-kuulokkeet;462,81
+13;A;1;3;3;Kuivauskaappi;395,81
+13;B;2;3;1;Kuivausrumpu;373,86
+13;B;2;3;1;Cheerleadingin kilpailusäännöt;346,93
+13;B;2;3;1;Grilli;366,04
+13;C;1;4;2;Pöytätenniksen säännöt;408,51
+13;C;1;4;2;Painepesuri;389,28
+13;D;2;4;4;Ompelukone;263,15
+13;D;2;4;4;Arkkupakastin;355,91
+13;D;2;4;4;Astianpesukone;412,58
+13;D;2;4;4;Uuni;408,67
+14;A;1;3;4;Televisio;250,65
+14;A;1;3;4;Koripallon pelisäännöt;300,13
+14;A;1;3;4;Nelikopteri;429,81
+14;A;1;3;4;Pöytätenniksen säännöt;157,55
+14;B;2;3;1;Päältäajettava ruohonleikkuri;237,36
+14;B;2;3;1;Kuivausrumpu;267,59
+14;B;2;3;1;Cheerleadingin kilpailusäännöt;267,30
+14;C;1;4;2;Kuivauskaappi;310,17
+14;C;1;4;2;Grilli;274,84
+14;C;1;4;2;Ompelukone;268,86
+14;C;1;4;2;Miekkailu;389,62
+14;D;2;4;3;Jalkapallosäännöt;428,74
+15;A;1;3;3;Lämpöpumppu;342,65
+15;A;1;3;3;Painepesuri;314,58
+15;A;1;3;3;Arkkupakastin;302,90
+15;B;2;3;1;Tenniksen kilpailumääräykset;313,65
+15;B;2;3;1;Kuivauskaappi;350,06
+15;C;1;4;4;Televisio;429,22
+15;C;1;4;4;Miekkailu;463,62
+15;C;1;4;4;Grilli;410,62
+15;D;2;4;2;Astianpesukone;420,23
+16;A;1;3;4;Jalkapallosäännöt;273,80
+16;A;1;3;4;Mankeli;182,39
+16;A;1;3;4;Astianpesukone;332,35
+16;B;2;3;1;Liesituuletin;464,51
+16;B;2;3;1;Mikroaaltouuni;403,59
+16;B;2;3;1;Pöytätenniksen säännöt;364,92
+16;C;1;4;3;Kuivausrumpu;385,12
+16;C;1;4;3;Päältäajettava ruohonleikkuri;317,80
+16;C;1;4;3;Agility;312,38
+16;C;1;4;3;Arkkupakastin;369,96
+16;D;2;4;2;Tenniksen kilpailumääräykset;406,50
+17;A;1;3;2;Nelikopteri;437,78
+17;A;1;3;2;Miekkailu;327,11
+17;A;1;3;2;Liesituuletin;403,73
+17;B;2;3;4;Ompelukone;228,05
+17;B;2;3;4;Kuivausrumpu;287,01
+17;B;2;3;4;Mankeli;236,79
+17;C;1;4;1;Cheerleadingin kilpailusäännöt;317,58
+17;C;1;4;1;Jalkapallosäännöt;310,69
+17;D;2;4;3;Päältäajettava ruohonleikkuri;268,59
+17;D;2;4;3;Pyykinpesukone;434,32
+17;D;2;4;3;Astianpesukone;333,18
+18;A;1;3;3;Kiuas;320,77
+18;A;1;3;3;Agility;211,57
+18;A;1;3;3;Arkkupakastin;306,90
+18;B;2;3;2;Tenniksen kilpailumääräykset;287,20
+18;B;2;3;2;Kuivauskaappi;283,12
+18;C;1;4;1;Päältäajettava ruohonleikkuri;429,90
+18;D;2;4;4;Jalkapallosäännöt;427,50
+18;D;2;4;4;Ompelukone;403,24
+19;A;1;3;4;Televisio;445,36
+19;A;1;3;4;Grilli;306,40
+19;A;1;3;4;Ompelukone;251,85
+19;B;2;3;2;Arkkupakastin;444,82
+20;A;1;3;4;Langattomat Bluetooth-kuulokkeet;268,12
+20;A;1;3;4;Taekwondon kilpailusäännöt;277,23
+20;A;1;3;4;Nelikopteri;453,19
+20;A;1;3;4;Tenniksen kilpailumääräykset;180,84
+20;B;2;3;3;Miekkailu;251,12
+20;B;2;3;3;Cheerleadingin kilpailusäännöt;246,02
+20;B;2;3;3;Painepesuri;311,18
+20;B;2;3;3;Päältäajettava ruohonleikkuri;222,69
+20;C;1;4;1;Jalkapallosäännöt;346,23
+20;C;1;4;1;Agility;250,85
+20;D;2;4;2;Kamiina;307,86
+20;D;2;4;2;Generaattori;328,21
+20;D;2;4;2;Mankeli;247,02
+21;A;1;3;3;Astianpesukone;323,60
+21;A;1;3;3;Mikroaaltouuni;416,45
+21;B;2;3;2;Taekwondon kilpailusäännöt;330,64
+21;B;2;3;2;Kuivauskaappi;247,52
+21;B;2;3;2;Kamiina;400,33
+21;C;1;4;4;Tenniksen kilpailumääräykset;432,44
+21;C;1;4;4;Grilli;299,18
+21;D;2;4;1;Cheerleadingin kilpailusäännöt;431,16
+21;D;2;4;1;Lämpöpumppu;462,33
+21;D;2;4;1;Mankeli;371,54
+22;A;1;3;3;Agility;313,60
+22;A;1;3;3;Ompelukone;286,90
+22;B;2;3;4;Generaattori;250,09
+22;B;2;3;4;Grilli;225,93
+22;C;1;4;2;Cheerleadingin kilpailusäännöt;300,06
+22;C;1;4;2;Miekkailu;327,69
+22;C;1;4;2;Lämpöpumppu;370,92
+22;C;1;4;2;Painepesuri;296,57
+22;D;2;4;1;Päältäajettava ruohonleikkuri;350,17
+23;A;1;3;1;Arkkupakastin;249,63
+23;A;1;3;1;Tenniksen kilpailumääräykset;280,56
+23;B;2;3;4;Cheerleadingin kilpailusäännöt;248,27
+23;B;2;3;4;Painepesuri;251,80
+23;B;2;3;4;Kamiina;348,54
+23;C;1;4;3;Agility;286,65
+23;C;1;4;3;Pöytätenniksen säännöt;241,42
+23;C;1;4;3;Mankeli;268,05
+23;C;1;4;3;Ompelukone;290,77
+23;D;2;4;2;Päältäajettava ruohonleikkuri;292,74
+23;D;2;4;2;Mikroaaltouuni;390,87
+23;D;2;4;2;Pyykinpesukone;353,02
+23;D;2;4;2;Koripallon pelisäännöt;365,87
+24;A;1;3;2;Generaattori;321,11
+24;A;1;3;2;Pöytätenniksen säännöt;296,72
+24;A;1;3;2;Ompelukone;291,82
+24;B;2;3;3;Mikroaaltouuni;339,29
+24;B;2;3;3;Astianpesukone;331,54
+24;B;2;3;3;Painepesuri;316,93
+24;D;2;4;4;Kuivauskaappi;288,23
+24;D;2;4;4;Taekwondon kilpailusäännöt;390,84

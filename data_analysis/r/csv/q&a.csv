@@ -1,0 +1,1215 @@
+participant;condition;layout;chats;part;topic;question;answer;wait_time;correct
+1;A;1;3;3;Pöytätenniksen säännöt;Meillä on tässä kaverin kanssa erimielisyyksiä pöytätenniksen säännöistä. Mikä on pöydän pituus?;274 cm;10,42;TRUE
+1;A;1;3;3;Pöytätenniksen säännöt;Kuinka korkealle pallon kuuluu nousta pelaajan kämmenestä syötössä?;16 cm;13,34;TRUE
+1;A;1;3;3;Pöytätenniksen säännöt;Entä kuinka kuinka monta pistettä pelaajan pitää vähintään saada, jotta voi voittaa erän?;11;37,66;TRUE
+1;A;1;3;3;Arkkupakastin;Tarvitsisin vastauksen muutamaan kysymykseen, jotta tiedän ostanko arkkupakastimen. Kuinka leveä pakastin on?;595 cm;40,71;TRUE
+1;A;1;3;3;Arkkupakastin;Sitten kysymys asennuksesta. Voinko asentaa pakastimen varastoon, jossa on talvella +5 astetta lämmintä?;ei;16,93;TRUE
+1;A;1;3;3;Arkkupakastin;Entä mikä on alhaisin lämpötila, jolle pakastimen voi säätää käyttöpaneelista?;-24 astetta;39,08;TRUE
+1;A;1;3;3;Cheerleadingin kilpailusäännöt;Joukkueemme on osallistumassa cheerleadingin SM-kisoihin ja haluaisin selvittää muutaman asian kilpailusäännöistä. Kuinka suuri kilpailualue on SM-kisoissa?;14x16 metriä tai 12x12 metriä riippuen kilpailusarjasta;39,78;FALSE
+1;A;1;3;3;Cheerleadingin kilpailusäännöt;Entä kuinka monta ulkoista spotteria joukkueella saa olla kilpailussa enintään?;6;14,91;TRUE
+1;A;1;3;3;Cheerleadingin kilpailusäännöt;Saako ulkoinen spotteri tukea huojuvaa pyramidia?;ei saa;20,11;TRUE
+1;A;1;3;3;Ompelukone;Mikä on tässä ompelukoneessa ompelen enimmäisleveys?;5 mm;142,11;TRUE
+1;A;1;3;3;Ompelukone;Entä mille välille ompelen pituuden voi asettaa siksak-ompelussa?;0,5-4 mm;77,70;TRUE
+1;A;1;3;3;Ompelukone;Kuinka painava kone on?;5 kg;9,61;TRUE
+1;A;1;3;3;Jalkapallosäännöt;Ajattelin pitää tietovisan eri urheilulajeista ja mietin tässä jalkapallokysymyksiä, tarvitsisin niihin vastaukset. Ensimmäiseksi, mikä on pelikentän sivurajan minimipituus?;90m;80,98;TRUE
+1;A;1;3;3;Jalkapallosäännöt;Mikä on pallon ympärysmitta?;68-70 cm;43,15;TRUE
+1;A;1;3;3;Jalkapallosäännöt;Kuinka monta pelaajaa joukkueessa saa olla enintään?;11;19,39;TRUE
+1;A;1;3;3;Televisio;Yritän muodostaa internet-yhteyttä ostamaani televisioon, mutta se ei tunnu onnistuvan. Mikä on minimi verkkoyhteyden nopeus, jotta internet-yhteys voidaan muodostaa?;10 mbps;96,86;TRUE
+1;B;2;3;4;Taekwondon kilpailusäännöt;Lapseni on osallistumassa ensimmäiseen taekwondokilpailuun ja muutama asia on vielä epäselvä. Mihin kilpailuluokkaan hänen pitää osallistua? Hän on 9-vuotias.;värivyöt, c-juniorit;25,83;TRUE
+1;B;2;3;4;Taekwondon kilpailusäännöt;Käydäänkö tässä luokassa pyykkipoikaottelua?;kyllä;46,22;TRUE
+1;B;2;3;4;Taekwondon kilpailusäännöt;Mitä punnituksessa pitää olla päällä?;t-paita ja baji;81,06;TRUE
+1;B;2;3;4;Jääkaappi;Tarvitsisin apua jääkaapin asennuksessa. Kuinka kauas sähköliedestä jääkaappi tulee vähintään sijoittaa?;3 cm;69,71;TRUE
+1;B;2;3;4;Jääkaappi;Olen kytkemässä jääkaappia toimintaan, laitoin juuri pistokkeen seinään ja nyt kuuluu joku hälytysääni. Mitä teen?;kytke hälytysääni pois lämpötilavalitsimella;60,57;TRUE
+1;B;2;3;4;Jääkaappi;Jääkaapista kuuluu välillä naksahduksia. Kuuluvatko ne normaaleihin käyntiääniin?;kyllä;39,24;TRUE
+1;B;2;3;4;Jääkaappi;Voisin vielä varmuuden vuoksi ottaa talteen huoltopalvelun puhelinnumeron, mikä se on?;207510700;43,28;TRUE
+1;B;2;3;4;Langattomat Bluetooth-kuulokkeet;Ostin juuri uudet Bluetooth-kuulokkeet ja tarvitsisin vastauksen muutamaan kysymykseen. Mitä kaikkea pakkauksen pitäisi sisältää?;kuulokkeet ja usb-latauskaapeli;41,77;FALSE
+1;B;2;3;4;Langattomat Bluetooth-kuulokkeet;OK, minulta näyttäisi puuttuvan ohjeet ja siksi tässä kyselen. Yritin muodostaa pariliitosta, mutta se kysyy jotain salasanaa. Mikä se mahtaa olla?;0;67,72;TRUE
+1;B;2;3;4;Langattomat Bluetooth-kuulokkeet;Kuinka kauan kuulokkeiden lataaminen pitäisi yleensä kestää?;2 tuntia;82,12;TRUE
+1;B;2;3;4;Langattomat Bluetooth-kuulokkeet;Kuinka suuri kuulokkeiden toimintasäde on?;10 metriä;42,71;TRUE
+1;B;2;3;4;Miekkailu;Olen miettinyt miekkailun aloittamista, mutta en tiedä mikä kolmesta miekkailulajista pitäisi valita. Mikä kolmesta miekkatyypistä (kalpa, floretti, säilä) saa olla painavin?;kalpa;34,26;TRUE
+1;B;2;3;4;Painepesuri;Mikä on mallin P 130.2 nimellispaine?;12/120;13,77;TRUE
+1;C;1;4;1;Pyykinpesukone;Olen miettinyt pesukoneen ostoa, ja haluasin kysyä pari juttua ennen päätöstä. Mikä on koneen leveys?;600mm;98,16;TRUE
+1;C;1;4;1;Pyykinpesukone;Entä maksimitäyttömäärä?;7 kg;27,62;TRUE
+1;C;1;4;1;Pyykinpesukone;Voiko koneen lisätoimintoihin kuuluvalla ajastuksella ajastaa koneen käynnistymään vuorokauden päästä?;ei;41,85;TRUE
+1;C;1;4;1;Koripallon pelisäännöt;Olen perustamassa koripallojoukkuetta ja olisi muutama kysymys. Kuinka monta pelaajaa joukkueessa voi enintään olla?;12;81,06;TRUE
+1;C;1;4;1;Koripallon pelisäännöt;Mitkä ovat pelikentän pituus ja leveys?;pituus 28m leveys 15m;85,77;TRUE
+1;C;1;4;1;Koripallon pelisäännöt;Kuinka monta erää ottelussa pelataan?;4;52,18;TRUE
+1;C;1;4;1;Kamiina;Voinko käyttää ostamani kamiinan polttoaineena sytytysnestettä?;ei;116,54;TRUE
+1;C;1;4;1;Kamiina;Entä mitä materiaalia keittolevy on?;valurautaa;72,60;TRUE
+1;C;1;4;1;Lämpöpumppu;Lämpöpumppuni ohjausjärjestelmän vihreä merkkivalo alkoi vilkkumaan eilen, mitä se tarkoittaa?;jokin hälytys on aktiivisena;87,66;TRUE
+1;C;1;4;1;Lämpöpumppu;Mikä asetus pitää olla päällä, jotta ohjausjärjestelmä sallii vain sähkövastuksen toiminnan?;lisälämpö;65,48;TRUE
+1;D;2;4;2;Päältäajettava ruohonleikkuri;Haluaisin vertailla kahta ruohonleikkurimallia, LM2148 M ja LM2153 MD. Kummassa näistä on suurempi teho?;lm2153md;48,50;TRUE
+1;D;2;4;2;Päältäajettava ruohonleikkuri;Entä onko niiden polttoainesäiliöiden tilavuuksissa eroa?;ei;90,16;TRUE
+1;D;2;4;2;Päältäajettava ruohonleikkuri;Mitkä niiden leikkuuleveydet ovat?;48 mm ja 53 mm;72,41;TRUE
+1;D;2;4;2;Uuni;Harkitsen tässä uunin ostoa, mutta haluaisin ensin tietää laitteen mitoista vähän. Mikä on leveimmän keittolevyn halkaisija?;18 cm;94,05;TRUE
+1;D;2;4;2;Uuni;Entä kuinka monta kannatintasoa uunissa on?;4;64,13;TRUE
+1;D;2;4;2;Uuni;Sitten vielä pari kysymystä uunin asennuksesta. Voiko uunin asentaa 200 mm päähän seinästä?;voi;75,62;TRUE
+1;D;2;4;2;Uuni;Hyvä, entä kuinka paljon tyhjää tilaa lieden päällä pitää vähintään olla?;650mm;15,34;TRUE
+1;D;2;4;2;Kiuas;Minulla olisi pari kysymystä koskien kiuastanne. Millä etäisyydellä kiukaan pitää olla sen takana olevasta seinästä?;100mm;88,01;TRUE
+1;D;2;4;2;Kiuas;Mikä on pisin aika, jonka päähän kiukaan voi ajastaa lämpenemään?;8 tuntia;43,96;TRUE
+1;D;2;4;2;Kiuas;Saako löylyvetenä käyttää merivettä?;ei;54,18;TRUE
+1;D;2;4;2;Kuivauskaappi;Kuinka korkea kuivauskaappi on?;1900mm;100,54;TRUE
+1;D;2;4;2;Kuivauskaappi;Kuinka kauan lingotun pyykin kuivaus pikakuivauksella kestää?;n. 120 min;71,97;TRUE
+1;D;2;4;2;Kuivauskaappi;Mitä pesuainetta kuivauskaapin puhdistukseen voi käyttää?;mietoa saippualiuosta;58,99;TRUE
+1;D;2;4;2;Kuivausrumpu;Haluaisin kysyä pari kysymystä kuivausrummusta ennen ostopäätöstä. Kuinka leveä kuivausrumpu on?;600mm;61,97;TRUE
+1;D;2;4;2;Mankeli;Olen katsellut mankelia mutta tarvitsisin vähän lisätietoja, jotta tiedän ostanko sen. Mikä on mankelin syvyys?;314mm;36,94;TRUE
+1;D;2;4;2;Astianpesukone;Ostin astianpesukoneen, ja minulla olisi muutama kysymys siihen liittyen. Mikä ohjelma on tarkoitettu erittäin likaisten astioiden pesuun (ohjelman numero)?;3;60,08;TRUE
+2;A;1;3;2;Koripallon pelisäännöt;Olen perustamassa koripallojoukkuetta ja olisi muutama kysymys. Kuinka monta pelaajaa joukkueessa voi enintään olla?;12;40,98;TRUE
+2;A;1;3;2;Koripallon pelisäännöt;Mitkä ovat pelikentän pituus ja leveys?;28m ja 15 m;46,47;TRUE
+2;A;1;3;2;Koripallon pelisäännöt;Kuinka monta erää ottelussa pelataan?;neljä;69,20;TRUE
+2;A;1;3;2;Koripallon pelisäännöt;Entä kuinka monta minuuttia yksi erä kestää?;10 minuuttia;17,67;TRUE
+2;A;1;3;2;Astianpesukone;Ostin astianpesukoneen, ja minulla olisi muutama kysymys siihen liittyen. Mikä ohjelma on tarkoitettu erittäin likaisten astioiden pesuun (ohjelman numero)?;3;21,41;TRUE
+2;A;1;3;2;Astianpesukone;Selvä, mitä lämpötilaa tämä ohjelma käyttää?;70 astetta;28,56;TRUE
+2;A;1;3;2;Astianpesukone;Sitten vielä yksi kysymys koneen asetuksista. Asuinpaikassani veden kovuus on 32°dH, mihin asentoon vedenpehmennin tulee siis asettaa?;7;76,29;TRUE
+2;A;1;3;2;Pyykinpesukone;Olen miettinyt pesukoneen ostoa, ja haluasin kysyä pari juttua ennen päätöstä. Mikä on koneen leveys?;600mm;43,38;TRUE
+2;A;1;3;2;Pyykinpesukone;Entä maksimitäyttömäärä?;7 kg;13,84;TRUE
+2;A;1;3;2;Pyykinpesukone;Voiko koneen lisätoimintoihin kuuluvalla ajastuksella ajastaa koneen käynnistymään vuorokauden päästä?;"en tiedä
+";187,88;FALSE
+2;A;1;3;2;Uuni;Harkitsen tässä uunin ostoa, mutta haluaisin ensin tietää laitteen mitoista vähän. Mikä on leveimmän keittolevyn halkaisija?;180 mm;99,83;TRUE
+2;B;2;3;3;Mankeli;Olen katsellut mankelia mutta tarvitsisin vähän lisätietoja, jotta tiedän ostanko sen. Mikä on mankelin syvyys?;314 mm;15,42;TRUE
+2;B;2;3;3;Mankeli;Entä mankeliliinan leveys?;55 cm;149,98;TRUE
+2;B;2;3;3;Mankeli;Mikä on lakanoiden mankeiloimisaika?;2-4 minuuttia;31,26;TRUE
+2;B;2;3;3;Agility;Olen osallistumassa ensimmäistä kertaa agility-kilpailuun. Koirani säkäkorkeus on 40cm, mihin kilpailuluokkaan (koko) minun pitää osallistua?;Medi (M);26,93;TRUE
+2;B;2;3;3;Agility;Kuinka monta eri tasoluokkaa on olemassa?;3;89,89;TRUE
+2;B;2;3;3;Agility;Onko agilitykilpailun tarkoituksena yhtenä osa-aluuena koiran ulkonäön arviointi?;"ei
+";29,02;TRUE
+2;B;2;3;3;Televisio;Yritän muodostaa internet-yhteyttä ostamaani televisioon, mutta se ei tunnu onnistuvan. Mikä on minimi verkkoyhteyden nopeus, jotta internet-yhteys voidaan muodostaa?;10 Mbps;115,13;TRUE
+2;B;2;3;3;Televisio;Kytkin USB-näppäimistön televisioon, millä painikkeella pääsen palaamaan valikossa edelliseen näyttöön?;ESC;148,82;TRUE
+2;B;2;3;3;Tenniksen kilpailumääräykset;Ajattelin ilmoittautua tenniskisoihin, mutta edellisistä on niin kauan aikaa, että haluaisin tarkistaa pari juttua. Olen tasolla 14, mihin tasoluokkaan minun kuuluu osallistua?;C;69,52;TRUE
+2;B;2;3;3;Miekkailu;Olen miettinyt miekkailun aloittamista, mutta en tiedä mikä kolmesta miekkailulajista pitäisi valita. Mikä kolmesta miekkatyypistä (kalpa, floretti, säilä) saa olla painavin?;Kalpa;63,03;TRUE
+2;C;1;4;4;Jääkaappi;Tarvitsisin apua jääkaapin asennuksessa. Kuinka kauas sähköliedestä jääkaappi tulee vähintään sijoittaa?;3 cm;64,35;TRUE
+2;C;1;4;4;Jääkaappi;Olen kytkemässä jääkaappia toimintaan, laitoin juuri pistokkeen seinään ja nyt kuuluu joku hälytysääni. Mitä teen?;Paina lämpötilavalitsinta 1;233,58;TRUE
+2;C;1;4;4;Arkkupakastin;Tarvitsisin vastauksen muutamaan kysymykseen, jotta tiedän ostanko arkkupakastimen. Kuinka leveä pakastin on?;595 mm;23,53;TRUE
+2;C;1;4;4;Arkkupakastin;Sitten kysymys asennuksesta. Voinko asentaa pakastimen varastoon, jossa on talvella +5 astetta lämmintä?;Et;179,81;TRUE
+2;C;1;4;4;Arkkupakastin;Entä mikä on alhaisin lämpötila, jolle pakastimen voi säätää käyttöpaneelista?;-24 astetta;136,99;TRUE
+2;C;1;4;4;Lämpöpumppu;Lämpöpumppuni ohjausjärjestelmän vihreä merkkivalo alkoi vilkkumaan eilen, mitä se tarkoittaa?;En tiedä;239,54;FALSE
+2;C;1;4;4;Pöytätenniksen säännöt;Meillä on tässä kaverin kanssa erimielisyyksiä pöytätenniksen säännöistä. Mikä on pöydän pituus?;274 cm;17,94;TRUE
+2;C;1;4;4;Pöytätenniksen säännöt;Kuinka korkealle pallon kuuluu nousta pelaajan kämmenestä syötössä?;16 cm;150,62;TRUE
+2;C;1;4;4;Pöytätenniksen säännöt;Entä kuinka kuinka monta pistettä pelaajan pitää vähintään saada, jotta voi voittaa erän?;11;146,39;TRUE
+2;D;2;4;1;Liesituuletin;Olen käyttänyt liesituuletinta jonkin aikaa ja mieleeni heräsi muutamia kysymyksiä siitä. Miten saan intensiivitehon päälle? Laitteessani on ohjauspaneeli 1.;Paina + painiketta, kun tuuletin on teholla 3;129,89;TRUE
+2;D;2;4;1;Kiuas;Minulla olisi pari kysymystä koskien kiuastanne. Millä etäisyydellä kiukaan pitää olla sen takana olevasta seinästä?;100 mm;60,70;TRUE
+2;D;2;4;1;Kiuas;Mikä on pisin aika, jonka päähän kiukaan voi ajastaa lämpenemään?;8 tuntia;214,83;TRUE
+2;D;2;4;1;Kiuas;Saako löylyvetenä käyttää merivettä?;Ei saa;29,00;TRUE
+2;D;2;4;1;Langattomat Bluetooth-kuulokkeet;Ostin juuri uudet Bluetooth-kuulokkeet ja tarvitsisin vastauksen muutamaan kysymykseen. Mitä kaikkea pakkauksen pitäisi sisältää?;Kuulokkeet, latauskaapelin ja pikaoppaan;38,99;TRUE
+2;D;2;4;1;Langattomat Bluetooth-kuulokkeet;OK, minulta näyttäisi puuttuvan ohjeet ja siksi tässä kyselen. Yritin muodostaa pariliitosta, mutta se kysyy jotain salasanaa. Mikä se mahtaa olla?;0;137,93;TRUE
+2;D;2;4;1;Nelikopteri;Kiinnostaisi tietää muutama juttu tästä nelikopterista. Kuinka painava kopteri on?;1380 g;236,53;TRUE
+2;D;2;4;1;Nelikopteri;Entä mikä on sen maksiminopeus?;20 m/s;43,90;TRUE
+3;A;1;3;2;Astianpesukone;Ostin astianpesukoneen, ja minulla olisi muutama kysymys siihen liittyen. Mikä ohjelma on tarkoitettu erittäin likaisten astioiden pesuun (ohjelman numero)?;3;55,06;TRUE
+3;A;1;3;2;Astianpesukone;Selvä, mitä lämpötilaa tämä ohjelma käyttää?;70C;53,26;TRUE
+3;A;1;3;2;Astianpesukone;Sitten vielä yksi kysymys koneen asetuksista. Asuinpaikassani veden kovuus on 32°dH, mihin asentoon vedenpehmennin tulee siis asettaa?;7;89,21;TRUE
+3;A;1;3;2;Langattomat Bluetooth-kuulokkeet;Ostin juuri uudet Bluetooth-kuulokkeet ja tarvitsisin vastauksen muutamaan kysymykseen. Mitä kaikkea pakkauksen pitäisi sisältää?;kuulokkeet, latauskaapeli, pikaopas;63,35;TRUE
+3;A;1;3;2;Langattomat Bluetooth-kuulokkeet;OK, minulta näyttäisi puuttuvan ohjeet ja siksi tässä kyselen. Yritin muodostaa pariliitosta, mutta se kysyy jotain salasanaa. Mikä se mahtaa olla?;0;65,11;TRUE
+3;A;1;3;2;Langattomat Bluetooth-kuulokkeet;Kuinka kauan kuulokkeiden lataaminen pitäisi yleensä kestää?;2h;38,94;TRUE
+3;A;1;3;2;Langattomat Bluetooth-kuulokkeet;Kuinka suuri kuulokkeiden toimintasäde on?;jopa 10m;30,28;TRUE
+3;A;1;3;2;Ompelukone;Mikä on tässä ompelukoneessa ompelen enimmäisleveys?;5mm;76,97;TRUE
+3;A;1;3;2;Ompelukone;Entä mille välille ompelen pituuden voi asettaa siksak-ompelussa?;0,5-4;33,45;TRUE
+3;A;1;3;2;Ompelukone;Kuinka painava kone on?;5kg;22,22;TRUE
+3;A;1;3;2;Kamiina;Voinko käyttää ostamani kamiinan polttoaineena sytytysnestettä?;et;62,45;TRUE
+3;A;1;3;2;Kamiina;Entä mitä materiaalia keittolevy on?;valurautaa;75,87;TRUE
+3;A;1;3;2;Taekwondon kilpailusäännöt;Lapseni on osallistumassa ensimmäiseen taekwondokilpailuun ja muutama asia on vielä epäselvä. Mihin kilpailuluokkaan hänen pitää osallistua? Hän on 9-vuotias.;värivyöt, c-juniorit;26,72;TRUE
+3;B;2;3;4;Päältäajettava ruohonleikkuri;Haluaisin vertailla kahta ruohonleikkurimallia, LM2148 M ja LM2153 MD. Kummassa näistä on suurempi teho?;2153 MDssä;35,93;TRUE
+3;B;2;3;4;Päältäajettava ruohonleikkuri;Entä onko niiden polttoainesäiliöiden tilavuuksissa eroa?;ei;42,30;TRUE
+3;B;2;3;4;Päältäajettava ruohonleikkuri;Mitkä niiden leikkuuleveydet ovat?;48 ja 53 mm;26,64;TRUE
+3;B;2;3;4;Miekkailu;Olen miettinyt miekkailun aloittamista, mutta en tiedä mikä kolmesta miekkailulajista pitäisi valita. Mikä kolmesta miekkatyypistä (kalpa, floretti, säilä) saa olla painavin?;kalpa;52,73;TRUE
+3;B;2;3;4;Miekkailu;Kuinka paljon se saa enintään painaa?;770g;9,38;TRUE
+3;B;2;3;4;Miekkailu;Sitten vielä kiinnostaisi osuma-alueet. Mikä on säilämiekkailun osuma-alue?;koko vartalo vyötäröstä alaspäin;31,16;FALSE
+3;B;2;3;4;Miekkailu;Entä kalpamiekkailun?;koko keho;40,84;TRUE
+3;B;2;3;4;Nelikopteri;Kiinnostaisi tietää muutama juttu tästä nelikopterista. Kuinka painava kopteri on?;1380g;19,05;TRUE
+3;B;2;3;4;Nelikopteri;Entä mikä on sen maksiminopeus?;20m/s;14,28;TRUE
+3;B;2;3;4;Nelikopteri;Kuuluko kotiinpaluutoimintoon kotiin paluu, jos akku on vähissä?;kyllä;46,93;TRUE
+3;B;2;3;4;Nelikopteri;Kuinka pitkä takuu kopterilla on?;1v;31,73;TRUE
+3;B;2;3;4;Televisio;Yritän muodostaa internet-yhteyttä ostamaani televisioon, mutta se ei tunnu onnistuvan. Mikä on minimi verkkoyhteyden nopeus, jotta internet-yhteys voidaan muodostaa?;10Mbps;28,81;TRUE
+3;B;2;3;4;Televisio;Kytkin USB-näppäimistön televisioon, millä painikkeella pääsen palaamaan valikossa edelliseen näyttöön?;esc;24,79;TRUE
+3;B;2;3;4;Televisio;Entä mitä Windows-näppäin tekee?;näyttää asetukset;19,15;TRUE
+3;B;2;3;4;Cheerleadingin kilpailusäännöt;Joukkueemme on osallistumassa cheerleadingin SM-kisoihin ja haluaisin selvittää muutaman asian kilpailusäännöistä. Kuinka suuri kilpailualue on SM-kisoissa?;14x16m;28,54;TRUE
+3;B;2;3;4;Cheerleadingin kilpailusäännöt;Entä kuinka monta ulkoista spotteria joukkueella saa olla kilpailussa enintään?;max 6;25,81;TRUE
+3;B;2;3;4;Cheerleadingin kilpailusäännöt;Saako ulkoinen spotteri tukea huojuvaa pyramidia?;ei;15,85;TRUE
+3;C;1;4;3;Mankeli;Olen katsellut mankelia mutta tarvitsisin vähän lisätietoja, jotta tiedän ostanko sen. Mikä on mankelin syvyys?;314mm;14,67;TRUE
+3;C;1;4;3;Mankeli;Entä mankeliliinan leveys?;55cm;13,81;TRUE
+3;C;1;4;3;Mankeli;Mikä on lakanoiden mankeiloimisaika?;2-4min;65,89;TRUE
+3;C;1;4;3;Jääkaappi;Tarvitsisin apua jääkaapin asennuksessa. Kuinka kauas sähköliedestä jääkaappi tulee vähintään sijoittaa?;vähintään 3cm päähän;35,65;TRUE
+3;C;1;4;3;Jääkaappi;Olen kytkemässä jääkaappia toimintaan, laitoin juuri pistokkeen seinään ja nyt kuuluu joku hälytysääni. Mitä teen?;sulje laitteen ovi;143,49;FALSE
+3;C;1;4;3;Jääkaappi;Jääkaapista kuuluu välillä naksahduksia. Kuuluvatko ne normaaleihin käyntiääniin?;kyllä;49,96;TRUE
+3;C;1;4;3;Kuivauskaappi;Kuinka korkea kuivauskaappi on?;1900mm;43,86;TRUE
+3;C;1;4;3;Kuivauskaappi;Kuinka kauan lingotun pyykin kuivaus pikakuivauksella kestää?;n.120min;66,82;TRUE
+3;C;1;4;3;Kuivauskaappi;Mitä pesuainetta kuivauskaapin puhdistukseen voi käyttää?;mietoa saippualiuosta;31,70;TRUE
+3;C;1;4;3;Painepesuri;Mikä on mallin P 130.2 nimellispaine?;12MPa;73,98;TRUE
+3;C;1;4;3;Painepesuri;Entä nimellisvirrankulutus?;2.300kW;87,52;TRUE
+3;C;1;4;3;Painepesuri;Kuinka pitkä takuu laitteessa on?;2v;54,23;TRUE
+3;C;1;4;3;Uuni;Harkitsen tässä uunin ostoa, mutta haluaisin ensin tietää laitteen mitoista vähän. Mikä on leveimmän keittolevyn halkaisija?;180mm;125,83;TRUE
+3;C;1;4;3;Uuni;Entä kuinka monta kannatintasoa uunissa on?;4;51,74;TRUE
+3;C;1;4;3;Tenniksen kilpailumääräykset;Ajattelin ilmoittautua tenniskisoihin, mutta edellisistä on niin kauan aikaa, että haluaisin tarkistaa pari juttua. Olen tasolla 14, mihin tasoluokkaan minun kuuluu osallistua?;C;88,60;TRUE
+3;C;1;4;3;Tenniksen kilpailumääräykset;Olen vähän huolissani omasta jaksamisestani, kuinka pitkä tauko kahden normaalipituisen saman luokan ottelussa on vähintään?;60min;48,04;TRUE
+4;A;1;3;4;Lämpöpumppu;Lämpöpumppuni ohjausjärjestelmän vihreä merkkivalo alkoi vilkkumaan eilen, mitä se tarkoittaa?;jokin hälytys on aktiivisena;112,46;TRUE
+4;A;1;3;4;Lämpöpumppu;Mikä asetus pitää olla päällä, jotta ohjausjärjestelmä sallii vain sähkövastuksen toiminnan?;LISÄLÄMPÖ;57,40;TRUE
+4;A;1;3;4;Lämpöpumppu;Entä mikä on oletussäätö lämpötilalle, jos otan lämmityksen pois?;17 astetta;59,88;TRUE
+4;A;1;3;4;Tenniksen kilpailumääräykset;Ajattelin ilmoittautua tenniskisoihin, mutta edellisistä on niin kauan aikaa, että haluaisin tarkistaa pari juttua. Olen tasolla 14, mihin tasoluokkaan minun kuuluu osallistua?;C;30,07;TRUE
+4;A;1;3;4;Tenniksen kilpailumääräykset;Olen vähän huolissani omasta jaksamisestani, kuinka pitkä tauko kahden normaalipituisen saman luokan ottelussa on vähintään?;60min;158,06;TRUE
+4;A;1;3;4;Tenniksen kilpailumääräykset;Kuinka montaa palloa tennisotteluissa voi korkeintaan käyttää?;6;54,89;TRUE
+4;A;1;3;4;Pöytätenniksen säännöt;Meillä on tässä kaverin kanssa erimielisyyksiä pöytätenniksen säännöistä. Mikä on pöydän pituus?;274cm;36,98;TRUE
+4;A;1;3;4;Pöytätenniksen säännöt;Kuinka korkealle pallon kuuluu nousta pelaajan kämmenestä syötössä?;vähintään 16cm;17,04;TRUE
+4;A;1;3;4;Pöytätenniksen säännöt;Entä kuinka kuinka monta pistettä pelaajan pitää vähintään saada, jotta voi voittaa erän?;11;31,74;TRUE
+4;A;1;3;4;Langattomat Bluetooth-kuulokkeet;Ostin juuri uudet Bluetooth-kuulokkeet ja tarvitsisin vastauksen muutamaan kysymykseen. Mitä kaikkea pakkauksen pitäisi sisältää?;Philipsin langattomat Bluetooth kuulokkeet SHB4405, USB-latauskaapeli, ja pikaopas;79,09;TRUE
+4;A;1;3;4;Langattomat Bluetooth-kuulokkeet;OK, minulta näyttäisi puuttuvan ohjeet ja siksi tässä kyselen. Yritin muodostaa pariliitosta, mutta se kysyy jotain salasanaa. Mikä se mahtaa olla?;0;41,94;TRUE
+4;A;1;3;4;Langattomat Bluetooth-kuulokkeet;Kuinka kauan kuulokkeiden lataaminen pitäisi yleensä kestää?;2 tuntia;24,39;TRUE
+4;A;1;3;4;Astianpesukone;Ostin astianpesukoneen, ja minulla olisi muutama kysymys siihen liittyen. Mikä ohjelma on tarkoitettu erittäin likaisten astioiden pesuun (ohjelman numero)?;3;50,63;TRUE
+4;A;1;3;4;Ompelukone;Mikä on tässä ompelukoneessa ompelen enimmäisleveys?;5mm;16,40;TRUE
+4;B;2;3;2;Pyykinpesukone;Olen miettinyt pesukoneen ostoa, ja haluasin kysyä pari juttua ennen päätöstä. Mikä on koneen leveys?;600mm;18,37;TRUE
+4;B;2;3;2;Pyykinpesukone;Entä maksimitäyttömäärä?;7kg;7,48;TRUE
+4;B;2;3;2;Pyykinpesukone;Voiko koneen lisätoimintoihin kuuluvalla ajastuksella ajastaa koneen käynnistymään vuorokauden päästä?;ei voi, enintään 20 tunnin päästä;44,16;TRUE
+4;B;2;3;2;Päältäajettava ruohonleikkuri;Haluaisin vertailla kahta ruohonleikkurimallia, LM2148 M ja LM2153 MD. Kummassa näistä on suurempi teho?;LM2153MD;20,42;TRUE
+4;B;2;3;2;Päältäajettava ruohonleikkuri;Entä onko niiden polttoainesäiliöiden tilavuuksissa eroa?;ei ole;78,21;TRUE
+4;B;2;3;2;Päältäajettava ruohonleikkuri;Mitkä niiden leikkuuleveydet ovat?;mallin LM2148 leveys 48mm, mallin LM2153 leveys 53mm;34,43;TRUE
+4;B;2;3;2;Liesituuletin;Olen käyttänyt liesituuletinta jonkin aikaa ja mieleeni heräsi muutamia kysymyksiä siitä. Miten saan intensiivitehon päälle? Laitteessani on ohjauspaneeli 1.;Paina painiketta +, kun tuuletin on teholla 3.;66,42;TRUE
+4;B;2;3;2;Liesituuletin;Kuinka usein rasvasuodatin pitäisi puhdistaa?;vähintään 2 kuukauden välein;106,01;TRUE
+4;B;2;3;2;Liesituuletin;Entä mitä puhdistusainetta voi käyttää laitteen alumiini- ja muoviosien puhdistukseen?;pehmeätä liinaa;21,41;FALSE
+4;B;2;3;2;Cheerleadingin kilpailusäännöt;Joukkueemme on osallistumassa cheerleadingin SM-kisoihin ja haluaisin selvittää muutaman asian kilpailusäännöistä. Kuinka suuri kilpailualue on SM-kisoissa?;cheer-sarjoissa ja tanssisarjoissa 14x16 metriä.;33,66;TRUE
+4;B;2;3;2;Cheerleadingin kilpailusäännöt;Entä kuinka monta ulkoista spotteria joukkueella saa olla kilpailussa enintään?;maksimissaan 6;28,16;TRUE
+4;B;2;3;2;Kuivauskaappi;Kuinka korkea kuivauskaappi on?;1900mm;38,55;TRUE
+4;B;2;3;2;Kuivauskaappi;Kuinka kauan lingotun pyykin kuivaus pikakuivauksella kestää?;120 min;27,58;TRUE
+4;C;1;4;3;Agility;Olen osallistumassa ensimmäistä kertaa agility-kilpailuun. Koirani säkäkorkeus on 40cm, mihin kilpailuluokkaan (koko) minun pitää osallistua?;Medi (M);116,96;TRUE
+4;C;1;4;3;Agility;Kuinka monta eri tasoluokkaa on olemassa?;5;125,81;FALSE
+4;C;1;4;3;Miekkailu;Olen miettinyt miekkailun aloittamista, mutta en tiedä mikä kolmesta miekkailulajista pitäisi valita. Mikä kolmesta miekkatyypistä (kalpa, floretti, säilä) saa olla painavin?;kalpa;51,63;TRUE
+4;C;1;4;3;Miekkailu;Kuinka paljon se saa enintään painaa?;770g;129,64;TRUE
+4;C;1;4;3;Miekkailu;Sitten vielä kiinnostaisi osuma-alueet. Mikä on säilämiekkailun osuma-alue?;vartalo, kädet, pää;17,95;TRUE
+4;C;1;4;3;Miekkailu;Entä kalpamiekkailun?;kaikki osuma-alueet ovat sallittuja (vartalo, kädet, pää ja jalat);19,12;TRUE
+4;C;1;4;3;Mikroaaltouuni;Minulla olisi pari kysymystä viime viikolla ostamastani mikrosta. Luulen että siinä on jokin häiriö, koska näytössä palaa kolme nollaa. Mikä voisi olla syy tähän?;sähkökatko;158,07;TRUE
+4;C;1;4;3;Mikroaaltouuni;Selvä. Entä mikä on suurin teho jonka voin valita?;800W;60,71;TRUE
+4;C;1;4;3;Mikroaaltouuni;Mitä tällä teholla tulisi kuumentaa?;nesteitä;45,08;TRUE
+4;C;1;4;3;Jalkapallosäännöt;Ajattelin pitää tietovisan eri urheilulajeista ja mietin tässä jalkapallokysymyksiä, tarvitsisin niihin vastaukset. Ensimmäiseksi, mikä on pelikentän sivurajan minimipituus?;90m;178,18;TRUE
+4;C;1;4;3;Jalkapallosäännöt;Mikä on pallon ympärysmitta?;68-70cm;61,59;TRUE
+4;C;1;4;3;Jalkapallosäännöt;Kuinka monta pelaajaa joukkueessa saa olla enintään?;11, ml. maalivahti;78,51;TRUE
+4;D;2;4;1;Koripallon pelisäännöt;Olen perustamassa koripallojoukkuetta ja olisi muutama kysymys. Kuinka monta pelaajaa joukkueessa voi enintään olla?;12;51,41;TRUE
+4;D;2;4;1;Koripallon pelisäännöt;Mitkä ovat pelikentän pituus ja leveys?;pituus 28m, leveys 15m;141,56;TRUE
+4;D;2;4;1;Koripallon pelisäännöt;Kuinka monta erää ottelussa pelataan?;4;99,02;TRUE
+4;D;2;4;1;Koripallon pelisäännöt;Entä kuinka monta minuuttia yksi erä kestää?;15min;15,93;FALSE
+4;D;2;4;1;Mankeli;Olen katsellut mankelia mutta tarvitsisin vähän lisätietoja, jotta tiedän ostanko sen. Mikä on mankelin syvyys?;314mm;33,02;TRUE
+4;D;2;4;1;Mankeli;Entä mankeliliinan leveys?;730mm;138,58;FALSE
+4;D;2;4;1;Mankeli;Mikä on lakanoiden mankeiloimisaika?;2-4min;116,47;TRUE
+4;D;2;4;1;Kuivausrumpu;Haluaisin kysyä pari kysymystä kuivausrummusta ennen ostopäätöstä. Kuinka leveä kuivausrumpu on?;Maksimissaan 950mm luukun ollessa auki;106,87;TRUE
+4;D;2;4;1;Kuivausrumpu;Mikä on täysin kuivaksi kuivaavan ohjelman maksimitäyttömäärä?;8kg;92,85;TRUE
+4;D;2;4;1;Kuivausrumpu;Kuuluuko ajastettu kuivaus laitteen lisätoimintoihin?;joo;112,94;TRUE
+4;D;2;4;1;Kuivausrumpu;Entä onko laitteessa ohjelmaa villavaatteille?;joo;20,86;TRUE
+4;D;2;4;1;Painepesuri;Mikä on mallin P 130.2 nimellispaine?;12/120MPa;112,84;TRUE
+4;D;2;4;1;Painepesuri;Entä nimellisvirrankulutus?;2300kW;55,31;TRUE
+5;A;1;3;4;Cheerleadingin kilpailusäännöt;Joukkueemme on osallistumassa cheerleadingin SM-kisoihin ja haluaisin selvittää muutaman asian kilpailusäännöistä. Kuinka suuri kilpailualue on SM-kisoissa?;12x12 metriä;20,93;FALSE
+5;A;1;3;4;Cheerleadingin kilpailusäännöt;Entä kuinka monta ulkoista spotteria joukkueella saa olla kilpailussa enintään?;max 6;149,12;TRUE
+5;A;1;3;4;Cheerleadingin kilpailusäännöt;Saako ulkoinen spotteri tukea huojuvaa pyramidia?;ei saa;19,57;TRUE
+5;A;1;3;4;Liesituuletin;Olen käyttänyt liesituuletinta jonkin aikaa ja mieleeni heräsi muutamia kysymyksiä siitä. Miten saan intensiivitehon päälle? Laitteessani on ohjauspaneeli 1.;paina + painiketta kun tuuletin on teholla 3;59,28;TRUE
+5;A;1;3;4;Liesituuletin;Kuinka usein rasvasuodatin pitäisi puhdistaa?;2 kk välein;29,33;TRUE
+5;A;1;3;4;Liesituuletin;Entä mitä puhdistusainetta voi käyttää laitteen alumiini- ja muoviosien puhdistukseen?;Kiitos samoin!;188,71;TRUE
+5;A;1;3;4;Kamiina;Voinko käyttää ostamani kamiinan polttoaineena sytytysnestettä?;ei;15,87;TRUE
+5;A;1;3;4;Kamiina;Entä mitä materiaalia keittolevy on?;valurautaa;62,90;TRUE
+5;A;1;3;4;Kamiina;Okei, sitten vielä yksi. Kuinka pitkä takuu kamiinalla on?;12kk;24,71;TRUE
+5;A;1;3;4;Mankeli;Olen katsellut mankelia mutta tarvitsisin vähän lisätietoja, jotta tiedän ostanko sen. Mikä on mankelin syvyys?;314 mm;26,32;TRUE
+5;A;1;3;4;Mankeli;Entä mankeliliinan leveys?;55 cm;74,47;TRUE
+5;A;1;3;4;Mikroaaltouuni;Minulla olisi pari kysymystä viime viikolla ostamastani mikrosta. Luulen että siinä on jokin häiriö, koska näytössä palaa kolme nollaa. Mikä voisi olla syy tähän?;sähkökatko;39,82;TRUE
+5;B;2;3;3;Miekkailu;Olen miettinyt miekkailun aloittamista, mutta en tiedä mikä kolmesta miekkailulajista pitäisi valita. Mikä kolmesta miekkatyypistä (kalpa, floretti, säilä) saa olla painavin?;kalpa;45,44;TRUE
+5;B;2;3;3;Miekkailu;Kuinka paljon se saa enintään painaa?;770g;28,30;TRUE
+5;B;2;3;3;Miekkailu;Sitten vielä kiinnostaisi osuma-alueet. Mikä on säilämiekkailun osuma-alue?;vyötäröstä ylöspäin;99,94;TRUE
+5;B;2;3;3;Miekkailu;Entä kalpamiekkailun?;koko ruumis;68,87;TRUE
+5;B;2;3;3;Jalkapallosäännöt;Ajattelin pitää tietovisan eri urheilulajeista ja mietin tässä jalkapallokysymyksiä, tarvitsisin niihin vastaukset. Ensimmäiseksi, mikä on pelikentän sivurajan minimipituus?;90 m;68,60;TRUE
+5;B;2;3;3;Jalkapallosäännöt;Mikä on pallon ympärysmitta?;68-70cm;52,30;TRUE
+5;B;2;3;3;Jalkapallosäännöt;Kuinka monta pelaajaa joukkueessa saa olla enintään?;11 kentällä, 12 vaihdossa;154,30;FALSE
+5;B;2;3;3;Jalkapallosäännöt;Sitten vielä yksi. Kuinka kaukana vastapuolen pelaajien pitää olla kulmakaaresta kulmapotkutilanteessa?;9.15 metrin päässä;64,32;TRUE
+5;B;2;3;3;Koripallon pelisäännöt;Olen perustamassa koripallojoukkuetta ja olisi muutama kysymys. Kuinka monta pelaajaa joukkueessa voi enintään olla?;12;103,50;TRUE
+5;B;2;3;3;Koripallon pelisäännöt;Mitkä ovat pelikentän pituus ja leveys?;28m pitkä ja 15m leveä;63,93;TRUE
+5;B;2;3;3;Koripallon pelisäännöt;Kuinka monta erää ottelussa pelataan?;4;55,51;TRUE
+5;B;2;3;3;Koripallon pelisäännöt;Entä kuinka monta minuuttia yksi erä kestää?;10 minuuttia;10,52;TRUE
+5;C;1;4;2;Kuivausrumpu;Haluaisin kysyä pari kysymystä kuivausrummusta ennen ostopäätöstä. Kuinka leveä kuivausrumpu on?;max leveys 950mm;19,66;TRUE
+5;C;1;4;2;Kuivausrumpu;Mikä on täysin kuivaksi kuivaavan ohjelman maksimitäyttömäärä?;8kg;171,77;TRUE
+5;C;1;4;2;Kuivausrumpu;Kuuluuko ajastettu kuivaus laitteen lisätoimintoihin?;kyllä;92,11;TRUE
+5;C;1;4;2;Päältäajettava ruohonleikkuri;Haluaisin vertailla kahta ruohonleikkurimallia, LM2148 M ja LM2153 MD. Kummassa näistä on suurempi teho?;LM2153 MD;50,51;TRUE
+5;C;1;4;2;Päältäajettava ruohonleikkuri;Entä onko niiden polttoainesäiliöiden tilavuuksissa eroa?;ei;162,74;TRUE
+5;C;1;4;2;Päältäajettava ruohonleikkuri;Mitkä niiden leikkuuleveydet ovat?;48mm ja 53mm;95,57;TRUE
+5;C;1;4;2;Jääkaappi;Tarvitsisin apua jääkaapin asennuksessa. Kuinka kauas sähköliedestä jääkaappi tulee vähintään sijoittaa?;3cm;49,82;TRUE
+5;C;1;4;2;Jääkaappi;Olen kytkemässä jääkaappia toimintaan, laitoin juuri pistokkeen seinään ja nyt kuuluu joku hälytysääni. Mitä teen?;kytke se pois päältä painamalla lämpötilavalitsinta;107,17;TRUE
+5;C;1;4;2;Kiuas;Minulla olisi pari kysymystä koskien kiuastanne. Millä etäisyydellä kiukaan pitää olla sen takana olevasta seinästä?;100mm;84,43;TRUE
+5;C;1;4;2;Kiuas;Mikä on pisin aika, jonka päähän kiukaan voi ajastaa lämpenemään?;8h;147,55;TRUE
+5;C;1;4;2;Kiuas;Saako löylyvetenä käyttää merivettä?;ei mielellään;101,50;TRUE
+5;D;2;4;1;Tenniksen kilpailumääräykset;Ajattelin ilmoittautua tenniskisoihin, mutta edellisistä on niin kauan aikaa, että haluaisin tarkistaa pari juttua. Olen tasolla 14, mihin tasoluokkaan minun kuuluu osallistua?;C;107,57;TRUE
+5;D;2;4;1;Tenniksen kilpailumääräykset;Olen vähän huolissani omasta jaksamisestani, kuinka pitkä tauko kahden normaalipituisen saman luokan ottelussa on vähintään?;60 minuuttia;239,04;TRUE
+5;D;2;4;1;Langattomat Bluetooth-kuulokkeet;Ostin juuri uudet Bluetooth-kuulokkeet ja tarvitsisin vastauksen muutamaan kysymykseen. Mitä kaikkea pakkauksen pitäisi sisältää?;kuulokkeet ja latauskaapelin;298,42;FALSE
+5;D;2;4;1;Langattomat Bluetooth-kuulokkeet;OK, minulta näyttäisi puuttuvan ohjeet ja siksi tässä kyselen. Yritin muodostaa pariliitosta, mutta se kysyy jotain salasanaa. Mikä se mahtaa olla?;0;102,39;TRUE
+5;D;2;4;1;Painepesuri;Mikä on mallin P 130.2 nimellispaine?;12/120;215,97;TRUE
+5;D;2;4;1;Painepesuri;Entä nimellisvirrankulutus?;2300 kW;138,28;TRUE
+5;D;2;4;1;Pyykinpesukone;Olen miettinyt pesukoneen ostoa, ja haluasin kysyä pari juttua ennen päätöstä. Mikä on koneen leveys?;600 mm;140,79;TRUE
+6;A;1;3;1;Mankeli;Olen katsellut mankelia mutta tarvitsisin vähän lisätietoja, jotta tiedän ostanko sen. Mikä on mankelin syvyys?;314mm;18,07;TRUE
+6;A;1;3;1;Mankeli;Entä mankeliliinan leveys?;730mm;39,78;FALSE
+6;A;1;3;1;Mankeli;Mikä on lakanoiden mankeiloimisaika?;1-3min;78,21;FALSE
+6;A;1;3;1;Pöytätenniksen säännöt;Meillä on tässä kaverin kanssa erimielisyyksiä pöytätenniksen säännöistä. Mikä on pöydän pituus?;274cm;37,40;TRUE
+6;A;1;3;1;Pöytätenniksen säännöt;Kuinka korkealle pallon kuuluu nousta pelaajan kämmenestä syötössä?;16cm;159,08;TRUE
+6;A;1;3;1;Pöytätenniksen säännöt;Entä kuinka kuinka monta pistettä pelaajan pitää vähintään saada, jotta voi voittaa erän?;Kutenkin pitää olla 2 pisteen ero mikäli molemmilla on 10 pistettä;108,54;TRUE
+6;A;1;3;1;Taekwondon kilpailusäännöt;Lapseni on osallistumassa ensimmäiseen taekwondokilpailuun ja muutama asia on vielä epäselvä. Mihin kilpailuluokkaan hänen pitää osallistua? Hän on 9-vuotias.;Värivyöt, C-juniorit;105,82;TRUE
+6;A;1;3;1;Taekwondon kilpailusäännöt;Käydäänkö tässä luokassa pyykkipoikaottelua?;Ei, käytetään etuhyppypotkua;99,95;FALSE
+6;A;1;3;1;Taekwondon kilpailusäännöt;Mitä punnituksessa pitää olla päällä?;T-paita ja dobokin housuja;41,63;TRUE
+6;A;1;3;1;Painepesuri;Mikä on mallin P 130.2 nimellispaine?;12/120;101,12;TRUE
+6;A;1;3;1;Painepesuri;Entä nimellisvirrankulutus?;2300;24,04;TRUE
+6;A;1;3;1;Astianpesukone;Ostin astianpesukoneen, ja minulla olisi muutama kysymys siihen liittyen. Mikä ohjelma on tarkoitettu erittäin likaisten astioiden pesuun (ohjelman numero)?;Ohjelma 3;24,98;TRUE
+6;B;2;3;2;Päältäajettava ruohonleikkuri;Haluaisin vertailla kahta ruohonleikkurimallia, LM2148 M ja LM2153 MD. Kummassa näistä on suurempi teho?;LM2153 MD;29,93;TRUE
+6;B;2;3;2;Päältäajettava ruohonleikkuri;Entä onko niiden polttoainesäiliöiden tilavuuksissa eroa?;Ei ole;38,47;TRUE
+6;B;2;3;2;Päältäajettava ruohonleikkuri;Mitkä niiden leikkuuleveydet ovat?;LM2148 M on 48mm ja LM2153 MD 53mm;33,85;TRUE
+6;B;2;3;2;Miekkailu;Olen miettinyt miekkailun aloittamista, mutta en tiedä mikä kolmesta miekkailulajista pitäisi valita. Mikä kolmesta miekkatyypistä (kalpa, floretti, säilä) saa olla painavin?;Kalpa 770g;29,75;TRUE
+6;B;2;3;2;Miekkailu;Kuinka paljon se saa enintään painaa?;Enintään  770g;67,60;TRUE
+6;B;2;3;2;Miekkailu;Sitten vielä kiinnostaisi osuma-alueet. Mikä on säilämiekkailun osuma-alue?;Yläruumin lantiosta ylöspäin;35,41;TRUE
+6;B;2;3;2;Miekkailu;Entä kalpamiekkailun?;Koko keho;16,06;TRUE
+6;B;2;3;2;Nelikopteri;Kiinnostaisi tietää muutama juttu tästä nelikopterista. Kuinka painava kopteri on?;Sisältäen propellit ja akun;29,46;TRUE
+6;B;2;3;2;Nelikopteri;Entä mikä on sen maksiminopeus?;6m/s (Sport mode);54,03;FALSE
+6;B;2;3;2;Agility;Olen osallistumassa ensimmäistä kertaa agility-kilpailuun. Koirani säkäkorkeus on 40cm, mihin kilpailuluokkaan (koko) minun pitää osallistua?;Kokoluokka Medi (M);51,48;TRUE
+6;B;2;3;2;Agility;Kuinka monta eri tasoluokkaa on olemassa?;Viisi;18,36;FALSE
+6;B;2;3;2;Agility;Onko agilitykilpailun tarkoituksena yhtenä osa-aluuena koiran ulkonäön arviointi?;Ei ole. Mitataan taitoa, nopeutta ja hyvää yhteistoimintaa;78,06;TRUE
+6;C;1;4;3;Uuni;Harkitsen tässä uunin ostoa, mutta haluaisin ensin tietää laitteen mitoista vähän. Mikä on leveimmän keittolevyn halkaisija?;180mm;27,90;TRUE
+6;C;1;4;3;Uuni;Entä kuinka monta kannatintasoa uunissa on?;3;124,56;FALSE
+6;C;1;4;3;Uuni;Sitten vielä pari kysymystä uunin asennuksesta. Voiko uunin asentaa 200 mm päähän seinästä?;kyllä;123,78;TRUE
+6;C;1;4;3;Uuni;Hyvä, entä kuinka paljon tyhjää tilaa lieden päällä pitää vähintään olla?;650mm;62,40;TRUE
+6;C;1;4;3;Jalkapallosäännöt;Ajattelin pitää tietovisan eri urheilulajeista ja mietin tässä jalkapallokysymyksiä, tarvitsisin niihin vastaukset. Ensimmäiseksi, mikä on pelikentän sivurajan minimipituus?;90m;36,33;TRUE
+6;C;1;4;3;Jalkapallosäännöt;Mikä on pallon ympärysmitta?;68-70cm;82,87;TRUE
+6;C;1;4;3;Jalkapallosäännöt;Kuinka monta pelaajaa joukkueessa saa olla enintään?;11;32,55;TRUE
+6;C;1;4;3;Jalkapallosäännöt;Sitten vielä yksi. Kuinka kaukana vastapuolen pelaajien pitää olla kulmakaaresta kulmapotkutilanteessa?;9,15m;159,97;TRUE
+6;C;1;4;3;Koripallon pelisäännöt;Olen perustamassa koripallojoukkuetta ja olisi muutama kysymys. Kuinka monta pelaajaa joukkueessa voi enintään olla?;12;34,60;TRUE
+6;C;1;4;3;Koripallon pelisäännöt;Mitkä ovat pelikentän pituus ja leveys?;28m ja 15m;126,75;TRUE
+6;C;1;4;3;Koripallon pelisäännöt;Kuinka monta erää ottelussa pelataan?;Neljä;102,57;TRUE
+6;C;1;4;3;Kuivausrumpu;Haluaisin kysyä pari kysymystä kuivausrummusta ennen ostopäätöstä. Kuinka leveä kuivausrumpu on?;600mm luukun ollessa kiinni;75,15;TRUE
+6;C;1;4;3;Kuivausrumpu;Mikä on täysin kuivaksi kuivaavan ohjelman maksimitäyttömäärä?;3,5kg;68,51;FALSE
+6;C;1;4;3;Kuivausrumpu;Kuuluuko ajastettu kuivaus laitteen lisätoimintoihin?;Kyllä;14,44;TRUE
+6;C;1;4;3;Kuivausrumpu;Entä onko laitteessa ohjelmaa villavaatteille?;Kyllä;20,76;TRUE
+6;D;2;4;4;Pyykinpesukone;Olen miettinyt pesukoneen ostoa, ja haluasin kysyä pari juttua ennen päätöstä. Mikä on koneen leveys?;600mm;33,78;TRUE
+6;D;2;4;4;Pyykinpesukone;Entä maksimitäyttömäärä?;7kg;52,65;TRUE
+6;D;2;4;4;Pyykinpesukone;Voiko koneen lisätoimintoihin kuuluvalla ajastuksella ajastaa koneen käynnistymään vuorokauden päästä?;Enimmäisaika on 20h;71,85;TRUE
+6;D;2;4;4;Liesituuletin;Olen käyttänyt liesituuletinta jonkin aikaa ja mieleeni heräsi muutamia kysymyksiä siitä. Miten saan intensiivitehon päälle? Laitteessani on ohjauspaneeli 1.;Paina ensimmäistä painiketta vasemmalla;60,62;FALSE
+6;D;2;4;4;Liesituuletin;Kuinka usein rasvasuodatin pitäisi puhdistaa?;Vähintään 2kk välein;83,94;TRUE
+6;D;2;4;4;Liesituuletin;Entä mitä puhdistusainetta voi käyttää laitteen alumiini- ja muoviosien puhdistukseen?;Lasinpesuaine ja pehmeä liina;84,28;TRUE
+6;D;2;4;4;Ompelukone;Mikä on tässä ompelukoneessa ompelen enimmäisleveys?;5mm;24,78;TRUE
+6;D;2;4;4;Ompelukone;Entä mille välille ompelen pituuden voi asettaa siksak-ompelussa?;Amnteeksi 0,5-4;80,50;TRUE
+6;D;2;4;4;Ompelukone;Kuinka painava kone on?;5kg;47,34;TRUE
+6;D;2;4;4;Lämpöpumppu;Lämpöpumppuni ohjausjärjestelmän vihreä merkkivalo alkoi vilkkumaan eilen, mitä se tarkoittaa?;Se tarkoittaa että lämpöpumppu on käynnissä ja se on valmis tuottamaan lämpöä tai lämmintä vettä;68,18;FALSE
+6;D;2;4;4;Tenniksen kilpailumääräykset;Ajattelin ilmoittautua tenniskisoihin, mutta edellisistä on niin kauan aikaa, että haluaisin tarkistaa pari juttua. Olen tasolla 14, mihin tasoluokkaan minun kuuluu osallistua?;C;77,92;TRUE
+7;A;1;3;1;Televisio;Yritän muodostaa internet-yhteyttä ostamaani televisioon, mutta se ei tunnu onnistuvan. Mikä on minimi verkkoyhteyden nopeus, jotta internet-yhteys voidaan muodostaa?;10 Mbps;69,89;TRUE
+7;A;1;3;1;Televisio;Kytkin USB-näppäimistön televisioon, millä painikkeella pääsen palaamaan valikossa edelliseen näyttöön?;ESC-näppäimellä;50,70;TRUE
+7;A;1;3;1;Televisio;Entä mitä Windows-näppäin tekee?;Näyttää television asetukset;80,58;TRUE
+7;A;1;3;1;Ompelukone;Mikä on tässä ompelukoneessa ompelen enimmäisleveys?;5 mm;28,87;TRUE
+7;A;1;3;1;Ompelukone;Entä mille välille ompelen pituuden voi asettaa siksak-ompelussa?;0,5-4;63,81;TRUE
+7;A;1;3;1;Ompelukone;Kuinka painava kone on?;5 kg;15,08;TRUE
+7;A;1;3;1;Kiuas;Minulla olisi pari kysymystä koskien kiuastanne. Millä etäisyydellä kiukaan pitää olla sen takana olevasta seinästä?;100 mm;53,95;TRUE
+7;A;1;3;1;Kiuas;Mikä on pisin aika, jonka päähän kiukaan voi ajastaa lämpenemään?;8 tuntia;48,61;TRUE
+7;A;1;3;1;Kiuas;Saako löylyvetenä käyttää merivettä?;Ei saa;36,81;TRUE
+7;A;1;3;1;Kuivausrumpu;Haluaisin kysyä pari kysymystä kuivausrummusta ennen ostopäätöstä. Kuinka leveä kuivausrumpu on?;600 mm;67,22;TRUE
+7;A;1;3;1;Kuivausrumpu;Mikä on täysin kuivaksi kuivaavan ohjelman maksimitäyttömäärä?;8 kg;61,93;TRUE
+7;A;1;3;1;Kuivausrumpu;Kuuluuko ajastettu kuivaus laitteen lisätoimintoihin?;Kyllä;18,93;TRUE
+7;B;2;3;2;Koripallon pelisäännöt;Olen perustamassa koripallojoukkuetta ja olisi muutama kysymys. Kuinka monta pelaajaa joukkueessa voi enintään olla?;12;27,14;TRUE
+7;B;2;3;2;Koripallon pelisäännöt;Mitkä ovat pelikentän pituus ja leveys?;28 m ja 15 m;80,70;TRUE
+7;B;2;3;2;Koripallon pelisäännöt;Kuinka monta erää ottelussa pelataan?;4;53,55;TRUE
+7;B;2;3;2;Koripallon pelisäännöt;Entä kuinka monta minuuttia yksi erä kestää?;10 min;60,53;TRUE
+7;B;2;3;2;Painepesuri;Mikä on mallin P 130.2 nimellispaine?;12/120 MPa/baari;63,99;TRUE
+7;B;2;3;2;Painepesuri;Entä nimellisvirrankulutus?;2.300 kW;33,29;TRUE
+7;B;2;3;2;Painepesuri;Kuinka pitkä takuu laitteessa on?;2 vuotta;52,73;TRUE
+7;B;2;3;2;Miekkailu;Olen miettinyt miekkailun aloittamista, mutta en tiedä mikä kolmesta miekkailulajista pitäisi valita. Mikä kolmesta miekkatyypistä (kalpa, floretti, säilä) saa olla painavin?;Kalpa;86,91;TRUE
+7;B;2;3;2;Miekkailu;Kuinka paljon se saa enintään painaa?;770 g;12,91;TRUE
+7;B;2;3;2;Miekkailu;Sitten vielä kiinnostaisi osuma-alueet. Mikä on säilämiekkailun osuma-alue?;Ylävartalo ja pää;44,83;TRUE
+7;B;2;3;2;Miekkailu;Entä kalpamiekkailun?;Koko vartalo;47,90;TRUE
+7;B;2;3;2;Arkkupakastin;Tarvitsisin vastauksen muutamaan kysymykseen, jotta tiedän ostanko arkkupakastimen. Kuinka leveä pakastin on?;595 mm;39,21;TRUE
+7;B;2;3;2;Kuivauskaappi;Kuinka korkea kuivauskaappi on?;1900 mm;44,04;TRUE
+7;B;2;3;2;Tenniksen kilpailumääräykset;Ajattelin ilmoittautua tenniskisoihin, mutta edellisistä on niin kauan aikaa, että haluaisin tarkistaa pari juttua. Olen tasolla 14, mihin tasoluokkaan minun kuuluu osallistua?;C;32,89;TRUE
+7;C;1;4;4;Päältäajettava ruohonleikkuri;Haluaisin vertailla kahta ruohonleikkurimallia, LM2148 M ja LM2153 MD. Kummassa näistä on suurempi teho?;LM2153 MD;27,28;TRUE
+7;C;1;4;4;Päältäajettava ruohonleikkuri;Entä onko niiden polttoainesäiliöiden tilavuuksissa eroa?;Ei ;46,38;TRUE
+7;C;1;4;4;Päältäajettava ruohonleikkuri;Mitkä niiden leikkuuleveydet ovat?;48 mm ja 53 mm;19,79;TRUE
+7;C;1;4;4;Jääkaappi;Tarvitsisin apua jääkaapin asennuksessa. Kuinka kauas sähköliedestä jääkaappi tulee vähintään sijoittaa?;3 cm;30,31;TRUE
+7;C;1;4;4;Jääkaappi;Olen kytkemässä jääkaappia toimintaan, laitoin juuri pistokkeen seinään ja nyt kuuluu joku hälytysääni. Mitä teen?;Paina lämpötilavalitsinta 1;124,07;TRUE
+7;C;1;4;4;Jääkaappi;Jääkaapista kuuluu välillä naksahduksia. Kuuluvatko ne normaaleihin käyntiääniin?;Kyllä;55,77;TRUE
+7;C;1;4;4;Pyykinpesukone;Olen miettinyt pesukoneen ostoa, ja haluasin kysyä pari juttua ennen päätöstä. Mikä on koneen leveys?;600 mm;42,91;TRUE
+7;C;1;4;4;Pyykinpesukone;Entä maksimitäyttömäärä?;7 kg;97,41;TRUE
+7;C;1;4;4;Pyykinpesukone;Voiko koneen lisätoimintoihin kuuluvalla ajastuksella ajastaa koneen käynnistymään vuorokauden päästä?;Ei voi;28,81;TRUE
+7;C;1;4;4;Cheerleadingin kilpailusäännöt;Joukkueemme on osallistumassa cheerleadingin SM-kisoihin ja haluaisin selvittää muutaman asian kilpailusäännöistä. Kuinka suuri kilpailualue on SM-kisoissa?;14x16 m;35,62;TRUE
+7;C;1;4;4;Cheerleadingin kilpailusäännöt;Entä kuinka monta ulkoista spotteria joukkueella saa olla kilpailussa enintään?;6;17,34;TRUE
+7;C;1;4;4;Cheerleadingin kilpailusäännöt;Saako ulkoinen spotteri tukea huojuvaa pyramidia?;Ei;112,70;TRUE
+7;C;1;4;4;Langattomat Bluetooth-kuulokkeet;Ostin juuri uudet Bluetooth-kuulokkeet ja tarvitsisin vastauksen muutamaan kysymykseen. Mitä kaikkea pakkauksen pitäisi sisältää?;Kuulokkeet ja USB-latauskaapeli;45,15;TRUE
+7;C;1;4;4;Langattomat Bluetooth-kuulokkeet;OK, minulta näyttäisi puuttuvan ohjeet ja siksi tässä kyselen. Yritin muodostaa pariliitosta, mutta se kysyy jotain salasanaa. Mikä se mahtaa olla?;Pikaopas pitäisi myös kuulua. Salasana on 0000;103,77;TRUE
+7;D;2;4;3;Pöytätenniksen säännöt;Meillä on tässä kaverin kanssa erimielisyyksiä pöytätenniksen säännöistä. Mikä on pöydän pituus?;274 cm;17,29;TRUE
+7;D;2;4;3;Pöytätenniksen säännöt;Kuinka korkealle pallon kuuluu nousta pelaajan kämmenestä syötössä?;16 cm;21,77;TRUE
+7;D;2;4;3;Pöytätenniksen säännöt;Entä kuinka kuinka monta pistettä pelaajan pitää vähintään saada, jotta voi voittaa erän?;11;82,46;TRUE
+7;D;2;4;3;Mankeli;Olen katsellut mankelia mutta tarvitsisin vähän lisätietoja, jotta tiedän ostanko sen. Mikä on mankelin syvyys?;314 mm;37,93;TRUE
+7;D;2;4;3;Mankeli;Entä mankeliliinan leveys?;55 cm;80,78;TRUE
+7;D;2;4;3;Mankeli;Mikä on lakanoiden mankeiloimisaika?;2-4 min;38,68;TRUE
+7;D;2;4;3;Jalkapallosäännöt;Ajattelin pitää tietovisan eri urheilulajeista ja mietin tässä jalkapallokysymyksiä, tarvitsisin niihin vastaukset. Ensimmäiseksi, mikä on pelikentän sivurajan minimipituus?;90 m;73,26;TRUE
+7;D;2;4;3;Jalkapallosäännöt;Mikä on pallon ympärysmitta?;68-70 cm;38,24;TRUE
+7;D;2;4;3;Jalkapallosäännöt;Kuinka monta pelaajaa joukkueessa saa olla enintään?;11;50,56;TRUE
+7;D;2;4;3;Jalkapallosäännöt;Sitten vielä yksi. Kuinka kaukana vastapuolen pelaajien pitää olla kulmakaaresta kulmapotkutilanteessa?;9,15 m;74,70;TRUE
+7;D;2;4;3;Uuni;Harkitsen tässä uunin ostoa, mutta haluaisin ensin tietää laitteen mitoista vähän. Mikä on leveimmän keittolevyn halkaisija?;180 mm;68,72;TRUE
+7;D;2;4;3;Uuni;Entä kuinka monta kannatintasoa uunissa on?;4;58,95;TRUE
+7;D;2;4;3;Uuni;Sitten vielä pari kysymystä uunin asennuksesta. Voiko uunin asentaa 200 mm päähän seinästä?;Voi;58,93;TRUE
+7;D;2;4;3;Uuni;Hyvä, entä kuinka paljon tyhjää tilaa lieden päällä pitää vähintään olla?;650 mm;54,77;TRUE
+7;D;2;4;3;Nelikopteri;Kiinnostaisi tietää muutama juttu tästä nelikopterista. Kuinka painava kopteri on?;1380 g;74,75;TRUE
+7;D;2;4;3;Nelikopteri;Entä mikä on sen maksiminopeus?;20 m/s;34,46;TRUE
+7;D;2;4;3;Astianpesukone;Ostin astianpesukoneen, ja minulla olisi muutama kysymys siihen liittyen. Mikä ohjelma on tarkoitettu erittäin likaisten astioiden pesuun (ohjelman numero)?;3;18,43;TRUE
+7;D;2;4;3;Astianpesukone;Selvä, mitä lämpötilaa tämä ohjelma käyttää?;70 astetta;42,25;TRUE
+8;A;1;3;1;Miekkailu;Olen miettinyt miekkailun aloittamista, mutta en tiedä mikä kolmesta miekkailulajista pitäisi valita. Mikä kolmesta miekkatyypistä (kalpa, floretti, säilä) saa olla painavin?;Kalpa;25,98;TRUE
+8;A;1;3;1;Miekkailu;Kuinka paljon se saa enintään painaa?;770g;25,44;TRUE
+8;A;1;3;1;Miekkailu;Sitten vielä kiinnostaisi osuma-alueet. Mikä on säilämiekkailun osuma-alue?;koko vartalo vyötäröstä ylöspäin;132,27;TRUE
+8;A;1;3;1;Miekkailu;Entä kalpamiekkailun?;koko keho;54,19;TRUE
+8;A;1;3;1;Agility;Olen osallistumassa ensimmäistä kertaa agility-kilpailuun. Koirani säkäkorkeus on 40cm, mihin kilpailuluokkaan (koko) minun pitää osallistua?;medi;65,06;TRUE
+8;A;1;3;1;Agility;Kuinka monta eri tasoluokkaa on olemassa?;5;30,04;FALSE
+8;A;1;3;1;Agility;Onko agilitykilpailun tarkoituksena yhtenä osa-aluuena koiran ulkonäön arviointi?;ei ole;214,07;TRUE
+8;A;1;3;1;Televisio;Yritän muodostaa internet-yhteyttä ostamaani televisioon, mutta se ei tunnu onnistuvan. Mikä on minimi verkkoyhteyden nopeus, jotta internet-yhteys voidaan muodostaa?;miniminopeus on 10Mbps;182,70;TRUE
+8;B;2;3;3;Astianpesukone;Ostin astianpesukoneen, ja minulla olisi muutama kysymys siihen liittyen. Mikä ohjelma on tarkoitettu erittäin likaisten astioiden pesuun (ohjelman numero)?;3;22,19;TRUE
+8;B;2;3;3;Astianpesukone;Selvä, mitä lämpötilaa tämä ohjelma käyttää?;70 astetta;39,32;TRUE
+8;B;2;3;3;Astianpesukone;Sitten vielä yksi kysymys koneen asetuksista. Asuinpaikassani veden kovuus on 32°dH, mihin asentoon vedenpehmennin tulee siis asettaa?;7;81,90;TRUE
+8;B;2;3;3;Langattomat Bluetooth-kuulokkeet;Ostin juuri uudet Bluetooth-kuulokkeet ja tarvitsisin vastauksen muutamaan kysymykseen. Mitä kaikkea pakkauksen pitäisi sisältää?;kuulokkeet, latauskaapeli ja pikaopas;39,88;TRUE
+8;B;2;3;3;Langattomat Bluetooth-kuulokkeet;OK, minulta näyttäisi puuttuvan ohjeet ja siksi tässä kyselen. Yritin muodostaa pariliitosta, mutta se kysyy jotain salasanaa. Mikä se mahtaa olla?;0;43,06;TRUE
+8;B;2;3;3;Langattomat Bluetooth-kuulokkeet;Kuinka kauan kuulokkeiden lataaminen pitäisi yleensä kestää?;2 tuntia;23,87;TRUE
+8;B;2;3;3;Langattomat Bluetooth-kuulokkeet;Kuinka suuri kuulokkeiden toimintasäde on?;10 metriä;13,70;TRUE
+8;B;2;3;3;Painepesuri;Mikä on mallin P 130.2 nimellispaine?;12 MPa;50,99;TRUE
+8;B;2;3;3;Painepesuri;Entä nimellisvirrankulutus?;2.300 kW;30,97;TRUE
+8;B;2;3;3;Painepesuri;Kuinka pitkä takuu laitteessa on?;2 vuotta;86,63;TRUE
+8;B;2;3;3;Pöytätenniksen säännöt;Meillä on tässä kaverin kanssa erimielisyyksiä pöytätenniksen säännöistä. Mikä on pöydän pituus?;274 cm;13,24;TRUE
+8;B;2;3;3;Pöytätenniksen säännöt;Kuinka korkealle pallon kuuluu nousta pelaajan kämmenestä syötössä?;16 cm;21,19;TRUE
+8;B;2;3;3;Mikroaaltouuni;Minulla olisi pari kysymystä viime viikolla ostamastani mikrosta. Luulen että siinä on jokin häiriö, koska näytössä palaa kolme nollaa. Mikä voisi olla syy tähän?;sähkökatko;51,25;TRUE
+8;C;1;4;2;Kuivauskaappi;Kuinka korkea kuivauskaappi on?;1900mm;10,84;TRUE
+8;C;1;4;2;Kuivauskaappi;Kuinka kauan lingotun pyykin kuivaus pikakuivauksella kestää?;n. 120 min;114,43;TRUE
+8;C;1;4;2;Kuivauskaappi;Mitä pesuainetta kuivauskaapin puhdistukseen voi käyttää?;mietoa saippualiuosta;121,66;TRUE
+8;C;1;4;2;Taekwondon kilpailusäännöt;Lapseni on osallistumassa ensimmäiseen taekwondokilpailuun ja muutama asia on vielä epäselvä. Mihin kilpailuluokkaan hänen pitää osallistua? Hän on 9-vuotias.;värivyöt, c-juniorit;36,19;TRUE
+8;C;1;4;2;Taekwondon kilpailusäännöt;Käydäänkö tässä luokassa pyykkipoikaottelua?;kyllä;108,92;TRUE
+8;C;1;4;2;Taekwondon kilpailusäännöt;Mitä punnituksessa pitää olla päällä?;t-paita ja dobokin housut;68,09;TRUE
+8;C;1;4;2;Tenniksen kilpailumääräykset;Ajattelin ilmoittautua tenniskisoihin, mutta edellisistä on niin kauan aikaa, että haluaisin tarkistaa pari juttua. Olen tasolla 14, mihin tasoluokkaan minun kuuluu osallistua?;c;58,02;TRUE
+8;C;1;4;2;Tenniksen kilpailumääräykset;Olen vähän huolissani omasta jaksamisestani, kuinka pitkä tauko kahden normaalipituisen saman luokan ottelussa on vähintään?;60 min;105,82;TRUE
+8;C;1;4;2;Tenniksen kilpailumääräykset;Kuinka montaa palloa tennisotteluissa voi korkeintaan käyttää?;kuutta;86,06;TRUE
+8;C;1;4;2;Mankeli;Olen katsellut mankelia mutta tarvitsisin vähän lisätietoja, jotta tiedän ostanko sen. Mikä on mankelin syvyys?;314 mm;172,82;TRUE
+8;C;1;4;2;Mankeli;Entä mankeliliinan leveys?;730 mm;45,82;FALSE
+8;C;1;4;2;Mankeli;Mikä on lakanoiden mankeiloimisaika?;2-4 min;65,75;TRUE
+8;C;1;4;2;Uuni;Harkitsen tässä uunin ostoa, mutta haluaisin ensin tietää laitteen mitoista vähän. Mikä on leveimmän keittolevyn halkaisija?;180 mm;55,58;TRUE
+8;D;2;4;4;Arkkupakastin;Tarvitsisin vastauksen muutamaan kysymykseen, jotta tiedän ostanko arkkupakastimen. Kuinka leveä pakastin on?;595 mm;58,44;TRUE
+8;D;2;4;4;Arkkupakastin;Sitten kysymys asennuksesta. Voinko asentaa pakastimen varastoon, jossa on talvella +5 astetta lämmintä?;ei;177,03;TRUE
+8;D;2;4;4;Arkkupakastin;Entä mikä on alhaisin lämpötila, jolle pakastimen voi säätää käyttöpaneelista?;-24 astetta;82,09;TRUE
+8;D;2;4;4;Liesituuletin;Olen käyttänyt liesituuletinta jonkin aikaa ja mieleeni heräsi muutamia kysymyksiä siitä. Miten saan intensiivitehon päälle? Laitteessani on ohjauspaneeli 1.;paina + painiketta;137,85;TRUE
+8;D;2;4;4;Liesituuletin;Kuinka usein rasvasuodatin pitäisi puhdistaa?;2 kuukauden välein;86,02;TRUE
+8;D;2;4;4;Liesituuletin;Entä mitä puhdistusainetta voi käyttää laitteen alumiini- ja muoviosien puhdistukseen?;lasinpesuainetta;79,15;TRUE
+8;D;2;4;4;Kuivausrumpu;Haluaisin kysyä pari kysymystä kuivausrummusta ennen ostopäätöstä. Kuinka leveä kuivausrumpu on?;950 mm;60,22;TRUE
+8;D;2;4;4;Kuivausrumpu;Mikä on täysin kuivaksi kuivaavan ohjelman maksimitäyttömäärä?;8 kg;105,12;TRUE
+8;D;2;4;4;Kuivausrumpu;Kuuluuko ajastettu kuivaus laitteen lisätoimintoihin?;kuuluu;105,34;TRUE
+8;D;2;4;4;Kuivausrumpu;Entä onko laitteessa ohjelmaa villavaatteille?;on;83,37;TRUE
+8;D;2;4;4;Nelikopteri;Kiinnostaisi tietää muutama juttu tästä nelikopterista. Kuinka painava kopteri on?;1380 g;145,92;TRUE
+8;D;2;4;4;Nelikopteri;Entä mikä on sen maksiminopeus?;20 m/s;110,93;TRUE
+9;A;1;3;1;Mankeli;Olen katsellut mankelia mutta tarvitsisin vähän lisätietoja, jotta tiedän ostanko sen. Mikä on mankelin syvyys?;314mm;27,81;TRUE
+9;A;1;3;1;Mankeli;Entä mankeliliinan leveys?;55cm;37,30;TRUE
+9;A;1;3;1;Mankeli;Mikä on lakanoiden mankeiloimisaika?;"En tiedä
+";125,88;FALSE
+9;A;1;3;1;Kuivauskaappi;Kuinka korkea kuivauskaappi on?;1900mm;26,57;TRUE
+9;A;1;3;1;Kuivauskaappi;Kuinka kauan lingotun pyykin kuivaus pikakuivauksella kestää?;120 min;53,73;TRUE
+9;A;1;3;1;Kuivauskaappi;Mitä pesuainetta kuivauskaapin puhdistukseen voi käyttää?;mietoa saippualiuosta;118,28;TRUE
+9;A;1;3;1;Kuivausrumpu;Haluaisin kysyä pari kysymystä kuivausrummusta ennen ostopäätöstä. Kuinka leveä kuivausrumpu on?;600mm;33,73;TRUE
+9;A;1;3;1;Kuivausrumpu;Mikä on täysin kuivaksi kuivaavan ohjelman maksimitäyttömäärä?;8 kg;204,86;TRUE
+9;A;1;3;1;Kuivausrumpu;Kuuluuko ajastettu kuivaus laitteen lisätoimintoihin?;ei;35,47;FALSE
+9;A;1;3;1;Pöytätenniksen säännöt;Meillä on tässä kaverin kanssa erimielisyyksiä pöytätenniksen säännöistä. Mikä on pöydän pituus?;274  cm;17,45;TRUE
+9;A;1;3;1;Pöytätenniksen säännöt;Kuinka korkealle pallon kuuluu nousta pelaajan kämmenestä syötössä?;16 cm;21,85;TRUE
+9;A;1;3;1;Pöytätenniksen säännöt;Entä kuinka kuinka monta pistettä pelaajan pitää vähintään saada, jotta voi voittaa erän?;11;43,18;TRUE
+9;A;1;3;1;Arkkupakastin;Tarvitsisin vastauksen muutamaan kysymykseen, jotta tiedän ostanko arkkupakastimen. Kuinka leveä pakastin on?;595 mm;47,23;TRUE
+9;B;2;3;4;Jalkapallosäännöt;Ajattelin pitää tietovisan eri urheilulajeista ja mietin tässä jalkapallokysymyksiä, tarvitsisin niihin vastaukset. Ensimmäiseksi, mikä on pelikentän sivurajan minimipituus?;90 m;46,34;TRUE
+9;B;2;3;4;Jalkapallosäännöt;Mikä on pallon ympärysmitta?;68-70 cm;59,62;TRUE
+9;B;2;3;4;Jalkapallosäännöt;Kuinka monta pelaajaa joukkueessa saa olla enintään?;11 pelaajaa;78,07;TRUE
+9;B;2;3;4;Jalkapallosäännöt;Sitten vielä yksi. Kuinka kaukana vastapuolen pelaajien pitää olla kulmakaaresta kulmapotkutilanteessa?;9,15 m;17,96;TRUE
+9;B;2;3;4;Ompelukone;Mikä on tässä ompelukoneessa ompelen enimmäisleveys?;5 mm;23,95;TRUE
+9;B;2;3;4;Ompelukone;Entä mille välille ompelen pituuden voi asettaa siksak-ompelussa?;0,5 - 4;95,30;TRUE
+9;B;2;3;4;Ompelukone;Kuinka painava kone on?;5 kg;42,93;TRUE
+9;B;2;3;4;Taekwondon kilpailusäännöt;Lapseni on osallistumassa ensimmäiseen taekwondokilpailuun ja muutama asia on vielä epäselvä. Mihin kilpailuluokkaan hänen pitää osallistua? Hän on 9-vuotias.;C-juniorit;56,03;TRUE
+9;B;2;3;4;Taekwondon kilpailusäännöt;Käydäänkö tässä luokassa pyykkipoikaottelua?;kyllä;44,33;TRUE
+9;B;2;3;4;Taekwondon kilpailusäännöt;Mitä punnituksessa pitää olla päällä?;t-paita ja dobokin housut;35,67;TRUE
+9;B;2;3;4;Nelikopteri;Kiinnostaisi tietää muutama juttu tästä nelikopterista. Kuinka painava kopteri on?;1380 g;17,69;TRUE
+9;B;2;3;4;Nelikopteri;Entä mikä on sen maksiminopeus?;20 m/s;17,01;TRUE
+9;B;2;3;4;Agility;Olen osallistumassa ensimmäistä kertaa agility-kilpailuun. Koirani säkäkorkeus on 40cm, mihin kilpailuluokkaan (koko) minun pitää osallistua?;Medi (M);43,89;TRUE
+9;B;2;3;4;Agility;Kuinka monta eri tasoluokkaa on olemassa?;3;28,77;TRUE
+9;B;2;3;4;Kiuas;Minulla olisi pari kysymystä koskien kiuastanne. Millä etäisyydellä kiukaan pitää olla sen takana olevasta seinästä?;100 mm;36,63;TRUE
+9;C;1;4;2;Langattomat Bluetooth-kuulokkeet;Ostin juuri uudet Bluetooth-kuulokkeet ja tarvitsisin vastauksen muutamaan kysymykseen. Mitä kaikkea pakkauksen pitäisi sisältää?;kuulokkeet, latauskaapeli, ja pikaopas;30,34;TRUE
+9;C;1;4;2;Langattomat Bluetooth-kuulokkeet;OK, minulta näyttäisi puuttuvan ohjeet ja siksi tässä kyselen. Yritin muodostaa pariliitosta, mutta se kysyy jotain salasanaa. Mikä se mahtaa olla?;0;126,74;TRUE
+9;C;1;4;2;Langattomat Bluetooth-kuulokkeet;Kuinka kauan kuulokkeiden lataaminen pitäisi yleensä kestää?;2 tuntia;43,88;TRUE
+9;C;1;4;2;Langattomat Bluetooth-kuulokkeet;Kuinka suuri kuulokkeiden toimintasäde on?;10 metriä;39,12;TRUE
+9;C;1;4;2;Päältäajettava ruohonleikkuri;Haluaisin vertailla kahta ruohonleikkurimallia, LM2148 M ja LM2153 MD. Kummassa näistä on suurempi teho?;LM2153 MD;66,22;TRUE
+9;C;1;4;2;Päältäajettava ruohonleikkuri;Entä onko niiden polttoainesäiliöiden tilavuuksissa eroa?;ei;109,42;TRUE
+9;C;1;4;2;Päältäajettava ruohonleikkuri;Mitkä niiden leikkuuleveydet ovat?;48 ja 53 mm;32,15;TRUE
+9;C;1;4;2;Astianpesukone;Ostin astianpesukoneen, ja minulla olisi muutama kysymys siihen liittyen. Mikä ohjelma on tarkoitettu erittäin likaisten astioiden pesuun (ohjelman numero)?;3;82,09;TRUE
+9;C;1;4;2;Astianpesukone;Selvä, mitä lämpötilaa tämä ohjelma käyttää?;70 c;66,78;TRUE
+9;C;1;4;2;Astianpesukone;Sitten vielä yksi kysymys koneen asetuksista. Asuinpaikassani veden kovuus on 32°dH, mihin asentoon vedenpehmennin tulee siis asettaa?;en tiedä;109,12;FALSE
+9;C;1;4;2;Cheerleadingin kilpailusäännöt;Joukkueemme on osallistumassa cheerleadingin SM-kisoihin ja haluaisin selvittää muutaman asian kilpailusäännöistä. Kuinka suuri kilpailualue on SM-kisoissa?;14x16 m;79,80;TRUE
+9;C;1;4;2;Cheerleadingin kilpailusäännöt;Entä kuinka monta ulkoista spotteria joukkueella saa olla kilpailussa enintään?;6;62,96;TRUE
+9;C;1;4;2;Cheerleadingin kilpailusäännöt;Saako ulkoinen spotteri tukea huojuvaa pyramidia?;ei saa;33,83;TRUE
+9;C;1;4;2;Uuni;Harkitsen tässä uunin ostoa, mutta haluaisin ensin tietää laitteen mitoista vähän. Mikä on leveimmän keittolevyn halkaisija?;180 mm;54,65;TRUE
+9;D;2;4;3;Kamiina;Voinko käyttää ostamani kamiinan polttoaineena sytytysnestettä?;et voi;22,55;TRUE
+9;D;2;4;3;Koripallon pelisäännöt;Olen perustamassa koripallojoukkuetta ja olisi muutama kysymys. Kuinka monta pelaajaa joukkueessa voi enintään olla?;12;33,96;TRUE
+9;D;2;4;3;Koripallon pelisäännöt;Mitkä ovat pelikentän pituus ja leveys?;28 m x 15 m;76,97;TRUE
+9;D;2;4;3;Koripallon pelisäännöt;Kuinka monta erää ottelussa pelataan?;4;48,30;TRUE
+9;D;2;4;3;Koripallon pelisäännöt;Entä kuinka monta minuuttia yksi erä kestää?;10 min;49,53;TRUE
+9;D;2;4;3;Lämpöpumppu;Lämpöpumppuni ohjausjärjestelmän vihreä merkkivalo alkoi vilkkumaan eilen, mitä se tarkoittaa?;en tiedä;165,68;FALSE
+9;D;2;4;3;Lämpöpumppu;Mikä asetus pitää olla päällä, jotta ohjausjärjestelmä sallii vain sähkövastuksen toiminnan?;lisälämpö;76,64;TRUE
+9;D;2;4;3;Liesituuletin;Olen käyttänyt liesituuletinta jonkin aikaa ja mieleeni heräsi muutamia kysymyksiä siitä. Miten saan intensiivitehon päälle? Laitteessani on ohjauspaneeli 1.;paina painiketta +;127,65;TRUE
+9;D;2;4;3;Liesituuletin;Kuinka usein rasvasuodatin pitäisi puhdistaa?;2 kk välein;82,08;TRUE
+9;D;2;4;3;Liesituuletin;Entä mitä puhdistusainetta voi käyttää laitteen alumiini- ja muoviosien puhdistukseen?;lasinpesuaine;89,71;TRUE
+10;A;1;3;1;Kuivauskaappi;Kuinka korkea kuivauskaappi on?;1900 mm;18,39;TRUE
+10;A;1;3;1;Kuivauskaappi;Kuinka kauan lingotun pyykin kuivaus pikakuivauksella kestää?;120 min;59,53;TRUE
+10;A;1;3;1;Kuivauskaappi;Mitä pesuainetta kuivauskaapin puhdistukseen voi käyttää?;mieto saipualiuos;83,99;TRUE
+10;A;1;3;1;Jääkaappi;Tarvitsisin apua jääkaapin asennuksessa. Kuinka kauas sähköliedestä jääkaappi tulee vähintään sijoittaa?;3 cm;68,68;TRUE
+10;A;1;3;1;Jääkaappi;Olen kytkemässä jääkaappia toimintaan, laitoin juuri pistokkeen seinään ja nyt kuuluu joku hälytysääni. Mitä teen?;kytke hälytysääni pois päältä painamalla lämpötilavalitsinta;110,20;TRUE
+10;A;1;3;1;Jääkaappi;Jääkaapista kuuluu välillä naksahduksia. Kuuluvatko ne normaaleihin käyntiääniin?;En tiedä;115,76;FALSE
+10;A;1;3;1;Tenniksen kilpailumääräykset;Ajattelin ilmoittautua tenniskisoihin, mutta edellisistä on niin kauan aikaa, että haluaisin tarkistaa pari juttua. Olen tasolla 14, mihin tasoluokkaan minun kuuluu osallistua?;C;50,11;TRUE
+10;A;1;3;1;Tenniksen kilpailumääräykset;Olen vähän huolissani omasta jaksamisestani, kuinka pitkä tauko kahden normaalipituisen saman luokan ottelussa on vähintään?;60 min;52,04;TRUE
+10;A;1;3;1;Tenniksen kilpailumääräykset;Kuinka montaa palloa tennisotteluissa voi korkeintaan käyttää?;6;183,04;TRUE
+10;B;2;3;3;Nelikopteri;Kiinnostaisi tietää muutama juttu tästä nelikopterista. Kuinka painava kopteri on?;1380g;142,87;TRUE
+10;B;2;3;3;Nelikopteri;Entä mikä on sen maksiminopeus?;20 m/s;81,31;TRUE
+10;B;2;3;3;Ompelukone;Mikä on tässä ompelukoneessa ompelen enimmäisleveys?;5,0 mm;68,83;TRUE
+10;B;2;3;3;Ompelukone;Entä mille välille ompelen pituuden voi asettaa siksak-ompelussa?;0,5-4;129,26;TRUE
+10;B;2;3;3;Ompelukone;Kuinka painava kone on?;5,0 kg;74,08;TRUE
+10;B;2;3;3;Kamiina;Voinko käyttää ostamani kamiinan polttoaineena sytytysnestettä?;ei;134,43;TRUE
+10;B;2;3;3;Kamiina;Entä mitä materiaalia keittolevy on?;en tiedä;99,09;FALSE
+10;B;2;3;3;Kamiina;Okei, sitten vielä yksi. Kuinka pitkä takuu kamiinalla on?;12 kk;30,68;TRUE
+10;B;2;3;3;Kiuas;Minulla olisi pari kysymystä koskien kiuastanne. Millä etäisyydellä kiukaan pitää olla sen takana olevasta seinästä?;100 mm;25,50;TRUE
+10;C;1;4;4;Agility;Olen osallistumassa ensimmäistä kertaa agility-kilpailuun. Koirani säkäkorkeus on 40cm, mihin kilpailuluokkaan (koko) minun pitää osallistua?;medi (M);82,59;TRUE
+10;C;1;4;4;Agility;Kuinka monta eri tasoluokkaa on olemassa?;3;97,21;TRUE
+10;C;1;4;4;Agility;Onko agilitykilpailun tarkoituksena yhtenä osa-aluuena koiran ulkonäön arviointi?;ei;113,99;TRUE
+10;C;1;4;4;Mikroaaltouuni;Minulla olisi pari kysymystä viime viikolla ostamastani mikrosta. Luulen että siinä on jokin häiriö, koska näytössä palaa kolme nollaa. Mikä voisi olla syy tähän?;SÄHKÖKATKO;134,03;TRUE
+10;C;1;4;4;Mikroaaltouuni;Selvä. Entä mikä on suurin teho jonka voin valita?;800w;49,24;TRUE
+10;C;1;4;4;Mikroaaltouuni;Mitä tällä teholla tulisi kuumentaa?;nesteitä;144,50;TRUE
+10;C;1;4;4;Päältäajettava ruohonleikkuri;Haluaisin vertailla kahta ruohonleikkurimallia, LM2148 M ja LM2153 MD. Kummassa näistä on suurempi teho?;LM2153 MD;100,86;TRUE
+10;C;1;4;4;Päältäajettava ruohonleikkuri;Entä onko niiden polttoainesäiliöiden tilavuuksissa eroa?;ei;89,19;TRUE
+10;C;1;4;4;Päältäajettava ruohonleikkuri;Mitkä niiden leikkuuleveydet ovat?;LM2148 M leikkuuleveys 48mm ja LM2153 MD 53 mm;112,87;TRUE
+10;C;1;4;4;Jalkapallosäännöt;Ajattelin pitää tietovisan eri urheilulajeista ja mietin tässä jalkapallokysymyksiä, tarvitsisin niihin vastaukset. Ensimmäiseksi, mikä on pelikentän sivurajan minimipituus?;minimi 90m ja maksimi 120m;136,99;TRUE
+10;C;1;4;4;Jalkapallosäännöt;Mikä on pallon ympärysmitta?;68-70cm;37,15;TRUE
+10;C;1;4;4;Jalkapallosäännöt;Kuinka monta pelaajaa joukkueessa saa olla enintään?;11 joista yksi maalivahti;148,65;TRUE
+10;D;2;4;2;Liesituuletin;Olen käyttänyt liesituuletinta jonkin aikaa ja mieleeni heräsi muutamia kysymyksiä siitä. Miten saan intensiivitehon päälle? Laitteessani on ohjauspaneeli 1.;paina +;152,17;TRUE
+10;D;2;4;2;Liesituuletin;Kuinka usein rasvasuodatin pitäisi puhdistaa?;2kk välein;113,71;TRUE
+10;D;2;4;2;Televisio;Yritän muodostaa internet-yhteyttä ostamaani televisioon, mutta se ei tunnu onnistuvan. Mikä on minimi verkkoyhteyden nopeus, jotta internet-yhteys voidaan muodostaa?;10 Mbps;34,73;TRUE
+10;D;2;4;2;Televisio;Kytkin USB-näppäimistön televisioon, millä painikkeella pääsen palaamaan valikossa edelliseen näyttöön?;esc;144,97;TRUE
+10;D;2;4;2;Televisio;Entä mitä Windows-näppäin tekee?;Näyttää television asetukset;74,73;TRUE
+10;D;2;4;2;Miekkailu;Olen miettinyt miekkailun aloittamista, mutta en tiedä mikä kolmesta miekkailulajista pitäisi valita. Mikä kolmesta miekkatyypistä (kalpa, floretti, säilä) saa olla painavin?;Kalpa;99,85;TRUE
+10;D;2;4;2;Miekkailu;Kuinka paljon se saa enintään painaa?;770g;60,15;TRUE
+10;D;2;4;2;Miekkailu;Sitten vielä kiinnostaisi osuma-alueet. Mikä on säilämiekkailun osuma-alue?;koko vartalo vyötäröstä ylöspäin;186,82;TRUE
+10;D;2;4;2;Uuni;Harkitsen tässä uunin ostoa, mutta haluaisin ensin tietää laitteen mitoista vähän. Mikä on leveimmän keittolevyn halkaisija?;180 mm;207,84;TRUE
+10;D;2;4;2;Uuni;Entä kuinka monta kannatintasoa uunissa on?;4;158,17;TRUE
+11;A;1;3;2;Lämpöpumppu;Lämpöpumppuni ohjausjärjestelmän vihreä merkkivalo alkoi vilkkumaan eilen, mitä se tarkoittaa?;en tiedä;114,34;FALSE
+11;A;1;3;2;Lämpöpumppu;Mikä asetus pitää olla päällä, jotta ohjausjärjestelmä sallii vain sähkövastuksen toiminnan?;salama;44,62;FALSE
+11;A;1;3;2;Lämpöpumppu;Entä mikä on oletussäätö lämpötilalle, jos otan lämmityksen pois?;17 c;22,03;TRUE
+11;A;1;3;2;Langattomat Bluetooth-kuulokkeet;Ostin juuri uudet Bluetooth-kuulokkeet ja tarvitsisin vastauksen muutamaan kysymykseen. Mitä kaikkea pakkauksen pitäisi sisältää?;Kuulokkeet, latauskaapeli, pikaopas;14,98;TRUE
+11;A;1;3;2;Langattomat Bluetooth-kuulokkeet;OK, minulta näyttäisi puuttuvan ohjeet ja siksi tässä kyselen. Yritin muodostaa pariliitosta, mutta se kysyy jotain salasanaa. Mikä se mahtaa olla?;0;46,53;TRUE
+11;A;1;3;2;Langattomat Bluetooth-kuulokkeet;Kuinka kauan kuulokkeiden lataaminen pitäisi yleensä kestää?;2 tuntia;74,27;TRUE
+11;A;1;3;2;Langattomat Bluetooth-kuulokkeet;Kuinka suuri kuulokkeiden toimintasäde on?;10 metriä;66,62;TRUE
+11;A;1;3;2;Nelikopteri;Kiinnostaisi tietää muutama juttu tästä nelikopterista. Kuinka painava kopteri on?;1380 g;51,60;TRUE
+11;A;1;3;2;Nelikopteri;Entä mikä on sen maksiminopeus?;20 m/s;66,02;TRUE
+11;A;1;3;2;Nelikopteri;Kuuluko kotiinpaluutoimintoon kotiin paluu, jos akku on vähissä?;Kyllä;22,94;TRUE
+11;A;1;3;2;Tenniksen kilpailumääräykset;Ajattelin ilmoittautua tenniskisoihin, mutta edellisistä on niin kauan aikaa, että haluaisin tarkistaa pari juttua. Olen tasolla 14, mihin tasoluokkaan minun kuuluu osallistua?;C;26,07;TRUE
+11;A;1;3;2;Kuivauskaappi;Kuinka korkea kuivauskaappi on?;1900 mm;14,76;TRUE
+11;A;1;3;2;Kuivauskaappi;Kuinka kauan lingotun pyykin kuivaus pikakuivauksella kestää?;n. 120 min;21,55;TRUE
+11;B;2;3;1;Koripallon pelisäännöt;Olen perustamassa koripallojoukkuetta ja olisi muutama kysymys. Kuinka monta pelaajaa joukkueessa voi enintään olla?;12;20,98;TRUE
+11;B;2;3;1;Koripallon pelisäännöt;Mitkä ovat pelikentän pituus ja leveys?;28 m ja 15 m;34,68;TRUE
+11;B;2;3;1;Koripallon pelisäännöt;Kuinka monta erää ottelussa pelataan?;4;44,07;TRUE
+11;B;2;3;1;Koripallon pelisäännöt;Entä kuinka monta minuuttia yksi erä kestää?;10;38,77;TRUE
+11;B;2;3;1;Arkkupakastin;Tarvitsisin vastauksen muutamaan kysymykseen, jotta tiedän ostanko arkkupakastimen. Kuinka leveä pakastin on?;595 mm;18,97;TRUE
+11;B;2;3;1;Arkkupakastin;Sitten kysymys asennuksesta. Voinko asentaa pakastimen varastoon, jossa on talvella +5 astetta lämmintä?;Et;65,12;TRUE
+11;B;2;3;1;Arkkupakastin;Entä mikä on alhaisin lämpötila, jolle pakastimen voi säätää käyttöpaneelista?;-24 c;56,85;TRUE
+11;B;2;3;1;Pöytätenniksen säännöt;Meillä on tässä kaverin kanssa erimielisyyksiä pöytätenniksen säännöistä. Mikä on pöydän pituus?;274 cm;31,79;TRUE
+11;B;2;3;1;Pöytätenniksen säännöt;Kuinka korkealle pallon kuuluu nousta pelaajan kämmenestä syötössä?;16 cm;84,40;TRUE
+11;B;2;3;1;Pöytätenniksen säännöt;Entä kuinka kuinka monta pistettä pelaajan pitää vähintään saada, jotta voi voittaa erän?;11;36,00;TRUE
+11;B;2;3;1;Televisio;Yritän muodostaa internet-yhteyttä ostamaani televisioon, mutta se ei tunnu onnistuvan. Mikä on minimi verkkoyhteyden nopeus, jotta internet-yhteys voidaan muodostaa?;10 Mbps;16,80;TRUE
+11;B;2;3;1;Televisio;Kytkin USB-näppäimistön televisioon, millä painikkeella pääsen palaamaan valikossa edelliseen näyttöön?;ESC;37,24;TRUE
+11;B;2;3;1;Grilli;Mietin grillin ostoa ja olisi pari kysymystä siitä. Mitkä ovat grillauspinta-alan pituus ja leveys?;49.6 x 90.0 cm;34,84;TRUE
+11;B;2;3;1;Grilli;Kuinka pitkä takuu grillillä on?;2 vuotta;24,59;TRUE
+11;B;2;3;1;Grilli;Entä mitä lisävarusteita grilliin on saatavana?;suojahuppu, elektroninen grillivarras;22,60;TRUE
+11;B;2;3;1;Mankeli;Olen katsellut mankelia mutta tarvitsisin vähän lisätietoja, jotta tiedän ostanko sen. Mikä on mankelin syvyys?;314 mm;40,00;TRUE
+11;B;2;3;1;Mankeli;Entä mankeliliinan leveys?;55 cm;21,33;TRUE
+11;C;1;4;3;Cheerleadingin kilpailusäännöt;Joukkueemme on osallistumassa cheerleadingin SM-kisoihin ja haluaisin selvittää muutaman asian kilpailusäännöistä. Kuinka suuri kilpailualue on SM-kisoissa?;14x16 m;33,26;TRUE
+11;C;1;4;3;Cheerleadingin kilpailusäännöt;Entä kuinka monta ulkoista spotteria joukkueella saa olla kilpailussa enintään?;6;110,10;TRUE
+11;C;1;4;3;Cheerleadingin kilpailusäännöt;Saako ulkoinen spotteri tukea huojuvaa pyramidia?;ei;41,23;TRUE
+11;C;1;4;3;Mikroaaltouuni;Minulla olisi pari kysymystä viime viikolla ostamastani mikrosta. Luulen että siinä on jokin häiriö, koska näytössä palaa kolme nollaa. Mikä voisi olla syy tähän?;en tiedä;71,56;FALSE
+11;C;1;4;3;Mikroaaltouuni;Selvä. Entä mikä on suurin teho jonka voin valita?;800 W;70,22;TRUE
+11;C;1;4;3;Mikroaaltouuni;Mitä tällä teholla tulisi kuumentaa?;nesteitä;77,60;TRUE
+11;C;1;4;3;Mikroaaltouuni;Olen kuullut, että metalliastiaa ei saisi laittaa mikroon, mistä se johtuu?;Miakroaallot eivät läpäise metallia;58,46;TRUE
+11;C;1;4;3;Ompelukone;Mikä on tässä ompelukoneessa ompelen enimmäisleveys?;5 mm;76,60;TRUE
+11;C;1;4;3;Ompelukone;Entä mille välille ompelen pituuden voi asettaa siksak-ompelussa?;0,5 - 4;91,24;TRUE
+11;C;1;4;3;Ompelukone;Kuinka painava kone on?;5 kg;92,95;TRUE
+11;C;1;4;3;Liesituuletin;Olen käyttänyt liesituuletinta jonkin aikaa ja mieleeni heräsi muutamia kysymyksiä siitä. Miten saan intensiivitehon päälle? Laitteessani on ohjauspaneeli 1.;Paina + teholla 3;71,82;TRUE
+11;C;1;4;3;Liesituuletin;Kuinka usein rasvasuodatin pitäisi puhdistaa?;En tiedä;95,00;FALSE
+11;C;1;4;3;Liesituuletin;Entä mitä puhdistusainetta voi käyttää laitteen alumiini- ja muoviosien puhdistukseen?;lasinpesuaine;62,76;TRUE
+11;C;1;4;3;Miekkailu;Olen miettinyt miekkailun aloittamista, mutta en tiedä mikä kolmesta miekkailulajista pitäisi valita. Mikä kolmesta miekkatyypistä (kalpa, floretti, säilä) saa olla painavin?;kalpa;58,40;TRUE
+11;C;1;4;3;Generaattori;Missä tätä generaattoria on tarkoitus käyttää?;asuntovaunuissa, matkailuautoissa, kaupallisessa käytössä olevissa ajoneuvoissa;56,26;TRUE
+11;D;2;4;4;Uuni;Harkitsen tässä uunin ostoa, mutta haluaisin ensin tietää laitteen mitoista vähän. Mikä on leveimmän keittolevyn halkaisija?;180 mm;20,30;TRUE
+11;D;2;4;4;Uuni;Entä kuinka monta kannatintasoa uunissa on?;4;69,93;TRUE
+11;D;2;4;4;Uuni;Sitten vielä pari kysymystä uunin asennuksesta. Voiko uunin asentaa 200 mm päähän seinästä?;Voi;36,95;TRUE
+11;D;2;4;4;Uuni;Hyvä, entä kuinka paljon tyhjää tilaa lieden päällä pitää vähintään olla?;650 mm;23,24;TRUE
+11;D;2;4;4;Pyykinpesukone;Olen miettinyt pesukoneen ostoa, ja haluasin kysyä pari juttua ennen päätöstä. Mikä on koneen leveys?;600 mm;78,21;TRUE
+11;D;2;4;4;Pyykinpesukone;Entä maksimitäyttömäärä?;7 kg;35,21;TRUE
+11;D;2;4;4;Pyykinpesukone;Voiko koneen lisätoimintoihin kuuluvalla ajastuksella ajastaa koneen käynnistymään vuorokauden päästä?;ei;35,46;TRUE
+11;D;2;4;4;Päältäajettava ruohonleikkuri;Haluaisin vertailla kahta ruohonleikkurimallia, LM2148 M ja LM2153 MD. Kummassa näistä on suurempi teho?;LM2153 MD;58,88;TRUE
+11;D;2;4;4;Päältäajettava ruohonleikkuri;Entä onko niiden polttoainesäiliöiden tilavuuksissa eroa?;ei;31,57;TRUE
+11;D;2;4;4;Päältäajettava ruohonleikkuri;Mitkä niiden leikkuuleveydet ovat?;LM2148 M 48 mm, LM2153 MD 53 mm;26,42;TRUE
+11;D;2;4;4;Jalkapallosäännöt;Ajattelin pitää tietovisan eri urheilulajeista ja mietin tässä jalkapallokysymyksiä, tarvitsisin niihin vastaukset. Ensimmäiseksi, mikä on pelikentän sivurajan minimipituus?;90 m;38,13;TRUE
+11;D;2;4;4;Jalkapallosäännöt;Mikä on pallon ympärysmitta?;68-70 cm;33,20;TRUE
+11;D;2;4;4;Jalkapallosäännöt;Kuinka monta pelaajaa joukkueessa saa olla enintään?;11;13,93;TRUE
+11;D;2;4;4;Jalkapallosäännöt;Sitten vielä yksi. Kuinka kaukana vastapuolen pelaajien pitää olla kulmakaaresta kulmapotkutilanteessa?;9,15 m;47,69;TRUE
+11;D;2;4;4;Kuivausrumpu;Haluaisin kysyä pari kysymystä kuivausrummusta ennen ostopäätöstä. Kuinka leveä kuivausrumpu on?;600 mm;15,69;TRUE
+11;D;2;4;4;Kuivausrumpu;Mikä on täysin kuivaksi kuivaavan ohjelman maksimitäyttömäärä?;3,5 kg;95,80;FALSE
+11;D;2;4;4;Taekwondon kilpailusäännöt;Lapseni on osallistumassa ensimmäiseen taekwondokilpailuun ja muutama asia on vielä epäselvä. Mihin kilpailuluokkaan hänen pitää osallistua? Hän on 9-vuotias.;Värivyöt, C-juniorit;42,23;TRUE
+11;D;2;4;4;Taekwondon kilpailusäännöt;Käydäänkö tässä luokassa pyykkipoikaottelua?;kyllä;58,72;TRUE
+11;D;2;4;4;Agility;Olen osallistumassa ensimmäistä kertaa agility-kilpailuun. Koirani säkäkorkeus on 40cm, mihin kilpailuluokkaan (koko) minun pitää osallistua?;M;96,48;TRUE
+11;D;2;4;4;Astianpesukone;Ostin astianpesukoneen, ja minulla olisi muutama kysymys siihen liittyen. Mikä ohjelma on tarkoitettu erittäin likaisten astioiden pesuun (ohjelman numero)?;3;46,26;TRUE
+12;A;1;3;2;Miekkailu;Olen miettinyt miekkailun aloittamista, mutta en tiedä mikä kolmesta miekkailulajista pitäisi valita. Mikä kolmesta miekkatyypistä (kalpa, floretti, säilä) saa olla painavin?;kalpa;45,29;TRUE
+12;A;1;3;2;Miekkailu;Kuinka paljon se saa enintään painaa?;770 g;13,67;TRUE
+12;A;1;3;2;Miekkailu;Sitten vielä kiinnostaisi osuma-alueet. Mikä on säilämiekkailun osuma-alue?;koko vartalo vyötäröstä ylöspäin;36,61;TRUE
+12;A;1;3;2;Miekkailu;Entä kalpamiekkailun?;koko keho aina varpaasta päätä suojaavaan maskiin asti;105,90;TRUE
+12;A;1;3;2;Jääkaappi;Tarvitsisin apua jääkaapin asennuksessa. Kuinka kauas sähköliedestä jääkaappi tulee vähintään sijoittaa?;3 cm;64,92;TRUE
+12;A;1;3;2;Jääkaappi;Olen kytkemässä jääkaappia toimintaan, laitoin juuri pistokkeen seinään ja nyt kuuluu joku hälytysääni. Mitä teen?;"Se on lämpötilahälytys
+";94,46;FALSE
+12;A;1;3;2;Astianpesukone;Ostin astianpesukoneen, ja minulla olisi muutama kysymys siihen liittyen. Mikä ohjelma on tarkoitettu erittäin likaisten astioiden pesuun (ohjelman numero)?;3;49,88;TRUE
+12;A;1;3;2;Astianpesukone;Selvä, mitä lämpötilaa tämä ohjelma käyttää?;70 c;133,26;TRUE
+12;A;1;3;2;Jalkapallosäännöt;Ajattelin pitää tietovisan eri urheilulajeista ja mietin tässä jalkapallokysymyksiä, tarvitsisin niihin vastaukset. Ensimmäiseksi, mikä on pelikentän sivurajan minimipituus?;90 m;37,84;TRUE
+12;B;2;3;1;Pöytätenniksen säännöt;Meillä on tässä kaverin kanssa erimielisyyksiä pöytätenniksen säännöistä. Mikä on pöydän pituus?;274 cm;23,58;TRUE
+12;B;2;3;1;Pöytätenniksen säännöt;Kuinka korkealle pallon kuuluu nousta pelaajan kämmenestä syötössä?;16 cm;32,44;TRUE
+12;B;2;3;1;Pöytätenniksen säännöt;Entä kuinka kuinka monta pistettä pelaajan pitää vähintään saada, jotta voi voittaa erän?;11;60,36;TRUE
+12;B;2;3;1;Lämpöpumppu;Lämpöpumppuni ohjausjärjestelmän vihreä merkkivalo alkoi vilkkumaan eilen, mitä se tarkoittaa?;"Anteeki eikun siis
+Hälytys on aktiivisena";103,51;TRUE
+12;B;2;3;1;Lämpöpumppu;Mikä asetus pitää olla päällä, jotta ohjausjärjestelmä sallii vain sähkövastuksen toiminnan?;Lisälämpö;53,09;TRUE
+12;B;2;3;1;Uuni;Harkitsen tässä uunin ostoa, mutta haluaisin ensin tietää laitteen mitoista vähän. Mikä on leveimmän keittolevyn halkaisija?;180 mm;117,52;TRUE
+12;B;2;3;1;Uuni;Entä kuinka monta kannatintasoa uunissa on?;4;62,69;TRUE
+12;C;1;4;4;Arkkupakastin;Tarvitsisin vastauksen muutamaan kysymykseen, jotta tiedän ostanko arkkupakastimen. Kuinka leveä pakastin on?;643 mm;42,07;FALSE
+12;C;1;4;4;Arkkupakastin;Sitten kysymys asennuksesta. Voinko asentaa pakastimen varastoon, jossa on talvella +5 astetta lämmintä?;ei se vaatii vähintään 10 c;118,44;TRUE
+12;C;1;4;4;Arkkupakastin;Entä mikä on alhaisin lämpötila, jolle pakastimen voi säätää käyttöpaneelista?;-24 c;61,76;TRUE
+12;C;1;4;4;Pyykinpesukone;Olen miettinyt pesukoneen ostoa, ja haluasin kysyä pari juttua ennen päätöstä. Mikä on koneen leveys?;522 mm;78,65;FALSE
+12;C;1;4;4;Pyykinpesukone;Entä maksimitäyttömäärä?;7 kg;70,64;TRUE
+12;C;1;4;4;Pyykinpesukone;Voiko koneen lisätoimintoihin kuuluvalla ajastuksella ajastaa koneen käynnistymään vuorokauden päästä?;ei, enintään 20 h päästä;131,26;TRUE
+12;C;1;4;4;Liesituuletin;Olen käyttänyt liesituuletinta jonkin aikaa ja mieleeni heräsi muutamia kysymyksiä siitä. Miten saan intensiivitehon päälle? Laitteessani on ohjauspaneeli 1.;paina painiketta + kun tuuletin on teholla 3;141,37;TRUE
+12;C;1;4;4;Liesituuletin;Kuinka usein rasvasuodatin pitäisi puhdistaa?;2 kk välein;80,03;TRUE
+12;C;1;4;4;Liesituuletin;Entä mitä puhdistusainetta voi käyttää laitteen alumiini- ja muoviosien puhdistukseen?;lasinpesuainetta;65,15;TRUE
+12;C;1;4;4;Mankeli;Olen katsellut mankelia mutta tarvitsisin vähän lisätietoja, jotta tiedän ostanko sen. Mikä on mankelin syvyys?;314 mm;19,26;TRUE
+12;C;1;4;4;Mankeli;Entä mankeliliinan leveys?;730 mm;188,25;FALSE
+12;C;1;4;4;Mankeli;Mikä on lakanoiden mankeiloimisaika?;2-4 min;97,17;TRUE
+12;D;2;4;3;Kuivausrumpu;Haluaisin kysyä pari kysymystä kuivausrummusta ennen ostopäätöstä. Kuinka leveä kuivausrumpu on?;950 mm;299,46;TRUE
+12;D;2;4;3;Langattomat Bluetooth-kuulokkeet;Ostin juuri uudet Bluetooth-kuulokkeet ja tarvitsisin vastauksen muutamaan kysymykseen. Mitä kaikkea pakkauksen pitäisi sisältää?;kuulokkeet ja latauskaapeli;137,90;FALSE
+12;D;2;4;3;Langattomat Bluetooth-kuulokkeet;OK, minulta näyttäisi puuttuvan ohjeet ja siksi tässä kyselen. Yritin muodostaa pariliitosta, mutta se kysyy jotain salasanaa. Mikä se mahtaa olla?;0;77,42;TRUE
+12;D;2;4;3;Langattomat Bluetooth-kuulokkeet;Kuinka kauan kuulokkeiden lataaminen pitäisi yleensä kestää?;2 h;77,37;TRUE
+12;D;2;4;3;Langattomat Bluetooth-kuulokkeet;Kuinka suuri kuulokkeiden toimintasäde on?;10 m;50,87;TRUE
+12;D;2;4;3;Agility;Olen osallistumassa ensimmäistä kertaa agility-kilpailuun. Koirani säkäkorkeus on 40cm, mihin kilpailuluokkaan (koko) minun pitää osallistua?;M;83,19;TRUE
+12;D;2;4;3;Agility;Kuinka monta eri tasoluokkaa on olemassa?;3;66,31;TRUE
+12;D;2;4;3;Agility;Onko agilitykilpailun tarkoituksena yhtenä osa-aluuena koiran ulkonäön arviointi?;ei;107,52;TRUE
+12;D;2;4;3;Ompelukone;Mikä on tässä ompelukoneessa ompelen enimmäisleveys?;1;382,10;FALSE
+13;A;1;3;3;Liesituuletin;Olen käyttänyt liesituuletinta jonkin aikaa ja mieleeni heräsi muutamia kysymyksiä siitä. Miten saan intensiivitehon päälle? Laitteessani on ohjauspaneeli 1.;paina +, kun tuuletin on teholla 3;139,31;TRUE
+13;A;1;3;3;Liesituuletin;Kuinka usein rasvasuodatin pitäisi puhdistaa?;vähintään 2kk välein;73,62;TRUE
+13;A;1;3;3;Liesituuletin;Entä mitä puhdistusainetta voi käyttää laitteen alumiini- ja muoviosien puhdistukseen?;lasinpesuaine;53,76;TRUE
+13;A;1;3;3;Langattomat Bluetooth-kuulokkeet;Ostin juuri uudet Bluetooth-kuulokkeet ja tarvitsisin vastauksen muutamaan kysymykseen. Mitä kaikkea pakkauksen pitäisi sisältää?;Kuulokkeet, usb-latauskaapeli, pikaopas;42,37;TRUE
+13;A;1;3;3;Langattomat Bluetooth-kuulokkeet;OK, minulta näyttäisi puuttuvan ohjeet ja siksi tässä kyselen. Yritin muodostaa pariliitosta, mutta se kysyy jotain salasanaa. Mikä se mahtaa olla?;0;133,69;TRUE
+13;A;1;3;3;Langattomat Bluetooth-kuulokkeet;Kuinka kauan kuulokkeiden lataaminen pitäisi yleensä kestää?;2 h;76,76;TRUE
+13;A;1;3;3;Langattomat Bluetooth-kuulokkeet;Kuinka suuri kuulokkeiden toimintasäde on?;jopa 10 m;52,61;TRUE
+13;A;1;3;3;Kuivauskaappi;Kuinka korkea kuivauskaappi on?;1900mm;53,36;TRUE
+13;A;1;3;3;Kuivauskaappi;Kuinka kauan lingotun pyykin kuivaus pikakuivauksella kestää?;n. 120 min;128,24;TRUE
+13;A;1;3;3;Kuivauskaappi;Mitä pesuainetta kuivauskaapin puhdistukseen voi käyttää?;mieto saippualiuos;84,22;TRUE
+13;A;1;3;3;Päältäajettava ruohonleikkuri;Haluaisin vertailla kahta ruohonleikkurimallia, LM2148 M ja LM2153 MD. Kummassa näistä on suurempi teho?;LM2153 MD;29,12;TRUE
+13;B;2;3;1;Kuivausrumpu;Haluaisin kysyä pari kysymystä kuivausrummusta ennen ostopäätöstä. Kuinka leveä kuivausrumpu on?;600mm;21,03;TRUE
+13;B;2;3;1;Kuivausrumpu;Mikä on täysin kuivaksi kuivaavan ohjelman maksimitäyttömäärä?;8 kg;85,20;TRUE
+13;B;2;3;1;Kuivausrumpu;Kuuluuko ajastettu kuivaus laitteen lisätoimintoihin?;kyllä;88,09;TRUE
+13;B;2;3;1;Kuivausrumpu;Entä onko laitteessa ohjelmaa villavaatteille?;Kyllä;80,36;TRUE
+13;B;2;3;1;Cheerleadingin kilpailusäännöt;Joukkueemme on osallistumassa cheerleadingin SM-kisoihin ja haluaisin selvittää muutaman asian kilpailusäännöistä. Kuinka suuri kilpailualue on SM-kisoissa?;14x16m;24,69;TRUE
+13;B;2;3;1;Cheerleadingin kilpailusäännöt;Entä kuinka monta ulkoista spotteria joukkueella saa olla kilpailussa enintään?;max 6;63,14;TRUE
+13;B;2;3;1;Cheerleadingin kilpailusäännöt;Saako ulkoinen spotteri tukea huojuvaa pyramidia?;Ei;83,16;TRUE
+13;B;2;3;1;Grilli;Mietin grillin ostoa ja olisi pari kysymystä siitä. Mitkä ovat grillauspinta-alan pituus ja leveys?;n. 49.6x90.0cm;54,70;TRUE
+13;B;2;3;1;Grilli;Kuinka pitkä takuu grillillä on?;2 vuotta. Landmanilta 5 vuotta alumiini- ja valuosille.;109,55;TRUE
+13;B;2;3;1;Grilli;Entä mitä lisävarusteita grilliin on saatavana?;Suojahuppu, elektroninen grillivarras;80,85;TRUE
+13;B;2;3;1;Jääkaappi;Tarvitsisin apua jääkaapin asennuksessa. Kuinka kauas sähköliedestä jääkaappi tulee vähintään sijoittaa?;3 cm;70,04;TRUE
+13;B;2;3;1;Jalkapallosäännöt;Ajattelin pitää tietovisan eri urheilulajeista ja mietin tässä jalkapallokysymyksiä, tarvitsisin niihin vastaukset. Ensimmäiseksi, mikä on pelikentän sivurajan minimipituus?;90m;42,88;TRUE
+13;C;1;4;2;Kiuas;Minulla olisi pari kysymystä koskien kiuastanne. Millä etäisyydellä kiukaan pitää olla sen takana olevasta seinästä?;100mm;45,96;TRUE
+13;C;1;4;2;Kiuas;Mikä on pisin aika, jonka päähän kiukaan voi ajastaa lämpenemään?;8 tuntia;187,33;TRUE
+13;C;1;4;2;Kiuas;Saako löylyvetenä käyttää merivettä?;Ei;79,08;TRUE
+13;C;1;4;2;Televisio;Yritän muodostaa internet-yhteyttä ostamaani televisioon, mutta se ei tunnu onnistuvan. Mikä on minimi verkkoyhteyden nopeus, jotta internet-yhteys voidaan muodostaa?;10 Mbps;435,51;TRUE
+13;C;1;4;2;Pöytätenniksen säännöt;Meillä on tässä kaverin kanssa erimielisyyksiä pöytätenniksen säännöistä. Mikä on pöydän pituus?;274cm;17,18;TRUE
+13;C;1;4;2;Pöytätenniksen säännöt;Kuinka korkealle pallon kuuluu nousta pelaajan kämmenestä syötössä?;16cm;99,04;TRUE
+13;C;1;4;2;Pöytätenniksen säännöt;Entä kuinka kuinka monta pistettä pelaajan pitää vähintään saada, jotta voi voittaa erän?;11 pistettä 2 pisteen erolla;203,46;TRUE
+13;C;1;4;2;Painepesuri;Mikä on mallin P 130.2 nimellispaine?;12 Mpa / 120 bar;61,45;TRUE
+13;C;1;4;2;Painepesuri;Entä nimellisvirrankulutus?;2.300 kW;107,40;TRUE
+13;C;1;4;2;Painepesuri;Kuinka pitkä takuu laitteessa on?;2 vuotta kotikäyttöön;43,44;TRUE
+13;D;2;4;4;Ompelukone;Mikä on tässä ompelukoneessa ompelen enimmäisleveys?;5mm;22,21;TRUE
+13;D;2;4;4;Ompelukone;Entä mille välille ompelen pituuden voi asettaa siksak-ompelussa?;0,5 - 4;40,64;TRUE
+13;D;2;4;4;Ompelukone;Kuinka painava kone on?;5 kg;56,88;TRUE
+13;D;2;4;4;Arkkupakastin;Tarvitsisin vastauksen muutamaan kysymykseen, jotta tiedän ostanko arkkupakastimen. Kuinka leveä pakastin on?;595mm;86,50;TRUE
+13;D;2;4;4;Arkkupakastin;Sitten kysymys asennuksesta. Voinko asentaa pakastimen varastoon, jossa on talvella +5 astetta lämmintä?;et voi;78,90;TRUE
+13;D;2;4;4;Arkkupakastin;Entä mikä on alhaisin lämpötila, jolle pakastimen voi säätää käyttöpaneelista?;-24 astetta;28,55;TRUE
+13;D;2;4;4;Astianpesukone;Ostin astianpesukoneen, ja minulla olisi muutama kysymys siihen liittyen. Mikä ohjelma on tarkoitettu erittäin likaisten astioiden pesuun (ohjelman numero)?;3;56,80;TRUE
+13;D;2;4;4;Astianpesukone;Selvä, mitä lämpötilaa tämä ohjelma käyttää?;70 astetta;48,30;TRUE
+13;D;2;4;4;Astianpesukone;Sitten vielä yksi kysymys koneen asetuksista. Asuinpaikassani veden kovuus on 32°dH, mihin asentoon vedenpehmennin tulee siis asettaa?;7;99,02;TRUE
+13;D;2;4;4;Uuni;Harkitsen tässä uunin ostoa, mutta haluaisin ensin tietää laitteen mitoista vähän. Mikä on leveimmän keittolevyn halkaisija?;180mm;89,03;TRUE
+13;D;2;4;4;Uuni;Entä kuinka monta kannatintasoa uunissa on?;4;33,01;TRUE
+13;D;2;4;4;Uuni;Sitten vielä pari kysymystä uunin asennuksesta. Voiko uunin asentaa 200 mm päähän seinästä?;kyllä;59,39;TRUE
+13;D;2;4;4;Uuni;Hyvä, entä kuinka paljon tyhjää tilaa lieden päällä pitää vähintään olla?;650mm;72,79;TRUE
+13;D;2;4;4;Mikroaaltouuni;Minulla olisi pari kysymystä viime viikolla ostamastani mikrosta. Luulen että siinä on jokin häiriö, koska näytössä palaa kolme nollaa. Mikä voisi olla syy tähän?;Sähkökatko;47,07;TRUE
+13;D;2;4;4;Mikroaaltouuni;Selvä. Entä mikä on suurin teho jonka voin valita?;800 W;33,64;TRUE
+14;A;1;3;4;Televisio;Yritän muodostaa internet-yhteyttä ostamaani televisioon, mutta se ei tunnu onnistuvan. Mikä on minimi verkkoyhteyden nopeus, jotta internet-yhteys voidaan muodostaa?;10 Mbps;23,66;TRUE
+14;A;1;3;4;Televisio;Kytkin USB-näppäimistön televisioon, millä painikkeella pääsen palaamaan valikossa edelliseen näyttöön?;ESC-näppäin;31,40;TRUE
+14;A;1;3;4;Televisio;Entä mitä Windows-näppäin tekee?;Näyttää television asetukset;7,11;TRUE
+14;A;1;3;4;Koripallon pelisäännöt;Olen perustamassa koripallojoukkuetta ja olisi muutama kysymys. Kuinka monta pelaajaa joukkueessa voi enintään olla?;12;35,25;TRUE
+14;A;1;3;4;Koripallon pelisäännöt;Mitkä ovat pelikentän pituus ja leveys?;28 m pitkä ja 15 m leveä;36,00;TRUE
+14;A;1;3;4;Koripallon pelisäännöt;Kuinka monta erää ottelussa pelataan?;4;37,11;TRUE
+14;A;1;3;4;Koripallon pelisäännöt;Entä kuinka monta minuuttia yksi erä kestää?;10 min;19,41;TRUE
+14;A;1;3;4;Nelikopteri;Kiinnostaisi tietää muutama juttu tästä nelikopterista. Kuinka painava kopteri on?;1380 g;22,45;TRUE
+14;A;1;3;4;Nelikopteri;Entä mikä on sen maksiminopeus?;20m/s;13,15;TRUE
+14;A;1;3;4;Nelikopteri;Kuuluko kotiinpaluutoimintoon kotiin paluu, jos akku on vähissä?;Kyllä kuuluu;66,62;TRUE
+14;A;1;3;4;Nelikopteri;Kuinka pitkä takuu kopterilla on?;1 vuosi;16,30;TRUE
+14;A;1;3;4;Pöytätenniksen säännöt;Meillä on tässä kaverin kanssa erimielisyyksiä pöytätenniksen säännöistä. Mikä on pöydän pituus?;274 cm;13,69;TRUE
+14;A;1;3;4;Pöytätenniksen säännöt;Kuinka korkealle pallon kuuluu nousta pelaajan kämmenestä syötössä?;16 cm;24,51;TRUE
+14;A;1;3;4;Pöytätenniksen säännöt;Entä kuinka kuinka monta pistettä pelaajan pitää vähintään saada, jotta voi voittaa erän?;11 pistettä;32,21;TRUE
+14;A;1;3;4;Mikroaaltouuni;Minulla olisi pari kysymystä viime viikolla ostamastani mikrosta. Luulen että siinä on jokin häiriö, koska näytössä palaa kolme nollaa. Mikä voisi olla syy tähän?;sähkökatko;39,88;TRUE
+14;A;1;3;4;Jääkaappi;Tarvitsisin apua jääkaapin asennuksessa. Kuinka kauas sähköliedestä jääkaappi tulee vähintään sijoittaa?;3 cm;19,45;TRUE
+14;B;2;3;1;Päältäajettava ruohonleikkuri;Haluaisin vertailla kahta ruohonleikkurimallia, LM2148 M ja LM2153 MD. Kummassa näistä on suurempi teho?;LM2153 MD;39,92;TRUE
+14;B;2;3;1;Päältäajettava ruohonleikkuri;Entä onko niiden polttoainesäiliöiden tilavuuksissa eroa?;ei;32,72;TRUE
+14;B;2;3;1;Päältäajettava ruohonleikkuri;Mitkä niiden leikkuuleveydet ovat?;48m ja 53m;47,70;TRUE
+14;B;2;3;1;Kuivausrumpu;Haluaisin kysyä pari kysymystä kuivausrummusta ennen ostopäätöstä. Kuinka leveä kuivausrumpu on?;950 mm;48,68;TRUE
+14;B;2;3;1;Kuivausrumpu;Mikä on täysin kuivaksi kuivaavan ohjelman maksimitäyttömäärä?;3,5kg;56,35;FALSE
+14;B;2;3;1;Kuivausrumpu;Kuuluuko ajastettu kuivaus laitteen lisätoimintoihin?;kyllä;26,59;TRUE
+14;B;2;3;1;Kuivausrumpu;Entä onko laitteessa ohjelmaa villavaatteille?;kyllä;38,13;TRUE
+14;B;2;3;1;Cheerleadingin kilpailusäännöt;Joukkueemme on osallistumassa cheerleadingin SM-kisoihin ja haluaisin selvittää muutaman asian kilpailusäännöistä. Kuinka suuri kilpailualue on SM-kisoissa?;14x16m;57,33;TRUE
+14;B;2;3;1;Cheerleadingin kilpailusäännöt;Entä kuinka monta ulkoista spotteria joukkueella saa olla kilpailussa enintään?;max 6;49,34;TRUE
+14;B;2;3;1;Cheerleadingin kilpailusäännöt;Saako ulkoinen spotteri tukea huojuvaa pyramidia?;ei saa;17,04;TRUE
+14;B;2;3;1;Arkkupakastin;Sitten kysymys asennuksesta. Voinko asentaa pakastimen varastoon, jossa on talvella +5 astetta lämmintä?;Et voi;118,84;TRUE
+14;B;2;3;1;Uuni;Harkitsen tässä uunin ostoa, mutta haluaisin ensin tietää laitteen mitoista vähän. Mikä on leveimmän keittolevyn halkaisija?;500 mm;138,94;FALSE
+14;B;2;3;1;Astianpesukone;Ostin astianpesukoneen, ja minulla olisi muutama kysymys siihen liittyen. Mikä ohjelma on tarkoitettu erittäin likaisten astioiden pesuun (ohjelman numero)?;3;162,87;TRUE
+14;C;1;4;2;Kuivauskaappi;Kuinka korkea kuivauskaappi on?;1900 mm;22,53;TRUE
+14;C;1;4;2;Kuivauskaappi;Kuinka kauan lingotun pyykin kuivaus pikakuivauksella kestää?;noin 120 min;120,40;TRUE
+14;C;1;4;2;Kuivauskaappi;Mitä pesuainetta kuivauskaapin puhdistukseen voi käyttää?;mietoa saippualiuosta;66,85;TRUE
+14;C;1;4;2;Grilli;Mietin grillin ostoa ja olisi pari kysymystä siitä. Mitkä ovat grillauspinta-alan pituus ja leveys?;49.6 x 90.0 cm;42,62;TRUE
+14;C;1;4;2;Grilli;Kuinka pitkä takuu grillillä on?;2 vuotta ostopäiväst;44,33;TRUE
+14;C;1;4;2;Grilli;Entä mitä lisävarusteita grilliin on saatavana?;suojahuppu ja elektroninen grillivarras;83,52;TRUE
+14;C;1;4;2;Ompelukone;Mikä on tässä ompelukoneessa ompelen enimmäisleveys?;5mm;67,84;TRUE
+14;C;1;4;2;Ompelukone;Entä mille välille ompelen pituuden voi asettaa siksak-ompelussa?;0,5 - 4;66,82;TRUE
+14;C;1;4;2;Ompelukone;Kuinka painava kone on?;5,0 kg;55,26;TRUE
+14;C;1;4;2;Miekkailu;Olen miettinyt miekkailun aloittamista, mutta en tiedä mikä kolmesta miekkailulajista pitäisi valita. Mikä kolmesta miekkatyypistä (kalpa, floretti, säilä) saa olla painavin?;kalpa;108,34;TRUE
+14;C;1;4;2;Miekkailu;Kuinka paljon se saa enintään painaa?;770g;14,57;TRUE
+14;C;1;4;2;Miekkailu;Sitten vielä kiinnostaisi osuma-alueet. Mikä on säilämiekkailun osuma-alue?;yläruumis;50,40;TRUE
+14;C;1;4;2;Miekkailu;Entä kalpamiekkailun?;Koko keho;37,38;TRUE
+14;C;1;4;2;Kamiina;Voinko käyttää ostamani kamiinan polttoaineena sytytysnestettä?;Et voi;91,27;TRUE
+14;C;1;4;2;Agility;Olen osallistumassa ensimmäistä kertaa agility-kilpailuun. Koirani säkäkorkeus on 40cm, mihin kilpailuluokkaan (koko) minun pitää osallistua?;Medi (M);53,81;TRUE
+14;C;1;4;2;Agility;Kuinka monta eri tasoluokkaa on olemassa?;kolme eri;56,69;TRUE
+14;C;1;4;2;Mankeli;Olen katsellut mankelia mutta tarvitsisin vähän lisätietoja, jotta tiedän ostanko sen. Mikä on mankelin syvyys?;314 mm;111,64;TRUE
+14;D;2;4;3;Langattomat Bluetooth-kuulokkeet;Ostin juuri uudet Bluetooth-kuulokkeet ja tarvitsisin vastauksen muutamaan kysymykseen. Mitä kaikkea pakkauksen pitäisi sisältää?;Langattomat kuulokkeet, usb-latauskaapelin sekä opikaoppaan;27,16;TRUE
+14;D;2;4;3;Langattomat Bluetooth-kuulokkeet;OK, minulta näyttäisi puuttuvan ohjeet ja siksi tässä kyselen. Yritin muodostaa pariliitosta, mutta se kysyy jotain salasanaa. Mikä se mahtaa olla?;salasana on 0000;177,10;TRUE
+14;D;2;4;3;Langattomat Bluetooth-kuulokkeet;Kuinka kauan kuulokkeiden lataaminen pitäisi yleensä kestää?;2 tuntia;31,23;TRUE
+14;D;2;4;3;Langattomat Bluetooth-kuulokkeet;Kuinka suuri kuulokkeiden toimintasäde on?;jopa 10 m;139,14;TRUE
+14;D;2;4;3;Liesituuletin;Olen käyttänyt liesituuletinta jonkin aikaa ja mieleeni heräsi muutamia kysymyksiä siitä. Miten saan intensiivitehon päälle? Laitteessani on ohjauspaneeli 1.;Paina painiketta + ku tuuletin on teholla 3;67,85;TRUE
+14;D;2;4;3;Liesituuletin;Kuinka usein rasvasuodatin pitäisi puhdistaa?;2 kuukauden välein;241,23;TRUE
+14;D;2;4;3;Tenniksen kilpailumääräykset;Ajattelin ilmoittautua tenniskisoihin, mutta edellisistä on niin kauan aikaa, että haluaisin tarkistaa pari juttua. Olen tasolla 14, mihin tasoluokkaan minun kuuluu osallistua?;C luokkaan;117,82;TRUE
+14;D;2;4;3;Tenniksen kilpailumääräykset;Olen vähän huolissani omasta jaksamisestani, kuinka pitkä tauko kahden normaalipituisen saman luokan ottelussa on vähintään?;30 minuuttia;189,12;FALSE
+14;D;2;4;3;Jalkapallosäännöt;Ajattelin pitää tietovisan eri urheilulajeista ja mietin tässä jalkapallokysymyksiä, tarvitsisin niihin vastaukset. Ensimmäiseksi, mikä on pelikentän sivurajan minimipituus?;90 m;148,78;TRUE
+14;D;2;4;3;Jalkapallosäännöt;Mikä on pallon ympärysmitta?;68-70 cm;20,73;TRUE
+14;D;2;4;3;Jalkapallosäännöt;Kuinka monta pelaajaa joukkueessa saa olla enintään?;11;44,03;TRUE
+14;D;2;4;3;Jalkapallosäännöt;Sitten vielä yksi. Kuinka kaukana vastapuolen pelaajien pitää olla kulmakaaresta kulmapotkutilanteessa?;9,15m;72,18;TRUE
+15;A;1;3;3;Lämpöpumppu;Lämpöpumppuni ohjausjärjestelmän vihreä merkkivalo alkoi vilkkumaan eilen, mitä se tarkoittaa?;jokin hälytys aktiivisena;58,35;TRUE
+15;A;1;3;3;Lämpöpumppu;Mikä asetus pitää olla päällä, jotta ohjausjärjestelmä sallii vain sähkövastuksen toiminnan?;lisälämpö;48,49;TRUE
+15;A;1;3;3;Lämpöpumppu;Entä mikä on oletussäätö lämpötilalle, jos otan lämmityksen pois?;17;58,85;TRUE
+15;A;1;3;3;Painepesuri;Mikä on mallin P 130.2 nimellispaine?;120baari;33,68;TRUE
+15;A;1;3;3;Painepesuri;Entä nimellisvirrankulutus?;2.300kw;51,09;TRUE
+15;A;1;3;3;Painepesuri;Kuinka pitkä takuu laitteessa on?;2 vuotta;55,79;TRUE
+15;A;1;3;3;Arkkupakastin;Tarvitsisin vastauksen muutamaan kysymykseen, jotta tiedän ostanko arkkupakastimen. Kuinka leveä pakastin on?;595mm;18,13;TRUE
+15;A;1;3;3;Arkkupakastin;Sitten kysymys asennuksesta. Voinko asentaa pakastimen varastoon, jossa on talvella +5 astetta lämmintä?;ei;84,36;TRUE
+15;A;1;3;3;Arkkupakastin;Entä mikä on alhaisin lämpötila, jolle pakastimen voi säätää käyttöpaneelista?;-24;59,37;TRUE
+15;A;1;3;3;Jääkaappi;Tarvitsisin apua jääkaapin asennuksessa. Kuinka kauas sähköliedestä jääkaappi tulee vähintään sijoittaa?;3cm;107,49;TRUE
+15;A;1;3;3;Mikroaaltouuni;Minulla olisi pari kysymystä viime viikolla ostamastani mikrosta. Luulen että siinä on jokin häiriö, koska näytössä palaa kolme nollaa. Mikä voisi olla syy tähän?;sähkökatko;77,42;TRUE
+15;A;1;3;3;Pöytätenniksen säännöt;Meillä on tässä kaverin kanssa erimielisyyksiä pöytätenniksen säännöistä. Mikä on pöydän pituus?;274cm;84,82;TRUE
+15;B;2;3;1;Tenniksen kilpailumääräykset;Ajattelin ilmoittautua tenniskisoihin, mutta edellisistä on niin kauan aikaa, että haluaisin tarkistaa pari juttua. Olen tasolla 14, mihin tasoluokkaan minun kuuluu osallistua?;c;50,93;TRUE
+15;B;2;3;1;Tenniksen kilpailumääräykset;Olen vähän huolissani omasta jaksamisestani, kuinka pitkä tauko kahden normaalipituisen saman luokan ottelussa on vähintään?;60min;87,44;TRUE
+15;B;2;3;1;Tenniksen kilpailumääräykset;Kuinka montaa palloa tennisotteluissa voi korkeintaan käyttää?;6;76,89;TRUE
+15;B;2;3;1;Kuivauskaappi;Kuinka korkea kuivauskaappi on?;1900mm;39,55;TRUE
+15;B;2;3;1;Kuivauskaappi;Kuinka kauan lingotun pyykin kuivaus pikakuivauksella kestää?;120min;96,16;TRUE
+15;B;2;3;1;Kuivauskaappi;Mitä pesuainetta kuivauskaapin puhdistukseen voi käyttää?;mieto saippualiuos;92,60;TRUE
+15;B;2;3;1;Uuni;Harkitsen tässä uunin ostoa, mutta haluaisin ensin tietää laitteen mitoista vähän. Mikä on leveimmän keittolevyn halkaisija?;180mm;92,70;TRUE
+15;B;2;3;1;Uuni;Entä kuinka monta kannatintasoa uunissa on?;4;108,33;TRUE
+15;B;2;3;1;Uuni;Sitten vielä pari kysymystä uunin asennuksesta. Voiko uunin asentaa 200 mm päähän seinästä?;kyllä;40,76;TRUE
+15;B;2;3;1;Uuni;Hyvä, entä kuinka paljon tyhjää tilaa lieden päällä pitää vähintään olla?;650mm;39,14;TRUE
+15;B;2;3;1;Mankeli;Olen katsellut mankelia mutta tarvitsisin vähän lisätietoja, jotta tiedän ostanko sen. Mikä on mankelin syvyys?;314mm;14,32;TRUE
+15;B;2;3;1;Mankeli;Entä mankeliliinan leveys?;55cm;58,43;TRUE
+15;C;1;4;4;Televisio;Yritän muodostaa internet-yhteyttä ostamaani televisioon, mutta se ei tunnu onnistuvan. Mikä on minimi verkkoyhteyden nopeus, jotta internet-yhteys voidaan muodostaa?;10mbps;32,04;TRUE
+15;C;1;4;4;Televisio;Kytkin USB-näppäimistön televisioon, millä painikkeella pääsen palaamaan valikossa edelliseen näyttöön?;esc näppäin;77,97;TRUE
+15;C;1;4;4;Televisio;Entä mitä Windows-näppäin tekee?;näyttää television asetukset;99,86;TRUE
+15;C;1;4;4;Miekkailu;Olen miettinyt miekkailun aloittamista, mutta en tiedä mikä kolmesta miekkailulajista pitäisi valita. Mikä kolmesta miekkatyypistä (kalpa, floretti, säilä) saa olla painavin?;kalpa;69,68;TRUE
+15;C;1;4;4;Miekkailu;Kuinka paljon se saa enintään painaa?;770g;74,25;TRUE
+15;C;1;4;4;Miekkailu;Sitten vielä kiinnostaisi osuma-alueet. Mikä on säilämiekkailun osuma-alue?;vartalo vyötäröstä ylöspäin;127,02;TRUE
+15;C;1;4;4;Miekkailu;Entä kalpamiekkailun?;koko vartalo;20,16;TRUE
+15;C;1;4;4;Grilli;Mietin grillin ostoa ja olisi pari kysymystä siitä. Mitkä ovat grillauspinta-alan pituus ja leveys?;49,6x90,0cm;86,12;TRUE
+15;C;1;4;4;Grilli;Kuinka pitkä takuu grillillä on?;2 vuotta;51,32;TRUE
+15;C;1;4;4;Grilli;Entä mitä lisävarusteita grilliin on saatavana?;suojahuppu ja elektroninen grillivarras;112,90;TRUE
+15;C;1;4;4;Langattomat Bluetooth-kuulokkeet;Ostin juuri uudet Bluetooth-kuulokkeet ja tarvitsisin vastauksen muutamaan kysymykseen. Mitä kaikkea pakkauksen pitäisi sisältää?;kuulokkeet, lautauskaapeli ja pikaopas;93,37;TRUE
+15;C;1;4;4;Langattomat Bluetooth-kuulokkeet;OK, minulta näyttäisi puuttuvan ohjeet ja siksi tässä kyselen. Yritin muodostaa pariliitosta, mutta se kysyy jotain salasanaa. Mikä se mahtaa olla?;0;107,15;TRUE
+15;C;1;4;4;Langattomat Bluetooth-kuulokkeet;Kuinka kauan kuulokkeiden lataaminen pitäisi yleensä kestää?;2 tuntia;104,65;TRUE
+15;C;1;4;4;Langattomat Bluetooth-kuulokkeet;Kuinka suuri kuulokkeiden toimintasäde on?;10m;20,57;TRUE
+15;D;2;4;2;Astianpesukone;Ostin astianpesukoneen, ja minulla olisi muutama kysymys siihen liittyen. Mikä ohjelma on tarkoitettu erittäin likaisten astioiden pesuun (ohjelman numero)?;3;20,03;TRUE
+15;D;2;4;2;Astianpesukone;Selvä, mitä lämpötilaa tämä ohjelma käyttää?;70;70,15;TRUE
+15;D;2;4;2;Astianpesukone;Sitten vielä yksi kysymys koneen asetuksista. Asuinpaikassani veden kovuus on 32°dH, mihin asentoon vedenpehmennin tulee siis asettaa?;7;136,67;TRUE
+15;D;2;4;2;Kuivausrumpu;Haluaisin kysyä pari kysymystä kuivausrummusta ennen ostopäätöstä. Kuinka leveä kuivausrumpu on?;600mm;39,72;TRUE
+15;D;2;4;2;Liesituuletin;Olen käyttänyt liesituuletinta jonkin aikaa ja mieleeni heräsi muutamia kysymyksiä siitä. Miten saan intensiivitehon päälle? Laitteessani on ohjauspaneeli 1.;+;215,78;TRUE
+15;D;2;4;2;Agility;Olen osallistumassa ensimmäistä kertaa agility-kilpailuun. Koirani säkäkorkeus on 40cm, mihin kilpailuluokkaan (koko) minun pitää osallistua?;medi;72,34;TRUE
+15;D;2;4;2;Agility;Kuinka monta eri tasoluokkaa on olemassa?;3;176,17;TRUE
+16;A;1;3;4;Jalkapallosäännöt;Ajattelin pitää tietovisan eri urheilulajeista ja mietin tässä jalkapallokysymyksiä, tarvitsisin niihin vastaukset. Ensimmäiseksi, mikä on pelikentän sivurajan minimipituus?;90m;30,25;TRUE
+16;A;1;3;4;Jalkapallosäännöt;Mikä on pallon ympärysmitta?;68-70cm;18,30;TRUE
+16;A;1;3;4;Jalkapallosäännöt;Kuinka monta pelaajaa joukkueessa saa olla enintään?;11, (joista 1 maalivahti);34,55;TRUE
+16;A;1;3;4;Jalkapallosäännöt;Sitten vielä yksi. Kuinka kaukana vastapuolen pelaajien pitää olla kulmakaaresta kulmapotkutilanteessa?;9,15m;32,92;TRUE
+16;A;1;3;4;Mankeli;Olen katsellut mankelia mutta tarvitsisin vähän lisätietoja, jotta tiedän ostanko sen. Mikä on mankelin syvyys?;314mm;35,03;TRUE
+16;A;1;3;4;Mankeli;Entä mankeliliinan leveys?;55cm;36,53;TRUE
+16;A;1;3;4;Mankeli;Mikä on lakanoiden mankeiloimisaika?;2-4min;31,63;TRUE
+16;A;1;3;4;Astianpesukone;Ostin astianpesukoneen, ja minulla olisi muutama kysymys siihen liittyen. Mikä ohjelma on tarkoitettu erittäin likaisten astioiden pesuun (ohjelman numero)?;3;40,42;TRUE
+16;A;1;3;4;Astianpesukone;Selvä, mitä lämpötilaa tämä ohjelma käyttää?;70 celsiusastetta;38,43;TRUE
+16;A;1;3;4;Astianpesukone;Sitten vielä yksi kysymys koneen asetuksista. Asuinpaikassani veden kovuus on 32°dH, mihin asentoon vedenpehmennin tulee siis asettaa?;7;35,33;TRUE
+16;A;1;3;4;Taekwondon kilpailusäännöt;Lapseni on osallistumassa ensimmäiseen taekwondokilpailuun ja muutama asia on vielä epäselvä. Mihin kilpailuluokkaan hänen pitää osallistua? Hän on 9-vuotias.;värivyöt, C-juniorit;52,94;TRUE
+16;A;1;3;4;Taekwondon kilpailusäännöt;Käydäänkö tässä luokassa pyykkipoikaottelua?;kyllä;38,10;TRUE
+16;A;1;3;4;Kuivauskaappi;Kuinka korkea kuivauskaappi on?;1900mm;27,22;TRUE
+16;A;1;3;4;Kuivauskaappi;Kuinka kauan lingotun pyykin kuivaus pikakuivauksella kestää?;n. 120min;89,31;TRUE
+16;A;1;3;4;Jääkaappi;Tarvitsisin apua jääkaapin asennuksessa. Kuinka kauas sähköliedestä jääkaappi tulee vähintään sijoittaa?;3cm;52,30;TRUE
+16;B;2;3;1;Liesituuletin;Olen käyttänyt liesituuletinta jonkin aikaa ja mieleeni heräsi muutamia kysymyksiä siitä. Miten saan intensiivitehon päälle? Laitteessani on ohjauspaneeli 1.;paina painiketta + kun tuuletin teholla 3;57,23;TRUE
+16;B;2;3;1;Liesituuletin;Kuinka usein rasvasuodatin pitäisi puhdistaa?;2 kuukauden välein;99,72;TRUE
+16;B;2;3;1;Liesituuletin;Entä mitä puhdistusainetta voi käyttää laitteen alumiini- ja muoviosien puhdistukseen?;lasinpesuainetta;45,92;TRUE
+16;B;2;3;1;Mikroaaltouuni;Minulla olisi pari kysymystä viime viikolla ostamastani mikrosta. Luulen että siinä on jokin häiriö, koska näytössä palaa kolme nollaa. Mikä voisi olla syy tähän?;Sähkökatko;31,09;TRUE
+16;B;2;3;1;Mikroaaltouuni;Selvä. Entä mikä on suurin teho jonka voin valita?;800W;36,23;TRUE
+16;B;2;3;1;Mikroaaltouuni;Mitä tällä teholla tulisi kuumentaa?;nesteitä;84,53;TRUE
+16;B;2;3;1;Mikroaaltouuni;Olen kuullut, että metalliastiaa ei saisi laittaa mikroon, mistä se johtuu?;mikroaallot eivät läpäise metallia;59,92;TRUE
+16;B;2;3;1;Pöytätenniksen säännöt;Meillä on tässä kaverin kanssa erimielisyyksiä pöytätenniksen säännöistä. Mikä on pöydän pituus?;274cm;91,52;TRUE
+16;B;2;3;1;Pöytätenniksen säännöt;Kuinka korkealle pallon kuuluu nousta pelaajan kämmenestä syötössä?;16cm;15,33;TRUE
+16;B;2;3;1;Pöytätenniksen säännöt;Entä kuinka kuinka monta pistettä pelaajan pitää vähintään saada, jotta voi voittaa erän?;11;142,68;TRUE
+16;B;2;3;1;Langattomat Bluetooth-kuulokkeet;Ostin juuri uudet Bluetooth-kuulokkeet ja tarvitsisin vastauksen muutamaan kysymykseen. Mitä kaikkea pakkauksen pitäisi sisältää?;philipsin langattomat kuulokkeet, usb-latauskaapelin ja pikaoppaan;46,56;TRUE
+16;C;1;4;3;Kuivausrumpu;Haluaisin kysyä pari kysymystä kuivausrummusta ennen ostopäätöstä. Kuinka leveä kuivausrumpu on?;600mm;45,50;TRUE
+16;C;1;4;3;Kuivausrumpu;Mikä on täysin kuivaksi kuivaavan ohjelman maksimitäyttömäärä?;8kg;71,67;TRUE
+16;C;1;4;3;Kuivausrumpu;Kuuluuko ajastettu kuivaus laitteen lisätoimintoihin?;kuuluu;32,35;TRUE
+16;C;1;4;3;Kuivausrumpu;Entä onko laitteessa ohjelmaa villavaatteille?;on;103,04;TRUE
+16;C;1;4;3;Päältäajettava ruohonleikkuri;Haluaisin vertailla kahta ruohonleikkurimallia, LM2148 M ja LM2153 MD. Kummassa näistä on suurempi teho?;LM2153 MD;72,94;TRUE
+16;C;1;4;3;Päältäajettava ruohonleikkuri;Entä onko niiden polttoainesäiliöiden tilavuuksissa eroa?;ei ole;48,13;TRUE
+16;C;1;4;3;Päältäajettava ruohonleikkuri;Mitkä niiden leikkuuleveydet ovat?;LM2148M 48mm ja LM2153 MD 53mm;45,38;TRUE
+16;C;1;4;3;Agility;Olen osallistumassa ensimmäistä kertaa agility-kilpailuun. Koirani säkäkorkeus on 40cm, mihin kilpailuluokkaan (koko) minun pitää osallistua?;Medi;88,66;TRUE
+16;C;1;4;3;Agility;Kuinka monta eri tasoluokkaa on olemassa?;kolme;28,34;TRUE
+16;C;1;4;3;Agility;Onko agilitykilpailun tarkoituksena yhtenä osa-aluuena koiran ulkonäön arviointi?;ei;97,00;TRUE
+16;C;1;4;3;Arkkupakastin;Tarvitsisin vastauksen muutamaan kysymykseen, jotta tiedän ostanko arkkupakastimen. Kuinka leveä pakastin on?;595mm;26,72;TRUE
+16;C;1;4;3;Arkkupakastin;Sitten kysymys asennuksesta. Voinko asentaa pakastimen varastoon, jossa on talvella +5 astetta lämmintä?;et;69,26;TRUE
+16;C;1;4;3;Arkkupakastin;Entä mikä on alhaisin lämpötila, jolle pakastimen voi säätää käyttöpaneelista?;-24 celsiusta;65,61;TRUE
+16;C;1;4;3;Televisio;Yritän muodostaa internet-yhteyttä ostamaani televisioon, mutta se ei tunnu onnistuvan. Mikä on minimi verkkoyhteyden nopeus, jotta internet-yhteys voidaan muodostaa?;10Mbps;91,59;TRUE
+16;C;1;4;3;Miekkailu;Olen miettinyt miekkailun aloittamista, mutta en tiedä mikä kolmesta miekkailulajista pitäisi valita. Mikä kolmesta miekkatyypistä (kalpa, floretti, säilä) saa olla painavin?;kalpa;130,63;TRUE
+16;D;2;4;2;Tenniksen kilpailumääräykset;Ajattelin ilmoittautua tenniskisoihin, mutta edellisistä on niin kauan aikaa, että haluaisin tarkistaa pari juttua. Olen tasolla 14, mihin tasoluokkaan minun kuuluu osallistua?;C;28,81;TRUE
+16;D;2;4;2;Tenniksen kilpailumääräykset;Olen vähän huolissani omasta jaksamisestani, kuinka pitkä tauko kahden normaalipituisen saman luokan ottelussa on vähintään?;60min;122,30;TRUE
+16;D;2;4;2;Tenniksen kilpailumääräykset;Kuinka montaa palloa tennisotteluissa voi korkeintaan käyttää?;6kpl;90,45;TRUE
+16;D;2;4;2;Generaattori;Missä tätä generaattoria on tarkoitus käyttää?;asuntovaunuissa, matkailuautoissa ja kaupallisessa käytössä olevissa ajoneuvoissa;78,86;TRUE
+16;D;2;4;2;Generaattori;Kuinka paljon se painaa?;96,5kg;92,21;TRUE
+16;D;2;4;2;Generaattori;Mitä lisävarusteita generaattoriin on saatavana?;ulkoinen tiivistesarja;78,09;TRUE
+16;D;2;4;2;Generaattori;Minkälainen huolto pitäisi tehdä generaattorin käytön ensimmäisenä kuukautena?;vaihdata öljy;73,59;TRUE
+16;D;2;4;2;Cheerleadingin kilpailusäännöt;Joukkueemme on osallistumassa cheerleadingin SM-kisoihin ja haluaisin selvittää muutaman asian kilpailusäännöistä. Kuinka suuri kilpailualue on SM-kisoissa?;14x16m;76,15;TRUE
+16;D;2;4;2;Cheerleadingin kilpailusäännöt;Entä kuinka monta ulkoista spotteria joukkueella saa olla kilpailussa enintään?;6 ulkopuolista spotteria;113,35;TRUE
+16;D;2;4;2;Cheerleadingin kilpailusäännöt;Saako ulkoinen spotteri tukea huojuvaa pyramidia?;ei saa;87,81;TRUE
+16;D;2;4;2;Nelikopteri;Kiinnostaisi tietää muutama juttu tästä nelikopterista. Kuinka painava kopteri on?;1380g;44,19;TRUE
+16;D;2;4;2;Nelikopteri;Entä mikä on sen maksiminopeus?;20m/s;122,35;TRUE
+17;A;1;3;2;Nelikopteri;Kiinnostaisi tietää muutama juttu tästä nelikopterista. Kuinka painava kopteri on?;1380g;21,48;TRUE
+17;A;1;3;2;Nelikopteri;Entä mikä on sen maksiminopeus?;20m/s;51,26;TRUE
+17;A;1;3;2;Nelikopteri;Kuuluko kotiinpaluutoimintoon kotiin paluu, jos akku on vähissä?;Kyllä;34,08;TRUE
+17;A;1;3;2;Nelikopteri;Kuinka pitkä takuu kopterilla on?;1v;18,22;TRUE
+17;A;1;3;2;Miekkailu;Olen miettinyt miekkailun aloittamista, mutta en tiedä mikä kolmesta miekkailulajista pitäisi valita. Mikä kolmesta miekkatyypistä (kalpa, floretti, säilä) saa olla painavin?;Kalpa;13,87;TRUE
+17;A;1;3;2;Miekkailu;Kuinka paljon se saa enintään painaa?;770g;69,26;TRUE
+17;A;1;3;2;Miekkailu;Sitten vielä kiinnostaisi osuma-alueet. Mikä on säilämiekkailun osuma-alue?;Koko vartalo vyötäröstä ylöspäin;60,01;TRUE
+17;A;1;3;2;Miekkailu;Entä kalpamiekkailun?;Keho;23,37;TRUE
+17;A;1;3;2;Liesituuletin;Olen käyttänyt liesituuletinta jonkin aikaa ja mieleeni heräsi muutamia kysymyksiä siitä. Miten saan intensiivitehon päälle? Laitteessani on ohjauspaneeli 1.;Kun painat uudelleen painiketta +, intensiitiviteho boost 2 aktivoituu;87,40;TRUE
+17;A;1;3;2;Liesituuletin;Kuinka usein rasvasuodatin pitäisi puhdistaa?;vähintään 2kk välein;39,41;TRUE
+17;A;1;3;2;Liesituuletin;Entä mitä puhdistusainetta voi käyttää laitteen alumiini- ja muoviosien puhdistukseen?;Lasinpesuaine;39,96;TRUE
+17;A;1;3;2;Agility;Olen osallistumassa ensimmäistä kertaa agility-kilpailuun. Koirani säkäkorkeus on 40cm, mihin kilpailuluokkaan (koko) minun pitää osallistua?;Medi (M);55,96;TRUE
+17;A;1;3;2;Agility;Kuinka monta eri tasoluokkaa on olemassa?;3;24,36;TRUE
+17;B;2;3;4;Ompelukone;Mikä on tässä ompelukoneessa ompelen enimmäisleveys?;5mm;15,29;TRUE
+17;B;2;3;4;Ompelukone;Entä mille välille ompelen pituuden voi asettaa siksak-ompelussa?;0,5 - 4;64,06;TRUE
+17;B;2;3;4;Ompelukone;Kuinka painava kone on?;5,0kg;37,05;TRUE
+17;B;2;3;4;Kuivausrumpu;Haluaisin kysyä pari kysymystä kuivausrummusta ennen ostopäätöstä. Kuinka leveä kuivausrumpu on?;600mm;28,11;TRUE
+17;B;2;3;4;Kuivausrumpu;Mikä on täysin kuivaksi kuivaavan ohjelman maksimitäyttömäärä?;8kg;54,74;TRUE
+17;B;2;3;4;Kuivausrumpu;Kuuluuko ajastettu kuivaus laitteen lisätoimintoihin?;Kyllä;13,30;TRUE
+17;B;2;3;4;Kuivausrumpu;Entä onko laitteessa ohjelmaa villavaatteille?;Kyllä;67,71;TRUE
+17;B;2;3;4;Mankeli;Olen katsellut mankelia mutta tarvitsisin vähän lisätietoja, jotta tiedän ostanko sen. Mikä on mankelin syvyys?;314mm;41,66;TRUE
+17;B;2;3;4;Mankeli;Entä mankeliliinan leveys?;55cm;63,98;TRUE
+17;B;2;3;4;Mankeli;Mikä on lakanoiden mankeiloimisaika?;2-4min;42,35;TRUE
+17;B;2;3;4;Tenniksen kilpailumääräykset;Ajattelin ilmoittautua tenniskisoihin, mutta edellisistä on niin kauan aikaa, että haluaisin tarkistaa pari juttua. Olen tasolla 14, mihin tasoluokkaan minun kuuluu osallistua?;C;28,40;TRUE
+17;B;2;3;4;Tenniksen kilpailumääräykset;Olen vähän huolissani omasta jaksamisestani, kuinka pitkä tauko kahden normaalipituisen saman luokan ottelussa on vähintään?;60min;74,93;TRUE
+17;B;2;3;4;Tenniksen kilpailumääräykset;Kuinka montaa palloa tennisotteluissa voi korkeintaan käyttää?;6;36,89;TRUE
+17;B;2;3;4;Kamiina;Voinko käyttää ostamani kamiinan polttoaineena sytytysnestettä?;Ei;30,13;TRUE
+17;B;2;3;4;Kamiina;Entä mitä materiaalia keittolevy on?;Valurautaa;38,75;TRUE
+17;B;2;3;4;Arkkupakastin;Tarvitsisin vastauksen muutamaan kysymykseen, jotta tiedän ostanko arkkupakastimen. Kuinka leveä pakastin on?;595mm;83,99;TRUE
+17;C;1;4;1;Cheerleadingin kilpailusäännöt;Joukkueemme on osallistumassa cheerleadingin SM-kisoihin ja haluaisin selvittää muutaman asian kilpailusäännöistä. Kuinka suuri kilpailualue on SM-kisoissa?;14x16m;50,74;TRUE
+17;C;1;4;1;Cheerleadingin kilpailusäännöt;Entä kuinka monta ulkoista spotteria joukkueella saa olla kilpailussa enintään?;6;41,99;TRUE
+17;C;1;4;1;Cheerleadingin kilpailusäännöt;Saako ulkoinen spotteri tukea huojuvaa pyramidia?;Ei, mutta sa kevyesti koskea alastuloissa;77,95;TRUE
+17;C;1;4;1;Jalkapallosäännöt;Ajattelin pitää tietovisan eri urheilulajeista ja mietin tässä jalkapallokysymyksiä, tarvitsisin niihin vastaukset. Ensimmäiseksi, mikä on pelikentän sivurajan minimipituus?;90m;59,30;TRUE
+17;C;1;4;1;Jalkapallosäännöt;Mikä on pallon ympärysmitta?;68-70cm;26,17;TRUE
+17;C;1;4;1;Jalkapallosäännöt;Kuinka monta pelaajaa joukkueessa saa olla enintään?;11, joista 1 maalivahti;34,61;TRUE
+17;C;1;4;1;Jalkapallosäännöt;Sitten vielä yksi. Kuinka kaukana vastapuolen pelaajien pitää olla kulmakaaresta kulmapotkutilanteessa?;9,15m;57,88;TRUE
+17;C;1;4;1;Painepesuri;Mikä on mallin P 130.2 nimellispaine?;12/120;71,39;TRUE
+17;C;1;4;1;Painepesuri;Entä nimellisvirrankulutus?;2.300kW;76,39;TRUE
+17;C;1;4;1;Painepesuri;Kuinka pitkä takuu laitteessa on?;2v;37,41;TRUE
+17;C;1;4;1;Lämpöpumppu;Lämpöpumppuni ohjausjärjestelmän vihreä merkkivalo alkoi vilkkumaan eilen, mitä se tarkoittaa?;pumppu on käynnissä ja se on valmis tuottamaan lämpöä tai lämmintä vettä;67,35;FALSE
+17;C;1;4;1;Koripallon pelisäännöt;Olen perustamassa koripallojoukkuetta ja olisi muutama kysymys. Kuinka monta pelaajaa joukkueessa voi enintään olla?;12 ml kapteeni;54,15;TRUE
+17;C;1;4;1;Koripallon pelisäännöt;Mitkä ovat pelikentän pituus ja leveys?;28m pitkä 15m leveä;34,12;TRUE
+17;D;2;4;3;Päältäajettava ruohonleikkuri;Haluaisin vertailla kahta ruohonleikkurimallia, LM2148 M ja LM2153 MD. Kummassa näistä on suurempi teho?;LM2153 MD;39,32;TRUE
+17;D;2;4;3;Päältäajettava ruohonleikkuri;Entä onko niiden polttoainesäiliöiden tilavuuksissa eroa?;Ei;47,30;TRUE
+17;D;2;4;3;Päältäajettava ruohonleikkuri;Mitkä niiden leikkuuleveydet ovat?;LM2148M: 48mm, LM2153MD: 53mm;33,11;TRUE
+17;D;2;4;3;Jääkaappi;Tarvitsisin apua jääkaapin asennuksessa. Kuinka kauas sähköliedestä jääkaappi tulee vähintään sijoittaa?;3cm;36,30;TRUE
+17;D;2;4;3;Jääkaappi;Olen kytkemässä jääkaappia toimintaan, laitoin juuri pistokkeen seinään ja nyt kuuluu joku hälytysääni. Mitä teen?;Paina lämpötilavalitsinta 1;98,23;TRUE
+17;D;2;4;3;Jääkaappi;Jääkaapista kuuluu välillä naksahduksia. Kuuluvatko ne normaaleihin käyntiääniin?;Kyllä;11,92;TRUE
+17;D;2;4;3;Jääkaappi;Voisin vielä varmuuden vuoksi ottaa talteen huoltopalvelun puhelinnumeron, mikä se on?;207510700;90,25;TRUE
+17;D;2;4;3;Pyykinpesukone;Olen miettinyt pesukoneen ostoa, ja haluasin kysyä pari juttua ennen päätöstä. Mikä on koneen leveys?;600mm;29,15;TRUE
+17;D;2;4;3;Pyykinpesukone;Entä maksimitäyttömäärä?;7kg;98,00;TRUE
+17;D;2;4;3;Pyykinpesukone;Voiko koneen lisätoimintoihin kuuluvalla ajastuksella ajastaa koneen käynnistymään vuorokauden päästä?;Ei, enintään 20h päästä;70,67;TRUE
+17;D;2;4;3;Astianpesukone;Ostin astianpesukoneen, ja minulla olisi muutama kysymys siihen liittyen. Mikä ohjelma on tarkoitettu erittäin likaisten astioiden pesuun (ohjelman numero)?;3;61,40;TRUE
+17;D;2;4;3;Astianpesukone;Selvä, mitä lämpötilaa tämä ohjelma käyttää?;70c;35,69;TRUE
+17;D;2;4;3;Astianpesukone;Sitten vielä yksi kysymys koneen asetuksista. Asuinpaikassani veden kovuus on 32°dH, mihin asentoon vedenpehmennin tulee siis asettaa?;7;43,24;TRUE
+17;D;2;4;3;Grilli;Mietin grillin ostoa ja olisi pari kysymystä siitä. Mitkä ovat grillauspinta-alan pituus ja leveys?;49,6cm x 90,0cm;30,31;TRUE
+17;D;2;4;3;Grilli;Kuinka pitkä takuu grillillä on?;2v;84,98;TRUE
+17;D;2;4;3;Generaattori;Missä tätä generaattoria on tarkoitus käyttää?;Asuntovaunuissa, matkailuautoissa ja kaupallisessa käytössä olevissa ajoneuvoissa;100,27;TRUE
+18;A;1;3;3;Kiuas;Minulla olisi pari kysymystä koskien kiuastanne. Millä etäisyydellä kiukaan pitää olla sen takana olevasta seinästä?;100 mm;59,40;TRUE
+18;A;1;3;3;Kiuas;Mikä on pisin aika, jonka päähän kiukaan voi ajastaa lämpenemään?;8 tuntia;59,68;TRUE
+18;A;1;3;3;Kiuas;Saako löylyvetenä käyttää merivettä?;ei;18,20;TRUE
+18;A;1;3;3;Agility;Olen osallistumassa ensimmäistä kertaa agility-kilpailuun. Koirani säkäkorkeus on 40cm, mihin kilpailuluokkaan (koko) minun pitää osallistua?;Medi (M);40,27;TRUE
+18;A;1;3;3;Agility;Kuinka monta eri tasoluokkaa on olemassa?;3;17,34;TRUE
+18;A;1;3;3;Agility;Onko agilitykilpailun tarkoituksena yhtenä osa-aluuena koiran ulkonäön arviointi?;ei;54,52;TRUE
+18;A;1;3;3;Arkkupakastin;Tarvitsisin vastauksen muutamaan kysymykseen, jotta tiedän ostanko arkkupakastimen. Kuinka leveä pakastin on?;595 mm;62,24;TRUE
+18;A;1;3;3;Arkkupakastin;Sitten kysymys asennuksesta. Voinko asentaa pakastimen varastoon, jossa on talvella +5 astetta lämmintä?;et voi;55,19;TRUE
+18;A;1;3;3;Arkkupakastin;Entä mikä on alhaisin lämpötila, jolle pakastimen voi säätää käyttöpaneelista?;-24 astetta;47,14;TRUE
+18;A;1;3;3;Taekwondon kilpailusäännöt;Lapseni on osallistumassa ensimmäiseen taekwondokilpailuun ja muutama asia on vielä epäselvä. Mihin kilpailuluokkaan hänen pitää osallistua? Hän on 9-vuotias.;Värivyöt, C-juniorit;66,45;TRUE
+18;A;1;3;3;Taekwondon kilpailusäännöt;Käydäänkö tässä luokassa pyykkipoikaottelua?;kyllä;15,48;TRUE
+18;A;1;3;3;Pyykinpesukone;Olen miettinyt pesukoneen ostoa, ja haluasin kysyä pari juttua ennen päätöstä. Mikä on koneen leveys?;600 mm;27,81;TRUE
+18;A;1;3;3;Lämpöpumppu;Lämpöpumppuni ohjausjärjestelmän vihreä merkkivalo alkoi vilkkumaan eilen, mitä se tarkoittaa?;se palaa sen merkiksi että kaikki on kunnossa;46,45;FALSE
+18;B;2;3;2;Tenniksen kilpailumääräykset;Ajattelin ilmoittautua tenniskisoihin, mutta edellisistä on niin kauan aikaa, että haluaisin tarkistaa pari juttua. Olen tasolla 14, mihin tasoluokkaan minun kuuluu osallistua?;C;22,05;TRUE
+18;B;2;3;2;Tenniksen kilpailumääräykset;Olen vähän huolissani omasta jaksamisestani, kuinka pitkä tauko kahden normaalipituisen saman luokan ottelussa on vähintään?;60min;63,98;TRUE
+18;B;2;3;2;Tenniksen kilpailumääräykset;Kuinka montaa palloa tennisotteluissa voi korkeintaan käyttää?;6;92,65;TRUE
+18;B;2;3;2;Nelikopteri;Kiinnostaisi tietää muutama juttu tästä nelikopterista. Kuinka painava kopteri on?;1380g;27,50;TRUE
+18;B;2;3;2;Nelikopteri;Entä mikä on sen maksiminopeus?;20 m/s;73,03;TRUE
+18;B;2;3;2;Nelikopteri;Kuuluko kotiinpaluutoimintoon kotiin paluu, jos akku on vähissä?;kyllä;25,19;TRUE
+18;B;2;3;2;Kuivauskaappi;Kuinka korkea kuivauskaappi on?;1900mm;19,48;TRUE
+18;B;2;3;2;Kuivauskaappi;Kuinka kauan lingotun pyykin kuivaus pikakuivauksella kestää?;n. 180 min;84,69;TRUE
+18;B;2;3;2;Kuivauskaappi;Mitä pesuainetta kuivauskaapin puhdistukseen voi käyttää?;mietoa saippualiuosta;76,68;TRUE
+18;B;2;3;2;Jääkaappi;Tarvitsisin apua jääkaapin asennuksessa. Kuinka kauas sähköliedestä jääkaappi tulee vähintään sijoittaa?;3 cm;19,55;TRUE
+18;B;2;3;2;Painepesuri;Mikä on mallin P 130.2 nimellispaine?;12/120 MPa/baari;50,83;TRUE
+18;B;2;3;2;Painepesuri;Entä nimellisvirrankulutus?;2.300 kW;44,97;TRUE
+18;C;1;4;1;Miekkailu;Olen miettinyt miekkailun aloittamista, mutta en tiedä mikä kolmesta miekkailulajista pitäisi valita. Mikä kolmesta miekkatyypistä (kalpa, floretti, säilä) saa olla painavin?;"kapla
+";58,17;TRUE
+18;C;1;4;1;Miekkailu;Kuinka paljon se saa enintään painaa?;770g;52,01;TRUE
+18;C;1;4;1;Generaattori;Missä tätä generaattoria on tarkoitus käyttää?;asuntovaunussa;109,48;TRUE
+18;C;1;4;1;Generaattori;Kuinka paljon se painaa?;96,5kg;38,15;TRUE
+18;C;1;4;1;Generaattori;Mitä lisävarusteita generaattoriin on saatavana?;PR 25044, ulkoinen tiivistesarja;205,88;TRUE
+18;C;1;4;1;Päältäajettava ruohonleikkuri;Haluaisin vertailla kahta ruohonleikkurimallia, LM2148 M ja LM2153 MD. Kummassa näistä on suurempi teho?;LM2153 MD;111,28;TRUE
+18;C;1;4;1;Päältäajettava ruohonleikkuri;Entä onko niiden polttoainesäiliöiden tilavuuksissa eroa?;ei;50,24;TRUE
+18;C;1;4;1;Päältäajettava ruohonleikkuri;Mitkä niiden leikkuuleveydet ovat?;48 ja 53 mm;139,48;TRUE
+18;C;1;4;1;Kamiina;Voinko käyttää ostamani kamiinan polttoaineena sytytysnestettä?;ei;132,39;TRUE
+18;C;1;4;1;Kamiina;Entä mitä materiaalia keittolevy on?;valurautaa;47,71;TRUE
+18;C;1;4;1;Kamiina;Okei, sitten vielä yksi. Kuinka pitkä takuu kamiinalla on?;12 kuukautta;79,80;TRUE
+18;D;2;4;4;Jalkapallosäännöt;Ajattelin pitää tietovisan eri urheilulajeista ja mietin tässä jalkapallokysymyksiä, tarvitsisin niihin vastaukset. Ensimmäiseksi, mikä on pelikentän sivurajan minimipituus?;90 m;33,79;TRUE
+18;D;2;4;4;Jalkapallosäännöt;Mikä on pallon ympärysmitta?;68-70cm;79,74;TRUE
+18;D;2;4;4;Jalkapallosäännöt;Kuinka monta pelaajaa joukkueessa saa olla enintään?;11;97,73;TRUE
+18;D;2;4;4;Jalkapallosäännöt;Sitten vielä yksi. Kuinka kaukana vastapuolen pelaajien pitää olla kulmakaaresta kulmapotkutilanteessa?;9,15 m;30,22;TRUE
+18;D;2;4;4;Langattomat Bluetooth-kuulokkeet;Ostin juuri uudet Bluetooth-kuulokkeet ja tarvitsisin vastauksen muutamaan kysymykseen. Mitä kaikkea pakkauksen pitäisi sisältää?;kuulokkeet, USB-latauskaapelin ja pikaoppaan;55,57;TRUE
+18;D;2;4;4;Langattomat Bluetooth-kuulokkeet;OK, minulta näyttäisi puuttuvan ohjeet ja siksi tässä kyselen. Yritin muodostaa pariliitosta, mutta se kysyy jotain salasanaa. Mikä se mahtaa olla?;0;150,58;TRUE
+18;D;2;4;4;Langattomat Bluetooth-kuulokkeet;Kuinka kauan kuulokkeiden lataaminen pitäisi yleensä kestää?;2 tuntia;52,04;TRUE
+18;D;2;4;4;Langattomat Bluetooth-kuulokkeet;Kuinka suuri kuulokkeiden toimintasäde on?;jopa 10 m;53,78;TRUE
+18;D;2;4;4;Ompelukone;Mikä on tässä ompelukoneessa ompelen enimmäisleveys?;5 mm;154,11;TRUE
+18;D;2;4;4;Ompelukone;Entä mille välille ompelen pituuden voi asettaa siksak-ompelussa?;0,5-4;86,28;TRUE
+18;D;2;4;4;Ompelukone;Kuinka painava kone on?;5 kg;47,19;TRUE
+18;D;2;4;4;Mikroaaltouuni;Minulla olisi pari kysymystä viime viikolla ostamastani mikrosta. Luulen että siinä on jokin häiriö, koska näytössä palaa kolme nollaa. Mikä voisi olla syy tähän?;sähkökatkos;78,22;TRUE
+18;D;2;4;4;Mikroaaltouuni;Selvä. Entä mikä on suurin teho jonka voin valita?;800 W;96,38;TRUE
+18;D;2;4;4;Mikroaaltouuni;Mitä tällä teholla tulisi kuumentaa?;nesteitä;54,47;TRUE
+19;A;1;3;4;Televisio;Yritän muodostaa internet-yhteyttä ostamaani televisioon, mutta se ei tunnu onnistuvan. Mikä on minimi verkkoyhteyden nopeus, jotta internet-yhteys voidaan muodostaa?;10 Mbps;45,23;TRUE
+19;A;1;3;4;Televisio;Kytkin USB-näppäimistön televisioon, millä painikkeella pääsen palaamaan valikossa edelliseen näyttöön?;ESC-näppäin;133,75;TRUE
+19;A;1;3;4;Televisio;Entä mitä Windows-näppäin tekee?;Näyttää television asetukset;75,88;TRUE
+19;A;1;3;4;Grilli;Mietin grillin ostoa ja olisi pari kysymystä siitä. Mitkä ovat grillauspinta-alan pituus ja leveys?;n. 49.6 x 90.0 cm;97,20;TRUE
+19;A;1;3;4;Grilli;Kuinka pitkä takuu grillillä on?;2 vuotta;26,95;TRUE
+19;A;1;3;4;Grilli;Entä mitä lisävarusteita grilliin on saatavana?;suojahuppu ja elektroninen grillivarras;77,83;TRUE
+19;A;1;3;4;Ompelukone;Mikä on tässä ompelukoneessa ompelen enimmäisleveys?;5 mm;65,20;TRUE
+19;A;1;3;4;Ompelukone;Entä mille välille ompelen pituuden voi asettaa siksak-ompelussa?;0,5-4;49,98;TRUE
+19;A;1;3;4;Ompelukone;Kuinka painava kone on?;5,0 kg;57,28;TRUE
+19;A;1;3;4;Taekwondon kilpailusäännöt;Lapseni on osallistumassa ensimmäiseen taekwondokilpailuun ja muutama asia on vielä epäselvä. Mihin kilpailuluokkaan hänen pitää osallistua? Hän on 9-vuotias.;C-juniorit;40,92;TRUE
+19;A;1;3;4;Taekwondon kilpailusäännöt;Käydäänkö tässä luokassa pyykkipoikaottelua?;Kyllä;63,41;TRUE
+19;A;1;3;4;Agility;Olen osallistumassa ensimmäistä kertaa agility-kilpailuun. Koirani säkäkorkeus on 40cm, mihin kilpailuluokkaan (koko) minun pitää osallistua?;Medi (M);73,26;TRUE
+19;A;1;3;4;Agility;Kuinka monta eri tasoluokkaa on olemassa?;kolme;27,29;TRUE
+19;B;2;3;2;Nelikopteri;Kiinnostaisi tietää muutama juttu tästä nelikopterista. Kuinka painava kopteri on?;1380 g;91,42;TRUE
+19;B;2;3;2;Nelikopteri;Entä mikä on sen maksiminopeus?;20 m/s;204,31;TRUE
+19;B;2;3;2;Arkkupakastin;Tarvitsisin vastauksen muutamaan kysymykseen, jotta tiedän ostanko arkkupakastimen. Kuinka leveä pakastin on?;595 mm;75,93;TRUE
+19;B;2;3;2;Arkkupakastin;Sitten kysymys asennuksesta. Voinko asentaa pakastimen varastoon, jossa on talvella +5 astetta lämmintä?;et;198,72;TRUE
+19;B;2;3;2;Arkkupakastin;Entä mikä on alhaisin lämpötila, jolle pakastimen voi säätää käyttöpaneelista?;-24 astetta;49,98;TRUE
+19;B;2;3;2;Kiuas;Minulla olisi pari kysymystä koskien kiuastanne. Millä etäisyydellä kiukaan pitää olla sen takana olevasta seinästä?;100mm;66,89;TRUE
+19;B;2;3;2;Kiuas;Mikä on pisin aika, jonka päähän kiukaan voi ajastaa lämpenemään?;8 tuntia;46,66;TRUE
+19;B;2;3;2;Kiuas;Saako löylyvetenä käyttää merivettä?;et;212,28;TRUE
+19;C;1;4;1;Jääkaappi;Tarvitsisin apua jääkaapin asennuksessa. Kuinka kauas sähköliedestä jääkaappi tulee vähintään sijoittaa?;3 cm;374,08;TRUE
+19;C;1;4;1;Jalkapallosäännöt;Ajattelin pitää tietovisan eri urheilulajeista ja mietin tässä jalkapallokysymyksiä, tarvitsisin niihin vastaukset. Ensimmäiseksi, mikä on pelikentän sivurajan minimipituus?;90 m;68,25;TRUE
+19;C;1;4;1;Pyykinpesukone;Olen miettinyt pesukoneen ostoa, ja haluasin kysyä pari juttua ennen päätöstä. Mikä on koneen leveys?;600 mm;284,63;TRUE
+19;D;2;4;3;Cheerleadingin kilpailusäännöt;Joukkueemme on osallistumassa cheerleadingin SM-kisoihin ja haluaisin selvittää muutaman asian kilpailusäännöistä. Kuinka suuri kilpailualue on SM-kisoissa?;12 x 12 m;44,74;FALSE
+19;D;2;4;3;Cheerleadingin kilpailusäännöt;Entä kuinka monta ulkoista spotteria joukkueella saa olla kilpailussa enintään?;6 kpl;376,50;TRUE
+19;D;2;4;3;Kamiina;Voinko käyttää ostamani kamiinan polttoaineena sytytysnestettä?;et;51,16;TRUE
+19;D;2;4;3;Kamiina;Entä mitä materiaalia keittolevy on?;valurauta;265,64;TRUE
+19;D;2;4;3;Koripallon pelisäännöt;Olen perustamassa koripallojoukkuetta ja olisi muutama kysymys. Kuinka monta pelaajaa joukkueessa voi enintään olla?;12;92,89;TRUE
+19;D;2;4;3;Koripallon pelisäännöt;Mitkä ovat pelikentän pituus ja leveys?;28 m pitkä ja 15 m leveä;236,06;TRUE
+19;D;2;4;3;Päältäajettava ruohonleikkuri;Haluaisin vertailla kahta ruohonleikkurimallia, LM2148 M ja LM2153 MD. Kummassa näistä on suurempi teho?;LM2153 MD;130,70;TRUE
+19;D;2;4;3;Päältäajettava ruohonleikkuri;Entä onko niiden polttoainesäiliöiden tilavuuksissa eroa?;ei ole;217,29;TRUE
+20;A;1;3;4;Langattomat Bluetooth-kuulokkeet;Ostin juuri uudet Bluetooth-kuulokkeet ja tarvitsisin vastauksen muutamaan kysymykseen. Mitä kaikkea pakkauksen pitäisi sisältää?;kuulokkeet ja latauskaapeli ja pikaopas;21,19;TRUE
+20;A;1;3;4;Langattomat Bluetooth-kuulokkeet;OK, minulta näyttäisi puuttuvan ohjeet ja siksi tässä kyselen. Yritin muodostaa pariliitosta, mutta se kysyy jotain salasanaa. Mikä se mahtaa olla?;Salasana on 0000;45,10;TRUE
+20;A;1;3;4;Langattomat Bluetooth-kuulokkeet;Kuinka kauan kuulokkeiden lataaminen pitäisi yleensä kestää?;2 tuntia;23,46;TRUE
+20;A;1;3;4;Langattomat Bluetooth-kuulokkeet;Kuinka suuri kuulokkeiden toimintasäde on?;10metriä;33,51;TRUE
+20;A;1;3;4;Taekwondon kilpailusäännöt;Lapseni on osallistumassa ensimmäiseen taekwondokilpailuun ja muutama asia on vielä epäselvä. Mihin kilpailuluokkaan hänen pitää osallistua? Hän on 9-vuotias.;värivyöt, C-juniorit;37,22;TRUE
+20;A;1;3;4;Taekwondon kilpailusäännöt;Käydäänkö tässä luokassa pyykkipoikaottelua?;kyllä;43,04;TRUE
+20;A;1;3;4;Taekwondon kilpailusäännöt;Mitä punnituksessa pitää olla päällä?;t-paita ja dobokin housut;19,25;TRUE
+20;A;1;3;4;Nelikopteri;Kiinnostaisi tietää muutama juttu tästä nelikopterista. Kuinka painava kopteri on?;1380 g;41,82;TRUE
+20;A;1;3;4;Nelikopteri;Entä mikä on sen maksiminopeus?;20m/s;24,07;TRUE
+20;A;1;3;4;Nelikopteri;Kuuluko kotiinpaluutoimintoon kotiin paluu, jos akku on vähissä?;Kyllä;57,31;TRUE
+20;A;1;3;4;Nelikopteri;Kuinka pitkä takuu kopterilla on?;1 vuosi;13,03;TRUE
+20;A;1;3;4;Tenniksen kilpailumääräykset;Ajattelin ilmoittautua tenniskisoihin, mutta edellisistä on niin kauan aikaa, että haluaisin tarkistaa pari juttua. Olen tasolla 14, mihin tasoluokkaan minun kuuluu osallistua?;C;16,35;TRUE
+20;A;1;3;4;Tenniksen kilpailumääräykset;Olen vähän huolissani omasta jaksamisestani, kuinka pitkä tauko kahden normaalipituisen saman luokan ottelussa on vähintään?;60 minuuttia;29,51;TRUE
+20;A;1;3;4;Tenniksen kilpailumääräykset;Kuinka montaa palloa tennisotteluissa voi korkeintaan käyttää?;6;38,40;TRUE
+20;A;1;3;4;Astianpesukone;Ostin astianpesukoneen, ja minulla olisi muutama kysymys siihen liittyen. Mikä ohjelma on tarkoitettu erittäin likaisten astioiden pesuun (ohjelman numero)?;3;12,79;TRUE
+20;A;1;3;4;Astianpesukone;Selvä, mitä lämpötilaa tämä ohjelma käyttää?;70 astetta;32,77;TRUE
+20;B;2;3;3;Miekkailu;Olen miettinyt miekkailun aloittamista, mutta en tiedä mikä kolmesta miekkailulajista pitäisi valita. Mikä kolmesta miekkatyypistä (kalpa, floretti, säilä) saa olla painavin?;kalpa;34,25;TRUE
+20;B;2;3;3;Miekkailu;Kuinka paljon se saa enintään painaa?;770 grammaa;16,57;TRUE
+20;B;2;3;3;Miekkailu;Sitten vielä kiinnostaisi osuma-alueet. Mikä on säilämiekkailun osuma-alue?;koko vartalo vyötäröstä alaspäin;19,24;FALSE
+20;B;2;3;3;Miekkailu;Entä kalpamiekkailun?;koko keho;17,02;TRUE
+20;B;2;3;3;Cheerleadingin kilpailusäännöt;Joukkueemme on osallistumassa cheerleadingin SM-kisoihin ja haluaisin selvittää muutaman asian kilpailusäännöistä. Kuinka suuri kilpailualue on SM-kisoissa?;14x16 metriä;48,25;TRUE
+20;B;2;3;3;Cheerleadingin kilpailusäännöt;Entä kuinka monta ulkoista spotteria joukkueella saa olla kilpailussa enintään?;max 6;18,25;TRUE
+20;B;2;3;3;Cheerleadingin kilpailusäännöt;Saako ulkoinen spotteri tukea huojuvaa pyramidia?;ei ;34,23;TRUE
+20;B;2;3;3;Painepesuri;Mikä on mallin P 130.2 nimellispaine?;12MPa / 120baari;50,59;TRUE
+20;B;2;3;3;Painepesuri;Entä nimellisvirrankulutus?;2.300 kW;32,06;TRUE
+20;B;2;3;3;Painepesuri;Kuinka pitkä takuu laitteessa on?;kaksi vuotta;29,50;TRUE
+20;B;2;3;3;Uuni;Harkitsen tässä uunin ostoa, mutta haluaisin ensin tietää laitteen mitoista vähän. Mikä on leveimmän keittolevyn halkaisija?;180mm;18,63;TRUE
+20;B;2;3;3;Uuni;Entä kuinka monta kannatintasoa uunissa on?;4;43,00;TRUE
+20;B;2;3;3;Päältäajettava ruohonleikkuri;Haluaisin vertailla kahta ruohonleikkurimallia, LM2148 M ja LM2153 MD. Kummassa näistä on suurempi teho?;LM2153 MD;48,32;TRUE
+20;B;2;3;3;Päältäajettava ruohonleikkuri;Entä onko niiden polttoainesäiliöiden tilavuuksissa eroa?;ei;16,65;TRUE
+20;B;2;3;3;Päältäajettava ruohonleikkuri;Mitkä niiden leikkuuleveydet ovat?;48 mm ja 53 mm;33,50;TRUE
+20;B;2;3;3;Grilli;Mietin grillin ostoa ja olisi pari kysymystä siitä. Mitkä ovat grillauspinta-alan pituus ja leveys?;135.6cm ja 64cm;25,01;FALSE
+20;B;2;3;3;Grilli;Kuinka pitkä takuu grillillä on?;2 vuotta;15,14;TRUE
+20;B;2;3;3;Grilli;Entä mitä lisävarusteita grilliin on saatavana?;suojahuppu ja elektroninen grillivarras;24,84;TRUE
+20;C;1;4;1;Lämpöpumppu;Lämpöpumppuni ohjausjärjestelmän vihreä merkkivalo alkoi vilkkumaan eilen, mitä se tarkoittaa?;Jokin hälytys on aktiivisena;94,93;TRUE
+20;C;1;4;1;Lämpöpumppu;Mikä asetus pitää olla päällä, jotta ohjausjärjestelmä sallii vain sähkövastuksen toiminnan?;Lisälämpö;90,07;TRUE
+20;C;1;4;1;Lämpöpumppu;Entä mikä on oletussäätö lämpötilalle, jos otan lämmityksen pois?;17 astetta;145,86;TRUE
+20;C;1;4;1;Jääkaappi;Tarvitsisin apua jääkaapin asennuksessa. Kuinka kauas sähköliedestä jääkaappi tulee vähintään sijoittaa?;3cm;92,12;TRUE
+20;C;1;4;1;Jääkaappi;Olen kytkemässä jääkaappia toimintaan, laitoin juuri pistokkeen seinään ja nyt kuuluu joku hälytysääni. Mitä teen?;paina lämpötilavalitsinta 1;55,61;TRUE
+20;C;1;4;1;Jääkaappi;Jääkaapista kuuluu välillä naksahduksia. Kuuluvatko ne normaaleihin käyntiääniin?;Se on normaalia. Automaattinen sulatus käynnistyy;137,04;TRUE
+20;C;1;4;1;Jalkapallosäännöt;Ajattelin pitää tietovisan eri urheilulajeista ja mietin tässä jalkapallokysymyksiä, tarvitsisin niihin vastaukset. Ensimmäiseksi, mikä on pelikentän sivurajan minimipituus?;90m;54,92;TRUE
+20;C;1;4;1;Jalkapallosäännöt;Mikä on pallon ympärysmitta?;68-70cm;71,96;TRUE
+20;C;1;4;1;Jalkapallosäännöt;Kuinka monta pelaajaa joukkueessa saa olla enintään?;11;15,32;TRUE
+20;C;1;4;1;Jalkapallosäännöt;Sitten vielä yksi. Kuinka kaukana vastapuolen pelaajien pitää olla kulmakaaresta kulmapotkutilanteessa?;9,15metrin;76,53;TRUE
+20;C;1;4;1;Agility;Olen osallistumassa ensimmäistä kertaa agility-kilpailuun. Koirani säkäkorkeus on 40cm, mihin kilpailuluokkaan (koko) minun pitää osallistua?;Medi (M);60,47;TRUE
+20;C;1;4;1;Agility;Kuinka monta eri tasoluokkaa on olemassa?;3;63,25;TRUE
+20;C;1;4;1;Agility;Onko agilitykilpailun tarkoituksena yhtenä osa-aluuena koiran ulkonäön arviointi?;ei ole;36,00;TRUE
+20;C;1;4;1;Kuivauskaappi;Kuinka korkea kuivauskaappi on?;1900mm;64,57;TRUE
+20;D;2;4;2;Kamiina;Voinko käyttää ostamani kamiinan polttoaineena sytytysnestettä?;Ei saa;19,75;TRUE
+20;D;2;4;2;Kamiina;Entä mitä materiaalia keittolevy on?;valurautaa;69,55;TRUE
+20;D;2;4;2;Kamiina;Okei, sitten vielä yksi. Kuinka pitkä takuu kamiinalla on?;12 kuukautta;30,80;TRUE
+20;D;2;4;2;Generaattori;Missä tätä generaattoria on tarkoitus käyttää?;"Asuntovaunuissa, matkailuautoissa ja kaupallisessa käytössä olevissa ajoneuvoissa
+";56,35;TRUE
+20;D;2;4;2;Generaattori;Kuinka paljon se painaa?;96,5kg;70,51;TRUE
+20;D;2;4;2;Generaattori;Mitä lisävarusteita generaattoriin on saatavana?;ulkoinen tiivistesarja;31,52;TRUE
+20;D;2;4;2;Generaattori;Minkälainen huolto pitäisi tehdä generaattorin käytön ensimmäisenä kuukautena?;vaihdattaa öljy;37,97;TRUE
+20;D;2;4;2;Liesituuletin;Olen käyttänyt liesituuletinta jonkin aikaa ja mieleeni heräsi muutamia kysymyksiä siitä. Miten saan intensiivitehon päälle? Laitteessani on ohjauspaneeli 1.;paina painiketta +, kun tuuletin on teholla 3;95,74;TRUE
+20;D;2;4;2;Liesituuletin;Kuinka usein rasvasuodatin pitäisi puhdistaa?;vähintään 2 kuukauden välein;49,49;TRUE
+20;D;2;4;2;Liesituuletin;Entä mitä puhdistusainetta voi käyttää laitteen alumiini- ja muoviosien puhdistukseen?;Lasinpesuainetta ja pehmeää liinaa;50,10;TRUE
+20;D;2;4;2;Mankeli;Olen katsellut mankelia mutta tarvitsisin vähän lisätietoja, jotta tiedän ostanko sen. Mikä on mankelin syvyys?;314mm;46,29;TRUE
+20;D;2;4;2;Mankeli;Entä mankeliliinan leveys?;55cm;65,91;TRUE
+20;D;2;4;2;Mankeli;Mikä on lakanoiden mankeiloimisaika?;2-4min;26,45;TRUE
+20;D;2;4;2;Pyykinpesukone;Olen miettinyt pesukoneen ostoa, ja haluasin kysyä pari juttua ennen päätöstä. Mikä on koneen leveys?;600mm;25,69;TRUE
+20;D;2;4;2;Televisio;Yritän muodostaa internet-yhteyttä ostamaani televisioon, mutta se ei tunnu onnistuvan. Mikä on minimi verkkoyhteyden nopeus, jotta internet-yhteys voidaan muodostaa?;10 Mbps;79,31;TRUE
+20;D;2;4;2;Pöytätenniksen säännöt;Meillä on tässä kaverin kanssa erimielisyyksiä pöytätenniksen säännöistä. Mikä on pöydän pituus?;274 cm;84,09;TRUE
+21;A;1;3;3;Astianpesukone;Ostin astianpesukoneen, ja minulla olisi muutama kysymys siihen liittyen. Mikä ohjelma on tarkoitettu erittäin likaisten astioiden pesuun (ohjelman numero)?;3;23,28;TRUE
+21;A;1;3;3;Astianpesukone;Selvä, mitä lämpötilaa tämä ohjelma käyttää?;70C;47,29;TRUE
+21;A;1;3;3;Astianpesukone;Sitten vielä yksi kysymys koneen asetuksista. Asuinpaikassani veden kovuus on 32°dH, mihin asentoon vedenpehmennin tulee siis asettaa?;7;59,61;TRUE
+21;A;1;3;3;Liesituuletin;Olen käyttänyt liesituuletinta jonkin aikaa ja mieleeni heräsi muutamia kysymyksiä siitä. Miten saan intensiivitehon päälle? Laitteessani on ohjauspaneeli 1.;intensiiviteho boost 1 aktivoituu. Kun painat uudelleen painiketa + intensiiviteho 2 aktivoituu;91,26;TRUE
+21;A;1;3;3;Liesituuletin;Kuinka usein rasvasuodatin pitäisi puhdistaa?;noi 2kk välein;89,66;TRUE
+21;A;1;3;3;Liesituuletin;Entä mitä puhdistusainetta voi käyttää laitteen alumiini- ja muoviosien puhdistukseen?;lasinpesuaine;81,06;TRUE
+21;A;1;3;3;Mikroaaltouuni;Minulla olisi pari kysymystä viime viikolla ostamastani mikrosta. Luulen että siinä on jokin häiriö, koska näytössä palaa kolme nollaa. Mikä voisi olla syy tähän?;sähkökatko;33,78;TRUE
+21;A;1;3;3;Mikroaaltouuni;Selvä. Entä mikä on suurin teho jonka voin valita?;800W;60,09;TRUE
+21;A;1;3;3;Mikroaaltouuni;Mitä tällä teholla tulisi kuumentaa?;nesteitä;55,14;TRUE
+21;A;1;3;3;Mikroaaltouuni;Olen kuullut, että metalliastiaa ei saisi laittaa mikroon, mistä se johtuu?;mikroaallot eivät läpäise metallia;76,49;TRUE
+21;A;1;3;3;Pöytätenniksen säännöt;Meillä on tässä kaverin kanssa erimielisyyksiä pöytätenniksen säännöistä. Mikä on pöydän pituus?;274 cm.;86,18;TRUE
+21;A;1;3;3;Pöytätenniksen säännöt;Kuinka korkealle pallon kuuluu nousta pelaajan kämmenestä syötössä?;vähintää 16 cm;36,72;TRUE
+21;B;2;3;2;Taekwondon kilpailusäännöt;Lapseni on osallistumassa ensimmäiseen taekwondokilpailuun ja muutama asia on vielä epäselvä. Mihin kilpailuluokkaan hänen pitää osallistua? Hän on 9-vuotias.;C-juniorit;27,72;TRUE
+21;B;2;3;2;Taekwondon kilpailusäännöt;Käydäänkö tässä luokassa pyykkipoikaottelua?;anteeksi. käydään.;164,07;TRUE
+21;B;2;3;2;Taekwondon kilpailusäännöt;Mitä punnituksessa pitää olla päällä?;t-paitaa ja dobokin housuja (baji). Uskonnollisista syitä käytettävän pään peittävän hunnun (hijab) värin tulee olla valkoinen;51,97;TRUE
+21;B;2;3;2;Kuivauskaappi;Kuinka korkea kuivauskaappi on?;595mm;35,39;TRUE
+21;B;2;3;2;Kuivauskaappi;Kuinka kauan lingotun pyykin kuivaus pikakuivauksella kestää?;n.120min;74,56;TRUE
+21;B;2;3;2;Kuivauskaappi;Mitä pesuainetta kuivauskaapin puhdistukseen voi käyttää?;kaapin seinät puhdistetaan saippualiuoksella;45,99;TRUE
+21;B;2;3;2;Kamiina;Voinko käyttää ostamani kamiinan polttoaineena sytytysnestettä?;ei;57,14;TRUE
+21;B;2;3;2;Kamiina;Entä mitä materiaalia keittolevy on?;valurautaa;92,59;TRUE
+21;B;2;3;2;Kamiina;Okei, sitten vielä yksi. Kuinka pitkä takuu kamiinalla on?;12kk;48,36;TRUE
+21;B;2;3;2;Koripallon pelisäännöt;Olen perustamassa koripallojoukkuetta ja olisi muutama kysymys. Kuinka monta pelaajaa joukkueessa voi enintään olla?;12;38,10;TRUE
+21;B;2;3;2;Koripallon pelisäännöt;Mitkä ovat pelikentän pituus ja leveys?;28m pitkä ja 15m leveä;59,00;TRUE
+21;B;2;3;2;Langattomat Bluetooth-kuulokkeet;Ostin juuri uudet Bluetooth-kuulokkeet ja tarvitsisin vastauksen muutamaan kysymykseen. Mitä kaikkea pakkauksen pitäisi sisältää?;kuulokkeet, usb latauskaapeli ja pikaopas;59,75;TRUE
+21;B;2;3;2;Langattomat Bluetooth-kuulokkeet;OK, minulta näyttäisi puuttuvan ohjeet ja siksi tässä kyselen. Yritin muodostaa pariliitosta, mutta se kysyy jotain salasanaa. Mikä se mahtaa olla?;0;38,08;TRUE
+21;C;1;4;4;Tenniksen kilpailumääräykset;Ajattelin ilmoittautua tenniskisoihin, mutta edellisistä on niin kauan aikaa, että haluaisin tarkistaa pari juttua. Olen tasolla 14, mihin tasoluokkaan minun kuuluu osallistua?;C;25,58;TRUE
+21;C;1;4;4;Tenniksen kilpailumääräykset;Olen vähän huolissani omasta jaksamisestani, kuinka pitkä tauko kahden normaalipituisen saman luokan ottelussa on vähintään?;vähintään 60 min;131,77;TRUE
+21;C;1;4;4;Tenniksen kilpailumääräykset;Kuinka montaa palloa tennisotteluissa voi korkeintaan käyttää?;korkeitaan 6:tta;167,54;TRUE
+21;C;1;4;4;Grilli;Mietin grillin ostoa ja olisi pari kysymystä siitä. Mitkä ovat grillauspinta-alan pituus ja leveys?;n.49.6x90,0cm;37,96;TRUE
+21;C;1;4;4;Grilli;Kuinka pitkä takuu grillillä on?;2 vuotta;80,07;TRUE
+21;C;1;4;4;Grilli;Entä mitä lisävarusteita grilliin on saatavana?;suojahuppu, elektroninen grillivarras ;75,87;TRUE
+21;C;1;4;4;Televisio;Yritän muodostaa internet-yhteyttä ostamaani televisioon, mutta se ei tunnu onnistuvan. Mikä on minimi verkkoyhteyden nopeus, jotta internet-yhteys voidaan muodostaa?;10 Mbps;75,92;TRUE
+21;C;1;4;4;Televisio;Kytkin USB-näppäimistön televisioon, millä painikkeella pääsen palaamaan valikossa edelliseen näyttöön?;ESC-näppäin;85,75;TRUE
+21;C;1;4;4;Televisio;Entä mitä Windows-näppäin tekee?;näyttää television asetukset;129,49;TRUE
+21;C;1;4;4;Jääkaappi;Tarvitsisin apua jääkaapin asennuksessa. Kuinka kauas sähköliedestä jääkaappi tulee vähintään sijoittaa?;vähintään 3 cm;77,64;TRUE
+21;C;1;4;4;Jääkaappi;Olen kytkemässä jääkaappia toimintaan, laitoin juuri pistokkeen seinään ja nyt kuuluu joku hälytysääni. Mitä teen?;pakastinosassa on liian lämmintä!;119,71;FALSE
+21;C;1;4;4;Jääkaappi;Jääkaapista kuuluu välillä naksahduksia. Kuuluvatko ne normaaleihin käyntiääniin?;moottori,kytkimet tai magneettiventtiilit kytkeytyvät päälle ja pois päältä;102,96;FALSE
+21;C;1;4;4;Miekkailu;Olen miettinyt miekkailun aloittamista, mutta en tiedä mikä kolmesta miekkailulajista pitäisi valita. Mikä kolmesta miekkatyypistä (kalpa, floretti, säilä) saa olla painavin?;kalpa;102,27;TRUE
+21;D;2;4;1;Cheerleadingin kilpailusäännöt;Joukkueemme on osallistumassa cheerleadingin SM-kisoihin ja haluaisin selvittää muutaman asian kilpailusäännöistä. Kuinka suuri kilpailualue on SM-kisoissa?;Tanssisarjoissa 14x16m ja muissa vähintään 12x12m;52,08;FALSE
+21;D;2;4;1;Cheerleadingin kilpailusäännöt;Entä kuinka monta ulkoista spotteria joukkueella saa olla kilpailussa enintään?;maksimissaan 6:tta;102,07;TRUE
+21;D;2;4;1;Cheerleadingin kilpailusäännöt;Saako ulkoinen spotteri tukea huojuvaa pyramidia?;eivät saa;105,43;TRUE
+21;D;2;4;1;Lämpöpumppu;Lämpöpumppuni ohjausjärjestelmän vihreä merkkivalo alkoi vilkkumaan eilen, mitä se tarkoittaa?;"Tämä tarkoittaa hälytystä
+";86,27;TRUE
+21;D;2;4;1;Lämpöpumppu;Mikä asetus pitää olla päällä, jotta ohjausjärjestelmä sallii vain sähkövastuksen toiminnan?;lisälämpö;79,56;TRUE
+21;D;2;4;1;Lämpöpumppu;Entä mikä on oletussäätö lämpötilalle, jos otan lämmityksen pois?;17*;91,04;TRUE
+21;D;2;4;1;Mankeli;Olen katsellut mankelia mutta tarvitsisin vähän lisätietoja, jotta tiedän ostanko sen. Mikä on mankelin syvyys?;314mm;197,48;TRUE
+21;D;2;4;1;Mankeli;Entä mankeliliinan leveys?;730mm;15,75;FALSE
+21;D;2;4;1;Mankeli;Mikä on lakanoiden mankeiloimisaika?;2-4min;38,94;TRUE
+21;D;2;4;1;Generaattori;Missä tätä generaattoria on tarkoitus käyttää?;asuntovaunuissa, matkailuautoissa ja kaupallisessa käytössä olevissa ajoneuvoissa;145,99;TRUE
+21;D;2;4;1;Generaattori;Kuinka paljon se painaa?;96,5kg;37,23;TRUE
+22;A;1;3;3;Agility;Olen osallistumassa ensimmäistä kertaa agility-kilpailuun. Koirani säkäkorkeus on 40cm, mihin kilpailuluokkaan (koko) minun pitää osallistua?;M;71,75;TRUE
+22;A;1;3;3;Agility;Kuinka monta eri tasoluokkaa on olemassa?;3;41,59;TRUE
+22;A;1;3;3;Agility;Onko agilitykilpailun tarkoituksena yhtenä osa-aluuena koiran ulkonäön arviointi?;Ei;117,41;TRUE
+22;A;1;3;3;Ompelukone;Mikä on tässä ompelukoneessa ompelen enimmäisleveys?;5 mm;12,46;TRUE
+22;A;1;3;3;Ompelukone;Entä mille välille ompelen pituuden voi asettaa siksak-ompelussa?;4;108,29;FALSE
+22;A;1;3;3;Ompelukone;Kuinka painava kone on?;5kg;87,44;TRUE
+22;A;1;3;3;Uuni;Harkitsen tässä uunin ostoa, mutta haluaisin ensin tietää laitteen mitoista vähän. Mikä on leveimmän keittolevyn halkaisija?;180mm;76,82;TRUE
+22;A;1;3;3;Uuni;Entä kuinka monta kannatintasoa uunissa on?;4;111,14;TRUE
+22;A;1;3;3;Uuni;Sitten vielä pari kysymystä uunin asennuksesta. Voiko uunin asentaa 200 mm päähän seinästä?;Kyllä;58,49;TRUE
+22;A;1;3;3;Kiuas;Minulla olisi pari kysymystä koskien kiuastanne. Millä etäisyydellä kiukaan pitää olla sen takana olevasta seinästä?;10 cm;34,93;TRUE
+22;A;1;3;3;Jääkaappi;Tarvitsisin apua jääkaapin asennuksessa. Kuinka kauas sähköliedestä jääkaappi tulee vähintään sijoittaa?;3 cm;123,04;TRUE
+22;B;2;3;4;Nelikopteri;Kiinnostaisi tietää muutama juttu tästä nelikopterista. Kuinka painava kopteri on?;1380 g;44,70;TRUE
+22;B;2;3;4;Nelikopteri;Entä mikä on sen maksiminopeus?;20 m/s;34,19;TRUE
+22;B;2;3;4;Nelikopteri;Kuuluko kotiinpaluutoimintoon kotiin paluu, jos akku on vähissä?;Kyllä;104,86;TRUE
+22;B;2;3;4;Generaattori;Missä tätä generaattoria on tarkoitus käyttää?;Asuntovaunuissa, matkailuautoissa ja kaupallisessa käytössä olevissa ajoneuvoissa;49,67;TRUE
+22;B;2;3;4;Generaattori;Kuinka paljon se painaa?;96,5kg;12,33;TRUE
+22;B;2;3;4;Generaattori;Mitä lisävarusteita generaattoriin on saatavana?;Ulkoinen tiivistesarja;53,19;TRUE
+22;B;2;3;4;Generaattori;Minkälainen huolto pitäisi tehdä generaattorin käytön ensimmäisenä kuukautena?;Vaihda öljy;16,27;TRUE
+22;B;2;3;4;Grilli;Mietin grillin ostoa ja olisi pari kysymystä siitä. Mitkä ovat grillauspinta-alan pituus ja leveys?;49.6 x 90.0 cm;49,49;TRUE
+22;B;2;3;4;Grilli;Kuinka pitkä takuu grillillä on?;2v;15,24;TRUE
+22;B;2;3;4;Grilli;Entä mitä lisävarusteita grilliin on saatavana?;Suojahuppu ja elektroninen grillivarras;54,84;TRUE
+22;B;2;3;4;Langattomat Bluetooth-kuulokkeet;Ostin juuri uudet Bluetooth-kuulokkeet ja tarvitsisin vastauksen muutamaan kysymykseen. Mitä kaikkea pakkauksen pitäisi sisältää?;kuulokkeet, latauskaapeli ja pikaopas;19,53;TRUE
+22;B;2;3;4;Langattomat Bluetooth-kuulokkeet;OK, minulta näyttäisi puuttuvan ohjeet ja siksi tässä kyselen. Yritin muodostaa pariliitosta, mutta se kysyy jotain salasanaa. Mikä se mahtaa olla?;0;34,83;TRUE
+22;B;2;3;4;Langattomat Bluetooth-kuulokkeet;Kuinka kauan kuulokkeiden lataaminen pitäisi yleensä kestää?;5 tuntia;103,84;FALSE
+22;B;2;3;4;Kamiina;Voinko käyttää ostamani kamiinan polttoaineena sytytysnestettä?;Et;27,25;TRUE
+22;B;2;3;4;Kamiina;Entä mitä materiaalia keittolevy on?;Valurautaa;103,82;TRUE
+22;C;1;4;2;Cheerleadingin kilpailusäännöt;Joukkueemme on osallistumassa cheerleadingin SM-kisoihin ja haluaisin selvittää muutaman asian kilpailusäännöistä. Kuinka suuri kilpailualue on SM-kisoissa?;14x16 metriä;18,85;TRUE
+22;C;1;4;2;Cheerleadingin kilpailusäännöt;Entä kuinka monta ulkoista spotteria joukkueella saa olla kilpailussa enintään?;6;50,05;TRUE
+22;C;1;4;2;Cheerleadingin kilpailusäännöt;Saako ulkoinen spotteri tukea huojuvaa pyramidia?;Ei;39,31;TRUE
+22;C;1;4;2;Miekkailu;Olen miettinyt miekkailun aloittamista, mutta en tiedä mikä kolmesta miekkailulajista pitäisi valita. Mikä kolmesta miekkatyypistä (kalpa, floretti, säilä) saa olla painavin?;Kalpa;33,48;TRUE
+22;C;1;4;2;Miekkailu;Kuinka paljon se saa enintään painaa?;770 grammaa;22,58;TRUE
+22;C;1;4;2;Miekkailu;Sitten vielä kiinnostaisi osuma-alueet. Mikä on säilämiekkailun osuma-alue?;Koko vartalo vyötäröstä ylöspäin;60,80;TRUE
+22;C;1;4;2;Miekkailu;Entä kalpamiekkailun?;Koko keho;43,71;TRUE
+22;C;1;4;2;Lämpöpumppu;Lämpöpumppuni ohjausjärjestelmän vihreä merkkivalo alkoi vilkkumaan eilen, mitä se tarkoittaa?;jokin hälytys on aktiivinen;39,03;TRUE
+22;C;1;4;2;Lämpöpumppu;Mikä asetus pitää olla päällä, jotta ohjausjärjestelmä sallii vain sähkövastuksen toiminnan?;Salama;95,34;FALSE
+22;C;1;4;2;Lämpöpumppu;Entä mikä on oletussäätö lämpötilalle, jos otan lämmityksen pois?;17;46,54;TRUE
+22;C;1;4;2;Painepesuri;Mikä on mallin P 130.2 nimellispaine?;12/120;53,10;TRUE
+22;C;1;4;2;Painepesuri;Entä nimellisvirrankulutus?;2.300 kW;34,48;TRUE
+22;C;1;4;2;Painepesuri;Kuinka pitkä takuu laitteessa on?;2v;49,58;TRUE
+22;C;1;4;2;Tenniksen kilpailumääräykset;Ajattelin ilmoittautua tenniskisoihin, mutta edellisistä on niin kauan aikaa, että haluaisin tarkistaa pari juttua. Olen tasolla 14, mihin tasoluokkaan minun kuuluu osallistua?;C;70,50;TRUE
+22;C;1;4;2;Tenniksen kilpailumääräykset;Olen vähän huolissani omasta jaksamisestani, kuinka pitkä tauko kahden normaalipituisen saman luokan ottelussa on vähintään?;60 min;35,88;TRUE
+22;C;1;4;2;Arkkupakastin;Tarvitsisin vastauksen muutamaan kysymykseen, jotta tiedän ostanko arkkupakastimen. Kuinka leveä pakastin on?;595mm;20,92;TRUE
+22;C;1;4;2;Pöytätenniksen säännöt;Meillä on tässä kaverin kanssa erimielisyyksiä pöytätenniksen säännöistä. Mikä on pöydän pituus?;274cm;38,33;TRUE
+22;C;1;4;2;Pöytätenniksen säännöt;Kuinka korkealle pallon kuuluu nousta pelaajan kämmenestä syötössä?;16 cm;30,98;TRUE
+22;C;1;4;2;Koripallon pelisäännöt;Olen perustamassa koripallojoukkuetta ja olisi muutama kysymys. Kuinka monta pelaajaa joukkueessa voi enintään olla?;12;28,98;TRUE
+22;D;2;4;1;Liesituuletin;Olen käyttänyt liesituuletinta jonkin aikaa ja mieleeni heräsi muutamia kysymyksiä siitä. Miten saan intensiivitehon päälle? Laitteessani on ohjauspaneeli 1.;Paina painiketta +;183,42;TRUE
+22;D;2;4;1;Liesituuletin;Kuinka usein rasvasuodatin pitäisi puhdistaa?;2 kuukauden välein;62,62;TRUE
+22;D;2;4;1;Liesituuletin;Entä mitä puhdistusainetta voi käyttää laitteen alumiini- ja muoviosien puhdistukseen?;Lasinpesuaine;13,74;TRUE
+22;D;2;4;1;Päältäajettava ruohonleikkuri;Haluaisin vertailla kahta ruohonleikkurimallia, LM2148 M ja LM2153 MD. Kummassa näistä on suurempi teho?;LM2153 MD;29,01;TRUE
+22;D;2;4;1;Päältäajettava ruohonleikkuri;Entä onko niiden polttoainesäiliöiden tilavuuksissa eroa?;Ei;168,24;TRUE
+22;D;2;4;1;Päältäajettava ruohonleikkuri;Mitkä niiden leikkuuleveydet ovat?;48mm ja 53mm;21,54;TRUE
+22;D;2;4;1;Televisio;Yritän muodostaa internet-yhteyttä ostamaani televisioon, mutta se ei tunnu onnistuvan. Mikä on minimi verkkoyhteyden nopeus, jotta internet-yhteys voidaan muodostaa?;10 Mbps;154,05;TRUE
+22;D;2;4;1;Televisio;Kytkin USB-näppäimistön televisioon, millä painikkeella pääsen palaamaan valikossa edelliseen näyttöön?;ESC-näppäin;120,50;TRUE
+22;D;2;4;1;Televisio;Entä mitä Windows-näppäin tekee?;Näyttää television asetukset;21,01;TRUE
+22;D;2;4;1;Kuivausrumpu;Haluaisin kysyä pari kysymystä kuivausrummusta ennen ostopäätöstä. Kuinka leveä kuivausrumpu on?;600mm;93,92;TRUE
+22;D;2;4;1;Kuivausrumpu;Mikä on täysin kuivaksi kuivaavan ohjelman maksimitäyttömäärä?;3,5kg;115,44;FALSE
+22;D;2;4;1;Kuivausrumpu;Kuuluuko ajastettu kuivaus laitteen lisätoimintoihin?;Kyllä;114,86;TRUE
+22;D;2;4;1;Kuivausrumpu;Entä onko laitteessa ohjelmaa villavaatteille?;Kyllä;41,09;TRUE
+23;A;1;3;1;Arkkupakastin;Tarvitsisin vastauksen muutamaan kysymykseen, jotta tiedän ostanko arkkupakastimen. Kuinka leveä pakastin on?;595 mm;22,75;TRUE
+23;A;1;3;1;Arkkupakastin;Sitten kysymys asennuksesta. Voinko asentaa pakastimen varastoon, jossa on talvella +5 astetta lämmintä?;ei;30,51;TRUE
+23;A;1;3;1;Arkkupakastin;Entä mikä on alhaisin lämpötila, jolle pakastimen voi säätää käyttöpaneelista?;-24C;77,62;TRUE
+23;A;1;3;1;Tenniksen kilpailumääräykset;Ajattelin ilmoittautua tenniskisoihin, mutta edellisistä on niin kauan aikaa, että haluaisin tarkistaa pari juttua. Olen tasolla 14, mihin tasoluokkaan minun kuuluu osallistua?;C;31,63;TRUE
+23;A;1;3;1;Tenniksen kilpailumääräykset;Olen vähän huolissani omasta jaksamisestani, kuinka pitkä tauko kahden normaalipituisen saman luokan ottelussa on vähintään?;30 min;80,95;FALSE
+23;A;1;3;1;Tenniksen kilpailumääräykset;Kuinka montaa palloa tennisotteluissa voi korkeintaan käyttää?;6;71,78;TRUE
+23;A;1;3;1;Nelikopteri;Kiinnostaisi tietää muutama juttu tästä nelikopterista. Kuinka painava kopteri on?;1380 g;13,90;TRUE
+23;A;1;3;1;Nelikopteri;Entä mikä on sen maksiminopeus?;20 m/s;119,47;TRUE
+23;A;1;3;1;Jääkaappi;Tarvitsisin apua jääkaapin asennuksessa. Kuinka kauas sähköliedestä jääkaappi tulee vähintään sijoittaa?;3 cm;23,39;TRUE
+23;A;1;3;1;Astianpesukone;Ostin astianpesukoneen, ja minulla olisi muutama kysymys siihen liittyen. Mikä ohjelma on tarkoitettu erittäin likaisten astioiden pesuun (ohjelman numero)?;3;32,48;TRUE
+23;A;1;3;1;Astianpesukone;Selvä, mitä lämpötilaa tämä ohjelma käyttää?;70 C;11,30;TRUE
+23;B;2;3;4;Cheerleadingin kilpailusäännöt;Joukkueemme on osallistumassa cheerleadingin SM-kisoihin ja haluaisin selvittää muutaman asian kilpailusäännöistä. Kuinka suuri kilpailualue on SM-kisoissa?;14x16 metriä;36,73;TRUE
+23;B;2;3;4;Cheerleadingin kilpailusäännöt;Entä kuinka monta ulkoista spotteria joukkueella saa olla kilpailussa enintään?;6;43,47;TRUE
+23;B;2;3;4;Cheerleadingin kilpailusäännöt;Saako ulkoinen spotteri tukea huojuvaa pyramidia?;ei;23,19;TRUE
+23;B;2;3;4;Painepesuri;Mikä on mallin P 130.2 nimellispaine?;120 baaria;43,24;TRUE
+23;B;2;3;4;Painepesuri;Entä nimellisvirrankulutus?;2300 kW;20,50;TRUE
+23;B;2;3;4;Painepesuri;Kuinka pitkä takuu laitteessa on?;2 vuotta;13,96;TRUE
+23;B;2;3;4;Kamiina;Voinko käyttää ostamani kamiinan polttoaineena sytytysnestettä?;ei;66,13;TRUE
+23;B;2;3;4;Kamiina;Entä mitä materiaalia keittolevy on?;valurautaa;42,28;TRUE
+23;B;2;3;4;Kamiina;Okei, sitten vielä yksi. Kuinka pitkä takuu kamiinalla on?;12 kuukautta;27,98;TRUE
+23;B;2;3;4;Generaattori;Missä tätä generaattoria on tarkoitus käyttää?;ajoneuvoissa;42,04;FALSE
+23;B;2;3;4;Generaattori;Kuinka paljon se painaa?;96,5 kg;30,36;TRUE
+23;B;2;3;4;Generaattori;Mitä lisävarusteita generaattoriin on saatavana?;ulkoinen tiivistesarja;66,50;TRUE
+23;B;2;3;4;Taekwondon kilpailusäännöt;Lapseni on osallistumassa ensimmäiseen taekwondokilpailuun ja muutama asia on vielä epäselvä. Mihin kilpailuluokkaan hänen pitää osallistua? Hän on 9-vuotias.;C-juniorit;38,30;TRUE
+23;B;2;3;4;Taekwondon kilpailusäännöt;Käydäänkö tässä luokassa pyykkipoikaottelua?;kyllä;45,82;TRUE
+23;B;2;3;4;Jalkapallosäännöt;Ajattelin pitää tietovisan eri urheilulajeista ja mietin tässä jalkapallokysymyksiä, tarvitsisin niihin vastaukset. Ensimmäiseksi, mikä on pelikentän sivurajan minimipituus?;90 m;41,42;TRUE
+23;C;1;4;3;Agility;Olen osallistumassa ensimmäistä kertaa agility-kilpailuun. Koirani säkäkorkeus on 40cm, mihin kilpailuluokkaan (koko) minun pitää osallistua?;M;33,18;TRUE
+23;C;1;4;3;Agility;Kuinka monta eri tasoluokkaa on olemassa?;5;71,99;FALSE
+23;C;1;4;3;Agility;Onko agilitykilpailun tarkoituksena yhtenä osa-aluuena koiran ulkonäön arviointi?;ei;90,10;TRUE
+23;C;1;4;3;Pöytätenniksen säännöt;Meillä on tässä kaverin kanssa erimielisyyksiä pöytätenniksen säännöistä. Mikä on pöydän pituus?;274 cm;13,05;TRUE
+23;C;1;4;3;Pöytätenniksen säännöt;Kuinka korkealle pallon kuuluu nousta pelaajan kämmenestä syötössä?;16 cm;65,33;TRUE
+23;C;1;4;3;Pöytätenniksen säännöt;Entä kuinka kuinka monta pistettä pelaajan pitää vähintään saada, jotta voi voittaa erän?;11;64,03;TRUE
+23;C;1;4;3;Mankeli;Olen katsellut mankelia mutta tarvitsisin vähän lisätietoja, jotta tiedän ostanko sen. Mikä on mankelin syvyys?;314 mm;35,89;TRUE
+23;C;1;4;3;Mankeli;Entä mankeliliinan leveys?;55 cm;81,40;TRUE
+23;C;1;4;3;Mankeli;Mikä on lakanoiden mankeiloimisaika?;2-4 min;67,97;TRUE
+23;C;1;4;3;Ompelukone;Mikä on tässä ompelukoneessa ompelen enimmäisleveys?;5 mm;76,47;TRUE
+23;C;1;4;3;Ompelukone;Entä mille välille ompelen pituuden voi asettaa siksak-ompelussa?;0,5 - 4;61,26;TRUE
+23;C;1;4;3;Ompelukone;Kuinka painava kone on?;5 kg;50,61;TRUE
+23;C;1;4;3;Televisio;Yritän muodostaa internet-yhteyttä ostamaani televisioon, mutta se ei tunnu onnistuvan. Mikä on minimi verkkoyhteyden nopeus, jotta internet-yhteys voidaan muodostaa?;10 Mbps;31,26;TRUE
+23;C;1;4;3;Langattomat Bluetooth-kuulokkeet;Ostin juuri uudet Bluetooth-kuulokkeet ja tarvitsisin vastauksen muutamaan kysymykseen. Mitä kaikkea pakkauksen pitäisi sisältää?;kuulokkeet, usb-latauskaapeli, pikaopas;34,15;TRUE
+23;C;1;4;3;Langattomat Bluetooth-kuulokkeet;OK, minulta näyttäisi puuttuvan ohjeet ja siksi tässä kyselen. Yritin muodostaa pariliitosta, mutta se kysyy jotain salasanaa. Mikä se mahtaa olla?;0;95,56;TRUE
+23;C;1;4;3;Liesituuletin;Olen käyttänyt liesituuletinta jonkin aikaa ja mieleeni heräsi muutamia kysymyksiä siitä. Miten saan intensiivitehon päälle? Laitteessani on ohjauspaneeli 1.;aseta tuuletin teholle 3, paina painiketta +;88,75;TRUE
+23;C;1;4;3;Grilli;Mietin grillin ostoa ja olisi pari kysymystä siitä. Mitkä ovat grillauspinta-alan pituus ja leveys?;49.6cm x 90.0cm;53,69;TRUE
+23;D;2;4;2;Päältäajettava ruohonleikkuri;Haluaisin vertailla kahta ruohonleikkurimallia, LM2148 M ja LM2153 MD. Kummassa näistä on suurempi teho?;LM 2153 MD;44,29;TRUE
+23;D;2;4;2;Päältäajettava ruohonleikkuri;Entä onko niiden polttoainesäiliöiden tilavuuksissa eroa?;ei;56,69;TRUE
+23;D;2;4;2;Päältäajettava ruohonleikkuri;Mitkä niiden leikkuuleveydet ovat?;48 mm ja 53 mm;56,42;TRUE
+23;D;2;4;2;Mikroaaltouuni;Minulla olisi pari kysymystä viime viikolla ostamastani mikrosta. Luulen että siinä on jokin häiriö, koska näytössä palaa kolme nollaa. Mikä voisi olla syy tähän?;sähkökatko;58,07;TRUE
+23;D;2;4;2;Mikroaaltouuni;Selvä. Entä mikä on suurin teho jonka voin valita?;800 W;42,70;TRUE
+23;D;2;4;2;Mikroaaltouuni;Mitä tällä teholla tulisi kuumentaa?;nesteitä;44,11;TRUE
+23;D;2;4;2;Mikroaaltouuni;Olen kuullut, että metalliastiaa ei saisi laittaa mikroon, mistä se johtuu?;mikroaallot eivät läpäise metallia, ruoka jää kylmäksi;50,81;TRUE
+23;D;2;4;2;Pyykinpesukone;Olen miettinyt pesukoneen ostoa, ja haluasin kysyä pari juttua ennen päätöstä. Mikä on koneen leveys?;600 mm;58,97;TRUE
+23;D;2;4;2;Pyykinpesukone;Entä maksimitäyttömäärä?;7 kg;41,85;TRUE
+23;D;2;4;2;Pyykinpesukone;Voiko koneen lisätoimintoihin kuuluvalla ajastuksella ajastaa koneen käynnistymään vuorokauden päästä?;ei;28,19;TRUE
+23;D;2;4;2;Koripallon pelisäännöt;Olen perustamassa koripallojoukkuetta ja olisi muutama kysymys. Kuinka monta pelaajaa joukkueessa voi enintään olla?;12;46,73;TRUE
+23;D;2;4;2;Koripallon pelisäännöt;Mitkä ovat pelikentän pituus ja leveys?;28m pitkä ja 15m leveä;54,07;TRUE
+23;D;2;4;2;Koripallon pelisäännöt;Kuinka monta erää ottelussa pelataan?;4;26,21;TRUE
+23;D;2;4;2;Koripallon pelisäännöt;Entä kuinka monta minuuttia yksi erä kestää?;10;53,99;TRUE
+23;D;2;4;2;Kuivausrumpu;Haluaisin kysyä pari kysymystä kuivausrummusta ennen ostopäätöstä. Kuinka leveä kuivausrumpu on?;950 mm;57,37;TRUE
+23;D;2;4;2;Miekkailu;Olen miettinyt miekkailun aloittamista, mutta en tiedä mikä kolmesta miekkailulajista pitäisi valita. Mikä kolmesta miekkatyypistä (kalpa, floretti, säilä) saa olla painavin?;kalpa;40,76;TRUE
+24;A;1;3;2;Generaattori;Missä tätä generaattoria on tarkoitus käyttää?;asuntovaunuissa, matkailuautoissa ja kaupallisessa käytössä olevissa ajoneuvoissa. Ei vesikulkuneuvoissa;91,69;TRUE
+24;A;1;3;2;Generaattori;Kuinka paljon se painaa?;96,5kg;43,23;TRUE
+24;A;1;3;2;Generaattori;Mitä lisävarusteita generaattoriin on saatavana?;ulkoinen tiivistesarja;46,92;TRUE
+24;A;1;3;2;Generaattori;Minkälainen huolto pitäisi tehdä generaattorin käytön ensimmäisenä kuukautena?;Vaihtaa öljy;20,52;TRUE
+24;A;1;3;2;Pöytätenniksen säännöt;Meillä on tässä kaverin kanssa erimielisyyksiä pöytätenniksen säännöistä. Mikä on pöydän pituus?;274cm;107,47;TRUE
+24;A;1;3;2;Pöytätenniksen säännöt;Kuinka korkealle pallon kuuluu nousta pelaajan kämmenestä syötössä?;vähintään 16cm;45,83;TRUE
+24;A;1;3;2;Pöytätenniksen säännöt;Entä kuinka kuinka monta pistettä pelaajan pitää vähintään saada, jotta voi voittaa erän?;11 pistettä;56,40;TRUE
+24;A;1;3;2;Ompelukone;Mikä on tässä ompelukoneessa ompelen enimmäisleveys?;5mm;100,64;TRUE
+24;A;1;3;2;Ompelukone;Entä mille välille ompelen pituuden voi asettaa siksak-ompelussa?;0,5 - 4;67,61;TRUE
+24;A;1;3;2;Ompelukone;Kuinka painava kone on?;5kg;22,91;TRUE
+24;A;1;3;2;Kiuas;Minulla olisi pari kysymystä koskien kiuastanne. Millä etäisyydellä kiukaan pitää olla sen takana olevasta seinästä?;100mm;41,89;TRUE
+24;A;1;3;2;Kiuas;Mikä on pisin aika, jonka päähän kiukaan voi ajastaa lämpenemään?;8h;33,75;TRUE
+24;A;1;3;2;Jalkapallosäännöt;Ajattelin pitää tietovisan eri urheilulajeista ja mietin tässä jalkapallokysymyksiä, tarvitsisin niihin vastaukset. Ensimmäiseksi, mikä on pelikentän sivurajan minimipituus?;90m;24,73;TRUE
+24;A;1;3;2;Jalkapallosäännöt;Mikä on pallon ympärysmitta?;68-70cm;37,42;TRUE
+24;A;1;3;2;Koripallon pelisäännöt;Olen perustamassa koripallojoukkuetta ja olisi muutama kysymys. Kuinka monta pelaajaa joukkueessa voi enintään olla?;12;54,14;TRUE
+24;A;1;3;2;Koripallon pelisäännöt;Mitkä ovat pelikentän pituus ja leveys?;28m x 15m;22,91;TRUE
+24;B;2;3;3;Mikroaaltouuni;Minulla olisi pari kysymystä viime viikolla ostamastani mikrosta. Luulen että siinä on jokin häiriö, koska näytössä palaa kolme nollaa. Mikä voisi olla syy tähän?;Sähkökatko;39,05;TRUE
+24;B;2;3;3;Mikroaaltouuni;Selvä. Entä mikä on suurin teho jonka voin valita?;800W;29,95;TRUE
+24;B;2;3;3;Mikroaaltouuni;Mitä tällä teholla tulisi kuumentaa?;Nestettä;36,99;TRUE
+24;B;2;3;3;Mikroaaltouuni;Olen kuullut, että metalliastiaa ei saisi laittaa mikroon, mistä se johtuu?;Mikroaallot eivät läpäise metallia. ;30,44;TRUE
+24;B;2;3;3;Astianpesukone;Ostin astianpesukoneen, ja minulla olisi muutama kysymys siihen liittyen. Mikä ohjelma on tarkoitettu erittäin likaisten astioiden pesuun (ohjelman numero)?;3;47,77;TRUE
+24;B;2;3;3;Astianpesukone;Selvä, mitä lämpötilaa tämä ohjelma käyttää?;70 C;43,84;TRUE
+24;B;2;3;3;Astianpesukone;Sitten vielä yksi kysymys koneen asetuksista. Asuinpaikassani veden kovuus on 32°dH, mihin asentoon vedenpehmennin tulee siis asettaa?;7;48,11;TRUE
+24;B;2;3;3;Painepesuri;Mikä on mallin P 130.2 nimellispaine?;12/120 MPa / Baari;52,18;TRUE
+24;B;2;3;3;Painepesuri;Entä nimellisvirrankulutus?;2300kW;60,50;TRUE
+24;B;2;3;3;Painepesuri;Kuinka pitkä takuu laitteessa on?;kaksi vuotta;22,63;TRUE
+24;B;2;3;3;Uuni;Harkitsen tässä uunin ostoa, mutta haluaisin ensin tietää laitteen mitoista vähän. Mikä on leveimmän keittolevyn halkaisija?;500mm;41,25;FALSE
+24;B;2;3;3;Uuni;Entä kuinka monta kannatintasoa uunissa on?;4;36,96;TRUE
+24;B;2;3;3;Kamiina;Voinko käyttää ostamani kamiinan polttoaineena sytytysnestettä?;Et;48,10;TRUE
+24;B;2;3;3;Pyykinpesukone;Olen miettinyt pesukoneen ostoa, ja haluasin kysyä pari juttua ennen päätöstä. Mikä on koneen leveys?;600mm;39,75;TRUE
+24;C;1;4;1;Lämpöpumppu;Lämpöpumppuni ohjausjärjestelmän vihreä merkkivalo alkoi vilkkumaan eilen, mitä se tarkoittaa?;vihreän merkkivalon vilkuessa jokin hälytys on aktiivisena;189,10;TRUE
+24;C;1;4;1;Miekkailu;Olen miettinyt miekkailun aloittamista, mutta en tiedä mikä kolmesta miekkailulajista pitäisi valita. Mikä kolmesta miekkatyypistä (kalpa, floretti, säilä) saa olla painavin?;Kalpa saa painaa eniten, 770 grammaa;53,46;TRUE
+24;C;1;4;1;Miekkailu;Kuinka paljon se saa enintään painaa?;770 grammaa;6,98;TRUE
+24;C;1;4;1;Miekkailu;Sitten vielä kiinnostaisi osuma-alueet. Mikä on säilämiekkailun osuma-alue?;Vyötärön yläpuolella olevat alueet;143,51;TRUE
+24;C;1;4;1;Arkkupakastin;Tarvitsisin vastauksen muutamaan kysymykseen, jotta tiedän ostanko arkkupakastimen. Kuinka leveä pakastin on?;595mm;131,28;TRUE
+24;C;1;4;1;Tenniksen kilpailumääräykset;Ajattelin ilmoittautua tenniskisoihin, mutta edellisistä on niin kauan aikaa, että haluaisin tarkistaa pari juttua. Olen tasolla 14, mihin tasoluokkaan minun kuuluu osallistua?;Tasoluokka C;138,03;TRUE
+24;C;1;4;1;Tenniksen kilpailumääräykset;Olen vähän huolissani omasta jaksamisestani, kuinka pitkä tauko kahden normaalipituisen saman luokan ottelussa on vähintään?;Vähintään 30 minuuttia;128,43;FALSE
+24;D;2;4;4;Kuivauskaappi;Kuinka korkea kuivauskaappi on?;1900mm;17,86;TRUE
+24;D;2;4;4;Kuivauskaappi;Kuinka kauan lingotun pyykin kuivaus pikakuivauksella kestää?;120min;101,36;TRUE
+24;D;2;4;4;Kuivauskaappi;Mitä pesuainetta kuivauskaapin puhdistukseen voi käyttää?;mieto saippualiuos;80,21;TRUE
+24;D;2;4;4;Liesituuletin;Olen käyttänyt liesituuletinta jonkin aikaa ja mieleeni heräsi muutamia kysymyksiä siitä. Miten saan intensiivitehon päälle? Laitteessani on ohjauspaneeli 1.;paina painiketta +, kun tuuletin on teholla 3;101,75;TRUE
+24;D;2;4;4;Liesituuletin;Kuinka usein rasvasuodatin pitäisi puhdistaa?;2kk;114,39;TRUE
+24;D;2;4;4;Liesituuletin;Entä mitä puhdistusainetta voi käyttää laitteen alumiini- ja muoviosien puhdistukseen?;pehmeä liina;117,06;FALSE
+24;D;2;4;4;Taekwondon kilpailusäännöt;Lapseni on osallistumassa ensimmäiseen taekwondokilpailuun ja muutama asia on vielä epäselvä. Mihin kilpailuluokkaan hänen pitää osallistua? Hän on 9-vuotias.;Värivyöt, C-juniorit;41,08;TRUE
+24;D;2;4;4;Taekwondon kilpailusäännöt;Käydäänkö tässä luokassa pyykkipoikaottelua?;kyllä;79,87;TRUE
+24;D;2;4;4;Taekwondon kilpailusäännöt;Mitä punnituksessa pitää olla päällä?;t-paita ja dobokin housut;81,85;TRUE
+24;D;2;4;4;Langattomat Bluetooth-kuulokkeet;Ostin juuri uudet Bluetooth-kuulokkeet ja tarvitsisin vastauksen muutamaan kysymykseen. Mitä kaikkea pakkauksen pitäisi sisältää?;Kuulokkeet, latauskaapeli sekä pikaopas;56,35;TRUE
+24;D;2;4;4;Langattomat Bluetooth-kuulokkeet;OK, minulta näyttäisi puuttuvan ohjeet ja siksi tässä kyselen. Yritin muodostaa pariliitosta, mutta se kysyy jotain salasanaa. Mikä se mahtaa olla?;0000;111,02;TRUE
+24;D;2;4;4;Langattomat Bluetooth-kuulokkeet;Kuinka kauan kuulokkeiden lataaminen pitäisi yleensä kestää?;2h;88,40;TRUE
+24;D;2;4;4;Langattomat Bluetooth-kuulokkeet;Kuinka suuri kuulokkeiden toimintasäde on?;jopa 10 metriä;93,16;TRUE
+24;D;2;4;4;Televisio;Yritän muodostaa internet-yhteyttä ostamaani televisioon, mutta se ei tunnu onnistuvan. Mikä on minimi verkkoyhteyden nopeus, jotta internet-yhteys voidaan muodostaa?;10 Mbps;83,92;TRUE
