@@ -1,17 +1,24 @@
+library(dplyr)
+library(tidyr)
+library(psych)
 library(lme4)
 library(lmerTest)
+library(ggplot2)
+library(lattice)
+library(corrplot)
+library(gridExtra)
 
 data.firstresponses <- read.table("csv/first_response_times.csv", header = T, sep = ";", dec = ",")
 
-# Anova
-data.firstresponses.aov <- with(data.firstresponses,
-	aov(first_response_time ~ as.factor(layout) * as.factor(chats) + Error(participant / (as.factor(layout) * as.factor(chats))))
-)
-print(summary(data.firstresponses.aov))
+# # Anova
+# data.firstresponses.aov <- with(data.firstresponses,
+# 	aov(first_response_time ~ as.factor(layout) * as.factor(chats) + Error(participant / (as.factor(layout) * as.factor(chats))))
+# )
+# print(summary(data.firstresponses.aov))
 
-# Linear mixed model
-m1 <- lmer(first_response_time ~ as.factor(layout) * as.factor(chats) + (1|participant) + (1|part) + (1|topic), data = data.firstresponses)
-print(summary(m1))
+# # Linear mixed model
+# m1 <- lmer(first_response_time ~ as.factor(layout) * as.factor(chats) + (1|participant) + (1|part) + (1|topic), data = data.firstresponses)
+# print(summary(m1))
 
 # dev.new()
 # print(densityplot(data.firstresponses$first_response_time))
@@ -26,19 +33,19 @@ colnames(data.firstresponses.mean) <- c("participant", "layout", "chats", "first
 data.firstresponses.mean.aov <- with(data.firstresponses.mean,
 	aov(first_response_time ~ as.factor(layout) * as.factor(chats) + Error(participant / (as.factor(layout) * as.factor(chats))))
 )
-print(summary(data.firstresponses.mean.aov))
+# print(summary(data.firstresponses.mean.aov))
 
 m2 <- lmer(first_response_time ~ as.factor(layout) * as.factor(chats) + (1|participant), data = data.firstresponses.mean)
 print(summary(m2))
 
 data.firstresponses.mean %>%
 	group_by(layout) %>%
-	summarise(sd = sd(first_response_time), response_time = mean(first_response_time)) %>%
+	summarise(sd = sd(first_response_time), max=max(first_response_time), min=min(first_response_time), median=median(first_response_time), mean=mean(first_response_time)) %>%
 	print(n=2)
 
 data.firstresponses.mean %>%
 	group_by(chats) %>%
-	summarise(sd = sd(first_response_time), response_time = mean(first_response_time)) %>%
+	summarise(sd = sd(first_response_time), max=max(first_response_time), min=min(first_response_time), median=median(first_response_time), mean=mean(first_response_time)) %>%
 	print(n=2)
 
 p1 <- ggplot(data.firstresponses.mean, aes(first_response_time)) +
@@ -118,12 +125,15 @@ data.firstresponses.upperq <- quantile(data.firstresponses$first_response_time)[
 mild.threshold.upper <- (data.firstresponses.iqr * 1.5) + data.firstresponses.upperq
 mild.threshold.lower <- data.firstresponses.lowerq - (data.firstresponses.iqr * 1.5)
 
-data.firstresponses.filtered <- data.firstresponses[which(data.firstresponses$first_response_time <= mild.threshold.upper), ]
+print(mild.threshold.lower)
+print(mild.threshold.upper)
+
+data.firstresponses.filtered <- data.firstresponses[which(data.firstresponses$first_response_time <= mild.threshold.upper & data.firstresponses$first_response_time > mild.threshold.lower), ]
 print(nrow(data.firstresponses))
 print(nrow(data.firstresponses.filtered))
 
-m1 <- lmer(first_response_time ~ as.factor(layout) * as.factor(chats) + (1|participant) + (1|part) + (1|topic), data = data.firstresponses.filtered)
-print(summary(m1))
+# m1 <- lmer(first_response_time ~ as.factor(layout) * as.factor(chats) + (1|participant) + (1|part) + (1|topic), data = data.firstresponses.filtered)
+# print(summary(m1))
 
 # dev.new()
 # print(densityplot(data.firstresponses.filtered$first_response_time))
@@ -137,19 +147,19 @@ colnames(data.firstresponses.filtered.mean) <- c("participant", "layout", "chats
 data.firstresponses.filtered.mean.aov <- with(data.firstresponses.filtered.mean,
 	aov(first_response_time ~ as.factor(layout) * as.factor(chats) + Error(participant / (as.factor(layout) * as.factor(chats))))
 )
-print(summary(data.firstresponses.filtered.mean.aov))
+# print(summary(data.firstresponses.filtered.mean.aov))
 
 m2 <- lmer(first_response_time ~ as.factor(layout) * as.factor(chats) + (1|participant), data = data.firstresponses.filtered.mean)
 print(summary(m2))
 
 data.firstresponses.filtered.mean %>%
 	group_by(layout) %>%
-	summarise(sd = sd(first_response_time), response_time = mean(first_response_time)) %>%
+	summarise(sd = sd(first_response_time), max=max(first_response_time), min=min(first_response_time), median=median(first_response_time), mean=mean(first_response_time)) %>%
 	print(n=2)
 
 data.firstresponses.filtered.mean %>%
 	group_by(chats) %>%
-	summarise(sd = sd(first_response_time), response_time = mean(first_response_time)) %>%
+	summarise(sd = sd(first_response_time), max=max(first_response_time), min=min(first_response_time), median=median(first_response_time), mean=mean(first_response_time)) %>%
 	print(n=2)
 
 p1 <- ggplot(data.firstresponses.filtered.mean, aes(first_response_time)) +

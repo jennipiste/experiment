@@ -1,5 +1,12 @@
+library(dplyr)
+library(tidyr)
+library(psych)
 library(lme4)
 library(lmerTest)
+library(ggplot2)
+library(lattice)
+library(corrplot)
+library(gridExtra)
 
 data.questions <- read.table("csv/q&a.csv", header = T, sep = ";", dec = ",")
 
@@ -20,7 +27,7 @@ print(densityplot(data.questions.waittime.mean$wait_time))
 data.questions.waittime.mean.aov <- with(data.questions.waittime.mean,
 	aov(wait_time ~ as.factor(layout) * as.factor(chats) + Error(participant / (as.factor(layout) * as.factor(chats))))
 )
-print(summary(data.questions.waittime.mean.aov))
+# print(summary(data.questions.waittime.mean.aov))
 
 # Linear mixed model
 m1 <- lmer(wait_time ~ as.factor(layout) * as.factor(chats) + (1|participant), data = data.questions.waittime.mean)
@@ -28,12 +35,12 @@ print(summary(m1))
 
 data.questions.waittime.mean %>%
 	group_by(layout) %>%
-	summarise(sd = sd(wait_time), response_time = mean(wait_time)) %>%
+	summarise(sd = sd(wait_time), max=max(wait_time), min=min(wait_time), median=median(wait_time), mean=mean(wait_time)) %>%
 	print(n=2)
 
 data.questions.waittime.mean %>%
 	group_by(chats) %>%
-	summarise(sd = sd(wait_time), response_time = mean(wait_time)) %>%
+	summarise(sd = sd(wait_time), max=max(wait_time), min=min(wait_time), median=median(wait_time), mean=mean(wait_time)) %>%
 	print(n=2)
 
 p1 <- ggplot(data.questions.waittime.mean, aes(wait_time)) +
@@ -116,7 +123,7 @@ mild.threshold.lower <- data.questions.lowerq - (data.questions.iqr * 1.5)
 print(mild.threshold.upper)
 print(mild.threshold.lower)
 
-data.questions.filtered <- data.questions[which(data.questions$wait_time <= mild.threshold.upper), ]
+data.questions.filtered <- data.questions[which(data.questions$wait_time <= mild.threshold.upper & data.questions$wait_time > mild.threshold.lower), ]
 print(nrow(data.questions))
 print(nrow(data.questions.filtered))
 
@@ -135,7 +142,7 @@ print(densityplot(data.questions.filtered.waittime.mean$wait_time))
 data.questions.filtered.waittime.mean.aov <- with(data.questions.filtered.waittime.mean,
 	aov(wait_time ~ as.factor(layout) * as.factor(chats) + Error(participant / (as.factor(layout) * as.factor(chats))))
 )
-print(summary(data.questions.filtered.waittime.mean.aov))
+# print(summary(data.questions.filtered.waittime.mean.aov))
 
 # Linear mixed model
 m1 <- lmer(wait_time ~ as.factor(layout) * as.factor(chats) + (1|participant), data = data.questions.filtered.waittime.mean)
@@ -143,12 +150,12 @@ print(summary(m1))
 
 data.questions.filtered.waittime.mean %>%
 	group_by(layout) %>%
-	summarise(sd = sd(wait_time), response_time = mean(wait_time)) %>%
+	summarise(sd = sd(wait_time), max=max(wait_time), min=min(wait_time), median=median(wait_time), mean=mean(wait_time)) %>%
 	print(n=2)
 
 data.questions.filtered.waittime.mean %>%
 	group_by(chats) %>%
-	summarise(sd = sd(wait_time), response_time = mean(wait_time)) %>%
+	summarise(sd = sd(wait_time), max=max(wait_time), min=min(wait_time), median=median(wait_time), mean=mean(wait_time)) %>%
 	print(n=2)
 
 p1 <- ggplot(data.questions.filtered.waittime.mean, aes(wait_time)) +

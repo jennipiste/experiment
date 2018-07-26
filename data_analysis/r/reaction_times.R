@@ -1,20 +1,27 @@
+library(dplyr)
+library(tidyr)
+library(psych)
 library(lme4)
 library(lmerTest)
+library(ggplot2)
+library(lattice)
+library(corrplot)
+library(gridExtra)
 
 data.reactions <- read.table("csv/reaction_times.csv", header = T, sep = ";", dec = ",")
 
 # TODO: Should reaction time be first calculated as average for each dialog????
 # Greater effect without taking participant averages?
 
-# Anova
-data.reactions.aov <- with(data.reactions,
-	aov(reaction_time ~ as.factor(layout) * as.factor(chats) + Error(participant / (as.factor(layout) * as.factor(chats))))
-)
-# print(summary(data.reactions.aov))
+# # Anova
+# data.reactions.aov <- with(data.reactions,
+# 	aov(reaction_time ~ as.factor(layout) * as.factor(chats) + Error(participant / (as.factor(layout) * as.factor(chats))))
+# )
+# # print(summary(data.reactions.aov))
 
-# Linear mixed model
-m1 <- lmer(reaction_time ~ as.factor(layout) * as.factor(chats) + (1|participant) + (1|part) + (1|topic), data = data.reactions)
-print(summary(m1))
+# # Linear mixed model
+# m1 <- lmer(reaction_time ~ as.factor(layout) * as.factor(chats) + (1|participant) + (1|part) + (1|topic), data = data.reactions)
+# print(summary(m1))
 
 # dev.new()
 # print(densityplot(data.reactions$reaction_time))
@@ -36,12 +43,12 @@ print(summary(m2))
 
 data.reactions.mean %>%
 	group_by(layout) %>%
-	summarise(sd = sd(reaction_time), reaction_time = mean(reaction_time)) %>%
+	summarise(sd = sd(reaction_time), max=max(reaction_time), min=min(reaction_time), median=median(reaction_time), mean=mean(reaction_time)) %>%
 	print(n=2)
 
 data.reactions.mean %>%
 	group_by(chats) %>%
-	summarise(sd = sd(reaction_time), reaction_time = mean(reaction_time)) %>%
+	summarise(sd = sd(reaction_time), max=max(reaction_time), min=min(reaction_time), median=median(reaction_time), mean=mean(reaction_time)) %>%
 	print(n=2)
 
 p1 <- ggplot(data.reactions.mean, aes(reaction_time)) +
@@ -121,12 +128,15 @@ data.reactions.upperq <- quantile(data.reactions$reaction_time)[[4]]
 mild.threshold.upper <- (data.reactions.iqr * 1.5) + data.reactions.upperq
 mild.threshold.lower <- data.reactions.lowerq - (data.reactions.iqr * 1.5)
 
-data.reactions.filtered <- data.reactions[which(data.reactions$reaction_time <= mild.threshold.upper), ]
+print(mild.threshold.upper)
+print(mild.threshold.lower)
+
+data.reactions.filtered <- data.reactions[which(data.reactions$reaction_time <= mild.threshold.upper & data.reactions$reaction_time > mild.threshold.lower), ]
 print(nrow(data.reactions))
 print(nrow(data.reactions.filtered))
 
-m1 <- lmer(reaction_time ~ as.factor(layout) * as.factor(chats) + (1|participant) + (1|part) + (1|topic), data = data.reactions.filtered)
-print(summary(m1))
+# m1 <- lmer(reaction_time ~ as.factor(layout) * as.factor(chats) + (1|participant) + (1|part) + (1|topic), data = data.reactions.filtered)
+# print(summary(m1))
 
 # dev.new()
 # print(densityplot(data.reactions.filtered$reaction_time))
@@ -147,12 +157,12 @@ print(summary(m2))
 
 data.reactions.filtered.mean %>%
 	group_by(layout) %>%
-	summarise(sd = sd(reaction_time), reaction_time = mean(reaction_time)) %>%
+	summarise(sd = sd(reaction_time), max=max(reaction_time), min=min(reaction_time), median=median(reaction_time), mean=mean(reaction_time)) %>%
 	print(n=2)
 
 data.reactions.filtered.mean %>%
 	group_by(chats) %>%
-	summarise(sd = sd(reaction_time), reaction_time = mean(reaction_time)) %>%
+	summarise(sd = sd(reaction_time), max=max(reaction_time), min=min(reaction_time), median=median(reaction_time), mean=mean(reaction_time)) %>%
 	print(n=2)
 
 p1 <- ggplot(data.reactions.filtered.mean, aes(reaction_time)) +
@@ -168,8 +178,8 @@ p1 <- ggplot(data.reactions.filtered.mean, aes(reaction_time)) +
 		  legend.title = element_text(size=16, face="bold"),
 		  legend.text = element_text(size=16, face="bold"),
 		  legend.background = element_rect(fill = "white", colour = "black", linetype = "solid"))
-dev.new()
-print(p1)
+# dev.new()
+# print(p1)
 
 p2 <- ggplot(data.reactions.filtered.mean, aes(reaction_time)) +
 	scale_fill_manual(name = "Chats",
@@ -184,8 +194,8 @@ p2 <- ggplot(data.reactions.filtered.mean, aes(reaction_time)) +
 		  legend.title = element_text(size=16, face="bold"),
 		  legend.text = element_text(size=16, face="bold"),
 		  legend.background = element_rect(fill = "white", colour = "black", linetype = "solid"))
-dev.new()
-print(p2)
+# dev.new()
+# print(p2)
 
 p3 <- ggplot(data.reactions.filtered.mean %>%
 	group_by(layout) %>%

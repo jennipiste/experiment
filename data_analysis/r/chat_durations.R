@@ -1,20 +1,27 @@
+library(dplyr)
+library(tidyr)
+library(psych)
 library(lme4)
 library(lmerTest)
+library(ggplot2)
+library(lattice)
+library(corrplot)
+library(gridExtra)
 
 data.durations <- read.table("csv/chat_durations.csv", header = T, sep = ";", dec = ",")
 
-# Anova
-data.durations.aov <- with(data.durations,
-	aov(duration ~ as.factor(layout) * as.factor(chats) + Error(participant / (as.factor(layout) * as.factor(chats))))
-)
-print(summary(data.durations.aov))
+# # Anova
+# data.durations.aov <- with(data.durations,
+# 	aov(duration ~ as.factor(layout) * as.factor(chats) + Error(participant / (as.factor(layout) * as.factor(chats))))
+# )
+# # print(summary(data.durations.aov))
 
-# Linear mixed model
-m1 <- lmer(duration ~ as.factor(layout) * as.factor(chats) + (1|participant) + (1|part) + (1|topic), data = data.durations)
-print(summary(m1))
+# # Linear mixed model
+# m1 <- lmer(duration ~ as.factor(layout) * as.factor(chats) + (1|participant) + (1|part) + (1|topic), data = data.durations)
+# print(summary(m1))
 
-dev.new()
-print(densityplot(data.durations$duration))
+# dev.new()
+# print(densityplot(data.durations$duration))
 
 # Both again with participant means for each condition
 data.durations.mean <- aggregate(data.durations$duration,
@@ -26,20 +33,20 @@ colnames(data.durations.mean) <- c("participant", "layout", "chats", "duration")
 data.durations.mean.aov <- with(data.durations.mean,
 	aov(duration ~ as.factor(layout) * as.factor(chats) + Error(participant / (as.factor(layout) * as.factor(chats))))
 )
-print(summary(data.durations.mean.aov))
+# print(summary(data.durations.mean.aov))
 
 m2 <- lmer(duration ~ as.factor(layout) * as.factor(chats) + (1|participant), data = data.durations.mean)
 print(summary(m2))
-print(anova(m2))
+# print(anova(m2))
 
 data.durations.mean %>%
 	group_by(layout) %>%
-	summarise(sd = sd(duration), chat_duration = mean(duration)) %>%
+	summarise(sd = sd(duration), max=max(duration), min=min(duration), median=median(duration), mean=mean(duration)) %>%
 	print(n=2)
 
 data.durations.mean %>%
 	group_by(chats) %>%
-	summarise(sd = sd(duration), chat_duration = mean(duration)) %>%
+	summarise(sd = sd(duration), max=max(duration), min=min(duration), median=median(duration), mean=mean(duration)) %>%
 	print(n=2)
 
 p1 <- ggplot(data.durations.mean, aes(duration)) +
@@ -122,7 +129,7 @@ mild.threshold.lower <- data.durations.lowerq - (data.durations.iqr * 1.5)
 print(mild.threshold.upper)
 print(mild.threshold.lower)
 
-data.durations.filtered <- data.durations[which(data.durations$duration <= mild.threshold.upper), ]
+data.durations.filtered <- data.durations[which(data.durations$duration <= mild.threshold.upper & data.durations$duration > mild.threshold.lower), ]
 print(nrow(data.durations))
 print(nrow(data.durations.filtered))
 
