@@ -25,3 +25,9 @@ yarn-error.log*
 .vscode/
 
 *.sqlite3
+
+data.xls
+
+.RData
+.Rapp.history
+.Rhistory
