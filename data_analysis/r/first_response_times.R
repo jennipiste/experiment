@@ -26,12 +26,6 @@ data.firstresponses.filtered <- data.firstresponses[which(data.firstresponses$fi
 print(nrow(data.firstresponses))
 print(nrow(data.firstresponses.filtered))
 
-# data.firstresponses.filtered.mean <- aggregate(data.firstresponses.filtered$first_response_time,
-# 	by = list(data.firstresponses.filtered$participant, data.firstresponses.filtered$condition, data.firstresponses.filtered$layout, data.firstresponses.filtered$chats),
-# 	FUN = mean
-# )
-# colnames(data.firstresponses.filtered.mean) <- c("participant", "condition", "layout", "chats", "first_response_time")
-
 # dev.new()
 # plot(densityplot(data.firstresponses.filtered.mean$first_response_time))
 
@@ -40,10 +34,6 @@ data.firstresponses.filtered %>%
 	group_by(condition) %>%
 	summarise(mean=mean(first_response_time), sd = sd(first_response_time), min=min(first_response_time),max=max(first_response_time)) %>%
 	print(n=4)
-
-# Anova
-data.firstresponses.filtered.aov <- aov(first_response_time ~ (as.factor(layout) * as.factor(chats)) + Error(participant / (as.factor(layout) * as.factor(chats))), data=data.firstresponses.filtered)
-# print(summary(data.firstresponses.filtered.aov))
 
 # Linear mixed model
 # With interaction

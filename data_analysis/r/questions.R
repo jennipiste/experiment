@@ -30,14 +30,6 @@ print(nrow(data.questions.waittime.filtered))
 # Question response times #
 ###########################
 
-# # Mean wait times for participants for each condition
-# data.questions.waittime.filtered.mean <- aggregate(data.questions.filtered$wait_time,
-# 	by = list(data.questions.filtered$participant, data.questions.filtered$condition, data.questions.filtered$layout, data.questions.filtered$chats),
-# 	FUN = mean
-# )
-# colnames(data.questions.waittime.filtered.mean) <- c("participant", "condition", "layout", "chats", "wait_time")
-# data.questions.waittime.filtered.mean <- data.questions.waittime.filtered.mean[order(data.questions.waittime.filtered.mean$participant), ]
-
 # Statistics
 data.questions.waittime.filtered %>%
 	group_by(condition) %>%
