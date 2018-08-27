@@ -17,24 +17,24 @@ data.layout <- data.questionnaires[, 'layout']
 data.chats <- data.questionnaires[, 'chats']
 data.condition <- data.questionnaires[, 'condition']
 
-factanal <- factanal(data.questions, 2, rotation="varimax")
-print(factanal)
-print(factanal, digits=2, cutoff=.4, sort=TRUE)
+# factanal <- factanal(data.questions, 2, rotation="varimax")
+# print(factanal)
+# print(factanal, digits=2, cutoff=.4, sort=TRUE)
 
-alpha <- psych::alpha(data.questions, check.keys=TRUE)
-print(alpha)
-print(alpha$total$std.alpha)
+# alpha <- psych::alpha(data.questions, check.keys=TRUE)
+# print(alpha)
+# print(alpha$total$std.alpha)
 
-# Cronbach's alpha for both factors
-factor1 <- data.questions[, c("stress", "frustration", "memory")]
-factor2 <- data.questions[, c("efficiency", "control")]
+# # Cronbach's alpha for both factors
+# factor1 <- data.questions[, c("stress", "frustration", "memory")]
+# factor2 <- data.questions[, c("efficiency", "control")]
 
-factor1.alpha <- psych::alpha(factor1, check.keys=TRUE)
-factor2.alpha <- psych::alpha(factor2)
-print(factor1.alpha)
-print(factor1.alpha$total$std.alpha)
-print(factor2.alpha)
-print(factor2.alpha$total$std.alpha)
+# factor1.alpha <- psych::alpha(factor1, check.keys=TRUE)
+# factor2.alpha <- psych::alpha(factor2)
+# print(factor1.alpha)
+# print(factor1.alpha$total$std.alpha)
+# print(factor2.alpha)
+# print(factor2.alpha$total$std.alpha)
 
 # EFFICIENCY
 data.questionnaires %>%
@@ -44,12 +44,17 @@ data.questionnaires %>%
 
 data.efficiency <- data.questionnaires[, 'efficiency']
 
+# Chi-squared tests
 m1 <- chisq.test(data.layout, data.efficiency)
 print(m1)
 m2 <- chisq.test(data.chats, data.efficiency)
 print(m2)
-m3 <- chisq.test(data.condition, data.efficiency)
+
+# Mann-Whitney tests
+m3 <- wilcox.test(data.questionnaires$efficiency[data.questionnaires$layout==1], data.questionnaires$efficiency[data.questionnaires$layout==2])
 print(m3)
+m4 <- wilcox.test(data.questionnaires$efficiency[data.questionnaires$chats==3], data.questionnaires$efficiency[data.questionnaires$chats==4])
+print(m4)
 
 p1 <- ggplot(data.questionnaires, aes(x=efficiency, group=as.factor(chats), fill=as.factor(chats))) +
 	scale_fill_manual(name = "chats",
@@ -61,7 +66,6 @@ p1 <- ggplot(data.questionnaires, aes(x=efficiency, group=as.factor(chats), fill
 	theme_minimal() +
 	theme(legend.position = c(0.1, 0.85),
 		  legend.background = element_rect(fill = "white", colour = "black", linetype = "solid"))
-
 dev.new()
 plot(p1)
 
@@ -77,8 +81,12 @@ m1 <- chisq.test(data.layout, data.stress)
 print(m1)
 m2 <- chisq.test(data.chats, data.stress)
 print(m2)
-m3 <- chisq.test(data.condition, data.stress)
+
+# Mann-Whitney tests
+m3 <- wilcox.test(data.questionnaires$stress[data.questionnaires$layout==1], data.questionnaires$stress[data.questionnaires$layout==2])
 print(m3)
+m4 <- wilcox.test(data.questionnaires$stress[data.questionnaires$chats==3], data.questionnaires$stress[data.questionnaires$chats==4])
+print(m4)
 
 p1 <- ggplot(data.questionnaires, aes(x=stress, group=as.factor(chats), fill=as.factor(chats))) +
 	scale_fill_manual(name = "chats",
@@ -90,7 +98,6 @@ p1 <- ggplot(data.questionnaires, aes(x=stress, group=as.factor(chats), fill=as.
 	theme_minimal() +
 	theme(legend.position = c(0.85, 0.85),
 		  legend.background = element_rect(fill = "white", colour = "black", linetype = "solid"))
-
 dev.new()
 plot(p1)
 
@@ -106,8 +113,12 @@ m1 <- chisq.test(data.layout, data.control)
 print(m1)
 m2 <- chisq.test(data.chats, data.control)
 print(m2)
-m3 <- chisq.test(data.condition, data.control)
+
+# Mann-Whitney tests
+m3 <- wilcox.test(data.questionnaires$control[data.questionnaires$layout==1], data.questionnaires$control[data.questionnaires$layout==2])
 print(m3)
+m4 <- wilcox.test(data.questionnaires$control[data.questionnaires$chats==3], data.questionnaires$control[data.questionnaires$chats==4])
+print(m4)
 
 p1 <- ggplot(data.questionnaires, aes(x=control, group=as.factor(chats), fill=as.factor(chats))) +
 	scale_fill_manual(name = "chats",
@@ -119,7 +130,6 @@ p1 <- ggplot(data.questionnaires, aes(x=control, group=as.factor(chats), fill=as
 	theme_minimal() +
 	theme(legend.position = c(0.1, 0.85),
 		  legend.background = element_rect(fill = "white", colour = "black", linetype = "solid"))
-
 dev.new()
 plot(p1)
 
@@ -135,8 +145,12 @@ m1 <- chisq.test(data.layout, data.frustration)
 print(m1)
 m2 <- chisq.test(data.chats, data.frustration)
 print(m2)
-m3 <- chisq.test(data.condition, data.frustration)
+
+# Mann-Whitney tests
+m3 <- wilcox.test(data.questionnaires$frustration[data.questionnaires$layout==1], data.questionnaires$frustration[data.questionnaires$layout==2])
 print(m3)
+m4 <- wilcox.test(data.questionnaires$frustration[data.questionnaires$chats==3], data.questionnaires$frustration[data.questionnaires$chats==4])
+print(m4)
 
 p1 <- ggplot(data.questionnaires, aes(x=frustration, group=as.factor(chats), fill=as.factor(chats))) +
 	scale_fill_manual(name = "chats",
@@ -148,7 +162,6 @@ p1 <- ggplot(data.questionnaires, aes(x=frustration, group=as.factor(chats), fil
 	theme_minimal() +
 	theme(legend.position = c(0.85, 0.85),
 		  legend.background = element_rect(fill = "white", colour = "black", linetype = "solid"))
-
 dev.new()
 plot(p1)
 
@@ -164,8 +177,12 @@ m1 <- chisq.test(data.layout, data.memory)
 print(m1)
 m2 <- chisq.test(data.chats, data.memory)
 print(m2)
-m3 <- chisq.test(data.condition, data.memory)
+
+# Mann-Whitney tests
+m3 <- wilcox.test(data.questionnaires$memory[data.questionnaires$layout==1], data.questionnaires$memory[data.questionnaires$layout==2])
 print(m3)
+m4 <- wilcox.test(data.questionnaires$memory[data.questionnaires$chats==3], data.questionnaires$memory[data.questionnaires$chats==4])
+print(m4)
 
 p1 <- ggplot(data.questionnaires, aes(x=memory, group=as.factor(chats), fill=as.factor(chats))) +
 	scale_fill_manual(name = "chats",
@@ -177,6 +194,5 @@ p1 <- ggplot(data.questionnaires, aes(x=memory, group=as.factor(chats), fill=as.
 	theme_minimal() +
 	theme(legend.position = c(0.1, 0.85),
 		  legend.background = element_rect(fill = "white", colour = "black", linetype = "solid"))
-
 dev.new()
 plot(p1)
