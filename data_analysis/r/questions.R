@@ -39,19 +39,16 @@ data.questions.waittime.filtered %>%
 # dev.new()
 # plot(densityplot(data.questions.waittime.filtered$wait_time))
 
-# Anova
-data.questions.waittime.filtered.aov <- with(data.questions.waittime.filtered,
-	aov(wait_time ~ as.factor(layout) * as.factor(chats) + Error(participant / (as.factor(layout) * as.factor(chats))))
-)
-# print(summary(data.questions.waittime.filtered.aov))
-
 # Linear mixed model
 # With interaction
-m1 <- lmer(wait_time ~ as.factor(layout) * as.factor(chats) + (1|participant) + (1|part) + (1|topic), data = data.questions.waittime.filtered)
-print(summary(m1))
+# m1 <- lmer(wait_time ~ as.factor(layout) * as.factor(chats) + (1|participant) + (1|part) + (1|topic), data = data.questions.waittime.filtered)
+# print(summary(m1))
 
 # Without interaction
-m2 <- lmer(wait_time ~ as.factor(layout) + as.factor(chats) + (1|participant) + (1|part) + (1|topic), data = data.questions.waittime.filtered)
+m1 <- lmer(wait_time ~ as.factor(layout) + as.factor(chats) + (1|participant), data = data.questions.waittime.filtered)
+print(summary(m1))
+
+m2 <- lmer(scale(wait_time) ~ as.factor(layout) + as.factor(chats) + (1|participant), data = data.questions.waittime.filtered)
 print(summary(m2))
 
 # Plots
@@ -85,9 +82,23 @@ p2 <- ggplot(data.questions.waittime.filtered %>%
 	xlab("layout") +
     ylab("time (s)") +
 	ggtitle("Mean question response time in seconds") +
-
 dev.new()
 plot(p2)
+
+# Boxplot
+p3 <- ggplot(data.questions.waittime.filtered %>%
+       group_by(participant,layout,chats) %>%
+       summarise(wait_time = mean(wait_time)),
+       aes(as.factor(layout), wait_time, fill = as.factor(chats))) +
+    geom_boxplot() +
+	theme_minimal() +
+	xlab("layout") +
+    ylab("time (s)") +
+	scale_fill_manual(name = "chats",
+					  labels = c("3", "4"),
+ 					  values = c("#F79E9B", "#62D2D4"))
+dev.new()
+plot(p3)
 
 ####################
 # Number of errors #
@@ -109,11 +120,11 @@ data.questions.errors %>%
 # plot(densityplot(data.questions.errors$errors))
 
 # Linear mixed model
-m1 <- lmer(errors ~ as.factor(layout) * as.factor(chats) + (1|participant), data = data.questions.errors)
-print(summary(m1))
+# m1 <- lmer(errors ~ as.factor(layout) * as.factor(chats) + (1|participant), data = data.questions.errors)
+# print(summary(m1))
 
 # Generalized mixed model
-g1 <- glmer(errors ~ as.factor(layout) * as.factor(chats) + (1|participant), family=poisson, data=data.questions.errors)
+g1 <- glmer(errors ~ as.factor(layout) + as.factor(chats) + (1|participant), family=poisson, data=data.questions.errors)
 print(summary(g1))
 
 p1 <- ggplot(data.questions.errors, aes(errors)) +
@@ -146,6 +157,20 @@ p2 <- ggplot(data.questions.errors %>%
 	xlab("layout") +
     ylab("errors") +
 	ggtitle("Mean number of errors") +
-
 dev.new()
 plot(p2)
+
+# Boxplot
+p3 <- ggplot(data.questions.errors %>%
+       group_by(participant,layout,chats) %>%
+       summarise(errors = mean(errors)),
+       aes(as.factor(layout), errors, fill = as.factor(chats))) +
+    geom_boxplot() +
+	theme_minimal() +
+	xlab("layout") +
+    ylab("errors") +
+	scale_fill_manual(name = "chats",
+					  labels = c("3", "4"),
+ 					  values = c("#F79E9B", "#62D2D4"))
+dev.new()
+plot(p3)

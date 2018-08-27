@@ -32,11 +32,14 @@ print(nrow(data.durations.filtered))
 
 # Linear mixed model
 # With interaction
-m1 <- lmer(duration ~ as.factor(layout) * as.factor(chats) + (1|participant) + (1|part) + (1|topic), data = data.durations)
-print(summary(m1))
+# m1 <- lmer(duration ~ as.factor(layout) * as.factor(chats) + (1|participant) + (1|part) + (1|topic), data = data.durations)
+# print(summary(m1))
 
 # Without interaction
-m2 <- lmer(duration ~ as.factor(layout) + as.factor(chats) + (1|participant) + (1|part) + (1|topic), data = data.durations)
+m1 <- lmer(duration ~ as.factor(layout) + as.factor(chats) + (1|participant), data = data.durations)
+print(summary(m1))
+
+m2 <- lmer(scale(duration) ~ as.factor(layout) + as.factor(chats) + (1|participant), data = data.durations)
 print(summary(m2))
 
 # Statistics
@@ -79,3 +82,18 @@ p2 <- ggplot(data.durations %>%
 
 dev.new()
 plot(p2)
+
+# Boxplot
+p3 <- ggplot(data.durations %>%
+       group_by(participant,layout,chats) %>%
+       summarise(duration = mean(duration)),
+       aes(as.factor(layout), duration, fill = as.factor(chats))) +
+    geom_boxplot() +
+	theme_minimal() +
+	xlab("layout") +
+    ylab("time (s)") +
+	scale_fill_manual(name = "chats",
+					  labels = c("3", "4"),
+ 					  values = c("#F79E9B", "#62D2D4"))
+dev.new()
+plot(p3)

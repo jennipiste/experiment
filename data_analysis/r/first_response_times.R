@@ -7,7 +7,6 @@ library(ggplot2)
 library(lattice)
 library(corrplot)
 library(gridExtra)
-library(emmeans)
 
 data.firstresponses <- read.table("csv/first_response_times.csv", header = T, sep = ";", dec = ",")
 
@@ -37,14 +36,21 @@ data.firstresponses.filtered %>%
 
 # Linear mixed model
 # With interaction
-m1 <- lmer(first_response_time ~ as.factor(layout) * as.factor(chats) + (1|participant) + (1|topic) + (1|part), data = data.firstresponses.filtered)
-print(summary(m1))
+# m1 <- lmer(first_response_time ~ as.factor(layout) * as.factor(chats) + (1|participant) + (1|topic) + (1|part), data = data.firstresponses.filtered)
+# print(summary(m1))
 
 # Without interaction
-m2 <- lmer(first_response_time ~ as.factor(layout) + as.factor(chats) + (1|participant) + (1|topic) + (1|part), data = data.firstresponses.filtered)
+m1 <- lmer(first_response_time ~ as.factor(layout) + as.factor(chats) + (1|participant), data = data.firstresponses.filtered)
+print(summary(m1))
+
+m2 <- lmer(scale(first_response_time) ~ as.factor(layout) + as.factor(chats) + (1|participant), data = data.firstresponses.filtered)
 print(summary(m2))
 
-# Plots
+# Without filtering
+m3 <- lmer(scale(first_response_time) ~ as.factor(layout) + as.factor(chats) + (1|participant), data = data.firstresponses)
+print(summary(m3))
+
+# Densityplot
 p1 <- ggplot(data.firstresponses.filtered, aes(first_response_time)) +
 	ggtitle("First response time density") +
 	scale_fill_manual(name = "chats",
@@ -59,6 +65,7 @@ p1 <- ggplot(data.firstresponses.filtered, aes(first_response_time)) +
 dev.new()
 plot(p1)
 
+# Histogram with error bars
 p2 <- ggplot(data.firstresponses.filtered %>%
 	group_by(layout, chats) %>%
 	summarise(sd = sd(first_response_time), first_response_time = mean(first_response_time), n = n()) %>%
@@ -78,3 +85,18 @@ p2 <- ggplot(data.firstresponses.filtered %>%
 
 dev.new()
 plot(p2)
+
+# Boxplot
+p3 <- ggplot(data.firstresponses.filtered %>%
+       group_by(participant,layout,chats) %>%
+       summarise(first_response_time = mean(first_response_time)),
+       aes(as.factor(layout), first_response_time, fill = as.factor(chats))) +
+    geom_boxplot() +
+	theme_minimal() +
+	xlab("layout") +
+    ylab("time (s)") +
+	scale_fill_manual(name = "chats",
+					  labels = c("3", "4"),
+ 					  values = c("#F79E9B", "#62D2D4"))
+dev.new()
+plot(p3)

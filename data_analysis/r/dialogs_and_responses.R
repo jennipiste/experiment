@@ -39,8 +39,18 @@ data.dialogs.dialogs.filtered %>%
 	print(n=4)
 
 # Linear mixed model
-m1 <- lmer(dialogs_in_condition ~ as.factor(layout) * as.factor(chats) + (1|participant) + (1|part) + (1|topic), data = data.dialogs.dialogs.filtered)
+# m1 <- lmer(dialogs_in_condition ~ as.factor(layout) * as.factor(chats) + (1|participant) + (1|part) + (1|topic), data = data.dialogs.dialogs.filtered)
+# print(summary(m1))
+
+m1 <- lmer(dialogs_in_condition ~ as.factor(layout) + as.factor(chats) + (1|participant), data = data.dialogs.dialogs.filtered)
 print(summary(m1))
+
+m2 <- lmer(scale(dialogs_in_condition) ~ as.factor(layout) + as.factor(chats) + (1|participant), data = data.dialogs.dialogs.filtered)
+print(summary(m2))
+
+# Without filtering
+m3 <- lmer(scale(dialogs_in_condition) ~ as.factor(layout) + as.factor(chats) + (1|participant), data = data.dialogs.dialogs)
+print(summary(m3))
 
 # Plots
 p1 <- ggplot(data.dialogs.dialogs.filtered, aes(dialogs_in_condition)) +
@@ -73,9 +83,23 @@ p2 <- ggplot(data.dialogs.dialogs.filtered %>%
 	xlab("layout") +
     ylab("chats") +
 	ggtitle("Mean total number of chats") +
-
 dev.new()
 plot(p2)
+
+# Boxplot
+p3 <- ggplot(data.dialogs.dialogs.filtered %>%
+       group_by(participant,layout,chats) %>%
+       summarise(dialogs_in_condition = mean(dialogs_in_condition)),
+       aes(as.factor(layout), dialogs_in_condition, fill = as.factor(chats))) +
+    geom_boxplot() +
+	theme_minimal() +
+	xlab("layout") +
+    ylab("chats") +
+	scale_fill_manual(name = "chats",
+					  labels = c("3", "4"),
+ 					  values = c("#F79E9B", "#62D2D4"))
+dev.new()
+plot(p3)
 
 # ### FINISHED DIALOGS ###
 # # Get only the rows that have dialogs_in_condition values
@@ -106,8 +130,18 @@ data.dialogs.finisheddialogs.filtered %>%
 	print(n=4)
 
 # Linear mixed model
-m1 <- lmer(finished_dialogs_in_condition ~ as.factor(layout) * as.factor(chats) + (1|participant) + (1|part) + (1|topic), data = data.dialogs.finisheddialogs.filtered)
+# m1 <- lmer(finished_dialogs_in_condition ~ as.factor(layout) * as.factor(chats) + (1|participant) + (1|part) + (1|topic), data = data.dialogs.finisheddialogs.filtered)
+# print(summary(m1))
+
+m1 <- lmer(finished_dialogs_in_condition ~ as.factor(layout) + as.factor(chats) + (1|participant), data = data.dialogs.finisheddialogs.filtered)
 print(summary(m1))
+
+m2 <- lmer(scale(finished_dialogs_in_condition) ~ as.factor(layout) + as.factor(chats) + (1|participant), data = data.dialogs.finisheddialogs.filtered)
+print(summary(m2))
+
+# Without filtering
+m3 <- lmer(scale(finished_dialogs_in_condition) ~ as.factor(layout) + as.factor(chats) + (1|participant), data = data.dialogs.finisheddialogs)
+print(summary(m3))
 
 # Plots
 p1 <- ggplot(data.dialogs.finisheddialogs.filtered, aes(finished_dialogs_in_condition)) +
@@ -140,9 +174,23 @@ p2 <- ggplot(data.dialogs.finisheddialogs.filtered %>%
 	xlab("layout") +
     ylab("chats") +
 	ggtitle("Mean number of handled chats") +
-
 dev.new()
 plot(p2)
+
+# Boxplot
+p3 <- ggplot(data.dialogs.finisheddialogs.filtered %>%
+       group_by(participant,layout,chats) %>%
+       summarise(finished_dialogs_in_condition = mean(finished_dialogs_in_condition)),
+       aes(as.factor(layout), finished_dialogs_in_condition, fill = as.factor(chats))) +
+    geom_boxplot() +
+	theme_minimal() +
+	xlab("layout") +
+    ylab("chats") +
+	scale_fill_manual(name = "chats",
+					  labels = c("3", "4"),
+ 					  values = c("#F79E9B", "#62D2D4"))
+dev.new()
+plot(p3)
 
 # ### RESPONSES ###
 # # Get only the rows that have responses_in_condition values
@@ -173,8 +221,18 @@ data.dialogs.responses.filtered %>%
 	print(n=4)
 
 # Linear mixed model
-m1 <- lmer(responses_in_condition ~ as.factor(layout) * as.factor(chats) + (1|participant) + (1|part) + (1|topic), data = data.dialogs.responses.filtered)
+# m1 <- lmer(responses_in_condition ~ as.factor(layout) * as.factor(chats) + (1|participant) + (1|part) + (1|topic), data = data.dialogs.responses.filtered)
+# print(summary(m1))
+
+m1 <- lmer(responses_in_condition ~ as.factor(layout) + as.factor(chats) + (1|participant), data = data.dialogs.responses.filtered)
 print(summary(m1))
+
+m2 <- lmer(scale(responses_in_condition) ~ as.factor(layout) + as.factor(chats) + (1|participant), data = data.dialogs.responses.filtered)
+print(summary(m2))
+
+# Without filtering
+m3 <- lmer(scale(responses_in_condition) ~ as.factor(layout) + as.factor(chats) + (1|participant), data = data.dialogs.responses)
+print(summary(m3))
 
 # Plots
 p1 <- ggplot(data.dialogs.responses.filtered, aes(responses_in_condition)) +
@@ -207,6 +265,20 @@ p2 <- ggplot(data.dialogs.responses.filtered %>%
 	xlab("layout") +
     ylab("responses") +
 	ggtitle("Mean number of responses") +
-
 dev.new()
 plot(p2)
+
+# Boxplot
+p3 <- ggplot(data.dialogs.responses.filtered %>%
+       group_by(participant,layout,chats) %>%
+       summarise(responses_in_condition = mean(responses_in_condition)),
+       aes(as.factor(layout), responses_in_condition, fill = as.factor(chats))) +
+    geom_boxplot() +
+	theme_minimal() +
+	xlab("layout") +
+    ylab("responses") +
+	scale_fill_manual(name = "chats",
+					  labels = c("3", "4"),
+ 					  values = c("#F79E9B", "#62D2D4"))
+dev.new()
+plot(p3)
