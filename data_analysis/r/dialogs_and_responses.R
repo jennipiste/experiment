@@ -7,6 +7,8 @@ library(ggplot2)
 library(lattice)
 library(corrplot)
 library(gridExtra)
+library(car)
+library(MASS)
 
 data.dialogs <- read.table("csv/dialogs.csv", header = T, sep = ";", dec = ",")
 
@@ -29,8 +31,8 @@ data.dialogs.dialogs.filtered <- data.dialogs.dialogs[which(data.dialogs.dialogs
 print(nrow(data.dialogs.dialogs))
 print(nrow(data.dialogs.dialogs.filtered))
 
-# dev.new()
-# plot(densityplot(data.dialogs.dialogs.filtered$dialogs_in_condition))
+dev.new()
+plot(densityplot(data.dialogs.dialogs$dialogs_in_condition))
 
 # Statistics
 data.dialogs.dialogs.filtered %>%
@@ -120,8 +122,8 @@ data.dialogs.finisheddialogs.filtered <- data.dialogs.finisheddialogs[which(data
 print(nrow(data.dialogs.finisheddialogs))
 print(nrow(data.dialogs.finisheddialogs.filtered))
 
-# dev.new()
-# plot(densityplot(data.dialogs.finisheddialogs.filtered$finished_dialogs_in_condition))
+dev.new()
+plot(densityplot(data.dialogs.finisheddialogs$finished_dialogs_in_condition))
 
 # Statistics
 data.dialogs.finisheddialogs.filtered %>%
@@ -211,8 +213,8 @@ data.dialogs.responses.filtered <- data.dialogs.responses[which(data.dialogs.res
 print(nrow(data.dialogs.responses))
 print(nrow(data.dialogs.responses.filtered))
 
-# dev.new()
-# plot(densityplot(data.dialogs.responses.filtered$responses_in_condition))
+dev.new()
+plot(densityplot(data.dialogs.responses$responses_in_condition))
 
 # Statistics
 data.dialogs.responses.filtered %>%
